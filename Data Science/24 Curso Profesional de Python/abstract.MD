@@ -250,8 +250,6 @@ my_func()
   clase corta (con un solo método), los usamos para que sean elegantes. El
   segundo caso, es cuando usamos decoradores
 
-
-
 ### Decoradores
 
 Un **decorador** es una función que recibe como
@@ -307,7 +305,7 @@ def decorador(func):
     return envoltura
 
 # De esta manera se decora la función saludo (equivale a saludo = decorador(saludo) de la última línea, quedando ahora en la línea inmediata superior ):
-@decorador              
+@decorador            
 def saludo():
     print("¡Hola!")
 
@@ -317,6 +315,7 @@ saludo()                   # La función saludo está ahora decorada
 Esto permite ahorrar código al implementar características (decoradores) comunes a diferentes funciones:
 
 ```python
+
 def decorator_upper(func):                  # Función decoradora
     def wrapper(text):                      # Función anidada
         return func(text).upper()           # Operación que realiza el decorado a la función (func), inserta el texto a la función original. Convierte todo a mayúsculas.
@@ -332,4 +331,104 @@ def warning(name):
 
 print(message("Cesar")) # Output: CESAR, RECIBISTE UN MENSAJE
 print(warning("Cesar")) # Output: USA SOLO MAYÚSCULAS CESAR
+```
+
+
+
+### Estructuras de datos avanzadas
+
+#### Iteradores
+
+Antes de entender qué son los iteradores, primero debemos entender a los iterables.
+
+Son todos aquellos objetos que podemos recorrer en un ciclo. Son
+aquellas estructuras de datos divisibles en elementos únicos que yo
+puedo recorrer en un ciclo.
+
+Pero en Python las cosas no son así. Los iterables se convierten en iteradores.
+
+Ejemplo:
+
+```python
+# Creando un iterador
+
+my_list = [1,2,3,4,5]
+my_iter = iter(my_list)
+
+# Iterando un iterador
+
+print(next(my_iter))
+
+# Cuando no quedan datos, la excepción StopIteration es elevada
+```
+
+---
+
+```python
+# Creando un iterador
+
+my_list = [1,2,3,4,5]
+my_iter = iter(my_list)
+
+# Iterando un iterador
+
+while True: #ciclo infinito
+  try:
+    element = next(my_iter)
+    print(element)
+  except StopIteration:
+    break
+```
+
+**Momento impactante:** El ciclo “for” dentro de Python, no existe. Es un while con StopIteration.
+
+```python
+my_list = [1,2,3,4,5]
+
+for element in my_list:
+  print(element)
+```
+
+---
+
+`evenNumbers.py`:
+
+```python
+class EvenNumbers:
+  """Clase que implementa un iterador de todos los números pares,
+  o los números pares hasta un máximo
+  """
+
+  #* Constructor de la clase
+  def __init__(self, max = None): #self hace referencia al objeto futuro que voy a crear con esta clase
+    self.max = max
+
+
+  # Método para tener elementos o atributos que voy a necesitar para que el iterador funcione
+  def __iter__(self):
+    self.num = 0 #Primer número par
+    #* Convertir un iterable en un iterador
+    return self
+
+  # Método para tener la función "next" de Python
+  def __next__(self):
+    if not self.max or self.num <= self.max:
+      result = self.num
+      self.num += 2
+      return result
+    else:
+      raise StopIteration
+```
+
+Ventajas de usar iteradores:
+
+1. Nos ahorra recursos.
+2. Ocupan poca memoria.
+
+
+
+---
+
+```
+
 ```
