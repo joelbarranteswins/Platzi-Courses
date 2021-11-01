@@ -305,7 +305,7 @@ def decorador(func):
     return envoltura
 
 # De esta manera se decora la función saludo (equivale a saludo = decorador(saludo) de la última línea, quedando ahora en la línea inmediata superior ):
-@decorador            
+@decorador          
 def saludo():
     print("¡Hola!")
 
@@ -332,8 +332,6 @@ def warning(name):
 print(message("Cesar")) # Output: CESAR, RECIBISTE UN MENSAJE
 print(warning("Cesar")) # Output: USA SOLO MAYÚSCULAS CESAR
 ```
-
-
 
 ### Estructuras de datos avanzadas
 
@@ -427,8 +425,282 @@ Ventajas de usar iteradores:
 
 
 
+#### Generadores
+
+Sugar syntax de los iteradores. Los generadores son funciones que guardan un estado. Es un iterador escrito de forma más simple.
+
+```python
+def my_gen():
+
+  """un ejemplo de generadores"""
+
+  print('Hello world!')
+  n = 0
+  yield n # es exactamente lo mismo que return pero detiene la función, cuando se vuelva a llamar a la función, seguirá desde donde se quedó
+
+  print('Hello heaven!')
+  n = 1
+  yield n
+
+  print('Hello hell!')
+  n = 2
+  yield n
+
+
+a = my_gen()
+print(next(a)) # Hello world!
+print(next(a)) # Hello heaven!
+print(next(a)) # Hello hell!
+print(next(a)) StopIteration
+```
+
+Ahora veremos un **generator expression** (es como list comprehension pero mucho mejor, porque podemos manejar mucha cantidad
+
+de información sin tener problemas de rendimiento):
+
+```python
+#Generator expression
+
+my_list = [0,1,4,7,9,10]
+
+my_second_list = [x*2 for x in my_list] #List comprehension
+my_second_gen = ()x*2 for x in my_list]) #Generator expression
+```
+
+
+
+**Sets** :
+
+Los sets son una estructura de datos muy similares a las listas en
+cuanto a su forma, pero presentan ciertas características particulares:
+
+* Los sets son **inmutables**
+* Cada elemento del set es único, esto es que no se admiten duplicados,
+  aun si durante la definición del set se agregan elementos repetidos
+  pyhton solo guarda un elemento
+* los sets guardan los elementos en desorden
+
+Para declararlos se utilizan los {} parecido a los diccionarios solo que carece de la composición de conjunto {a:b, c:d}
+
+```python
+# set de enteros
+my_set = {1, 3, 5}
+print(my_set)
+
+# set de diferentes tipos de datos
+my_set = {1.0, "Hi", (1, 4, 7)}
+print(my_set)
+```
+
+Los sets no pueden ser leídos como las listas o recorridos a través
+de slices, esto debido a que no tienen un criterio de orden. Sin embargo
+si podemos agregar o eliminar items de los sets utilizando métodos:
+
+* **add():** nos permite agregar elementos al set, si se intenta agregar un elemento existente simplemente python los ignorara
+* **update():** nos permite agregar múltiples elementos al set
+* **remove():** permite eliminar un elemento del set, en el caso en que no se encuentre presente dicho elemento, Python elevará un error
+* **discard():**  permite eliminar un elemento del set,
+  en el caso en que no se encuentre presente dicho elemento, Python dejará
+  el set intacto, sin elevar ningún error.
+* **pop():** permite eliminar un elemento del set, pero lo hará de forma aleatoria.
+* **clear():** Limpia completamente el set, dejándolo vació.
+
+```python
+#ejemplo de operaciones sobre sets 
+my_set = {1, 2, 3} 
+print(my_set) #Output {1, 2, 3} 
+
+#añadiendo un elemento al set 
+my_set.add(4) 
+print(my_set) #Output {1, 2, 3, 4}
+
+#añadiendo varios elementos al set, python ignorará elementos repetidos 
+my_set.update([1, 5, 6]) 
+print(my_set) #Output {1, 2, 3, 4, 5, 6}
+
+# eliminado elementos del set 
+my_set.discard(1) 
+print(my_set) #Output {2, 3, 4, 5, 6}
+
+# borrando un elemento aleatorio 
+my_set.pop()
+print(my_set) #Output el set menos un elemento aleatorio 
+
+#limpiar el set 
+my_set.clear()
+print(my_set) # Output set() 
+```
+
+Podemos utilizar estructuras de datos existentes para transformarlas a sets utilizando el método  **set** :
+
+```python
+#usando listas para crear sets
+my_list = [1, 2, 3, 3, 4, 5]
+my_set = set(my_list)
+print(my_set)  #output {1, 2, 3, 4, 5}
+
+#usando tuplas para crear sets 
+my_tuple: ('hola', 'hola', 1, 2)
+my_set2: set(my_tuple)
+print(my_set2) #Output {'hola', 1}
+
+```
+
+
+
+### Sets
+
+Conjuntos: Una colección desordenada de elementos únicos e inmutables.
+
+#### Características:
+
+* Un set al ser impreso puede presentar diferente orden al definido
+  pues Python los ordena a modo de optimizar/ahorrar memoria: un set es
+  una colección desordenada.
+* En caso de existir elementos repetidos, los elimina, pues: un set es una lista de elementos únicos.
+* En caso de indicar una lista, por ejemplo, en un set este nos arroja un error, dado que: un set es inmutable.
+
+Al set no se puede acceder con un índice.
+
+Para declarar un set, el grupo de elementos debe ir entre llaves. Se
+diferencia de los diccionarios ya que no contienen el símbolo “ **:** ”, por lo que automáticamente Python lo entiende como un set de datos.
+
+En caso de desear declarar un set vacío no es posible usar llaves ya
+que al no contener datos entre las llaves las interpreta como un
+diccionario. En este caso la declaración de un set debe ser explicita
+mediante el comando **set()**
+
+#### Casting con Sets
+
+Para convertir una estructura de datos a un set se utiliza el comando set()
+
+Si se castea una lista a un set como resultado tenemos un set de
+elementos únicos ya que elimina los elementos repetidos. Los elementos
+mutables, en caso de existir, este comando los eliminará.
+
+#### Agregando elementos a un Set
+
+Para agregar un solo elemento se utiliza el método **.add** de los sets, en cambio, para agregar múltiples elementos se utiliza el método  **.update** . En ambos se eliminan todos los elementos que fuesen repetido en el set o mutables.
+
+#### Eliminando elementos de un Set
+
+Existen 4 métodos:
+
+* **.discard()** = Se indica como parámetro el elemento a
+  eliminar, en caso de no exisitir el elemento no realiza ninguna
+  operación y continúa con la ejecución.
+* **.remove()** = También se indica como parámetro el
+  elemento a eliminar, pero en este caso si no exististe el elemento
+  arroja un error (KeyError) y detiene la ejecución.
+* **.pop()** = Elimina un elemento del set de manera aleatoria.
+* **.clear()** = Limpia el set completo.
+
+#### operadores
+
+**Union** Operator  `|`
+
+**Intersection** Operator `&`
+
+**Difference** Operator `-`
+
+**Symmetric Difference** Operator `^`
+
+```
+my_set1 = {1, 2, 3, 4}
+my_set2 = {3,4,5,6}
+my_set3 = my_set1 | my_set2 ##Union, me uno todos los elementos, y los duplicados no los agrego
+print(f"union = {my_set3}")
+my_set4 = my_set1 & my_set2 ##Interseccion, me tomo los elementos que esten en ambos sets
+print(f"interseccion = {my_set4}")
+my_set5 = my_set1 - my_set2 ##Diferencia, me tomo los elementos que esten en el set1 pero no en set2
+print(f"diferencia = {my_set5}")
+my_set6 = my_set1 ^ my_set2 ##Diferencia simetrica, me tomo los elementos que esten en el set1 o en set2, pero no en ambos
+print(f"diferencia simetrica = {my_set6}")
+```
+
+
+```
+Esto puede quedar mejor y no tan largo, pero es mejor explicado paso a paso para algunos. Dejo mi aporte. 😃
+
+<
+def delete_repeated_items(some_list):
+    list_converted = set(some_list)
+  
+    new_list = []
+
+    for element in list_converted:
+        new_list.append(element)
+  
+    return new_list
+
+if __name__ == '__main__':
+
+    the_list = [0, 0, 1, 2, 3, 3, 4, 5, 6, 7, 7]
+    print(delete_repeated_items(the_list))
+    # return; must be [0, 1, 2, 3, 4, 5, 6, 7]
+> 
+
+```
+
+
+
+
+
+#### Manejo de fechas
+
+`datetime` es un módulo de manejo de fechas.
+
+```python
+import datetime
+
+my_time = datetime.datetime.now() # hora local de mi PC u hora universal
+my_date = datetime.date.today() # fecha actual
+
+my_day = datetime.date.today()
+
+print(my_time)
+print(my_date)
+
+print(f'Year: {my_day.year}')
+print(f'Month: {my_day.month}')
+print(f'Day: {my_day.day}')
+```
+
+Tabla de códigos de formato para fechas y horas(los más importantes):
+
+| Formato  | Código |
+| -------- | ------- |
+| Año     | %Y      |
+| Mes      | %m      |
+| Día     | %d      |
+| Hora     | %H      |
+| Minutos  | %M      |
+| Segundos | %S      |
+
+```python
+from datetime import datetime
+
+my_datetime = datetime.now()
+print(my_datetime)
+
+latam = my_datetime.strftime('%d/%m/%Y')
+print(f'Formato LATAM: {latam}')
+
+usa = my_datetime.strftime('%m/%d/%Y')
+print(f'Formato USA: {usa}')
+
+random_format = my_datetime.strftime('año %Y mes %m día %d')
+print(f'Formato random: {random_format}')
+
+formato_utc = datetime.utcnow()
+print(f'Formato UTC: {formato_utc}')
+```
+
+
 ---
 
 ```
+
+
 
 ```
