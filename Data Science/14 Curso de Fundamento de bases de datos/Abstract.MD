@@ -20,6 +20,8 @@ Las bases de datos entran cuando hacemos la transición a medios digitales.
 **Auto administrados:** Es la base de datos que instalas tú y te encargas de actualizaciones, mantenimiento, etc.
 **Administrados:** Servicios que ofrecen las nubes modernas como Azure y no debes preocuparte por mantenimiento o actualizaciones.
 
+<div style="page-break-after: always;"></div>
+
 ## Modulo 2. Introducción a las bases de datos relacionales
 
 ### Clase 3 Historia de las RDB (relational data bases)
@@ -93,6 +95,8 @@ b) El esquema lógico es el mismo independientemente de si la BD es distribuida 
 
 **Regla 12:** La regla de la no subversión.
 a) La base de datos no permitirá que exista un lenguaje o forma de acceso, que permita saltarse las reglas anteriores.
+
+<div style="page-break-after: always;"></div>
 
 ### Clase 4 Entidades y atributos
 
