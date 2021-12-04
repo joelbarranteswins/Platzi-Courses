@@ -50,32 +50,35 @@ Limpiar la terminal
 
 Definición
 
-    Un comando es una acción escrita, generalmente, a través de una terminal y emulada por una shell para ser ejecutada por nuestro sistema operativo.
+* Un comando es una acción escrita, generalmente, a    través de una terminal y emulada por una shell para ser ejecutada por nuestro sistema operativo.
 
 
 Comandos de la clase
 
-    pwd o print working directory. Comando para encontrar el ruta actual de trabajo de manera absoluta o desde el directorio /
-    cd o change directory. Comando para navegar entre directorios requiriendo, dependiendo, del directorio o ruta a navegar.
+* __pwd o print working directory:__ Comando para encontrar el ruta actual de trabajo de manera absoluta o desde el directorio
+* __cd o change directory__ Comando para navegar entre directorios requiriendo, dependiendo, del directorio o ruta a navegar.
     Hay varios shortcuts para navegar rápidamente:
-        cd .. para mover a un directorio inmediato anterior
-        cd para ir al directorio home
-        cd - para mover a un directorio previo
-    ls. Comando para ver el contenido de un directorio. Por defecto, se mostrará el contenido del directorio actual.
+        __cd ..__ para mover a un directorio inmediato anterior
+        __cd__ para ir al directorio home
+        __cd -__ para mover a un directorio previo
+* __ls o list directory contents:__ Comando para ver el contenido de un directorio. Por defecto, se mostrará el contenido del directorio actual.
     Algunas opciones son:
-        ls -R listar archivos de sub-directorios
-        ls -al listar archivos ocultos y de manera detallada
+        __ls -R__ listar archivos de sub-directorios
+        __ls -al__ listar archivos ocultos y de manera detallada
     file . Comando para reconocer el tipo descriptivo del archivo
 
 ## Manipulando archivos y directorios.
 
-    Todo lo que hacemos normalmente en una interfaz gráfica, lo podemos hacer en la terminal 👀.
-    ls: Algunas variantes:
+Todo lo que hacemos normalmente en una interfaz gráfica, lo podemos hacer en la terminal.
+* ls: Algunas variantes:
+    ~~~~
         ls -la: Nos muestra todo, incluso los ocultos.
         ls -lS: Los ordena por tamaño.
         ls -lr: Los muestra en reversa.
-    tree: Nos muestra todo, lo que hay dentro de cada carpeta, en forma de arbol 🌲. Podemos elegir el nivel de profundidad con tree -L <numero de niveles>
-    mkdir <nombre de directorio>: Para crear un directorio nuevo 📁. No es buena idea en general poner espacios en el nombre de los directorios. Si lo quieres hacer, usa comillas "Nombre con espacios".
+    ~~~~
+
+* tree: Nos muestra todo, lo que hay dentro de cada carpeta, en forma de arbol 🌲. Podemos elegir el nivel de profundidad con tree -L \<numero de niveles>
+* mkdir \<nombre de directorio>: Para crear un directorio nuevo 📁. No es buena idea en general poner espacios en el nombre de los directorios. Si lo quieres hacer, usa comillas "Nombre con espacios".
     touch <nombre de archivo>: Para crear archivos vacíos. Puedes crear varios con un solo comando 📄.
     cp <archivo a copiar> <nuevo archivo>: Para copiar un archivo. Si no se pone una ruta en el nombre del nuevo, se va a copiar en el directorio donde estés 🖨️.
     mv <archivo> <archivo con nueva ruta>: Para mover archivos a otra ruta. También te sirve para renombrarlos 💫, funciona con directorios y con archivos.
@@ -148,6 +151,151 @@ Comandos
     ls [[:lower:]]* Lo mismo pero con minúsculas.
     ls -d Se muestran solo directorios.
     ls [ad]* Todo lo que inicie con a o con b
+
+
+## Redirecciones: Cómo funciona la shell.
+
+    Normalmente, cuando pones un comando en la terminal, la salida se muestra ahí mismo, pero se puede redirigir la salida a un archivo 👀. Si la salida es correcta tiene file descriptor 1, si no, file descriptor 2.
+    * La entrada estándar es nuestro teclado que tiene file descriptor 0, pero también puede venir de otro lado 🧠.
+    Para redirigir algo usamos >. Por ejemplo ls > misarchivos.txt, entonces la salida del comando se guarda en ese archivo de texto. Siempre crea este archivo (si ya existe, lo reescribe).✍🏽
+    Para que se concatene la salida en un archivo preexistente usa "comando" >> "archivo". Esto ambos solo redirigen los stdout.
+    Para redirigir stderr, agregas su file descriptor "comando" 2> "archivo". 👽
+    Si quiere redirigir cualquiera de las dos opciones "comando" >> "archivo" 2>&1.
+    Esto nos puede servir para, por ejemplo, guardar los mensajes de error que manda un servidor 🤯.
+    Para redirigir stdin se usa <. Esto te permite tener de entrada de comandos algún archivo.
+
+## Redirecciones: pipe operator.
+
+* Es uno de los operadores mas útiles que existen, ya que nos permite poner varios comandos, tales que la salida de uno es la entrada del siguiente 📤.
+* __echo \<texto>__ genera un stdout con el texto que tenemos.
+* __cat \<archivo1> \<archivo2>__ muestra los dos archivos concatenados 💩.
+* El pipe operator | hace que el stdout de un comando sea el stdin de otro comando. Por ejemplo ls -lh | less
+* tee hace algo parecido a **>**, pero dentro de los pipe´s, por ejemplo __ls -lh | tee output.txt | less__ . introduce todos los metadatos de los archivos dentro de output.txt (read from standard input and write to standard output)
+* __cowsay "Texto"__ es un comando que imprime una vaca que dice algo JAJAJAJAJ 🐮.
+* __lolcat "Texto"__ es un comando que imprime texto con colores.
+"sudo apt install lolcat" para instalar
+
+## Encadenando comandos y operadores de control.
+
+* Son símbolos reservados por la terminal que nos permiten ejecutar varios comandos seguidos, e incluso agregar condicionales ⛓️.
+  
+* Síncronos: Se corre uno detrás de otro, en orden. Se hace esto con ; , por ejemplo ls; mkdir carpeta1; cal 
+  
+* Asíncrono: Por cada comando, se abre una nueva terminal, y cada comando se corre de manera paralela, esto es con &, por ejemplo ls & date & cal ⏲️
+  
+* Condicionales: Podemos agregar lógica a como se corren los comandos:
+
+    1.  AND: Si se cumple un comando, entonces se ejecuta el siguiente, se usa &&, un ejemplo es mkdir carpeta1 && cd carpeta1 && echo "Si se pudo" . Si no se puede ejecutar el primer comando, no se ejecuta el siguiente. 🚆
+
+    2. OR: Se ejecuta el primer comando que se pueda ejecutar, y se usa ||, por ejemplo cd carpeta || echo "No hay carpeta"
+
+## Cómo se manejan los permisos.
+
+    Cuando listamos con ls -l se muestran varias cosas. Los tipos de archivos:
+        - archivo normal.
+        d directorio.
+        l link simbólico.
+        b archivo de bloque especial.
+    Tipos de modos: rwx corresponde con read, write y execute. Se representan con 3 bits, y los podemos manejar a través de un modo octal, esto es, pasar de binario a número.
+        rwx (1,1,1) dueño. En modo octal es 7.
+        r-x (1,1,1) grupo. En modo octal es 5.
+        r-x (1,0,1) world. Octal 5.
+    Modo simbólico: Esto es para asignar los permisos a los diferentes posibles usuarios.
+        u Solo para el usuario.
+        g Solo para el grupo.
+        o Solo para otros (world).
+        a Aplica para todos.
+
+## Modificando permisos en la terminal.
+
+    Existen diversos usuarios con permisos cada uno; el usuario root es especial y puede hacer de todo🚶🏽.
+    Puedes crear archivos de texto también con > archivo.txt y también podemos editarlo con cat > archivo.txt 📜
+    En un archivo, se muestran: [tipo de archivo][rwx usuario][rwx grupo][rwx mundo], por ejemplo, -rw-r--r-- mitexto.txt 👀.
+    chmod <permiso en octal para usuario><para grupo><para mundo> <archivo> change mode nos sirve para cambiar los permisos de un archivo. Si hacemos por ejemplo chmod 755 mitexto.txt tendremos ahora -rwxr-xr-x mitexto.txt, esto no cambia para nada el contenido del archivo.
+    Para quitarle los permisos a alguien en particular, usamos el modo simbólico y usando laresta, por ejemplo quitando el permiso de lectura al usuario chmod u-r mitexto.txt. Para agregar, se usa la suma. 🧮
+    Podemos hacer configuraciones mas avanzadas, por ejemplo, podemos asignar varios permisos al mismo tiempo chmod u-x,go=w mitexto.txt.
+    whoami Para saber que usuario somos, y también podemos obtener el ID del usuario con id.
+    su root para cambiar de usuario hacía root, hay que tener cuidado al usar este usuario 😟. Su home es incluso distinto. Los archivos que crea root (o otro usuario) no se pueden eliminar por un usuario normal.
+    sudo <comando> nos otorga temporalmente los permisos de root para ejecutar algún comando que ocupe permisos especiales. 🦸🏽 Nunca dejes el usuario root por defecto, y ponle una contraseña distinta!!
+
+## Variables de entorno.
+
+    La termina tiene una configuración con diferentes valores, que se pueden acceder con las variables de entorno. Estas son muy importantes para la configuración general del sistema 🚒.
+    Podemos guardar alias para que se queden de manera permanente con esto 😉.
+    ln -s <ruta> <Nombre> Esto para hacer link simbólicos, que son un tipo de archivo que hacen referencia a otro lugar, básicamente es un acceso directo desde terminal 📁.
+    printenv nos muestra todas las variables de entorno que tenemos configuradas 📔.
+    echo $<variables> esto nos sirve para imprimir una variable en particular.
+    Algunas variables son:
+        HOME es nuestro HOME de usuario 😆.
+        PATH tiene todas las rutas donde se encuentran los binarios en los que se ejecuta nuestro sistema. 🛣️ Hay varios manejadores de paquetes para binarios, pero no todas las veces se agregan a PATH, y se deben agregar a mano.
+    En HOME, existe un archivo que se llama .bashrc que es donde está nuestra configuración de Bash. Lo podemos abrir con VS Code para modificarlo. En este archivo podemos crear alias.
+    > code .bashrc
+
+    alias <nombre>="comando" para crear un alias útil 👀.
+    code <archivo> para abrir un archivo de texto en VS Code desde la terminal.
+    Para modificar o crear una variable de entorno, se hace, por ejemplo PLATZI_MESSAGE='Hola amigos".
+    Para agregar una ruta a la variable PATH ponemos en .bashrc PATH=$PATH:<ruta>, guardamos, cargamos bash en la terminal, y listo 😄.
+    Es muuuy importante tener cuidado con los alias, nunca hay que nombrar un alias como un comando ya existente 😟.
+
+
+## Banderas del comando find
+### Banderas básicas:
+
+* -name: Realiza una búsqueda por nombre de archivo.
+* -iname: Realiza una búsqueda por nombre de archivo sin tomar en cuenta las mayúsculas o minúsculas.
+* -type: Realiza una búsqueda por tipo de archivo, f(files) y d(directories) que son los más comunes.
+* -size: Realiza una búsqueda por el tamaño de archivo y/o directorio.
+
+Banderas de tiempo⏰
+
+* mmin: Búsqueda por tiempo en minutos.
+* mtime: Búsqueda por tiempo en días.
+
+Más banderas👀
+
+    - maxdepth: Después de está bandera se pone el número de niveles de profundidad en los que queremos realizar la búsqueda
+    -empty: Realiza una búsqueda de archivos y/o directorios vacíos.
+    -perm: Búsqueda de archivos por permisos.
+    -not: Retorna los resultados que no coinciden con la búsqueda.
+    -delete: Está bandera se coloca al final del comando, eliminara los resultados de la busqueda(⚠️Hay que tener mucho cuidado al usarla).
+
+Hay muchas más banderas, pero esas son las que me parecieron más útiles.
+
+    Ejemplos:
+    A continuación pondré unos cuantos ejemplos de las banderas mencionadas anteriormente.
+
+
+Búsqueda de todos los archivos con el permiso 644 a partir del directorio actual con una profundidad de 2 niveles.
+
+    find . -perm 644 -maxdepth 2
+
+Búsqueda de archivos vacíos a partir del directorio actual.
+
+    find . -type f -empty
+
+Búsqueda de todos los archivos .log, todos los resultados serán eliminados.
+
+    find . -type d -iname "*.log" -delete   
+    
+
+## Su majestad grep
+Permite encontrar coincidencias en la búsqueda dentro de un archivo de texto, no necesariamente un archivo puede ser incluso la salida de info de la terminal ya que después de todo es texto.
+
+* grep <palabara a buscar <archivo a buscar> // aquí estoy buscando una coincidencia, y me va a mostrar por pantalla ejemplo: $ grep Towers movies.csv, busco en el archivo movies todas las películas que tengan las palabra towers
+
+* grep <parametro> <palabara a buscar> <archivo a buscar> // vamos a buscar todas las coincidencias que tengan “the” y que estén en el archivo movies, pero con el parámetro “-i” que nos permite que tanto las palabras que empiecen con mayúscula y minúscula se muestren, ya que con el anterior solo buscaba por defecto los “the” que empezaban con minuscula, ejemplo $ grep -i the movies.csv
+
+* grep –i the movies.csv | less // nos permite hacer scrol, es decir verlo de manera adecuada o poco a poco.
+
+* grep -c the movies.csv // si el parámetro lo cambiamos por –c en este caso nos muestra el número de veces que se encuentra una coincidencia y si le agregamos el parámetro “-ci” básicamente mostrara más numero de coincidencias debido a lo ya explicado con -i“
+
+* grep -v the movies.csv // nos muestra las opciones que no coinciden con “the” si agregamos el parámetro por ejemplo –vic excluirá the pero tanto las coincidencias en mayúscula y minúscula y además las contara.
+
+* __Bonus:__ El comando wc nos indica varios datos útiles en un archivo entonces si le pasamos el comando al archivo: $ wc movies.csv, nos mostrara lo sigt. 9126 30006 477779 movies.csv, donde 9126 significa las líneas, 30006 cuantos caracteres, 477779 numero de bits y finalmente el nombre del archivo. Este comando tiene varios parametrs también como: -l, -w, -c donde respectivamente nos muestra solo las líneas, caracteres y numero de bits.
+
+
+
+
 
 
 
