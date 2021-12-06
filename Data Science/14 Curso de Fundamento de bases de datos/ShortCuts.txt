@@ -1,5 +1,0 @@
-Algunos atajos con el teclado que nos pueden ayudar a la escritura y ejecución del código SQL.
-
-Ctrl + T; nos abre una nueva pestaña de Query para escribir código SQL.
-Ctrl + Shift + Enter; nos ayuda a ejecutar todo el código SQL que se allá escrito en el editor.
-Ctrl + Enter; nos ayuda ejecutar el código SQL donde el cursor este ubicado.
