@@ -499,8 +499,7 @@ La etiqueta __\<source/>__, se puede colocar dentro de una etiqueta __\<video>\<
 
 Para crear inputs con una lista de varias opciones (desplegables), se puede desarrollar de dos maneras diferentes:
 
-* **\<select>** Esta etiqueta permite crear la lista, usando etiquetas \<option> podemos generar mas opciones:
-
+* **\<select>** Esta etiqueta permite crear la lista, usando etiquetas \<option> podemos generar mas opciones (usar cuando hay pocas opciones):
 ```html
 <body>
     <main>
@@ -514,7 +513,7 @@ Para crear inputs con una lista de varias opciones (desplegables), se puede desa
 </body>
 ```
 
-* **\<input list = “”>**  es una etiqueta que con la etiqueta **\<datalist>** y las etiquetas **\<option>** nos ayudan a generar una lista desplegable y opciones de filtro:
+* **\<input list = “”>**  es una etiqueta que con la etiqueta **\<datalist>** y las etiquetas **\<option>** nos ayudan a generar una lista desplegable y opciones de filtro (usar cuando hay muchas opciones)
 
 ```html
 <body>
@@ -531,6 +530,118 @@ Para crear inputs con una lista de varias opciones (desplegables), se puede desa
 ```
 
 ## Input type submit vs. Button tag
+
+* **\<input type="submit" value="Nombre" />** es un boton lo utilizaremos solo en los formularios para enviar datos.
+
+```html
+<body>
+    <input type="submit" value="nombre">
+</body>
+````
+
+* **\<button type="submit">Qué color te gusta?\</button>** es un boton que lo utilizaremos en cualquier otro tipo de boton dentro de nuestro proyecto que por buenas practica no lo utilizaremos para enviar, sino para realizar otras acciones como descargar, compartir, abrir... 
+
+```html
+<body>
+    <button type="submit">Que color te gusta?</button>
+</body>
+````
+
+
+_______________________________________________________
+
+
+## ¿Qué es CSS?
+
+Cascading style sheet (css) es la herramienta con la que le damos estilo a nuestra pagina ya sea color, tamaño, espacios, lugares de posición y más.
+
+
+## ¿Cómo utilizamos CSS?: por etiqueta, selector, class y por ID
+
+Archivo CSS
+esta es la mejor práctica en especial cuando tendremos mucho CSS, tendremos un archivo *.css y en el head del html pondremos las etiqueta como refencia a ese archivo **href="./style.css"**
+
+~~~~html
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase CSS</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+~~~~
+y se aplicará el css en nuestro archivo
+
+Etiqueta style
+si tendremos poco css es posible usar la etiqueta style y directamente usarlo ahi
+
+~~~~html
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase CSS</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        .red {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+~~~~
+CSS embebido
+esto no es muy bueno hacerlo pero se puede hacer si solo aplicaremos pocos atributos a pocas etiquetas con el atributo style en la etiqueta
+
+~~~~html
+<body>
+    <p style="font-size: 12px;">soy un texto nuevo</p>
+</body>
+~~~~
+
+#### 3 formas de trabajo cuando se usa CSS:
+
+1. Selector por elemento (Por Etiqueta)
+Se indican con etiqueta{} en CSS (ejemplo p{} o h1{})
+en html se aplicará a todas las etiquetas del tipo indicado
+Esto es útil si queremos darle el mismo estilo a todos los elementos de un tipo como párrafo o titulos
+
+2. Por Clases
+se generan con .nombre{} en CSS
+en html se indican con el atributo class=”nombre”
+Esto sirve para dar el mismo estilo a muchos elementos distintos
+
+3. Por Id
+se generan con #nombre en CSS
+en html se indica con el atributo id=””
+Esto es útil si sólo lo usaremos con una etiqueta
+
+```html
+/* etiqueta */
+p {
+    color: blue;
+    font-size: 40px;
+}
+
+/* class */
+.parrafo {
+    color: red;
+    font-size: 10px;
+}
+
+/* ID */
+#texto {
+    color: green;
+    font-size: 20px;
+}
+
+```
+
+
+
+
+
+
 
 
 <!-- [
