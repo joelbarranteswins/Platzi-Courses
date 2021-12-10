@@ -462,9 +462,38 @@ La etiqueta __\<source/>__, se puede colocar dentro de una etiqueta __\<video>\<
 
 ## Autocomplete y require
 
+* **autocomplete** hacer que los campos del formulario se autocompleten solos con datos que ya ha usado antes el usuario (y están guardados en el navegador), se usa el atributo autocomplete dentro de la etiqueta input.
 
+* **required** hacer que los datos del campo sean obligatorios, se debe usar el atributo require en la etiqueta input.
 
+```html
+<body>
+    <h1>Calendar</h1>
 
+    <form action="">
+        <fieldset>
+            <legend>Calendario PLATZI</legend>
+
+            <label for="nombre">Cual es tu Nombre?</label>
+            <input type="text" id="nombre" name="nombre" autocomplete="name" required><br><br>
+
+            <label for="correo">Cual es tu correo?</label>
+            <input type="email" id="correo" name="correo" autocomplete="email" required><br><br>
+
+            <label for="pais">En que pais vives?</label>
+            <input type="text" id="pais" name="pais" autocomplete="country"><br><br>
+
+            <label for="cp">Cual es tu Codigo Postal?:</label>
+            <input type="text" id="cp" name="cp" autocomplete="postal-code"><br><br>
+
+            <input type="submit" value="Enviar" name="enviar">
+
+        </fieldset>
+    </form><br><br>
+
+    
+</body>
+```
 
 
 
