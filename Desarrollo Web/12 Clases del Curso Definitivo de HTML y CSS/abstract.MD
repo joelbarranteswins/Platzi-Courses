@@ -326,6 +326,144 @@ SINTAXIS:
 
 Esta etiqueta nos ayuda a darle una descripcion a la imagen (autor, tipo, año, etc…) y sera visible en la parte de abajo de la imagen
 
+## Etiqueta video
+
+La etiqueta __\<video>\</video>__, tiene algunos atributos como:
+
+* __controls:__ agrega al video los controles necesarios para reproducir, pausar y adelantar.
+
+* __preload = auto:__ hace que el navegador descargue el video, en el momento en el que se acceda a la página.
+
+
+La etiqueta __\<source/>__, se puede colocar dentro de una etiqueta __\<video>\</video>__ varias veces, para especificar diferentes rutas. Esto para asegurar que cualquier navegador pueda mostrar el video.
+
+```html
+<body>
+    <main>
+      <section>
+        <!-- Control= "nos da los botones" **** preload ="permite 
+        que el video se auto carge antes de para una mejor 
+        experiencia del lado cliente" -->
+        <video controls preload="auto">
+          <!-- Para no tener problemas en los navegadores
+          defino las extenciones -->
+          <source src="./miVideo.mp4#t=10,60" />
+          <source src="./miVideo.mpv#t=10,60" />
+          <!-- Para darle un tiempo inicio a fin lo hacemos con el # despues t="como quiero
+            que inicie" lo separo con , despues le doy el otro tiempo donde quiero que
+          finalice-->
+        </video>
+      </section>
+    </main>
+  </body>```
+```
+
+
+## Etiqueta form e input
+
+* __\<Form>__ Es una etiqueta fundamentalmente para tener una mejor semántica.
+
+* __\<Label>__ Etiqueta que representa la interfaz del usuario.
+* __for=" "__ Permite asociar un control, en el se le dará un nombre personalizado
+* __\<Input>__ Elemento donde el usuario da sus datos para el formulario.
+
+* __type=“text”__ Se aclara que los datos serán tipos textos (por ejemplo, nombre y apellido).
+
+* __type=“date”__ Da una apariencia diferente al input más un calendario donde el usuario podrá poner una fecha mediante los números o facilitándose llenarlo con ayuda del calendario.
+
+* __type=“time”__ También da una apariencia diferente pero para un horario.
+
+* __id=" "__ Se le da un nombre (por así decirlo) al elemento para poder asociarlo junto al mismo nombre que el label en el que se le da al atributo de valor de for.
+
+* __\<span>__ Es para aplicar estilo al texto o agrupación de elementos. Lo que haría en si es que se colocará arriba o abajo (dependiendo donde lo pongas en el editor de código) donde obtendrá un texto.
+
+```html
+<body>
+    <form action="">
+        <label for="nombre">
+            <span>Cual es tu Nombre?</span>
+            <input type="text" id="nombre" placeholder="Tu Nombre" required/>
+        </label>
+        <label for="inicio-platzi">
+            <span>Cual es tu Nombre?</span>
+            <input type="date" id="inicio-platzi"/>
+        </label>
+        <label for="horario">
+            <span>Que horas estudias?</span>
+            <input type="time" id="horario"/>
+        </label>
+    </form>
+</body>
+```
+#### Sin embargo se debe respetar el standar por lo cual el codigo seria de esta manera:
+
+```html
+<body>
+    <form action="">
+        <label for="nombre">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" placeholder="Tu Nombre" required/>
+        </label>
+    </form>
+</body>
+```
+
+## Calendar
+
+* Para generar un calendario, podemos hacer uso del tipo __datetime-local__, aunque también podemos hacer uso de las etiquetas de __time, date, week y month__
+
+* la etiqueta **submit**, para enviar los datos.
+
+
+
+##### Tambien podemos implementar a los formularios:
+**\<fieldset>\</fieldset>**  nos da un borde en el formulario. y poder seccionar un formulario
+**\<legend>\</legend>**  nos permite ponerle como un titulo al formulario
+
+```html
+<body>
+    
+    <form action="">
+        <fieldset>
+            <legend>Calendario (<b>primera forma</b>) </legend>
+
+            <label for="hora">Hora</label>
+            <input type="time" id="hora" name="hora"/><br><br>
+            
+            <label for="dia">Dia</label>
+            <input type="date" id="dia" name="dia"/><br><br>
+            
+            <label for="semana">Semana</label>
+            <input type="week" id="semana" name="semana"/><br><br>
+            
+            <label for="mes">Mes</label>
+            <input type="month" id="mes" name="mes"/><br><br>
+
+            <input type="submit"><br><br>
+
+        </fieldset>
+        
+    </form>
+    <form action="">
+        <fieldset>
+            <legend>Calendario (<b>segunda forma</b>) </legend>
+
+            <label for="calendario">Calendario</label>
+            <input type="datetime-local" id="calendario" name="calendario"/><br><br>
+
+        </fieldset>
+       
+
+        <input type="submit">
+    </form>
+</body>
+</html>
+```
+
+## Autocomplete y require
+
+
+
 
 
 
