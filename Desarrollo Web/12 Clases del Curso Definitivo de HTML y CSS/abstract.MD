@@ -495,9 +495,42 @@ La etiqueta __\<source/>__, se puede colocar dentro de una etiqueta __\<video>\<
 </body>
 ```
 
+## Select
 
+Para crear inputs con una lista de varias opciones (desplegables), se puede desarrollar de dos maneras diferentes:
 
+* **\<select>** Esta etiqueta permite crear la lista, usando etiquetas \<option> podemos generar mas opciones:
 
+```html
+<body>
+    <main>
+        <select name="cursos" id="">
+            <option value="JavaScript">JavaScript</option>
+            <option value="HTML5">HTML5</option>
+            <option value="CSS3">CSS3</option>
+            <option value="WEB">WEB</option>
+        </select>
+    </main>
+</body>
+```
+
+* **\<input list = “”>**  es una etiqueta que con la etiqueta **\<datalist>** y las etiquetas **\<option>** nos ayudan a generar una lista desplegable y opciones de filtro:
+
+```html
+<body>
+    <main>
+        <input list="cursos">
+        <datalist id="cursos">
+            <option value="JavaScript"></option>
+            <option value="HTML5"></option>
+            <option value="CSS3"></option>
+            <option value="WEB"></option>
+        </datalist>
+    </main>
+</body>
+```
+
+## Input type submit vs. Button tag
 
 
 <!-- [
