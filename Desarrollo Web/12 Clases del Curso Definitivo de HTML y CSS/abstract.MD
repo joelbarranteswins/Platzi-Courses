@@ -218,29 +218,113 @@ HTML semántico significa utilizar las etiquetas corresponientes para la parte d
 
 Podemos pensarlos como instrucciones que se incluyen dentro de la etiqueta de apertura de una etiqueta HTML y determinan el comportamiento de ésta última. Generalmente se asocian a un valor, el cual suele escribirse entre comillas dobles.
 
-
 Existen tres tipos de atributos, los cuales se distinguen mediante los valores asociados a ellos. Un atributo puede tener como valor:
 
 1) Conjunto finito de valores.
 2) Valores libres (como una URL o un texto).
 3) Valores booleanos.
-
-
-
+   
 En HTML5, los atributos de valor booleano se escriben sin valor asociado sólo en caso de que dicho valor sea verdadero, y se omite su mención cuando su valor es falso.
-
-
 
 <center>
 <img src="./src/anatomia_etiqueta.png" alt="Anatomia de etiqueta" width="600">
 </center>
 
 
+## Tipos de imágenes:
+
+1. Lossless (sin pérdida):
+
+> Capturan todos los datos del archivo original.
+> No se pierde nada del archivo original.
+> Puede comprimirse, pero podrá reconstruir su imagen al estado original
+
+2. Lossy (con pérdida):
+
+> Se aproximan a su imagen original.
+> Podría reducir la cantidad de colores en su imagen o analizar la imagen en busca de datos innecesarios.
+> Por consiguiente puede reducir su tamaño, lo que mejora el tiempo de carga de la página, pero pierde su calidad.
+> Los archivos tipo lossy son mucho más livianos que los archivos tipo lossless, por lo que son ideales para usar en sitios en donde el tamaño del archivo y la velocidad de descarga son importantes.
+
+#### Formatos:
+
+* __GIF__ (Graphics Interchange Format) -> Lossless: Formato de imagen animada sin pérdida, no se puede comprimir. 256 colores y ya no se puede comprimir.
+  
+* __PNG 8__ (Portable Network Graphics) -> Lossless: Formato de imagen sin pérdida, uso de colores de 256, se utiliza para logotipos e iconos para la página.
+  
+* __PNG 24__ (Portable Network Graphics) -> Lossless: Formato de imagen sin pérdida, uso de colores ilimitados mas de 256 colores, alta calidad, si intentamos comprimir no ayudará demasiado por la gran cantidad de colores.
+  
+* __JPG / JPEG__ (Photographic Experts Group) -> Lossy: Formato de imagen con pérdida, perdemos calidad a la hora de comprimirlas, pero llegan a ser óptimas para la carga en la página web.
+  
+* __SVG__ - Vector (Scalable Vector Graphics) -> Lossless: Formato de imagen muy ligero sin pérdida, con svg no perdemos calidad ya que esta compuesta por vectores.
+
+
+<center>
+<img src="./src/tipos_imagenes.webp" alt="Anatomia de etiqueta" width="600">
+</center>
+
+
+## Optimización de imágenes
+Para usar una imagen en la web y que no haya problemas durante la carga.
+
+  1. Tamaño máximo recomendado para una imágen es 70kb
+
+Herramientas para optimizar imágenes:
+
+  * Tiny PNG: Comprime el tamaño de una imagen, para hacerla más ligera.
+  [link tiny PNG](https://tinypng.com/)
+
+
+  * Verefix: Elimina los metadatos de una imagen, para reducir su tamaño. usualmente imagenes tomadas con celular.
+  [link verifux](https://www.verexif.com/)
+
+
+## Etiqueta img
+la etiqueta __img__ nos ayuda a cargar una imagen.
+
+```html
+<img src="manzana.png" alt="People">
+```
+* __src:__ se introduce el path del archivo
+* __alt:__ se introduce un etiqueta interna de la imagen que se carga.
+
+
+#### Otras maneranes de optimizar imagenes 
+Para optimizar nuestro sitio web con las imagenes o iframes, es colocando en la etiqueta img __el atributo loading__ .
 
 
 
+#### Atributo loading
+El atributo loading permite al navegador retrasar la carga de imáges y de iframes que están fuera de pantalla, hasta que el usuario haga scroll cerca de ellas. ___Éste atributo soporta 3 valores___:
+
+```html
+<img loading="lazy"  src="manzana.png" alt="People">
+```
+
+* __lazy:__ Retrasa la carga de la imagen hasta que el usuario alcanza con el scroll una distancia calculada desde el viewport.
+* __eager:__ Carga la imagen inmediatamente, sin importar donde está situada o colocada en la pantalla. En resumen, no hace lazy-loading.
+* __auto:__ Implementa el comportamiento por defecto del navegador para la carga de las imágenes. En resumen, poner auto es lo mismo que no poner el atributo loading.
+
+## Etiqueta figure
+
+La forma correcta de colocar una imagen es con la etiqueta figure
+
+SINTAXIS:
+
+```html
+<figure>
+          <img
+            src="./pics/tinified/small.jpg"
+            alt="Es una imagen de un perrito"
+          />
+          <figcaption>Es una imagen de un perrito</figcaption>  
+</figure>
+
+<figcaption><figcaption/>
+```
 
 
+Esta etiqueta nos ayuda a darle una descripcion a la imagen (autor, tipo, año, etc…) y sera visible en la parte de abajo de la imagen
 
 
 
