@@ -1,0 +1,17 @@
+h6 + p {
+    /* applicar todos los estilos a p que esten cerca de un h2 */
+    /* color: red; */
+}
+
+h2 ~ p {
+    /* aplicar todos los estilos a p que esten cerca de un h2 */
+    /* color: blue; */
+}
+
+div > p {
+    /* color: red; */
+}
+
+div p {
+    color: red;
+}

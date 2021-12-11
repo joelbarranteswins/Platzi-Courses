@@ -639,10 +639,365 @@ p {
 ```
 
 
+## Pseudo clases y pseudo elementos
+
+#### <u>Cómo nombrar las clases</u>
+Metodología **BEM😗** cómo nombrar correctamente las clases.
+Solo usa clases. Las nombra siguiendo el siguiente patrón: BLOQUE__ELEMENTO—MODIFICADOR (son 2 guiones, se usa 1 guión para separar palabras).
+
+[video de la metodologia BEM](https://www.youtube.com/watch?v=bvnzyXGkNY4)
+
+> Bloque: sección que puede funcionar por sí sola.
+> Elemento: forma una de las partes del bloque.
+> Modificador: variaciones de un mismo bloque/elemento.
+
+```html
+<!-- BLOQUE -->
+<main class="Padre">
+	<!-- BLOQUE__ELEMENTO --> 
+	<section class="Padre__Hijo">
+		<!-- BLOQUE__ELEMENTO--MODIFICADOR -->
+		<article class="Padre__Hijastro--Mayor"></article>
+		<article class="Padre__Hijastro--Menor"></article>
+	</section>
+ </main>
+```
+
+#### <u>Crear estilos con etiquetas dentro de clases</u>
+Si tienes etiquetas dentro de la etiqueta a la que le estás aplicando estilos y le pones una clase, puedes aplicar estilos únicamente a las etiquetas dentro de esa clase de la siguiente manera: 
+
+```css
+.clase etiqueta {
+    /* Estilos a etiqueta "a" dentro de una clase */
+}
+
+
+.main-nav__item a {
+    color: white; /* color de texto */
+    padding: 5px; /* espacio entre los elementos */
+    border-radius: 2px; /* redondear los bordes */
+    text-decoration: none; /* Elimina los puntos de la lista */
+}
+```
+<center>
+<img src="./src/web_indentation.webp" alt="Anatomia de etiqueta" width="500">
+</center>
+
+**Pseudo clases**
+Define el estilo de un estado especial de un elemento.
+Agregar al final de la clase **.clase a:nombreAccion**
+
+```css
+.main-nav__item a:hover { 
+    /* Con etiqueta:hover hacemos que cada vez que el 
+    usuario pase el cursor por el elemento se le 
+    apliquen los siguientes estilos CSS */
+
+    color: blue; /* color de texto */
+}
+
+.main-nav__item a:active { 
+    /* Con etiqueta:active hacemos que cada vez 
+    que el usuario haga click sobre el elemento
+    se le apliquen los siguientes estilos CSS */
+
+    color: red; /* color de texto */
+}
+```
+
+**Pseudo Elementos**
+Define el estilo de una parte específica de un elemento o agrega un elemento.
+Agregar al final de la clase **.clase a::nombreAccion**
+
+```css
+/* Pseudo elemento */
+.main-nav__item a::after {
+    /* Con after agregamos elemtos */
+
+    content: " | "; /* despues del elemento, agrega esto */
+}
+```
+<center>
+<img src="./src/pseudoclasses_pseudoelementos.png" alt="pseudoclasses_pseudoelementos" width="800">
+</center>
+
+
+## Anatomía de una regla de CSS
+
+sintaxis del lenguaje CSS
+
+<center>
+<img src="./src/regla_css.png" alt="regla_css" width="450">
+</center>
+
+
+## Modelo de caja
+
+En la web los elementos se piensan en forma de rectángulos. A esto se le conoce como Modelo de caja.
+
+Las cajas tienen parámetros que podemos editar en nuestro CSS
+
+> Margin: Espacio que hay del borde de la caja hacia afuera.Visualmente, permite separar a la caja de elementos externos.
+> Border: Es el borde de la caja. Por defecto, a partir de ahí medimos las distancias de nuestra caja con elementos internos o externos.
+> Padding: Espacio que hay del borde de la caja hacia adentro. Visualmente, permite separar a la caja de elementos internos.
+> content: es el contenido, texto o imagenes:
+> * width: ancho del contenido
+> * height: alto del contenido
+
+<center>
+<img src="./src/modelo_de_caja.webp" alt="regla_css" width="600">
+</center>
+
+
+Pensandolo como una casa:
+
+> El margin es el jardin o la acera que te aleja de las otras casas.
+> El border son tus paredes.
+> El padding es el espacio que tienen tus paredes con tus muebles.
+> El content son tus muebles.
+
+<center>
+<img src="./src/modelo_de_caja_2.webp" alt="regla_css" width="500">
+</center>
+
+* **hacer cambio en el content, border y padding**
+tener en cuenta que no se esta alterando el margin, lo cual nos generar un scroll
+
+```css
+main {
+    width: 100%;
+    height: 500px;
+    border:10px solid grey;
+    padding: 20px 35px;
+}
+```
+
+* **hacer cambio en el content, border y padding**
+para reducir el margin de nuestro modelo de caja, usar el siguiente codigo en todos los proyectos con CSS
+
+```css
+*{
+    /*hace que el margin se igual a 0*/
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+```
+
+**<u>Para proyectos mas grandes, se debe usar normalize</u>**
+
+[Link del video](https://www.youtube.com/watch?v=TeQgd0NS_lQ)
+
+
+## Herencia
+
+Cuando se realiza el frondend, sin usa css. entonces se usa los valores por defecto del navegador te lo da.
+
+Sin embargo si queremos establecer nuestros propios valores por defecto, entonces debe entender que es la herencia:
+
+* **Inherit**  es un valor por medio de una keyword que especifica que, a la propiedad que se la apliquemos debe de heredar los valores de su elemento padre. Podemos decir que la palabra Inherit significa “Usa el valor de mi padre”, si el elemento padre no tiene definido dicho valor entonces el navegador seguirá hasta que encuentre un elemento superior que lo contenga, y en ultima instancia de no tenerlo ningún elemento superior se aplicara el valor por defecto.
+
+```css
+html {
+    font-size: 75%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+    font-size: inherit;
+}
+```
+
+<center>
+<img src="./src/herencia.png" alt="regla_css" width="450">
+</center>
 
 
 
 
+
+
+Initial. Este valor pertenece a la especificación CSS3 y cuando aplicamos a una propiedad el valor initial estamos dando el valor inicial y predefinido por el navegador en cuestión.
+
+Upset. Este valor unset es una combinación entre inherit y initial, cuando utilizamos este valor en una propiedad esta tratara de heredar el valor de su elemento padre si este esta disponible, de no ser así este valor colocará el valor de la propiedad en su valor inicial, como si usáramos inherit e initial juntos.
+
+
+## Especificidad en selectores
+Orden de declaración en .css
+
+1. Importancia
+2. Especificidad
+3. rden de fuente
+
+Importancia.
+
+1. Hoja de estilo de agente de usuario (Estilos del navegador): primero el navegador va a implementar los estilos que ya trae por defecto
+
+2. Declaraciones normales en hojas de estilo de autor (nuestro .css) que son los estilos que nosotros colocamos en nuestro proyecto.
+
+3. Declaraciones importantes en hojas de estilos de autor (utilizar el !important) no es buena practica
+
+Especificidad: el orden de importancia es:
+
+<center>
+<img src="./src/especificidad.png" alt="regla_css" width="500">
+</center>
+
+#### Regla
+**Regla de cascada**
+Para entender la razon de un conflicto, debemos entender la .
+<center>
+<img src="./src/regla_cascada.png" alt="regla_css" width="700">
+</center>
+
+**Orden de la fuente** las declaraciones finales son las que se se van a ejecutar en el caso que los estilos tienen la misma especificidad
+
+
+## Demo de especificidad y orden en selectores
+
+
+> Usamos ‘#’ cuando llamamos al id.
+> Usamos ‘.’ cuando llamamos a las clases.
+> Usamos ‘*’ cuando hacemos referencia a todo el código html, al momento de hacer reset en los estilos que ya vienen por defecto.
+
+**index.html** 
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo</title>
+    <link rel="stylesheet" href="./style.css" /> 
+    <!-- href hacer referencia al documento CSS -->
+  </head>
+<body>
+    <header class="page-header">
+        <h1 id="page-title" class="title">Empresa</h1>
+        <nav>
+            <ul id="main-nav" class="nav">
+                <li><a href="">Home</a></li>
+                <li><a href="">Curso</a></li>
+                <li><a href="">Instructores</a></li>
+                <li><a href="" class="blog">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+</body>
+```
+**style.css** 
+```css
+* {
+    /* le da estilos a todo el codigo html*/
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+h1 {
+    /* le da estilos a una etiqueta de tipo h1 */
+    color: purple;
+    font-family: serif;
+    margin-bottom: 10px;
+  
+}
+
+#page-title {
+    /*cuando se tiene muchos fonts, es por si uno de ellos
+    el buscador no lo tiene y pasa al siguiente*/
+    font-family: Arial, Helvetica, sans-serif;
+} 
+
+.title {
+    font-size: 18px;
+    font-family: monospace;
+}
+
+#main-nav {
+    /* Esto son estilos para el ID*/
+    margin-top: 10px;
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+#main-nav li {
+    /* Esto es para los estilos de los elementos de lista */
+    display: inline-block; /* Esto es para que los elementos se muestren en línea */
+}
+
+#main-nav a {
+    /* Esto es para los estilos de los elementos de ancla */
+    color: white; 
+    background-color: #13a4a4;
+    padding: 5px;
+    border-radius: 2px;
+    text-decoration: none;
+}
+ 
+#main-nav .blog{
+    background-color: red;
+} 
+```
+
+## Más sobre selectores
+
+#### Recordar que :
+1. Evitar usar !important
+2. Evitar usar estilos embebidos (Estilos en la etiqueta html).
+3. Evitar usar ID para dar estilos en CSS por que tienen mas peso y dan conflictos.
+
+
+Mala Practica en CSS es hacer, cuando no se maneja bien la especificidad :
+```css
+#main-nav .blog{
+    background-color: red !important;
+} 
+```
+
+## Combinadores: Adjacent Siblings (combinators)
+**El combinador hermano adyacente ( + )** separa dos selectores y coincide con el segundo elemento solo si sigue inmediatamente al primer elemento, y ambos son hijos del mismo padre element.
+
+```css
+h2 + p {
+    /* applicar todos los estilos a p que esten cerca de un h2 */
+    color: red;
+}
+```
+
+<center>
+<img src="./src/combinadores.png" alt="regla_css" width="500">
+</center>
+
+
+## Combinadores: General Sibling
+**general sibling combinator ( ~ )** separa dos selectores y coincide con el segundo elemento solo si sigue al primer elemento (aunque no necesariamente inmediatamente), y ambos son hijos del mismo elemento padre .
+
+```css
+h2 ~ p {
+    /* aplicar todos los estilos a p que sean hermanos de h2  */
+    color: blue;
+}
+```
+
+## Combinadores: Hijo y Descendiente
+
+**The child combinator ( > )** se coloca entre dos selectores CSS. Solo coincide con los elementos que coinciden con el segundo selector que son hijos directos de los elementos que coinciden con el primero.
+
+```css
+div > p {
+    /* color: red; */
+}
+```
+
+**The descendant combinator** , típicamente representado por un único carácter de espacio ( ), combina dos selectores de modo que los elementos que coinciden con el segundo selector se seleccionan si tienen un elemento antepasado (padre, padre del padre, padre del padre, etc.) que coincida con el primer selector. Los selectores que utilizan un combinador descendiente se denominan selectores descendientes .
+
+```css
+div p {
+    color: red;
+}
+```
 
 
 <!-- [
