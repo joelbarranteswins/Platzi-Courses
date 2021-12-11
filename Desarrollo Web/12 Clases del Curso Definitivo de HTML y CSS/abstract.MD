@@ -616,6 +616,7 @@ se generan con #nombre en CSS
 en html se indica con el atributo id=””
 Esto es útil si sólo lo usaremos con una etiqueta
 
+
 ```html
 /* etiqueta */
 p {
