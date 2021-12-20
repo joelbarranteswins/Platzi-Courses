@@ -1002,49 +1002,52 @@ div p {
 
 </br>
 <center>
-<img src="./src/combination.webp" alt="regla_css" width="700">
+<img src="./src/combination.webp" alt="regla_css" width="800">
 </center>
 
 
 ## Medidas
 
-Unidades absolutas
-Como su nombre lo indica, son unidades que están completamente definidas. Esto quiere decir que su valor no depende de otro valor de referencia. En este grupo encontramos los siguientes elementos:
+#### <u>Unidades absolutas</u>
+Es una medida absoluta que depende de los pixeles.
+la medida no cambia sin importar el equipo o el tamaño de la antalla.
+son unidades que están completamente definidas. Esto quiere decir que su valor no depende de otro valor de referencia. 
+En este grupo encontramos los siguientes elementos:
 
-* cm: Aumenta el tamaño de nuestro texto o elemento en centímetros
-* mm: Aumenta el tamaño de nuestro texto o elemento en milímetros
-* in: Aumenta el tamaño de nuestro texto o elemento en pulgadas (1in = 96px = 2.54cm)
-* px: Aumenta el tamaño de nuestro texto en pixeles
-* pt: Aumenta el tamaño de nuestro texto en puntos (1pt = 1/72 de 1in)
-* pc: Aumenta el tamaño de nuestro texto en picas (1pc = 12 puntos aprox)
+* **cm:** Aumenta el tamaño de nuestro texto o elemento en centímetros
+* **mm:** Aumenta el tamaño de nuestro texto o elemento en milímetros
+* **in:** Aumenta el tamaño de nuestro texto o elemento en pulgadas **(1in = 96px = 2.54cm)**
+* **px:** Aumenta el tamaño de nuestro texto en pixeles
+* **pt:** Aumenta el tamaño de nuestro texto en puntos **(1pt = 1/72 de 1in)**
+* **pc:** Aumenta el tamaño de nuestro texto en picas **(1pc = 12 puntos aprox)**
 
 
 
-Unidades relativas
+#### <u>Unidades relativas</u>
+son medidas que cambian y se ajusta a las medidas del dispositivo.
 
-Este tipo de unidad es más flexible y se expresa en forma de porcentaje (%). Me refiero a su flexibilidad porque se adapta de acuerdo al tamaño de otro valor de referencia. Por ejemplo, en el mundo real tu hermano y tú tienen dos balones de futbol. Un balón es grande y el otro es pequeño, pero a cada uno le corresponde la mitad de cada uno de esos balones (50%). No importa el tamaño del balón, porque igual siempre vas a ser dueño del 50%. Entonces, si el balón grande redujera su tamaño, igual tendrías el 50% de este. Ahora aplica este ejemplo a los distintos tipos de resolución de pantalla. Ahora bien, las unidades relativas se subdividen en 2 grupos:
+Este tipo de unidad es más flexible y se expresa en forma de porcentaje (%). Me refiero a su flexibilidad porque se adapta de acuerdo al tamaño de otro valor de referencia. 
+
+Ahora aplica este ejemplo a los distintos tipos de resolución de pantalla. Ahora bien, las unidades relativas se subdividen en 2 grupos:
 
 1. Relativas a la tipografía
 
 2. Relativas al viewport
 
-<u>**Relativas a la tipografía**</u>
+##### 1. <u>Relativas a la tipografía</u>
 
-* em: Relativo al tamaño de fuente de un elemento. Si, por ejemplo, utilizamos 3em (font-size: 3em); mi texto aumentará 3 veces su tamaño en relación al tamaño que se esté utilizando por defecto.
+* em (elemento): Relativo al tamaño de fuente de un elemento. Si, por ejemplo, utilizamos 3em (font-size: 3em); mi texto aumentará 3 veces su tamaño en relación al tamaño que se esté utilizando por defecto.
 
 * ex: Aumenta el tamaño de mi letra en cuanto a su altura.
 
-* Rem: Es igual a (em) con la diferencia de que este actúa en la raíz. O sea, en la letra que esté utilizando por defecto.
+* Rem (root elemento): Es igual a (em) con la diferencia de que este actúa en la raíz. O sea, en la letra que esté utilizando por defecto.
 
-<u>**Relativas al viewport - ventana**</u>
+##### 2. <u>Relativas al viewport - ventana</u>
 
-* vw: Porcentaje relativo a la anchura del viewport.
-
-* vh: Porcentaje relativo a la altura del viewport.
-
-* vmin: Entre vw y vh toma el que tenga menor valor.
-
-* vmax: Entre vw y vh toma el que tenga mayor valor.
+* **vw:** Porcentaje relativo a la anchura del viewport.
+* **vh:** Porcentaje relativo a la altura del viewport.
+* **vmin:** Entre vw y vh toma el que tenga menor valor.
+* **vmax:** Entre vw y vh toma el que tenga mayor valor.
 
 
 <center>
