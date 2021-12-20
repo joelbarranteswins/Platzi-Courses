@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*Como por defecto el 
+font-size es 16px, el 62,5% 
+nos daría 10px*/
+html{
+    font-size: 62.5%;
+}
+
+p {
+    font-size: 1.6rem; /*  1.6 x 10 = 16px */	
+}
+/*entonces podemos calcular 
+rem fácilmente multiplicando por 10
+
+
+main div {
+    font-size: 1.6 px;
+}

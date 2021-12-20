@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>abstract.MD</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="table-of-contents">Table of Contents</h1>
+<ol>
+<li><a href="#example">Example</a></li>
+<li><a href="#example2">Example2</a></li>
+<li><a href="#third-example">Third Example</a></li>
+<li><a href="#fourth-examplehttpwwwfourthexamplecom">Fourth Example</a></li>
+</ol>
+<h2 id="example">Example</h2>
+<h2 id="example2">Example2</h2>
+<h2 id="third-example">Third Example</h2>
+<h2 id="fourth-example"><a href="http://www.fourthexample.com">Fourth Example</a></h2>
+<h1 id="curso-definitivo-de-html-y-css">Curso Definitivo de HTML y CSS</h1>
+<p><u>By Joel Barrantes</u></p>
+<h2 id="qu%C3%A9-aprender%C3%A1s-sobre-html-y-css">Qué aprenderás sobre HTML y CSS</h2>
+<h4 id="html">HTML</h4>
+<blockquote>
+<p>Estructura de los documentos que se visualizan en los navegadores (Chrome, Edge, Firefox, Safari, Opera, etc) Es el lenguaje con el que clasificamos o etiquetamos cada parte del deocumento, dejándoles saber al navegador, que información va a vi</p>
+<p>De esa manera, presentamos: Barras de Navegación, Secciones, articulos, listas, títulos de diferentes tamaños, audios, videos, imágenes, entre otros.</p>
+</blockquote>
+<h4 id="css">CSS</h4>
+<blockquote>
+<p>Es el lenguaje con el que le damos estilos a todo el contenido previamente etiquetado con HTML. Es el encargado o usado para darle todo el aspecto visual de manera profesional, usando estándares de diseño de documentos y logrando así la correcta visualización de textos y recursos audiovisuales en formatos digitales, en nuestro caso, las páginas web.</p>
+</blockquote>
+<h4 id="javascript">JAVASCRIPT</h4>
+<blockquote>
+<p>Es lenguaje que se usa para crear o brindar a las páginas web la capacidad de interactuar con el usuario y los recursos asociados a una página web, como lo son: bases de datos, servidores de diversa índole, información derivada de la interacción de cada página en sí.</p>
+</blockquote>
+<h2 id="%C2%BFqu%C3%A9-es-el-frontend">¿Qué es el Frontend?</h2>
+<p>Front-end: Es alguien que se dedica al desarrollo en el lado del cliente, estas pueden ser las interacción que tienes en una página web, las animaciones y los estilos son cosas que suceden en el cliente.</p>
+<p>Los Front-end utilizan las tecnologías de HTML, CSS y JS, que son estándares que entiende el navegador.</p>
+<p>También utilizan Frameworks de CSS, lo cual nos puede facilitar fragmentos de CSS ya construidos para que podamos agregarlos a nuestros sitios web! Es una ayuda para acortar tiempos de desarrollo!</p>
+<p>Y espera! También tenemos los Frameworks y librerías de JS, los cuales nos permitirán construir productos que puedan escalar más rápido y que tengan una interacción mayor.
+Y por si fuera poco. Tenemos los Preprocesadores de CSS, podríamos decir que es CSS con super poderes!</p>
+<p>Para terminar tenemos compiladores / empaquetadores de JS como Babel y Webpack</p>
+<center>
+<img src="file:///home/dustin/Documents/GitHub/2__Cursos__P/Desarrollo Web/12 Clases del Curso Definitivo de HTML y CSS/src/frontend.webp" alt="drawing" width="600">
+</center>
+<h2 id="back-end">Back-end</h2>
+<p>Es lo opuesto a un Front-end, ya que el Back-end trabaja en el lado del servidor mientras el Front-end en el lado del cliente.</p>
+<p>Es el responsable de manejar toda la lógica que hay detrás de una petición dada por el navegador.</p>
+<p>Una característica que lo diferencia del Front-end es que no tiene estándares, ya que tiene varios lenguajes de programación (Node.js, Python, PHP, Ruby, GO, Java, .NET entre otros) . Los cuales estos lenguajes tienen sus propios frameworks como Django (Python), Lavarel (PHP), Rails (Ruby), Express (JS), Spring (Java).</p>
+<p>El Back-end tambien tiene que tener en cuenta la infraestructura, donde va a generar el deploy de su aplicación (esto tambien puede ser tarea de un DevOps, un perfil dedicado a la infraestructura). Con tecnologías como Google Cloud, DigitalOcean, AWS y Heroku.</p>
+<p>Y por último entramos en Bases de datos, teniendo las relacionales (mongoDB) y las no-relacionales. (MySQL).
+Ahora que tienes más noción de que trata cada uno… ¿Cual te llama más la atención? ¿Cual te gustaría aprender? ¡En los comentarios podemos seguir esta charla! 😃😃</p>
+<p>Utiliza lenguajes de programacion/ frameworks que corran del lado del servidor, infraestructura en la nube y base de datos.</p>
+<center>
+<img src="file:///home/dustin/Documents/GitHub/2__Cursos__P/Desarrollo Web/12 Clases del Curso Definitivo de HTML y CSS/src/backend.webp" alt="drawing" width="600">
+</center>
+<h2 id="desarrollador-fullstack">Desarrollador Fullstack</h2>
+<p>es alguien que tiene conocimientos tanto del Front-end como del Back-end, es alguien que entiende como funciona un producto web desde principio a fin. Desde la idea hasta la producción!</p>
+<p>Sin dudas tiene un alto conocimiento acerca de una aplicación web.</p>
+<p>Pero Hey! Ellos tienen sus áreas de especialización, ya sea Front-end o Back-end
+Espero ver sus aportes relacionados a un Desarrollador Fullstack, es a mi parecer, un mundo bastante amplio!</p>
+<center>
+<img src="file:///home/dustin/Documents/GitHub/2__Cursos__P/Desarrollo Web/12 Clases del Curso Definitivo de HTML y CSS/src/fullstack.webp" alt="drawing" width="600">
+</center>
+<h2 id="p%C3%A1ginas-est%C3%A1ticas-vs-din%C3%A1micas">Páginas Estáticas vs. Dinámicas</h2>
+<ul>
+<li>
+<p><strong>Sitos Web Estáticos (Páginas informativas):</strong> La información que contiene, se mantiene constante y estática. No se actualiza con la interacción del usuario.
+Conveniente para landing pages (Páginas informativas) o Blogs.
+Serán siempre iguales para todos los usuarios.</p>
+</li>
+<li>
+<p><strong>Sitios Web Dinámicos (Aplicaciones Web - Web Apps):</strong> Actualizan su información con respecto a la interacción del usuario. Dependen de una base de datos, de donde extrae e ingresa información.
+Serán diferentes, dependiendo del usuario que la use.</p>
+</li>
+</ul>
+<center>
+<img src="file:///home/dustin/Documents/GitHub/2__Cursos__P/Desarrollo Web/12 Clases del Curso Definitivo de HTML y CSS/src/estatica_y_dinamica.webp" alt="drawing" width="600">
+</center>
+<h2 id="html-anatom%C3%ADa-de-una-p%C3%A1gina-web">HTML: anatomía de una página web</h2>
+<h5 id="la-web-se-conforma-de-tres-conceptos">La web se conforma de tres conceptos:</h5>
+<blockquote>
+<p>URL =&gt; Uniform Resource Locator.
+HTTP =&gt; Protocolo de transferencia de hipertexto.
+HTML =&gt; código que se utiliza para estructurar el contenido de tu web, y darle sentido y propósito.</p>
+</blockquote>
+<ul>
+<li><strong>HTML</strong> son siglas, Hyper Text Markup Language <strong>(Lenguaje de Marcado de Hipertexto)</strong>.
+Hyper Text  significa que el texto tiene interactividad, conexión con otros documentos.
+_Markup _significa que le pone etiquetas a los elementos. Por eso también se le conoce como un lenguaje de etiquetas.
+HTML es un lenguaje interpretado.
+HTML es un estándar, así que no importa desde que navegador, que dispositivo se ejecute, es lo mismo en cualquier sitio. Sigue siendo el mismo código.</li>
+</ul>
+<p>Anatomía de una página Web:</p>
+<blockquote>
+<p>Container.- Contenedor principal
+Header.- Cabecera de la página
+Main content.- Estructura principal, por ejemplo el post de un red social.
+Sidebar.- Contenido secundario de una página.
+Footer.- Pie de página.</p>
+</blockquote>
+<center>
+<img src="file:///home/dustin/Documents/GitHub/2__Cursos__P/Desarrollo Web/12 Clases del Curso Definitivo de HTML y CSS/src/estructura_web.webp" alt="drawing" width="600">
+</center>
+<p>Hay etiquetas en HTML que nos ayuda a diferenciar en donde estamos.</p>
+<!-- break the page -->
+<div style="page-break-after: always;"></div>
+<h2 id="index-y-su-estructura-b%C3%A1sica-head">Index y su estructura básica: head</h2>
+<p>En el head van todos los archivos importantes para que nuestro proyecto funcione correctamente, algunos como: Estilos, fuentes, descripciones, librerías… Es la parte no visible de nuestra página.</p>
+<pre class="hljs"><code><div><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-comment">&lt;!--Le decimos al navegador que este 
+archivo es del tipo html:5--&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"es"</span>&gt;</span>
+  <span class="hljs-comment">&lt;!--Es la etiqueta "padre" donde vivirá nuestro proyecto. 
+  El atributo lang establece el idioma del sitio web. 
+  Debemos usarlo para que el navegador pueda traducir 
+  nuestra página--&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span> /&gt;</span>
+    <span class="hljs-comment">&lt;!--Este atributo nos ayuda a la hora de incluir 
+    caracteres especiales y emojis en nuestro proyecto--&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"description"</span> 
+        <span class="hljs-attr">content</span>=<span class="hljs-string">"Esta página te mostrará fotos de gatos"</span> /&gt;</span>
+    <span class="hljs-comment">&lt;!--Muestra una descripción de nuestro sitio 
+    en los buscadores--&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"robots"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"index,follow"</span> /&gt;</span>
+    <span class="hljs-comment">&lt;!--Le dice a los robots de los navegadores que 
+    rastreen nuestra página y la muestran en las búsquedas--&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Mi página<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-comment">&lt;!--Título de nuestra página, no confundir con 
+    los H1-H6. Este titulo es el que ves en la pestaña 
+    del navegador--&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, 
+    initial-scale=1.0"</span> /&gt;</span>
+    <span class="hljs-comment">&lt;!--Nos ayuda a trabajar en proyectos reponsive--&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"./css/style.css"</span>&gt;</span>
+    <span class="hljs-comment">&lt;!--Linkea/Enlaza archivos de estilos u otros 
+    archivos que necesitemos en nuestro proyecto--&gt;</span>
+
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+</div></code></pre>
+<!-- break the page -->
+<div style="page-break-after: always;"></div>
+<h2 id="index-y-su-estructura-b%C3%A1sica-body">Index y su estructura básica: body</h2>
+<p>body es la parte visible de nuestro website 😃. Es muy importante usar HTML semántico y no llenar todo de &lt;div&gt; para que nuestro sitio sea mejor interpretado por el navegador y por lo tanto más accesible.</p>
+<p>HTML semántico significa utilizar las etiquetas corresponientes para la parte del sitio que le corresponde. cada cosa en su lugar.</p>
+<pre class="hljs"><code><div> <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span> <span class="hljs-comment">&lt;!--Sección superior de nuestro website--&gt;</span> 
+
+      <span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span> <span class="hljs-comment">&lt;!--Sección de navegación de nuestro 
+      website, siempre dentro del header--&gt;</span>
+
+    <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span> <span class="hljs-comment">&lt;!--Main es el contenido central de 
+    nuestro website, "la parte del medio"--&gt;</span>
+
+      <span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span> 
+        <span class="hljs-comment">&lt;!--Nuestro website puede estar divido por 
+        secciones, por ejemplo platzi tiene 3: 
+        El navegador de cursos y rutas, el feed 
+        y nuestras rutas de aprendizaje--&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
+          <span class="hljs-comment">&lt;!--Contenido independiente de la página. 
+          Es reutilizable--&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span>
+
+      <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+
+      <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span> <span class="hljs-comment">&lt;!--Lista desordenada: Sin numerar--&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-comment">&lt;!--Item List. Elementos de la lista--&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+
+      <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+
+      <span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span> <span class="hljs-comment">&lt;!--Lista ordenada: Numerada--&gt;</span>
+      
+    <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span> <span class="hljs-comment">&lt;!--Sección final de nuestro website--&gt;</span>
+
+    <span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Soy un texto<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span> <span class="hljs-comment">&lt;!--Párrafo, texto--&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Soy un titulo<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span> 
+    <span class="hljs-comment">&lt;!--Títulos, muestran el texto más grande y 
+    con negrilla. Existen desde el h1 al h6--&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Soy un link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-comment">&lt;!--Enlaces/links que nos permitirán movernos 
+    entre páginas.--&gt;</span>
+
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+</div></code></pre>
+<h2 id="anatom%C3%ADa-de-una-etiqueta-de-html">Anatomía de una etiqueta de HTML</h2>
+<h4 id="%C2%BFqu%C3%A9-son-los-atributos">¿Qué son los atributos?</h4>
+<p>Podemos pensarlos como instrucciones que se incluyen dentro de la etiqueta de apertura de una etiqueta HTML y determinan el comportamiento de ésta última. Generalmente se asocian a un valor, el cual suele escribirse entre comillas dobles.</p>
+<p>Existen tres tipos de atributos, los cuales se distinguen mediante los valores asociados a ellos. Un atributo puede tener como valor:</p>
+<ol>
+<li>Conjunto finito de valores.</li>
+<li>Valores libres (como una URL o un texto).</li>
+<li>Valores booleanos.</li>
+</ol>
+<p>En HTML5, los atributos de valor booleano se escriben sin valor asociado sólo en caso de que dicho valor sea verdadero, y se omite su mención cuando su valor es falso.</p>
+<center>
+<img src="file:///home/dustin/Documents/GitHub/2__Cursos__P/Desarrollo Web/12 Clases del Curso Definitivo de HTML y CSS/src/anatomia_etiqueta.png" alt="Anatomia de etiqueta" width="600">
+</center>
+<h2 id="tipos-de-im%C3%A1genes">Tipos de imágenes:</h2>
+<ol>
+<li>Lossless (sin pérdida):</li>
+</ol>
+<blockquote>
+<p>Capturan todos los datos del archivo original.
+No se pierde nada del archivo original.
+Puede comprimirse, pero podrá reconstruir su imagen al estado original</p>
+</blockquote>
+<ol start="2">
+<li>Lossy (con pérdida):</li>
+</ol>
+<blockquote>
+<p>Se aproximan a su imagen original.
+Podría reducir la cantidad de colores en su imagen o analizar la imagen en busca de datos innecesarios.
+Por consiguiente puede reducir su tamaño, lo que mejora el tiempo de carga de la página, pero pierde su calidad.
+Los archivos tipo lossy son mucho más livianos que los archivos tipo lossless, por lo que son ideales para usar en sitios en donde el tamaño del archivo y la velocidad de descarga son importantes.</p>
+</blockquote>
+<h4 id="formatos">Formatos:</h4>
+<ul>
+<li>
+<p><strong>GIF</strong> (Graphics Interchange Format) -&gt; Lossless: Formato de imagen animada sin pérdida, no se puede comprimir. 256 colores y ya no se puede comprimir.</p>
+</li>
+<li>
+<p><strong>PNG 8</strong> (Portable Network Graphics) -&gt; Lossless: Formato de imagen sin pérdida, uso de colores de 256, se utiliza para logotipos e iconos para la página.</p>
+</li>
+<li>
+<p><strong>PNG 24</strong> (Portable Network Graphics) -&gt; Lossless: Formato de imagen sin pérdida, uso de colores ilimitados mas de 256 colores, alta calidad, si intentamos comprimir no ayudará demasiado por la gran cantidad de colores.</p>
+</li>
+<li>
+<p><strong>JPG / JPEG</strong> (Photographic Experts Group) -&gt; Lossy: Formato de imagen con pérdida, perdemos calidad a la hora de comprimirlas, pero llegan a ser óptimas para la carga en la página web.</p>
+</li>
+<li>
+<p><strong>SVG</strong> - Vector (Scalable Vector Graphics) -&gt; Lossless: Formato de imagen muy ligero sin pérdida, con svg no perdemos calidad ya que esta compuesta por vectores.</p>
+</li>
+</ul>
+<center>
+<img src="file:///home/dustin/Documents/GitHub/2__Cursos__P/Desarrollo Web/12 Clases del Curso Definitivo de HTML y CSS/src/tipos_imagenes.webp" alt="Anatomia de etiqueta" width="600">
+</center>
+<h2 id="optimizaci%C3%B3n-de-im%C3%A1genes">Optimización de imágenes</h2>
+<p>Para usar una imagen en la web y que no haya problemas durante la carga.</p>
+<ol>
+<li>Tamaño máximo recomendado para una imágen es 70kb</li>
+</ol>
+<p>Herramientas para optimizar imágenes:</p>
+<ul>
+<li>
+<p>Tiny PNG: Comprime el tamaño de una imagen, para hacerla más ligera.
+<a href="https://tinypng.com/">link tiny PNG</a></p>
+</li>
+<li>
+<p>Verefix: Elimina los metadatos de una imagen, para reducir su tamaño. usualmente imagenes tomadas con celular.
+<a href="https://www.verexif.com/">link verifux</a></p>
+</li>
+</ul>
+<h2 id="etiqueta-img">Etiqueta img</h2>
+<p>la etiqueta <strong>img</strong> nos ayuda a cargar una imagen.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"manzana.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"People"</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><strong>src:</strong> se introduce el path del archivo</li>
+<li><strong>alt:</strong> se introduce un etiqueta interna de la imagen que se carga.</li>
+</ul>
+<h4 id="otras-maneranes-de-optimizar-imagenes">Otras maneranes de optimizar imagenes</h4>
+<p>Para optimizar nuestro sitio web con las imagenes o iframes, es colocando en la etiqueta img <strong>el atributo loading</strong> .</p>
+<h4 id="atributo-loading">Atributo loading</h4>
+<p>El atributo loading permite al navegador retrasar la carga de imáges y de iframes que están fuera de pantalla, hasta que el usuario haga scroll cerca de ellas. <em><strong>Éste atributo soporta 3 valores</strong></em>:</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">loading</span>=<span class="hljs-string">"lazy"</span>  <span class="hljs-attr">src</span>=<span class="hljs-string">"manzana.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"People"</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><strong>lazy:</strong> Retrasa la carga de la imagen hasta que el usuario alcanza con el scroll una distancia calculada desde el viewport.</li>
+<li><strong>eager:</strong> Carga la imagen inmediatamente, sin importar donde está situada o colocada en la pantalla. En resumen, no hace lazy-loading.</li>
+<li><strong>auto:</strong> Implementa el comportamiento por defecto del navegador para la carga de las imágenes. En resumen, poner auto es lo mismo que no poner el atributo loading.</li>
+</ul>
+<h2 id="etiqueta-figure">Etiqueta figure</h2>
+<p>La forma correcta de colocar una imagen es con la etiqueta figure</p>
+<p>SINTAXIS:</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">figure</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">img</span>
+            <span class="hljs-attr">src</span>=<span class="hljs-string">"./pics/tinified/small.jpg"</span>
+            <span class="hljs-attr">alt</span>=<span class="hljs-string">"Es una imagen de un perrito"</span>
+          /&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">figcaption</span>&gt;</span>Es una imagen de un perrito<span class="hljs-tag">&lt;/<span class="hljs-name">figcaption</span>&gt;</span>  
+<span class="hljs-tag">&lt;/<span class="hljs-name">figure</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">figcaption</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">figcaption</span>/&gt;</span>
+</div></code></pre>
+<p>Esta etiqueta nos ayuda a darle una descripcion a la imagen (autor, tipo, año, etc…) y sera visible en la parte de abajo de la imagen</p>
+<h2 id="etiqueta-video">Etiqueta video</h2>
+<p>La etiqueta <strong>&lt;video&gt;&lt;/video&gt;</strong>, tiene algunos atributos como:</p>
+<ul>
+<li>
+<p><strong>controls:</strong> agrega al video los controles necesarios para reproducir, pausar y adelantar.</p>
+</li>
+<li>
+<p><strong>preload = auto:</strong> hace que el navegador descargue el video, en el momento en el que se acceda a la página.</p>
+</li>
+</ul>
+<p>La etiqueta <strong>&lt;source/&gt;</strong>, se puede colocar dentro de una etiqueta <strong>&lt;video&gt;&lt;/video&gt;</strong> varias veces, para especificar diferentes rutas. Esto para asegurar que cualquier navegador pueda mostrar el video.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- Control= "nos da los botones" **** preload ="permite 
+        que el video se auto carge antes de para una mejor 
+        experiencia del lado cliente" --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">video</span> <span class="hljs-attr">controls</span> <span class="hljs-attr">preload</span>=<span class="hljs-string">"auto"</span>&gt;</span>
+          <span class="hljs-comment">&lt;!-- Para no tener problemas en los navegadores
+          defino las extenciones --&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./miVideo.mp4#t=10,60"</span> /&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./miVideo.mpv#t=10,60"</span> /&gt;</span>
+          <span class="hljs-comment">&lt;!-- Para darle un tiempo inicio a fin lo hacemos con el # despues t="como quiero
+            que inicie" lo separo con , despues le doy el otro tiempo donde quiero que
+          finalice--&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">video</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>```
+</div></code></pre>
+<h2 id="etiqueta-form-e-input">Etiqueta form e input</h2>
+<ul>
+<li>
+<p><strong>&lt;Form&gt;</strong> Es una etiqueta fundamentalmente para tener una mejor semántica.</p>
+</li>
+<li>
+<p><strong>&lt;Label&gt;</strong> Etiqueta que representa la interfaz del usuario.</p>
+</li>
+<li>
+<p><strong>for=&quot; &quot;</strong> Permite asociar un control, en el se le dará un nombre personalizado</p>
+</li>
+<li>
+<p><strong>&lt;Input&gt;</strong> Elemento donde el usuario da sus datos para el formulario.</p>
+</li>
+<li>
+<p><strong>type=“text”</strong> Se aclara que los datos serán tipos textos (por ejemplo, nombre y apellido).</p>
+</li>
+<li>
+<p><strong>type=“date”</strong> Da una apariencia diferente al input más un calendario donde el usuario podrá poner una fecha mediante los números o facilitándose llenarlo con ayuda del calendario.</p>
+</li>
+<li>
+<p><strong>type=“time”</strong> También da una apariencia diferente pero para un horario.</p>
+</li>
+<li>
+<p><strong>id=&quot; &quot;</strong> Se le da un nombre (por así decirlo) al elemento para poder asociarlo junto al mismo nombre que el label en el que se le da al atributo de valor de for.</p>
+</li>
+<li>
+<p><strong>&lt;span&gt;</strong> Es para aplicar estilo al texto o agrupación de elementos. Lo que haría en si es que se colocará arriba o abajo (dependiendo donde lo pongas en el editor de código) donde obtendrá un texto.</p>
+</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">""</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"nombre"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Cual es tu Nombre?<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"nombre"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Tu Nombre"</span> <span class="hljs-attr">required</span>/&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"inicio-platzi"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Cual es tu Nombre?<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"date"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"inicio-platzi"</span>/&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"horario"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Que horas estudias?<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"time"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"horario"</span>/&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+</div></code></pre>
+<h4 id="sin-embargo-se-debe-respetar-el-standar-por-lo-cual-el-codigo-seria-de-esta-manera">Sin embargo se debe respetar el standar por lo cual el codigo seria de esta manera:</h4>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">""</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"nombre"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"nombre"</span>&gt;</span>Nombre:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"nombre"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Tu Nombre"</span> <span class="hljs-attr">required</span>/&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+</div></code></pre>
+<h2 id="calendar">Calendar</h2>
+<ul>
+<li>
+<p>Para generar un calendario, podemos hacer uso del tipo <strong>datetime-local</strong>, aunque también podemos hacer uso de las etiquetas de <strong>time, date, week y month</strong></p>
+</li>
+<li>
+<p>la etiqueta <strong>submit</strong>, para enviar los datos.</p>
+</li>
+</ul>
+<h5 id="tambien-podemos-implementar-a-los-formularios">Tambien podemos implementar a los formularios:</h5>
+<p><strong>&lt;fieldset&gt;&lt;/fieldset&gt;</strong>  nos da un borde en el formulario. y poder seccionar un formulario
+<strong>&lt;legend&gt;&lt;/legend&gt;</strong>  nos permite ponerle como un titulo al formulario</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    
+    <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">""</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span>Calendario (<span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>primera forma<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>) <span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"hora"</span>&gt;</span>Hora<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"time"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"hora"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"hora"</span>/&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+            
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"dia"</span>&gt;</span>Dia<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"date"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"dia"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"dia"</span>/&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+            
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"semana"</span>&gt;</span>Semana<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"week"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"semana"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"semana"</span>/&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+            
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"mes"</span>&gt;</span>Mes<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"month"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"mes"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"mes"</span>/&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
+        
+    <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">""</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span>Calendario (<span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>segunda forma<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>) <span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"calendario"</span>&gt;</span>Calendario<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"datetime-local"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"calendario"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"calendario"</span>/&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
+       
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</div></code></pre>
+<h2 id="autocomplete-y-require">Autocomplete y require</h2>
+<ul>
+<li>
+<p><strong>autocomplete</strong> hacer que los campos del formulario se autocompleten solos con datos que ya ha usado antes el usuario (y están guardados en el navegador), se usa el atributo autocomplete dentro de la etiqueta input.</p>
+</li>
+<li>
+<p><strong>required</strong> hacer que los datos del campo sean obligatorios, se debe usar el atributo require en la etiqueta input.</p>
+</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Calendar<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">""</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span>Calendario PLATZI<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"nombre"</span>&gt;</span>Cual es tu Nombre?<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"nombre"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"nombre"</span> <span class="hljs-attr">autocomplete</span>=<span class="hljs-string">"name"</span> <span class="hljs-attr">required</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"correo"</span>&gt;</span>Cual es tu correo?<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"email"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"correo"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"correo"</span> <span class="hljs-attr">autocomplete</span>=<span class="hljs-string">"email"</span> <span class="hljs-attr">required</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"pais"</span>&gt;</span>En que pais vives?<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"pais"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"pais"</span> <span class="hljs-attr">autocomplete</span>=<span class="hljs-string">"country"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"cp"</span>&gt;</span>Cual es tu Codigo Postal?:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"cp"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"cp"</span> <span class="hljs-attr">autocomplete</span>=<span class="hljs-string">"postal-code"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Enviar"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"enviar"</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+
+    
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+</div></code></pre>
+<h2 id="select">Select</h2>
+<p>Para crear inputs con una lista de varias opciones (desplegables), se puede desarrollar de dos maneras diferentes:</p>
+<ul>
+<li><strong>&lt;select&gt;</strong> Esta etiqueta permite crear la lista, usando etiquetas &lt;option&gt; podemos generar mas opciones (usar cuando hay pocas opciones):</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"cursos"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">""</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"JavaScript"</span>&gt;</span>JavaScript<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"HTML5"</span>&gt;</span>HTML5<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"CSS3"</span>&gt;</span>CSS3<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"WEB"</span>&gt;</span>WEB<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><strong>&lt;input list = “”&gt;</strong>  es una etiqueta que con la etiqueta <strong>&lt;datalist&gt;</strong> y las etiquetas <strong>&lt;option&gt;</strong> nos ayudan a generar una lista desplegable y opciones de filtro (usar cuando hay muchas opciones)</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">list</span>=<span class="hljs-string">"cursos"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">datalist</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"cursos"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"JavaScript"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"HTML5"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"CSS3"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"WEB"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">datalist</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+</div></code></pre>
+<h2 id="input-type-submit-vs-button-tag">Input type submit vs. Button tag</h2>
+<ul>
+<li><strong>&lt;input type=&quot;submit&quot; value=&quot;Nombre&quot; /&gt;</strong> es un boton lo utilizaremos solo en los formularios para enviar datos.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"nombre"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li><strong>&lt;button type=&quot;submit&quot;&gt;Qué color te gusta?&lt;/button&gt;</strong> es un boton que lo utilizaremos en cualquier otro tipo de boton dentro de nuestro proyecto que por buenas practica no lo utilizaremos para enviar, sino para realizar otras acciones como descargar, compartir, abrir...</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span>Que color te gusta?<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+</div></code></pre>
+<hr>
+<h2 id="%C2%BFqu%C3%A9-es-css">¿Qué es CSS?</h2>
+<p>Cascading style sheet (css) es la herramienta con la que le damos estilo a nuestra pagina ya sea color, tamaño, espacios, lugares de posición y más.</p>
+<h2 id="%C2%BFc%C3%B3mo-utilizamos-css-por-etiqueta-selector-class-y-por-id">¿Cómo utilizamos CSS?: por etiqueta, selector, class y por ID</h2>
+<p>Archivo CSS
+esta es la mejor práctica en especial cuando tendremos mucho CSS, tendremos un archivo *.css y en el head del html pondremos las etiqueta como refencia a ese archivo <strong>href=&quot;./style.css&quot;</strong></p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"X-UA-Compatible"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"IE=edge"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Clase CSS<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"./style.css"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+</div></code></pre>
+<p>y se aplicará el css en nuestro archivo</p>
+<p>Etiqueta style
+si tendremos poco css es posible usar la etiqueta style y directamente usarlo ahi</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"X-UA-Compatible"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"IE=edge"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Clase CSS<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"./style.css"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+        <span class="hljs-selector-class">.red</span> {
+            <span class="hljs-attribute">color</span>: red;
+            <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
+        }
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+</div></code></pre>
+<p>CSS embebido
+esto no es muy bueno hacerlo pero se puede hacer si solo aplicaremos pocos atributos a pocas etiquetas con el atributo style en la etiqueta</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"font-size: 12px;"</span>&gt;</span>soy un texto nuevo<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+</div></code></pre>
+<h4 id="3-formas-de-trabajo-cuando-se-usa-css">3 formas de trabajo cuando se usa CSS:</h4>
+<ol>
+<li>
+<p>Selector por elemento (Por Etiqueta)
+Se indican con etiqueta{} en CSS (ejemplo p{} o h1{})
+en html se aplicará a todas las etiquetas del tipo indicado
+Esto es útil si queremos darle el mismo estilo a todos los elementos de un tipo como párrafo o titulos</p>
+</li>
+<li>
+<p>Por Clases
+se generan con .nombre{} en CSS
+en html se indican con el atributo class=”nombre”
+Esto sirve para dar el mismo estilo a muchos elementos distintos</p>
+</li>
+<li>
+<p>Por Id
+se generan con #nombre en CSS
+en html se indica con el atributo id=””
+Esto es útil si sólo lo usaremos con una etiqueta</p>
+</li>
+</ol>
+<pre class="hljs"><code><div>/* etiqueta */
+p {
+    color: blue;
+    font-size: 40px;
+}
+
+/* class */
+.parrafo {
+    color: red;
+    font-size: 10px;
+}
+
+/* ID */
+#texto {
+    color: green;
+    font-size: 20px;
+}
+
+</div></code></pre>
+<h2 id="pseudo-clases-y-pseudo-elementos">Pseudo clases y pseudo elementos</h2>
+<h4 id="uc%C3%B3mo-nombrar-las-clasesu"><u>Cómo nombrar las clases</u></h4>
+<p>Metodología <strong>BEM😗</strong> cómo nombrar correctamente las clases.
+Solo usa clases. Las nombra siguiendo el siguiente patrón: BLOQUE__ELEMENTO—MODIFICADOR (son 2 guiones, se usa 1 guión para separar palabras).</p>
+<p><a href="https://www.youtube.com/watch?v=bvnzyXGkNY4">video de la metodologia BEM</a></p>
+<blockquote>
+<p>Bloque: sección que puede funcionar por sí sola.
+Elemento: forma una de las partes del bloque.
+Modificador: variaciones de un mismo bloque/elemento.</p>
+</blockquote>
+<pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- BLOQUE --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">main</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"Padre"</span>&gt;</span>
+	<span class="hljs-comment">&lt;!-- BLOQUE__ELEMENTO --&gt;</span> 
+	<span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"Padre__Hijo"</span>&gt;</span>
+		<span class="hljs-comment">&lt;!-- BLOQUE__ELEMENTO--MODIFICADOR --&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"Padre__Hijastro--Mayor"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"Padre__Hijastro--Menor"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+ <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+</div></code></pre>
+<h4 id="ucrear-estilos-con-etiquetas-dentro-de-clasesu"><u>Crear estilos con etiquetas dentro de clases</u></h4>
+<p>Si tienes etiquetas dentro de la etiqueta a la que le estás aplicando estilos y le pones una clase, puedes aplicar estilos únicamente a las etiquetas dentro de esa clase de la siguiente manera:</p>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.clase</span> <span class="hljs-selector-tag">etiqueta</span> {
+    <span class="hljs-comment">/* Estilos a etiqueta "a" dentro de una clase */</span>
+}
+
+
+<span class="hljs-selector-class">.main-nav__item</span> <span class="hljs-selector-tag">a</span> {
+    <span class="hljs-attribute">color</span>: white; <span class="hljs-comment">/* color de texto */</span>
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">5px</span>; <span class="hljs-comment">/* espacio entre los elementos */</span>
+    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">2px</span>; <span class="hljs-comment">/* redondear los bordes */</span>
+    <span class="hljs-attribute">text-decoration</span>: none; <span class="hljs-comment">/* Elimina los puntos de la lista */</span>
+}
+</div></code></pre>
+<center>
+<img src="file:///home/dustin/Documents/GitHub/2__Cursos__P/Desarrollo Web/12 Clases del Curso Definitivo de HTML y CSS/src/web_indentation.webp" alt="Anatomia de etiqueta" width="500">
+</center>
+<p><strong>Pseudo clases</strong>
+Define el estilo de un estado especial de un elemento.
+Agregar al final de la clase <strong>.clase a:nombreAccion</strong></p>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.main-nav__item</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span> { 
+    <span class="hljs-comment">/* Con etiqueta:hover hacemos que cada vez que el 
+    usuario pase el cursor por el elemento se le 
+    apliquen los siguientes estilos CSS */</span>
+
+    <span class="hljs-attribute">color</span>: blue; <span class="hljs-comment">/* color de texto */</span>
+}
+
+<span class="hljs-selector-class">.main-nav__item</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:active</span> { 
+    <span class="hljs-comment">/* Con etiqueta:active hacemos que cada vez 
+    que el usuario haga click sobre el elemento
+    se le apliquen los siguientes estilos CSS */</span>
+
+    <span class="hljs-attribute">color</span>: red; <span class="hljs-comment">/* color de texto */</span>
+}
+</div></code></pre>
+<p><strong>Pseudo Elementos</strong>
+Define el estilo de una parte específica de un elemento o agrega un elemento.
+Agregar al final de la clase <strong>.clase a::nombreAccion</strong></p>
+<pre class="hljs"><code><div><span class="hljs-comment">/* Pseudo elemento */</span>
+<span class="hljs-selector-class">.main-nav__item</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">::after</span> {
+    <span class="hljs-comment">/* Con after agregamos elemtos */</span>
+
+    <span class="hljs-attribute">content</span>: <span class="hljs-string">" | "</span>; <span class="hljs-comment">/* despues del elemento, agrega esto */</span>
+}
+</div></code></pre>
+<center>
+<img src="file:///home/dustin/Documents/GitHub/2__Cursos__P/Desarrollo Web/12 Clases del Curso Definitivo de HTML y CSS/src/pseudoclasses_pseudoelementos.png" alt="pseudoclasses_pseudoelementos" width="800">
+</center>
+<h2 id="anatom%C3%ADa-de-una-regla-de-css">Anatomía de una regla de CSS</h2>
+<p>sintaxis del lenguaje CSS</p>
+<center>
+<img src="file:///home/dustin/Documents/GitHub/2__Cursos__P/Desarrollo Web/12 Clases del Curso Definitivo de HTML y CSS/src/regla_css.png" alt="regla_css" width="450">
+</center>
+<h2 id="modelo-de-caja">Modelo de caja</h2>
+<p>En la web los elementos se piensan en forma de rectángulos. A esto se le conoce como Modelo de caja.</p>
+<p>Las cajas tienen parámetros que podemos editar en nuestro CSS</p>
+<blockquote>
+<p>Margin: Espacio que hay del borde de la caja hacia afuera.Visualmente, permite separar a la caja de elementos externos.
+Border: Es el borde de la caja. Por defecto, a partir de ahí medimos las distancias de nuestra caja con elementos internos o externos.
+Padding: Espacio que hay del borde de la caja hacia adentro. Visualmente, permite separar a la caja de elementos internos.
+content: es el contenido, texto o imagenes:</p>
+<ul>
+<li>width: ancho del contenido</li>
+<li>height: alto del contenido</li>
+</ul>
+</blockquote>
+<center>
+<img src="file:///home/dustin/Documents/GitHub/2__Cursos__P/Desarrollo Web/12 Clases del Curso Definitivo de HTML y CSS/src/modelo_de_caja.webp" alt="regla_css" width="600">
+</center>
+<p>Pensandolo como una casa:</p>
+<blockquote>
+<p>El margin es el jardin o la acera que te aleja de las otras casas.
+El border son tus paredes.
+El padding es el espacio que tienen tus paredes con tus muebles.
+El content son tus muebles.</p>
+</blockquote>
+<center>
+<img src="file:///home/dustin/Documents/GitHub/2__Cursos__P/Desarrollo Web/12 Clases del Curso Definitivo de HTML y CSS/src/modelo_de_caja_2.webp" alt="regla_css" width="500">
+</center>
+<ul>
+<li><strong>hacer cambio en el content, border y padding</strong>
+tener en cuenta que no se esta alterando el margin, lo cual nos generar un scroll</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">main</span> {
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">500px</span>;
+    <span class="hljs-attribute">border</span>:<span class="hljs-number">10px</span> solid grey;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">20px</span> <span class="hljs-number">35px</span>;
+}
+</div></code></pre>
+<ul>
+<li><strong>hacer cambio en el content, border y padding</strong>
+para reducir el margin de nuestro modelo de caja, usar el siguiente codigo en todos los proyectos con CSS</li>
+</ul>
+<pre class="hljs"><code><div>*{
+    <span class="hljs-comment">/*hace que el margin se igual a 0*/</span>
+    <span class="hljs-attribute">box-sizing</span>: border-box;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+}
+</div></code></pre>
+<p><strong><u>Para proyectos mas grandes, se debe usar normalize</u></strong></p>
+<p><a href="https://www.youtube.com/watch?v=TeQgd0NS_lQ">Link del video</a></p>
+<h2 id="herencia">Herencia</h2>
+<p>Cuando se realiza el frondend, sin usa css. entonces se usa los valores por defecto del navegador te lo da.</p>
+<p>Sin embargo si queremos establecer nuestros propios valores por defecto, entonces debe entender que es la herencia:</p>
+<ul>
+<li><strong>Inherit</strong>  es un valor por medio de una keyword que especifica que, a la propiedad que se la apliquemos debe de heredar los valores de su elemento padre. Podemos decir que la palabra Inherit significa “Usa el valor de mi padre”, si el elemento padre no tiene definido dicho valor entonces el navegador seguirá hasta que encuentre un elemento superior que lo contenga, y en ultima instancia de no tenerlo ningún elemento superior se aplicara el valor por defecto.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">html</span> {
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">75%</span>;
+    <span class="hljs-attribute">font-family</span>: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+<span class="hljs-selector-tag">h1</span> {
+    <span class="hljs-attribute">font-size</span>: inherit;
+}
+</div></code></pre>
+<center>
+<img src="file:///home/dustin/Documents/GitHub/2__Cursos__P/Desarrollo Web/12 Clases del Curso Definitivo de HTML y CSS/src/herencia.png" alt="regla_css" width="450">
+</center>
+<p>Initial. Este valor pertenece a la especificación CSS3 y cuando aplicamos a una propiedad el valor initial estamos dando el valor inicial y predefinido por el navegador en cuestión.</p>
+<p>Upset. Este valor unset es una combinación entre inherit y initial, cuando utilizamos este valor en una propiedad esta tratara de heredar el valor de su elemento padre si este esta disponible, de no ser así este valor colocará el valor de la propiedad en su valor inicial, como si usáramos inherit e initial juntos.</p>
+<h2 id="especificidad-en-selectores">Especificidad en selectores</h2>
+<p>Orden de declaración en .css</p>
+<ol>
+<li>Importancia</li>
+<li>Especificidad</li>
+<li>rden de fuente</li>
+</ol>
+<p>Importancia.</p>
+<ol>
+<li>
+<p>Hoja de estilo de agente de usuario (Estilos del navegador): primero el navegador va a implementar los estilos que ya trae por defecto</p>
+</li>
+<li>
+<p>Declaraciones normales en hojas de estilo de autor (nuestro .css) que son los estilos que nosotros colocamos en nuestro proyecto.</p>
+</li>
+<li>
+<p>Declaraciones importantes en hojas de estilos de autor (utilizar el !important) no es buena practica</p>
+</li>
+</ol>
+<p>Especificidad: el orden de importancia es:</p>
+<center>
+<img src="file:///home/dustin/Documents/GitHub/2__Cursos__P/Desarrollo Web/12 Clases del Curso Definitivo de HTML y CSS/src/especificidad.png" alt="regla_css" width="500">
+</center>
+<h4 id="regla">Regla</h4>
+<p><strong>Regla de cascada</strong>
+Para entender la razon de un conflicto, debemos entender la .</p>
+<center>
+<img src="file:///home/dustin/Documents/GitHub/2__Cursos__P/Desarrollo Web/12 Clases del Curso Definitivo de HTML y CSS/src/regla_cascada.png" alt="regla_css" width="700">
+</center>
+<p><strong>Orden de la fuente</strong> las declaraciones finales son las que se se van a ejecutar en el caso que los estilos tienen la misma especificidad</p>
+<h2 id="demo-de-especificidad-y-orden-en-selectores">Demo de especificidad y orden en selectores</h2>
+<blockquote>
+<p>Usamos ‘#’ cuando llamamos al id.
+Usamos ‘.’ cuando llamamos a las clases.
+Usamos ‘*’ cuando hacemos referencia a todo el código html, al momento de hacer reset en los estilos que ya vienen por defecto.</p>
+</blockquote>
+<p><strong>index.html</strong></p>
+<pre class="hljs"><code><div><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Demo<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"./style.css"</span> /&gt;</span> 
+    <span class="hljs-comment">&lt;!-- href hacer referencia al documento CSS --&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"page-header"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"page-title"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"title"</span>&gt;</span>Empresa<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"main-nav"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">""</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">""</span>&gt;</span>Curso<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">""</span>&gt;</span>Instructores<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">""</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"blog"</span>&gt;</span>Blog<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+    
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+</div></code></pre>
+<p><strong>style.css</strong></p>
+<pre class="hljs"><code><div><span class="hljs-comment">/*tambien llamado selector universal*/</span>
+* {
+    <span class="hljs-comment">/* le da estilos a todo el codigo html*/</span>
+    <span class="hljs-attribute">box-sizing</span>: border-box;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+
+}
+
+<span class="hljs-selector-tag">h1</span> {
+    <span class="hljs-comment">/* le da estilos a una etiqueta de tipo h1 */</span>
+    <span class="hljs-attribute">color</span>: purple;
+    <span class="hljs-attribute">font-family</span>: serif;
+    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">10px</span>;
+  
+}
+
+<span class="hljs-selector-id">#page-title</span> {
+    <span class="hljs-comment">/*cuando se tiene muchos fonts, es por si uno de ellos
+    el buscador no lo tiene y pasa al siguiente*/</span>
+    <span class="hljs-attribute">font-family</span>: Arial, Helvetica, sans-serif;
+} 
+
+<span class="hljs-selector-class">.title</span> {
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">18px</span>;
+    <span class="hljs-attribute">font-family</span>: monospace;
+}
+
+<span class="hljs-selector-id">#main-nav</span> {
+    <span class="hljs-comment">/* Esto son estilos para el ID*/</span>
+    <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-attribute">list-style-type</span>: none;
+    <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">0px</span>;
+}
+
+<span class="hljs-selector-id">#main-nav</span> <span class="hljs-selector-tag">li</span> {
+    <span class="hljs-comment">/* Esto es para los estilos de los elementos de lista */</span>
+    <span class="hljs-attribute">display</span>: inline-block; <span class="hljs-comment">/* Esto es para que los elementos se muestren en línea */</span>
+}
+
+<span class="hljs-selector-id">#main-nav</span> <span class="hljs-selector-tag">a</span> {
+    <span class="hljs-comment">/* Esto es para los estilos de los elementos de ancla */</span>
+    <span class="hljs-attribute">color</span>: white; 
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#13a4a4</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">5px</span>;
+    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">2px</span>;
+    <span class="hljs-attribute">text-decoration</span>: none;
+}
+ 
+<span class="hljs-selector-id">#main-nav</span> <span class="hljs-selector-class">.blog</span>{
+    <span class="hljs-attribute">background-color</span>: red;
+} 
+</div></code></pre>
+<h2 id="m%C3%A1s-sobre-selectores">Más sobre selectores</h2>
+<h4 id="recordar-que">Recordar que :</h4>
+<ol>
+<li>Evitar usar !important</li>
+<li>Evitar usar estilos embebidos (Estilos en la etiqueta html).</li>
+<li>Evitar usar ID para dar estilos en CSS por que tienen mas peso y dan conflictos.</li>
+</ol>
+<p>Mala Practica en CSS es hacer, cuando no se maneja bien la especificidad :</p>
+<pre class="hljs"><code><div><span class="hljs-selector-id">#main-nav</span> <span class="hljs-selector-class">.blog</span>{
+    <span class="hljs-attribute">background-color</span>: red <span class="hljs-meta">!important</span>;
+} 
+</div></code></pre>
+<h2 id="combinadores-adjacent-siblings-combinators">Combinadores: Adjacent Siblings (combinators)</h2>
+<p><strong>El combinador hermano adyacente ( + )</strong> separa dos selectores y coincide con el segundo elemento solo si sigue inmediatamente al primer elemento, y ambos son hijos del mismo padre element.</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">h2</span> + <span class="hljs-selector-tag">p</span> {
+    <span class="hljs-comment">/* applicar todos los estilos a p que esten cerca de un h2 */</span>
+    <span class="hljs-attribute">color</span>: red;
+}
+</div></code></pre>
+<center>
+<img src="file:///home/dustin/Documents/GitHub/2__Cursos__P/Desarrollo Web/12 Clases del Curso Definitivo de HTML y CSS/src/combinadores.png" alt="regla_css" width="500">
+</center>
+<h2 id="combinadores-general-sibling">Combinadores: General Sibling</h2>
+<p><strong>general sibling combinator ( ~ )</strong> separa dos selectores y coincide con el segundo elemento solo si sigue al primer elemento (aunque no necesariamente inmediatamente), y ambos son hijos del mismo elemento padre .</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">h2</span> ~ <span class="hljs-selector-tag">p</span> {
+    <span class="hljs-comment">/* aplicar todos los estilos a p que sean hermanos de h2  */</span>
+    <span class="hljs-attribute">color</span>: blue;
+}
+</div></code></pre>
+<h2 id="combinadores-hijo-y-descendiente">Combinadores: Hijo y Descendiente</h2>
+<p><strong>The child combinator ( &gt; )</strong> se coloca entre dos selectores CSS. Solo coincide con los elementos que coinciden con el segundo selector que son hijos directos de los elementos que coinciden con el primero.</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">div</span> &gt; <span class="hljs-selector-tag">p</span> {
+    <span class="hljs-comment">/* color: red; */</span>
+}
+</div></code></pre>
+<p><strong>The descendant combinator</strong> , típicamente representado por un único carácter de espacio ( ), combina dos selectores de modo que los elementos que coinciden con el segundo selector se seleccionan si tienen un elemento antepasado (padre, padre del padre, padre del padre, etc.) que coincida con el primer selector. Los selectores que utilizan un combinador descendiente se denominan selectores descendientes .</p>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">div</span> <span class="hljs-selector-tag">p</span> {
+    <span class="hljs-attribute">color</span>: red;
+}
+</div></code></pre>
+<br>
+<center>
+<img src="file:///home/dustin/Documents/GitHub/2__Cursos__P/Desarrollo Web/12 Clases del Curso Definitivo de HTML y CSS/src/combination.webp" alt="regla_css" width="900">
+</center>
+<h2 id="medidas">Medidas</h2>
+<h4 id="uunidades-absolutasu"><u>Unidades absolutas</u></h4>
+<p>Es una medida absoluta que depende de los pixeles.
+la medida no cambia sin importar el equipo o el tamaño de la antalla.
+son unidades que están completamente definidas. Esto quiere decir que su valor no depende de otro valor de referencia.
+En este grupo encontramos los siguientes elementos:</p>
+<ul>
+<li><strong>cm:</strong> Aumenta el tamaño de nuestro texto o elemento en centímetros</li>
+<li><strong>mm:</strong> Aumenta el tamaño de nuestro texto o elemento en milímetros</li>
+<li><strong>in:</strong> Aumenta el tamaño de nuestro texto o elemento en pulgadas <strong>(1in = 96px = 2.54cm)</strong></li>
+<li><strong>px:</strong> Aumenta el tamaño de nuestro texto en pixeles</li>
+<li><strong>pt:</strong> Aumenta el tamaño de nuestro texto en puntos <strong>(1pt = 1/72 de 1in)</strong></li>
+<li><strong>pc:</strong> Aumenta el tamaño de nuestro texto en picas <strong>(1pc = 12 puntos aprox)</strong></li>
+</ul>
+<h4 id="uunidades-relativasu"><u>Unidades relativas</u></h4>
+<p>son medidas que cambian y se ajusta a las medidas del dispositivo.</p>
+<p>Este tipo de unidad es más flexible y se expresa en forma de porcentaje (%). Me refiero a su flexibilidad porque se adapta de acuerdo al tamaño de otro valor de referencia.</p>
+<p>Ahora aplica este ejemplo a los distintos tipos de resolución de pantalla. Ahora bien, las unidades relativas se subdividen en 2 grupos:</p>
+<ol>
+<li>
+<p>Relativas a la tipografía</p>
+</li>
+<li>
+<p>Relativas al viewport</p>
+</li>
+</ol>
+<h5 id="1-urelativas-a-la-tipograf%C3%ADau">1. <u>Relativas a la tipografía</u></h5>
+<ul>
+<li>
+<p>em (elemento): Relativo al tamaño de fuente de un elemento. Si, por ejemplo, utilizamos 3em (font-size: 3em); mi texto aumentará 3 veces su tamaño en relación al tamaño que se esté utilizando por defecto.</p>
+</li>
+<li>
+<p>ex: Aumenta el tamaño de mi letra en cuanto a su altura.</p>
+</li>
+<li>
+<p>Rem (root elemento): Es igual a (em) con la diferencia de que este actúa en la raíz. O sea, en la letra que esté utilizando por defecto.</p>
+</li>
+</ul>
+<h5 id="2-urelativas-al-viewport---ventanau">2. <u>Relativas al viewport - ventana</u></h5>
+<ul>
+<li><strong>vw:</strong> Porcentaje relativo a la anchura del viewport.</li>
+<li><strong>vh:</strong> Porcentaje relativo a la altura del viewport.</li>
+<li><strong>vmin:</strong> Entre vw y vh toma el que tenga menor valor.</li>
+<li><strong>vmax:</strong> Entre vw y vh toma el que tenga mayor valor.</li>
+</ul>
+<center>
+<img src="file:///home/dustin/Documents/GitHub/2__Cursos__P/Desarrollo Web/12 Clases del Curso Definitivo de HTML y CSS/src/tipos_medidas.png" alt="regla_css" width="350">
+</center>
+<h2 id="medidas-em">Medidas EM</h2>
+<p>esta medida toma el tomaño fuente del padre directo.
+el padre directo puede ser las configuraciones del html o cualquier padre cercano.</p>
+<p>el siguiente ejemplo es algo del que debemos tener mucho cuidado cuando tener un proyecto mas grande.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">main</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text-container"</span>&gt;</span> 
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Soy un texto inicial<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Soy un texto de ejemplo<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Soy un texto de ejemplo<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Soy un texto de ejemplo<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Soy un texto de ejemplo<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> 
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> 
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> 
+       <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> 
+    <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+    
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.text-container</span> {
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1.5em</span>; 
+    <span class="hljs-comment">/* 1.5 del tamaño de la etiqueta html, si es que no hay establecido un font-size como padre superior*/</span>
+}
+
+<span class="hljs-selector-class">.text-container</span> <span class="hljs-selector-tag">div</span> {
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1.5em</span>;
+}
+</div></code></pre>
+<h2 id="medidas-rem">Medidas REM</h2>
+<p>funciona igual que el em, con la diferencia que es relativo al valor de la fuente del elemento html, y no tiene en cuenta el valor heredado o al padre directo.</p>
+<p>Por defecto el html viene con un tamaño de fuente de 16px asi que esta medida siempre tiene referencia al estilo root, es decir al tamaño fuente de la etiqueta html.</p>
+<p>==1 rem = 16 px==
+(tener en cuenta que eso 16px son de la etiqueta html)</p>
+<p>Si queremos aplicar rem de una forma mas sencilla para no tener que hacer tantos calculos hacemos lo siguiente</p>
+<pre class="hljs"><code><div><span class="hljs-comment">/*Como por defecto el 
+font-size es 16px, el 62,5% 
+nos daría 10px*/</span>
+<span class="hljs-selector-tag">html</span>{
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">62.5%</span>;
+}
+
+<span class="hljs-selector-tag">p</span> {
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1.6rem</span>; <span class="hljs-comment">/*  1.6 x 10 = 16px */</span>	
+}
+<span class="hljs-comment">/*entonces podemos calcular 
+rem fácilmente multiplicando por 10
+</span></div></code></pre>
+<p>si la etiqueta html vale 16 px y cuando se usa el rem este tambien sera 16px, entonces hacemos esto.
+convertimos esos 16 px en 10 px, de la siguiente manera
+16px * 62.5% = 10px
+ahora la etique html tiene 10 px como font-size y el rem es 10 px tambien, es decir:</p>
+<p>1 rem = 10 px</p>
+<p>ahora si por ejemplo a una etiqueta le asignamos 2 rem este hara referencia a 20px, o si por ejemplo le damos un valor de 1.5rem su valor sera de 15px</p>
+<h2 id="maxmin-width">Max/Min width</h2>
+<p>¿Qué es la viewport?
+Es el área visible del usuario de una página web.
+El viewpost varía según el dispositivo y será más pequeña en un teléfono móvil que en una pantalla de computadora.</p>
+<p>Antes de las tabletas y los teléfonos móviles, las páginas web estaban diseñadas solo para pantallas de computadora, y era común que las páginas web tuvieran un diseño estático y un tamaño fijo.</p>
+<p>Luego, cuando comenzamos a navegar por Internet usando tabletas y teléfonos móviles, las páginas web de tamaño fijo eran demasiado grandes para caber en el viewport. Para solucionar este problema, los navegadores de esos dispositivos redujeron la página web completa para adaptarse a la pantalla.</p>
+<h4 id="medidas-que-se-aplican-en-el-viewport">Medidas que se aplican en el Viewport</h4>
+<p><strong>Min-height:</strong> se utiliza para definir la altura mínima de un elemento dado. Impide que el valor de la propiedad height llegue a ser más pequeña que la especificada en la altura mínima ( min-height ). Se refiere a la altura del bloque contenedor.</p>
+<p><strong>Max-height:</strong> se utiliza para definir la altura máxima de un elemento dado. Impide que el valor de la altura pueda llegar a ser más grande que la de max-height . Porcentajes: se refiere a la altura del bloque contenedor.</p>
+<p><strong>Min-width:</strong> se usa para determinar la anchura mínima de un elemento. Previene que la propiedad width pueda ser inferior que min-width . Aplicable a: elementos de tipo bloque. Porcentajes: se refieren a la anchura del bloque contenedor.</p>
+<p><strong>Max-width:</strong> define el ancho máximo que un elemento puede tener, max-width cambia el tamaño del elemento si el valor de width es mayor que el de max-width.</p>
+<pre class="hljs"><code><div>* {
+    <span class="hljs-attribute">box-sizing</span>: border-box;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-selector-tag">main</span> {
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100vw</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100vh</span>;
+    <span class="hljs-attribute">background-color</span>: blueviolet;
+}
+
+<span class="hljs-selector-tag">section</span>{
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">80%</span>;<span class="hljs-comment">/*debemos tener un width base que normalmente sera en porcentaje*/</span>
+    <span class="hljs-attribute">min-width</span>: <span class="hljs-number">320px</span>;<span class="hljs-comment">/*limitamos el tamaño que se va a encojer*/</span>
+    <span class="hljs-attribute">max-width</span>: <span class="hljs-number">500px</span>;<span class="hljs-comment">/*limitamos el tamaño que va a crecer*/</span>
+    <span class="hljs-attribute">min-height</span>: <span class="hljs-number">500px</span>; <span class="hljs-comment">/*limite minima de la altura*/</span>
+    <span class="hljs-attribute">max-height</span>: <span class="hljs-number">800px</span> <span class="hljs-comment">/*limite maxima de la altura*/</span>
+    margin: <span class="hljs-number">0</span> auto;
+    <span class="hljs-attribute">background-color</span>: red;
+}
+</div></code></pre>
+<p><strong>overflow:</strong> quiere decir que tenemos mas texto de lo que el contenedor puede almacenar.</p>
+<p>un error comun es que le asignamos un tamaño a nuestro contenedor pero el contenido es demasiado
+que se desborda del contenedor una forma de solucionarlo es asignar un tamaño min que permite
+que nuestro contenedor crezca según el contenido que se tiene.</p>
+<!-- [
+    les quiero dejar los aportes que más me gustaron.
+
+    Lucy06Campos nos recomienda una guía del desarrollo web https://platzi.com/comentario/1684577/
+    Nihilus117 explica las siglas de html y css. https://platzi.com/comentario/1687509/
+    danilofb nos comparte todas las etiquetas de html. https://platzi.com/comentario/1697848/
+    padronjosef quiere saber cuales son las diferencias de html css y js. https://platzi.com/comentario/1952538/
+    doy una pagina de apoyo (también era un aporte prueba ya que esta clase así allá mas de 100 aportes solo me cargan 100) https://platzi.com/comentario/1984889/
+    matiaswasiak nos da su opinión de html y css. https://platzi.com/comentario/1683711/
+    SEBASSD nos deja información de html css y js. https://platzi.com/comentario/1821882/
+    anibaldbxd me hizo reír https://platzi.com/comentario/1684610/
+    lesterpaz99 nos da información opcional pero importante para trabajar con html y css. https://platzi.com/comentario/1797578/
+    carSantello nos ilustra los conceptos de html css y js https://platzi.com/comentario/1683531/
+
+espero haber sido de ayuda.
+] -->
+</body>
+</html>

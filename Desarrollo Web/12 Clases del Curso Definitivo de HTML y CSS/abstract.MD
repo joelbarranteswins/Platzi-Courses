@@ -889,6 +889,7 @@ Para entender la razon de un conflicto, debemos entender la .
 ```
 **style.css** 
 ```css
+/*tambien llamado selector universal*/
 * {
     /* le da estilos a todo el codigo html*/
     box-sizing: border-box;
@@ -1002,7 +1003,7 @@ div p {
 
 </br>
 <center>
-<img src="./src/combination.webp" alt="regla_css" width="800">
+<img src="./src/combination.webp" alt="regla_css" width="900">
 </center>
 
 
@@ -1053,6 +1054,132 @@ Ahora aplica este ejemplo a los distintos tipos de resolución de pantalla. Ahor
 <center>
 <img src="./src/tipos_medidas.png" alt="regla_css" width="350">
 </center>
+
+
+## Medidas EM
+
+esta medida toma el tomaño fuente del padre directo.
+el padre directo puede ser las configuraciones del html o cualquier padre cercano.
+
+el siguiente ejemplo es algo del que debemos tener mucho cuidado cuando tener un proyecto mas grande.
+~~~html
+<body>
+    <main class="text-container"> 
+        <p>Soy un texto inicial</p>
+       <div>
+           <p>Soy un texto de ejemplo</p>
+           <div>
+            <p>Soy un texto de ejemplo</p>
+            <div>
+                <p>Soy un texto de ejemplo</p>
+                <div>
+                    <p>Soy un texto de ejemplo</p>
+                </div> 
+            </div> 
+        </div> 
+       </div> 
+    </main>
+    
+</body>
+~~~
+
+~~~css
+.text-container {
+    font-size: 1.5em; 
+    /* 1.5 del tamaño de la etiqueta html, si es que no hay establecido un font-size como padre superior*/
+}
+
+.text-container div {
+    font-size: 1.5em;
+}
+~~~
+
+## Medidas REM
+funciona igual que el em, con la diferencia que es relativo al valor de la fuente del elemento html, y no tiene en cuenta el valor heredado o al padre directo.
+
+Por defecto el html viene con un tamaño de fuente de 16px asi que esta medida siempre tiene referencia al estilo root, es decir al tamaño fuente de la etiqueta html.
+
+==1 rem = 16 px==
+(tener en cuenta que eso 16px son de la etiqueta html)
+
+Si queremos aplicar rem de una forma mas sencilla para no tener que hacer tantos calculos hacemos lo siguiente
+
+~~~css
+/*Como por defecto el 
+font-size es 16px, el 62,5% 
+nos daría 10px*/
+html{
+    font-size: 62.5%;
+}
+
+p {
+    font-size: 1.6rem; /*  1.6 x 10 = 16px */	
+}
+/*entonces podemos calcular 
+rem fácilmente multiplicando por 10
+~~~
+si la etiqueta html vale 16 px y cuando se usa el rem este tambien sera 16px, entonces hacemos esto.
+convertimos esos 16 px en 10 px, de la siguiente manera
+16px * 62.5% = 10px
+ahora la etique html tiene 10 px como font-size y el rem es 10 px tambien, es decir:
+
+1 rem = 10 px
+
+ahora si por ejemplo a una etiqueta le asignamos 2 rem este hara referencia a 20px, o si por ejemplo le damos un valor de 1.5rem su valor sera de 15px
+
+## Max/Min width
+
+¿Qué es la viewport?
+Es el área visible del usuario de una página web.
+El viewpost varía según el dispositivo y será más pequeña en un teléfono móvil que en una pantalla de computadora.
+
+Antes de las tabletas y los teléfonos móviles, las páginas web estaban diseñadas solo para pantallas de computadora, y era común que las páginas web tuvieran un diseño estático y un tamaño fijo.
+
+Luego, cuando comenzamos a navegar por Internet usando tabletas y teléfonos móviles, las páginas web de tamaño fijo eran demasiado grandes para caber en el viewport. Para solucionar este problema, los navegadores de esos dispositivos redujeron la página web completa para adaptarse a la pantalla.
+
+#### Medidas que se aplican en el Viewport
+**Min-height:** se utiliza para definir la altura mínima de un elemento dado. Impide que el valor de la propiedad height llegue a ser más pequeña que la especificada en la altura mínima ( min-height ). Se refiere a la altura del bloque contenedor.
+
+**Max-height:** se utiliza para definir la altura máxima de un elemento dado. Impide que el valor de la altura pueda llegar a ser más grande que la de max-height . Porcentajes: se refiere a la altura del bloque contenedor.
+
+**Min-width:** se usa para determinar la anchura mínima de un elemento. Previene que la propiedad width pueda ser inferior que min-width . Aplicable a: elementos de tipo bloque. Porcentajes: se refieren a la anchura del bloque contenedor.
+
+**Max-width:** define el ancho máximo que un elemento puede tener, max-width cambia el tamaño del elemento si el valor de width es mayor que el de max-width.
+
+~~~css
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    background-color: blueviolet;
+}
+
+section{
+    width: 80%;/*debemos tener un width base que normalmente sera en porcentaje*/
+    min-width: 320px;/*limitamos el tamaño que se va a encojer*/
+    max-width: 500px;/*limitamos el tamaño que va a crecer*/
+    min-height: 500px; /*limite minima de la altura*/
+    max-height: 800px /*limite maxima de la altura*/
+    margin: 0 auto;
+    background-color: red;
+}
+~~~
+
+**overflow:** quiere decir que tenemos mas texto de lo que el contenedor puede almacenar. 
+
+un error comun es que le asignamos un tamaño a nuestro contenedor pero el contenido es demasiado
+que se desborda del contenedor una forma de solucionarlo es asignar un tamaño min que permite
+que nuestro contenedor crezca según el contenido que se tiene. 
+
+
+
+
+
 
 
 <!-- [
