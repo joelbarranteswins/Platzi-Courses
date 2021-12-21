@@ -1110,7 +1110,7 @@ font-size es 16px, el 62,5%
 nos daría 10px*/
 html{
     font-size: 62.5%;
-}
+} /*modificamos la etiquta html*/
 
 p {
     font-size: 1.6rem; /*  1.6 x 10 = 16px */	
@@ -1177,6 +1177,208 @@ que se desborda del contenedor una forma de solucionarlo es asignar un tamaño m
 que nuestro contenedor crezca según el contenido que se tiene. 
 
 
+## Position
+todas las etiquetas en html vienen con ese **Position= "static"** 
+
+Valores de position
+**Static:** Posición por defecto de los elementos, conservan la posición y espacio de donde son colocados (estáticos). No se puede usar top, right, bottom y left en esta posición.
+**Absolute:** Permanecen en la posición de donde fueron colocados pero pierden su espacio físico (se sobreponen a los elementos que ocupan dicho espacio), se los puede posicionar mediante las propiedades top, right, bottom y left.
+**Importante:** Al aplicar las propiedades top, right, bottom y left se tomará de referencia al contenedor más cercano con posición relativa.
+**Relative:** Conservan su posición original y espacio físico pero se los puede posicionar mediante las propiedades top, right, bottom y left sin perder dicho espacio físico.
+**Fixed:** Pierden su espacio físico y permanecen de forma fija (siguen el scroll, se colocan al lado izquierdo del viewport), se los puede posicionar mediante las propiedades de top, right, bottom y left.
+**Sticky:** Conservan su espacio físico pero cuando el scroll los alcanza lo siguen (sin perder dicho espacio físico), es muy usado para barras de navegación y se lo puede posicionar con las propiedades top, right, bottom y left.
+
+
+<center>
+<img src="./src/posicion_elementos.png" alt="regla_css" width="500">
+</center>
+
+~~~css
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    /*stiqueta html*/
+    background: url('./src/background.jpg') no-repeat center center;
+    background-size: cover;
+    background-color: #cccccc;
+    font-size: 85%;
+}
+ 
+
+
+.info {
+    font-size: 1.6rem;
+    font-weight: small;
+    text-align: center;
+    width: 55%;
+    border: rgb(129, 129, 191) solid 1px;
+    border-radius: 15px;
+    background-color: rgb(30, 192, 135, 0.5); /*el ultimo numero es opacidad*/
+    /* opacity: 0.5; */
+    margin: 0 auto;
+    padding: 10rem;
+    top: 10rem;
+}
+
+h1 {
+    padding: 0.5;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 5rem;
+    top: 2rem; 
+    width: 20%; /*ancho del contenedor*/
+    opacity: 1;
+    margin: 0 auto; /*margen del contenedor*/
+    border: rgb(186, 199, 176) solid 2px;
+    border-radius: 15px; /*borde del contenedor*/
+    background-color: rgb(0, 255, 21);
+    position: relative; /*posicion del contenedor*/
+}
+~~~
+
+## Display
+
+3 tipos de display:
+
+* **Block:** Estos toman el 100% del width, por lo que un elemento no puede posicionarse a un lado de el.
+Se le puede poner el width deseado, height deseado, añadir margin, padding sin problema. Pero recordando que ocupara este elemento todo el largo de una Fila por asi decirlo.
+
+* **Inline:** Estos elementos solo ocuparan el ancho dependiento de su contenido. Por lo tanto estos elementos si permiten que si un elemento cabe a lado suyo, se posicione este ahi.
+Las *desventajas es que no se les puede modificar el width, height, ni colocar margin u padding tanto top, como bottom.
+
+* **inline-block:** Este tiene la combinación de los 2 anteriores. Haciéndolo un mejor candidato para usarlo.
+Permite modificar su width, height, añadirle margin, padding sin problemas y lo mejor es que mientras que haya espacio a un lado suyo, este permitirá posicionar mas elementos ahi.
+
+~~~html
+<body>
+    <div class="block-element">Esto es una etiqueta</div>
+    <p class="block-element">Esto es una etiqueta de parrafo</p>
+    <div class="block-element">
+        <p class="parrafo">parrafo</p>
+        <p class="parrafo">parrafo</p>
+        <p class="parrafo">parrafo</p>
+    </div>
+    <span>Soy una etiqueta span</span>
+    <span>Soy una etiqueta span</span>
+
+    <ul class="nav">
+        <li>Home</li>
+        <li>Cursos</li>
+        <li>Instructores</li>
+        <li>Blog</li>
+    </ul>
+</body>
+~~~
+
+
+~~~css
+.block-element {
+    background-color: green;
+    margin: 10px;
+    padding: 10px;
+
+}
+
+.nav {
+    background-color: peachpuff;
+    /* margin: 0px; */
+    padding: 20px;
+    list-style: none;
+    text-align: center;
+}
+
+.nav li {
+    display: inline-block;
+    font-size: 20px;
+    margin: 10px 0;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+~~~
+
+
+<center>
+<img src="./src/display.webp" alt="regla_css" width="450">
+</center>
+
+
+## Display Flex
+
+Flex es un tipo de display que permite que el contenedor padre sea flexible a los cambios que puedan tener los elementos hijos en su alineación.
+
+Una vez tengamos el elemento padre con display flex tenemos otras propiedades que podremos usar para nuestro beneficio.
+
+1. Flex-direction: Te permite elegir la alineación de los elementos hijos sea en vertical (column) u horizontal (row), esta alineación viene por defecto.
+2. Justify-content: Esta propiedad nos permite alinear el contenido de forma horizontal
+        
+    * Flex-start: Alinear items del flex desde el comienzo.
+    * Flex-end: Alinear items desde el final.
+    * Center: Alinear items en el centro del contenedor.
+    * Space-between: Distribuir items uniformemente, el primer items al inicio, el último al final.
+    * Space-around: Distribuir items uniformemente, estos tienen el mismo espacio a su alrededor.
+   * Space-evenly: Distribuye uniformemente el espacio entre los items y su alrededor.
+3. Flex-wrap: Permite que un elemento cuyo tamaño sea mayor al de la página haga un salto de línea sin salirse del contenedor, pues este se agranda.
+
+
+~~~html
+<body>
+    <main class="container">
+        <div class="box1 box">
+            <p>box1</p>
+        </div>
+        <div class="box2 box">
+            <p>box2</p>
+        </div>
+        <div class="box3 box">
+            <p>box3</p>
+        </div>
+    </main>
+</body>
+~~~
+
+~~~css
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+
+}
+
+.container {
+    border: 0.3rem solid black;
+    display: flex;
+}
+
+.box {
+    width: 10rem;
+    height: 10rem;
+}
+
+.box1 {
+    background-color: red;
+}
+
+.box2 {
+    background-color: green;
+}
+
+.box3 {
+    background-color: blue;
+}
+~~~
 
 
 
