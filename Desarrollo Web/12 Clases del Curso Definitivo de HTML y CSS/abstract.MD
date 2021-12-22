@@ -1410,7 +1410,7 @@ body {
 
 .container {
     border: 0.3rem solid black;
-    display: flex;
+    display: flex; /*Es necesario porque nos pemite manipular el contenido con flex*/
     flex-wrap: wrap;
     /* height: 50vh; 50% de la altura del navegador */
 
@@ -1515,15 +1515,209 @@ se puede usar google fonts [link](https://fonts.google.com/)
 
 
 <center>
-<img src="./src/web_fonts.png" alt="web_fonts" width="600">
+<img src="./src/web_fonts.png" alt="web_fonts" width="900">
 </center>
 
+seleccionamos el style y luego le damos click en  \<link>, copiamos el contenido y lo pegamos dentro del head, de esta manera.
+
+~~~html
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yuji+Hentaigana+Akebono&display=swap" rel="stylesheet">
+</head>
+~~~
+
+<center>
+<img src="./src/css_rules.png" alt="css_rules" width="300">
+</center>
+
+copiamos el contenido del css rules y lo pegamos en el script de css de esta manera:
+
+~~~css
+html {
+    font-family: 'Yuji Hentaigana Akebono', cursive;
+}
+~~~
 
 Buenas practicas con Web Fonts:
 - solo cargar 1 fuente por proyecto
 - importarlas siempre en la etiqueta head
 
 
+## Responsive design: media queries
+
+Se debe optimizar para todos los dispositivos. se debe tener en claro un par de conceptos:
+
+**Break points:** cuando la pantalla sea de cierto tamaño, se generará un cambio para reposicionar o redimensionar los contenedores.
+
+**Media Queries en CSS:** son condicionales. **No es la mejor práctica pero aplicándolo al CSS**: se aplican para cada tamaño de dispositivo. El pixelaje dado será el break point.
+
+@media (min-width: #;) {"código que se aplicará"} 
+~~~css
+@media (min-width: 768px) {...}
+@media (min-width: 992px) {...}
+@media (min-width: 1200px) {...}
+~~~
+
+**Media Queries en HTML:** Para aplicar media queries con buenas prácticas, **hay que hacerlo en el head del html**. Porque así solo se descarga el código necesario según el dispositivo, mientras que en CSS se descarga todo sin importar nada.
+
+~~~html
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style_table.css" media="screen and (min-width: 768px)">
+~~~
+
+##### Mobile First/Only
+ Lo más importante es diseñar para movil. Por lo que se debe diseñar con mobile first. Es decir, primero diseñar para celular, luego un break point para tablet y finalmente un break point para PC.
+
+El style.css debe estar hecho para mobile. Luego se pueden crear otros archivos como tablet.css o desktop.css.
+
+algunas paginas para aplicar FIRST MOBILE:
+- https://solisapp.com/
+- https://sizzy.co/
+- https://responsively.app/
+- https://blisk.io/
+
+
+## Estrategias de responsive: mostly fluid
+El patrón Mostly fluid consiste, principalmente, en una cuadrícula fluida. Por lo general, en las pantallas grandes o medianas se mantiene el mismo tamaño y simplemente se ajustan los márgenes en las más anchas.
+
+En las pantallas más pequeñas, la cuadrícula fluida genera el reprocesamiento del contenido principal, mientras que las columnas se apilan verticalmente. Una de las mayores ventajas de este patrón es que, en general, solo se necesita un punto de interrupción entre las pantallas grandes y las pequeñas.
+
+<center>
+<img src="./src/mostly_fluid.webp" alt="mostly_fluid" width="500">
+</center>
+
+
+**Algunos consejos**
+
+sirve para escribir classes y div en abreviatura
+~~~html
+main.container>div.c$*5
+~~~
+
+para llamar varias clases a la vez 
+~~~css
+.c1, .c2, .c3, .c4, .c5 {
+    width: 100%;
+    min-width: 150px;
+    height: 100px;
+}
+~~~
+
+## Implementando mostly fluid
+>index.html
+~~~html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    /*dependiendo del viewport, con estos link se modificará la vista*/
+    <link rel="stylesheet" 
+    href="./style.css">
+    <link rel="stylesheet" 
+    href="./tablet.css" 
+    media="screen and (min-width: 600px)">
+    <link rel="stylesheet" 
+    href="./desktop.css" 
+    media="screen and (min-width: 800px)">
+</head>
+<body>
+    <main class="container">
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+        <div class="c5"></div>
+    </main>
+</body>
+</html>
+~~~
+
+>style.css
+~~~css
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.c1, .c2, .c3, .c4, .c5 {
+    width: 100%;
+    min-width: 150px;
+    height: 100px;
+}
+
+.c1 {
+    background-color: red;
+}
+
+.c2 {
+    background-color: green;
+}
+.c3 {
+    background-color: blue;
+}
+
+.c4 {
+    background-color: yellow;
+}
+
+.c5 {
+    background-color: orange;
+}
+~~~
+
+>tablet.css
+~~~css
+@media (min-width: 600px) {
+    .c2, .c3, .c4 {
+        width: 50%;
+    }
+}
+~~~
+
+>desktop.css 
+~~~css
+@media (min-width: 800px) {
+    .container{
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .c1 {
+        width: 60%;
+    }
+    .c2 {
+        width: 40%;
+    }
+    .c3 {
+        width: 33%;
+    }
+    .c4 {
+        width: 34%;
+    }
+
+}
+~~~
 
 
 <!-- [
