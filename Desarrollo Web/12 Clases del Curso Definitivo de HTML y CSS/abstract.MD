@@ -1313,16 +1313,7 @@ Flex es un tipo de display que permite que el contenedor padre sea flexible a lo
 
 Una vez tengamos el elemento padre con display flex tenemos otras propiedades que podremos usar para nuestro beneficio.
 
-1. Flex-direction: Te permite elegir la alineación de los elementos hijos sea en vertical (column) u horizontal (row), esta alineación viene por defecto.
-2. Justify-content: Esta propiedad nos permite alinear el contenido de forma horizontal
-        
-    * Flex-start: Alinear items del flex desde el comienzo.
-    * Flex-end: Alinear items desde el final.
-    * Center: Alinear items en el centro del contenedor.
-    * Space-between: Distribuir items uniformemente, el primer items al inicio, el último al final.
-    * Space-around: Distribuir items uniformemente, estos tienen el mismo espacio a su alrededor.
-   * Space-evenly: Distribuye uniformemente el espacio entre los items y su alrededor.
-3. Flex-wrap: Permite que un elemento cuyo tamaño sea mayor al de la página haga un salto de línea sin salirse del contenedor, pues este se agranda.
+
 
 
 ~~~html
@@ -1380,6 +1371,157 @@ body {
 }
 ~~~
 
+## Flexbox layouts
+
+1. **Flex-direction:** Te permite elegir la alineación de los elementos hijos sea en vertical (column) u horizontal (row), esta alineación viene por defecto.
+2. **Justify-content:** Esta propiedad nos permite alinear el contenido de forma horizontal
+        
+    * **Flex-start:** Alinear items del flex desde el comienzo.
+    * **Flex-end:** Alinear items desde el final.
+    * **Center:** Alinear items en el centro del contenedor.
+    * **Space-between:** Distribuir items uniformemente, el primer items al inicio, el último al final.
+    * **Space-around:** Distribuir items uniformemente, estos tienen el mismo espacio a su alrededor.
+   * **Space-evenly:** Distribuye uniformemente el espacio entre los items y su alrededor.
+  
+3. **Flex-wrap:** Permite que un elemento cuyo tamaño sea mayor al de la página haga un salto de línea sin salirse del contenedor, pues este se agranda.
+
+4. **Order:** Especifica el orden utilizado para disponer los elementos en su contenedor flexible. Los elementos estarán dispuestos en orden ascendente según el valor de order.
+   
+5. **Flex-grow:** Especifica qué cantidad del espacio restante dentro del contenedor flexible, debería ocupar el ítem en cuestión según su dirección principal, esta última determinada por **flex-direction**.
+   
+6. **Flex-basis:** Especifica el tamaño inicial de un elemento flexible.
+
+
+~~~css
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+
+}
+
+.container {
+    border: 0.3rem solid black;
+    display: flex;
+    flex-wrap: wrap;
+    /* height: 50vh; 50% de la altura del navegador */
+
+}
+
+.box {
+    /* width: 10rem; */
+    height: 10rem;
+    flex-basis: 10rem;
+    flex-shrink: 1;
+    /* flex-grow: 1; */
+}
+
+.box1 {
+    background-color: red;
+    /* order: 1; */
+    /* flex-grow: 1; */
+}
+
+.box2 {
+    background-color: green;
+    /* flex-grow: 1; */
+}
+
+.box3 {
+    background-color: blue;
+    /* order: 4;  */
+}
+~~~
+
+
+~~~css
+flex-grow: 0; /*No crece si hay espacio sobrante*/
+flex-shrink: 1; /*Se va a encojer el 100% del espacio que se vaya quitando*/
+flex-basis: auto; /*Toma el size de su contenido. 
+Notese que dependiendo del flex-direction el flex-basis 
+sera el width o el height del elemento*/
+~~~
+
+
+## Variables
+Nos servirán para guardar valores que reiteradamente ocuparemos en el desarrollo de nuestro proyecto. 
+Realmente se le ve mas utilidad en proyectos grandes.
+
+Como se declara?
+Normalmente se declara dentro de ==**:root**== la que serán variables globales.
+
+~~~css
+:root {
+    --primary-color: #003476;
+    --secondary-color: #b4d2f7;
+    --header-size: 4rem;
+    --font: 1.8rem
+}
+~~~
+
+
+Como utilizar las variables?
+Se utilizaran las variables gracias a la Función var() y se usa de la siguiente manera.
+
+~~~css
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+header {
+    width: 100vw;
+    height: 15vh;
+    background-color: var(--primary-color);
+}
+
+main {
+    width: 100vw;
+    height: 70vh;
+    font-size: var(--font);
+}
+
+h1 {
+    font-size: 4rem;
+    color: #55804a;
+}
+
+footer {
+    width: 100vw;
+    height: 15vh;
+    background-color: var(--secondary-color);
+~~~
+
+
+## Web fonts
+
+existen fuenteas setteadas en mi navegadores
+
+se puede usar google fonts [link](https://fonts.google.com/)
+
+
+<center>
+<img src="./src/web_fonts.png" alt="web_fonts" width="600">
+</center>
+
+
+Buenas practicas con Web Fonts:
+- solo cargar 1 fuente por proyecto
+- importarlas siempre en la etiqueta head
 
 
 

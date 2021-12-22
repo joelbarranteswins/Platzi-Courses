@@ -16,22 +16,28 @@ body {
 .container {
     border: 0.3rem solid black;
     display: flex;
-    align-items: flex-start;
-    height: 50vh;
+    flex-wrap: wrap;
+    /* height: 50vh; 50% de la altura del navegador */
 
 }
 
 .box {
-    width: 10rem;
+    /* width: 10rem; */
     height: 10rem;
+    flex-basis: 10rem;
+    flex-shrink: 1;
+    /* flex-grow: 1; */
 }
 
 .box1 {
     background-color: red;
+    /* order: 1; */
+    /* flex-grow: 1; */
 }
 
 .box2 {
     background-color: green;
+    /* flex-grow: 1; */
 }
 
 .box3 {
@@ -44,6 +50,7 @@ body {
 
 .box5 {
     background-color: orange;
+    /* order: 4;  */
 }
 
 .box6 {
