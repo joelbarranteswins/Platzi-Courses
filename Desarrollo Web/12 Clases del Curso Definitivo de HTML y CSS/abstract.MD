@@ -1719,7 +1719,142 @@ html {
 }
 ~~~
 
+## Layout shifter CSS
+es cambiar tu layout completamente para diferentes pantallas, lo que hace que en cada pantalla parezca un proyecto totalmente diferente.
 
+
+<center>
+<img src="./src/layout_shifter.png" alt="layout_shifter" width="500">
+</center>
+
+
+## Column drop
+al momento de crecer el ancho, los contenedores iran subiendo.
+
+<center>
+<img src="./src/layout_shifter.png" alt="layout_shifter" width="500">
+</center>
+
+
+## Buenas prácticas y ejemplos de responsive
+
+Separar siempre tus archivos:
+1. mobile.css/style.css
+2. tablet.css
+3. desktop.css
+
+En esta página puedes ver el width en promedio de diferentes dispositivos.
+
+https://www.mydevice.io/
+
+Ademas, escoger de 3 a 4 breakpoint es buena practica
+
+
+## Imágenes responsive
+
+**En HTML** es buena practica usar la etiqueta pictura con source, para que se use la imagen de acuerdo al viewport del equipo que entre a la apgina web.
+
+~~~html
+<body>
+    <main>
+        <picture> <!-- Agrupa una serie de imágenes. Etiqueta contenedora. -->
+            <source media="(min-width:1000px)" set="./imgs/medium.jpg"/>
+            <!-- Mostrará la imagen que cumpla una serie de criterios opcionales.-->
+            <source media="(min-width:800px)" srcset="./imgs/small.jpg"/>
+            <img src="./imgs/small.jpg" alt="Ejemplo"/>
+        </picture>
+    </main>
+</body>
+~~~
+
+**En CSS** lo mejor para imagenes es usar:
+~~~css
+img {
+    width: 100%;
+}
+~~~
+
+
+ademas, Es completamente válido usar <picture> dentro de <figure> y así poder usar el <figcaption> :
+~~~html
+<figure>
+	<picture>
+		<source …>
+		<source …>
+		<source …>
+		<img…>
+	</picture>
+<figcaption>…</figcaption>
+</figure>
+~~~
+
+## accesibilidad
+#### HTML Semántica
+
+
+La semántica está relacionada con las etiquetas contenedoras en HTML5, por ejemplo: header, main, sidebar y footer. Estas agregan información importante para aquellos que tengan problemas con la visualización de la página. Les permite a estos usuarios orientarse en qué sección de la página se encuentran.
+
+Por eso, es importante utilizar las diferentes etiquetas que HTML5 ofrece para tener la mejor semántica posible y la accesibilidad.
+
+#### Textos 
+
+lo mejor es usar medidas relativas como rem para poder aumentar el tamaño del texto.
+si usamos pixeles, estos textos no se podran aumentar al cambiar el tamaño de letra en el navegador.
+
+Ejemplo de con rem en CSS
+~~~css
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+
+h1 {
+    font-size: 3.0rem;
+}
+
+p {
+    font-size: 1.8rem;
+}
+~~~
+
+
+#### Labels, alt y title
+
+* **label:** es una etiqueta ayuda a que se pueda enfocar rápidamente en el input del formulario.
+* **alt:** es un atributo de la etiqueta img, ayuda a colocar una descripción rápida de lo que contiene la imagen, ya que esto será leído por el software para accesibilidad auditiva o aparece cuando no se carga la imagen.
+* **title** Es un atributo de la etiqueta img, le agrega una descripción a la imagen cuando el cursor se pone encima de ella.
+
+~~~ html
+<body>
+    <main>
+        <form action="">
+            <label for="name">
+                <span>Cual es tu nombre?</span>
+                <input id="name" type="text">
+            </label>
+            <label for="starting-studying">
+                <span>Cual dia empezaste en platzi?</span>
+                <input id="starting-studying" type="date">
+            </label>
+            <label for="time-to-study">
+                <span>En que hora estudias mas?</span>
+                <input id="time-to-study" type="time">
+            </label>
+        </form>
+        <section>
+            <img src="./img/medium.jpg" alt="Son las extrellas en el espacio" 
+            title="Es un cielo con estrellas">
+        </section>
+    </main>
+    
+</body>
+~~~
 <!-- [
     les quiero dejar los aportes que más me gustaron.
 
