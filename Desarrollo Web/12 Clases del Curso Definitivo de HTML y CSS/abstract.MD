@@ -257,7 +257,7 @@ En HTML5, los atributos de valor booleano se escriben sin valor asociado sólo e
   
 * __JPG / JPEG__ (Photographic Experts Group) -> Lossy: Formato de imagen con pérdida, perdemos calidad a la hora de comprimirlas, pero llegan a ser óptimas para la carga en la página web.
   
-* __SVG__ - Vector (Scalable Vector Graphics) -> Lossless: Formato de imagen muy ligero sin pérdida, con svg no perdemos calidad ya que esta compuesta por vectores.
+* __SVG__ - Vector (Scalable Vector Graphics) -> Lossless: Formato de imagen muy ligero sin pérdida, con svg no perdemos calidad ya que esta compuesta por vectores. mejores para utilizar con transparente.
 
 
 <center>
@@ -411,7 +411,7 @@ La etiqueta __\<source/>__, se puede colocar dentro de una etiqueta __\<video>\<
 
 ## Calendar
 
-* Para generar un calendario, podemos hacer uso del tipo __datetime-local__, aunque también podemos hacer uso de las etiquetas de __time, date, week y month__
+* Para generar un calendario con fecha y hora, podemos hacer uso del tipo __datetime-local__, aunque también podemos hacer uso de las etiquetas de __time, date, week y month__
 
 * la etiqueta **submit**, para enviar los datos.
 
@@ -451,10 +451,7 @@ La etiqueta __\<source/>__, se puede colocar dentro de una etiqueta __\<video>\<
 
             <label for="calendario">Calendario</label>
             <input type="datetime-local" id="calendario" name="calendario"/><br><br>
-
         </fieldset>
-       
-
         <input type="submit">
     </form>
 </body>
