@@ -1,8 +1,25 @@
+
 # Curso Definitivo de HTML y CSS
 <u>By Joel Barrantes</u>
+<center>
+<h2>
+<u>Table of Contents</u>
+</h2>
+</center>
 
 
-## Qué aprenderás sobre HTML y CSS
+1. [Web Developer Fundamentals](#1-web-developer-fundamentals)
+2. [HTML](#2-html)
+3. [Formularios](#3-formularios)
+4. [CSS](#4-css)
+5. [Responsive Design](#5-responsive-design)
+6. [Accesibilidad](#6-accesibilidad)
+
+
+
+
+
+# 1. Web Developer Fundamentals
 #### HTML
 > Estructura de los documentos que se visualizan en los navegadores (Chrome, Edge, Firefox, Safari, Opera, etc) Es el lenguaje con el que clasificamos o etiquetamos cada parte del deocumento, dejándoles saber al navegador, que información va a vi
 > 
@@ -76,6 +93,8 @@ Serán diferentes, dependiendo del usuario que la use.
 </center>
 
 
+# 2. HTML
+
 ## HTML: anatomía de una página web
 ##### La web se conforma de tres conceptos:
 
@@ -83,7 +102,7 @@ Serán diferentes, dependiendo del usuario que la use.
 > HTTP => Protocolo de transferencia de hipertexto.
 > HTML => código que se utiliza para estructurar el contenido de tu web, y darle sentido y propósito.
 
-* __HTML__ son siglas, Hyper Text Markup Language __(Lenguaje de Marcado de Hipertexto)__.
+* **HTML** son siglas, Hyper Text Markup Language __(Lenguaje de Marcado de Hipertexto)__.
 Hyper Text  significa que el texto tiene interactividad, conexión con otros documentos.
 _Markup _significa que le pone etiquetas a los elementos. Por eso también se le conoce como un lenguaje de etiquetas.
 HTML es un lenguaje interpretado.
@@ -213,6 +232,7 @@ HTML semántico significa utilizar las etiquetas corresponientes para la parte d
   </body>
 ```
 
+# 3. formularios
 ## Anatomía de una etiqueta de HTML
 
 #### ¿Qué son los atributos?
@@ -546,9 +566,9 @@ Para crear inputs con una lista de varias opciones (desplegables), se puede desa
 ````
 
 
-_______________________________________________________
 
 
+# 4. CSS
 ## ¿Qué es CSS?
 
 Cascading style sheet (css) es la herramienta con la que le damos estilo a nuestra pagina ya sea color, tamaño, espacios, lugares de posición y más.
@@ -1547,6 +1567,7 @@ Buenas practicas con Web Fonts:
 - solo cargar 1 fuente por proyecto
 - importarlas siempre en la etiqueta head
 
+# 5. Responsive Design
 
 ## Responsive design: media queries
 
@@ -1785,15 +1806,15 @@ ademas, Es completamente válido usar <picture> dentro de <figure> y así poder 
 </figure>
 ~~~
 
-## accesibilidad
-#### HTML Semántica
+# 6. accesibilidad
+## HTML Semántica
 
 
 La semántica está relacionada con las etiquetas contenedoras en HTML5, por ejemplo: header, main, sidebar y footer. Estas agregan información importante para aquellos que tengan problemas con la visualización de la página. Les permite a estos usuarios orientarse en qué sección de la página se encuentran.
 
 Por eso, es importante utilizar las diferentes etiquetas que HTML5 ofrece para tener la mejor semántica posible y la accesibilidad.
 
-#### Textos 
+## Textos 
 
 lo mejor es usar medidas relativas como rem para poder aumentar el tamaño del texto.
 si usamos pixeles, estos textos no se podran aumentar al cambiar el tamaño de letra en el navegador.
@@ -1821,7 +1842,7 @@ p {
 ~~~
 
 
-#### Labels, alt y title
+## Labels, alt y title
 
 * **label:** es una etiqueta ayuda a que se pueda enfocar rápidamente en el input del formulario.
 * **alt:** es un atributo de la etiqueta img, ayuda a colocar una descripción rápida de lo que contiene la imagen, ya que esto será leído por el software para accesibilidad auditiva o aparece cuando no se carga la imagen.
@@ -1852,6 +1873,9 @@ p {
     
 </body>
 ~~~
+
+
+
 <!-- [
     les quiero dejar los aportes que más me gustaron.
 
