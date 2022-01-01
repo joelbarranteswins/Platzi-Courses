@@ -1,0 +1,24 @@
+cuando se atasca git
+> ESC + q
+
+
+
+podemos usar para el git ignore
+_____________
+primero.txt
+user/*
+*.log
+¯¯¯¯¯¯¯¯¯¯¯¯¯
+https://www.toptal.com/developers/gitignore
+
+
+crear git tags (etiquetas)
+lightweight -> .git/refs/tags (git tag v1.0.0)
+	colo en el archivo local
+
+annotated ->  .git/refs/tags (git tag -a v1.0.0 -m "Nueva tag"
+	      .git/objects
+	       se guarda en el git repository
+
+para ver las etiquetas
+> git show v1.0.0

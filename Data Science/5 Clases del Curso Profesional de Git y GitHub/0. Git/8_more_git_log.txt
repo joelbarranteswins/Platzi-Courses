@@ -1,0 +1,31 @@
+simplica lo que se modifico o agrego
+> git log --online
+
+ver grafos del git
+>git log --graph
+
+los cambios introducidos
+> git log --stat
+
+ver los commit con filtro
+git log -p
+git log -2
+
+quienes han subido cada archivo
+git shortlog
+
+quienes trabajan en el repositorio
+ git shortlog -n -s
+
+ver los correo de los autores
+git shortlog -n -s -e
+
+que han subido un autor
+git log --autor="Joel B."
+git log --autor="Joel B." --online
+
+saver cuando se subio un archivo
+git log --grep="five"
+
+ver informa de los merge hechos
+git log --merges --online

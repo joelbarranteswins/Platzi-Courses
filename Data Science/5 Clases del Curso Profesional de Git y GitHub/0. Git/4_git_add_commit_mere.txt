@@ -1,0 +1,44 @@
+mover de staging area a el git repository
+> git commit -m "nuestro primer commit"
+
+ver el contenido de un object
+git cat-file -p <name-sexagesimal>
+
+ver todos los commit que se hizo desde un master
+> git log
+
+agregar archivos nuevos y existentes(subir los cambios)
+> git add .
+
+vida de los archivos
+untracked or modified-(git add)-> staged -(git commit)-> unmodified 
+		<-(git restore --staged)-
+
+cambiar al master
+> git switch master
+
+las rammas se almacenan en el object refs/heads
+ver todas los head o ramas que existen
+> git branch
+
+crear una rama o head
+> git branch name-of-the-new-branch
+
+cambiar de ramas
+> git checkout name-of-the-new-branch
+
+ver todos los commits
+> git log
+
+borrar una rama o branch
+> git  branch -d name-of-the-new-branch
+
+creo la rama y hago el switch
+> git checkout -b name-of-the-new-branch
+
+cambiar nombre del branch o rama
+> git branch -m name-of-the-new-branch new_name-the-new-branch
+
+combinar head y la nueva rama (usar en la rama principal en
+ la rama que se quiere traer una nueva rama) 
+> git merge name-of-the-new-branch
