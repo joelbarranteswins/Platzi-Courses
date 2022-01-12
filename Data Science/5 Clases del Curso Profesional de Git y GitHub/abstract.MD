@@ -312,7 +312,7 @@ Si Git puede resolver el conflicto hará commit automáticamente. Pero, en caso 
 ==Los archivos con conflictos por el comando git merge entran en un nuevo estado que conocemos como Unmerged.== Funcionan muy parecido a los archivos en estado Unstaged, algo así como un estado intermedio entre Untracked y Unstaged, solo debemos ejecutar git add para pasarlos al área de staging y git commit para aplicar los cambios en el repositorio.
 
 
-## 
+## Uso de GitHub
 
 GitHub es una plataforma que nos permite guardar repositorios de Git que podemos usar como servidores remotos y ejecutar algunos comandos de forma visual e interactiva (sin necesidad de la consola de comandos).
 
@@ -324,21 +324,245 @@ Para clonar un repositorio desde GitHub (o cualquier otro servidor remoto) debem
 
 Sin embargo, esto solo funciona para las personas que quieren empezar a contribuir en el proyecto. Si queremos conectar el repositorio de GitHub con nuestro repositorio local, el que creamos con git init, debemos ejecutar las siguientes instrucciones:
 
-##### Primero: Guardar la URL del repositorio de GitHub
-#####  con el nombre de origin
-git remote add origin URL
+1. Primero: Guardar la URL del repositorio de GitHub HTTPS
+2. abrir git bash en la carpeta de trabajo y escribir: 
+   **git remote add origin URL** : agregara el repositorio remoto al repositorio local.
+3. Verificar el repositorio remoto:
+    **git remote** : repositorio remoto agregado
+    **git remote -v** : opciones de repositorio remoto
+4. Traer la versión del repositorio remoto y hacer merge para crear un commit con los archivos de ambas partes. Podemos usar git fetch y git merge
+    primero probemos: **git push origin master**
+    **git pull origin master --allow-unrelated-histories** : traer todos los archivos del repositorio remoto
+5. ahora a guardar
+    **git push origin master** : guarda los cambio en el repositorio remoto
 
-##### Segundo: Verificar que la URL se haya guardado
-##### correctamente:
-git remote
-git remote -v
+## Cómo funcionan las llaves públicas y privadas
 
-##### Tercero: Traer la versión del repositorio remoto y
-##### hacer merge para crear un commit con los archivos
-##### de ambas partes. Podemos usar git fetch y git merge
-##### o solo el git pull con el flag --allow-unrelated-histories:
-git pull origin master --allow-unrelated-histories
+Las llaves públicas y privadas nos ayudan a cifrar y descifrar nuestros archivos de forma que los podamos compartir sin correr el riesgo de que sean interceptados por personas con malas intenciones.
 
-##### Por último, ahora sí podemos hacer git push para guardar
-##### los cambios de nuestro repositorio local en GitHub:
-git push origin master
+La forma de hacerlo es la siguiente:
+
+1. Ambas personas deben crear su llave pública y privada.
+2. Ambas personas pueden compartir su llave pública a las otras partes (recuerda que esta llave es pública, no hay problema si la “interceptan”).
+3. La persona que quiere compartir un mensaje puede usar la llave pública de la otra persona para cifrar los archivos y asegurarse que solo puedan ser descifrados con la llave privada de la persona con la que queremos compartir el mensaje.
+4. El mensaje está cifrado y puede ser enviado a la otra persona sin problemas en caso de que los archivos sean interceptados.
+5. La persona a la que enviamos el mensaje cifrado puede usar su llave privada para descifrar el mensaje y ver los archivos.
+
+>Puedes compartir tu llave pública pero nunca tu llave privada.
+
+## Configura tus llaves SSH en local
+
+Primer paso: Generar tus llaves SSH. Recuerda que es muy buena idea proteger tu llave privada con una contraseña.
+
+* ssh-keygen -t rsa -b 4096 -C "tu@email.com"
+Segundo paso: Terminar de configurar nuestro sistema.
+
+Se creara un archivo en ~/.ssh con dos archivo
+1. id_rsa : es la llave privada (sin extension)
+2. id_rsa.pub : es la llave publica(con extension)
+
+En Windows y Linux:
+
+Encender el "servidor" de llaves SSH de tu computadora:
+* eval $(ssh-agent -s)
+
+Añadir tu llave SSH a este "servidor":
+* ssh-add ruta-donde-guardaste-tu-llave-privada
+En Mac:
+
+Encender el "servidor" de llaves SSH de tu computadora:
+* eval "$(ssh-agent -s)"
+
+
+
+## Conexión a GitHub con SSH
+
+Luego de crear nuestras llaves SSH podemos entregarle la llave pública a GitHub para comunicarnos de forma segura y sin necesidad de escribir nuestro usuario y contraseña todo el tiempo.
+
+Para esto debes entrar a la Configuración de Llaves SSH en GitHub, crear una nueva llave con el nombre que le quieras dar y el contenido de la llave pública de tu computadora.
+
+Ahora podemos actualizar la URL que guardamos en nuestro repositorio remoto, solo que, en vez de guardar la URL con HTTPS, vamos a usar la URL con SSH:
+
+* git remote set-url origin url-ssh-del-repositorio-en-github
+
+
+si se quiere cambiar el nombre del remote entonces hacer lo siguiente:
+* git remote rename origen origin
+
+## Tags y versiones en Git y GitHub
+
+Los tags o etiquetas nos permiten asignar versiones a los commits con cambios más importantes o significativos de nuestro proyecto.
+
+Comandos para trabajar con etiquetas:
+
+* **git tag -a \<version-o-release> -m "\<mensaje-explicativo>" \<hash-commit>** : Crear un nuevo tag y asignarlo a un commit.
+* **git tag -d \<nombre-del-tag>** : Borrar un tag en el repositorio local.
+* **git tag** : Listar los tags de nuestro repositorio local
+* **git show-ref --tags** : Ver referencia de los commits a los que están conectados mi tags.
+* **git push origin --tags** : Publicar un tag en el repositorio remoto.
+* Borrar un tag del repositorio remoto
+  1. **git tag -d \<nombre-del-tag>**
+  2. **git push origin :refs/tags/\<nombre-del-tag>** : 
+
+
+
+## alias en git
+>comando para crear un alias global en git bash y ejecuta el siguiente comando:
+* git log --all --graph --decorate --oneline
+
+**Crear una alias:**
+Para un proyecto:
+* git config alias.arbolito "log --all --graph --decorate --oneline"
+
+Global:
+* git config --global alias.arbolito "log --all --graph --decorate --oneline"
+
+~~~git
+git config --global alias.superlog "log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+~~~
+
+## Manejo de ramas en GitHub
+Puedes trabajar con ramas que nunca envías a GitHub, así como pueden haber ramas importantes en GitHub que nunca usas en el repositorio local. Lo importante es que aprendas a manejarlas para trabajar profesionalmente.
+
+Crear una rama en el repositorio local: 
+* **git branch nombre-de-la-rama** o **git checkout -b nombre-de-la-rama**.
+Publicar una rama local al repositorio remoto: 
+* **git push origin \<nombre-de-la-rama>**
+Recuerda que podemos ver gráficamente nuestro entorno y flujo de trabajo local con Git usando el comando gitk.
+* **git show-branch** : historia de los branch
+* **git show-branch --all**: solo con mas detalles
+
+* **gitk** : muestra un software que viene con git todos los commits 
+  
+
+## Configurar múltiples colaboradores en un repositorio de GitHub
+Por defecto, cualquier persona puede clonar o descargar tu proyecto desde GitHub, pero no pueden crear commits, ni ramas, ni nada.
+
+Existen varias formas de solucionar esto para poder aceptar contribuciones. Una de ellas es añadir a cada persona de nuestro equipo como colaborador de nuestro repositorio.
+
+Solo debemos entrar a la configuración de colaboradores de nuestro proyecto (Repositorio > Settings > Collaborators) y añadir el email o username de los nuevos colaboradores.
+
+
+
+
+
+
+
+
+
+
+## Flujo de trabajo profesional: Haciendo merge de ramas de desarrollo a master
+
+
+
+## Flujo de trabajo profesional con Pull requests
+
+En un entorno profesional normalmente se bloquea la rama master, y para enviar código a dicha rama pasa por un code review y luego de su aprobación se unen códigos con los llamados merge request.
+
+Para realizar pruebas enviamos el código a servidores que normalmente los llamamos staging develop (servidores de pruebas) luego de que se realizan las pruebas pertinentes tanto de código como de la aplicación estos pasan a el servidor de producción con el ya antes mencionado merge request.
+
+
+
+
+
+## Git Rebase: reorganizando el trabajo realizado
+
+rebase: reescribe la historia del repositorio, cambia la historia de donde comenzó la rama y solo debe ser usado de manera local.
+
+es agarrar una rama y traerselo a la rama **main**, para luego eliminarlo. solo debe usarse en repositorios locales.
+
+* **git rebase \<name-of-branch-used-to-fix-bugs>** : trae otra rama y los commit se trae a la rama en la que se esta ejecutando el rebase.
+
+* **git branch -b <name-of-branch>** : borra una rama
+
+
+## Git Stash: Guardar cambios en memoria y recuperarlos después
+
+El stashed nos sirve para guardar cambios para después, Es una lista de estados que nos guarda algunos cambios que hicimos en Staging para poder cambiar de rama sin perder el trabajo que todavía no guardamos en un commit
+
+Ésto es especialmente útil porque hay veces que no se permite cambiar de rama, ésto porque porque tenemos cambios sin guardar, no siempre es un cambio lo suficientemente bueno como para hacer un commit, pero no queremos perder ese código en el que estuvimos trabajando.
+
+El stashed nos permite cambiar de ramas, hacer cambios, trabajar en otras cosas y, más adelante, retomar el trabajo con los archivos que teníamos en Staging pero que podemos recuperar ya que los guardamos en el Stash.
+
+* **git stash** : sirve para guardar los cambios del Staging Area en un espacio de la memoria, asi evitamos hacer commit y poder pasarnos a otra rama
+
+* **git stash list** : todos los stash guardados
+
+* **git stash pop** : llamar los cambios que no se hicieron commit y que se guardaron en el espacio de memoria.
+* **git stash drop** : sirve para eliminar un stash guardado.
+
+* git stash branch <branch-name> : crea una rama y trae el stash
+## Git Clean: limpiar tu proyecto de archivos no deseados
+
+Mientras estamos trabajando en un repositorio podemos añadir archivos a él, que realmente no forma parte de nuestro directorio de trabajo, archivos que no se deberían de agregar al repositorio remoto.
+
+El comando clean actúa en archivos sin seguimiento, este tipo de archivos son aquellos que se encuentran en el directorio de trabajo, pero que aún no se han añadido al índice de seguimiento de repositorio 
+
+* git clean --dry-run : muestra un listado de los archivosq ue vamos a borrar
+
+* git clean -f: elimna los archivo que se muestar con el --dry-run. solo borra archivos que puede indexar.
+
+* git stash branch <branch-name> : trae los cambios del stash a esta nueva rama.
+## Git cherry-pick: traer commits viejos al head de un branch
+
+Este comando permite coger uno o varios commits de otra rama sin tener que hacer un merge completo. Así, gracias a cherry-pick, podríamos aplicar los commits relacionados con nuestra funcionalidad de Facebook en nuestra rama master sin necesidad de hacer un merge.
+
+
+* **git log --oneline** : para ver todos los commit de un branch
+* **git cherry-pick \<hash-del-commit>** : trae un o varios commits a la rama en la que se esta. no es buena practica pero si se utiliza, se be saber lo que se hace.
+
+## Reconstruir commits en Git con amend
+
+A veces hacemos un commit, pero resulta que no queríamos mandarlo porque faltaba algo más
+
+* **git add \<archive-name>** : add the archive you needed to modified.
+* **git commit --amend** : modifica el ultimo commit y cambia el mensaje del commit. se abrira vim para modificar el mensaje del commit anterior.
+* **git commit --amend -m "Descripción del commit"** : modifica el ultimo commit pero con esto ya no se abre el editor de vim.
+* **git commit --amend --no-edit** : edita solo el mensaje del commit.
+ 
+Es muy util, pero hay que tener cuidado en algunos casos, como en el caso de que el commit que quieras enmendar lo hayas pusheado al repositorio remoto, entonces quieras enmendar un commit que esta en remoto.
+
+## Git Reset y Reflog: úsese en caso de emergencia
+
+tener en cuenta que GIT NUNCA OLVIDA, Git guarda todos los cambios aunque decidas borrarlos, al borrar un cambio lo que estás haciendo sólo es actualizar la punta del branch, para gestionar éstas puntas existe un mecanismo llamado registros de referencia o reflogs.
+
+* **git reflog** : si deseas ver cómo has modificado la historia dentro de este repositorio. 
+
+copiaremos uno de los hash del git reflog y lo usamos en el siguiente comando.
+* **git reset --hard eff544f** : Perderá todo lo que se encuentra en staging y en el Working directory y se moverá el head al commit eff544f
+* **git reset --soft eff544f** : Te recuperará todos los cambios que tengas diferentes al commit eff544f, los agregará al staging area y moverá el head al commit eff544f
+
+**git reset** es una mala práctica, no deberías usarlo en ningún momento; debe ser nuestro último recurso.
+
+
+## Buscar en archivos y commits de Git con Grep y log
+
+##### buscar palabras en los archivos en el branch actual
+* **git grep "palabra a buscar"**
+mostrar la linea en la cual la palabra aparece en el archivo.
+
+* **git grep -n "palabra a buscar"**
+mostrar cuantas veces aparce la palabra en cada archivo
+
+* **git grep -c "palabra a buscar"**
+buscar los commits en los cuales sale una palabra
+##### buscar en commits
+* **git log -S "palabra a buscar"**
+busca la palabra en los mensajes de los commits
+
+
+
+
+
+## Comandos y recursos colaborativos en Git y GitHub
+
+* **git shortlog** : Ver cuantos commits a hecho los miembros del equipo
+* **git shortlog -sn** : Las personas que han hecho ciertos commits
+* **git shortlog -sn --all** : Todos los commits (también los borrados)
+* **git shortlog -sn --all --no-merges** : muestra las estadisticas de los comigs del repositorio donde estoy
+* **git config --global alias.stats “shortlog -sn --all --no-merges”**: configura el comando “shortlog -sn --all --no-merges” en un Alias en las configuraciones globales de git del pc
+* **git blame -c blogpost.html** : Muestra quien ha hecho cambios en dicho archivo identado
+* **git blame** --help: Muestra en el navegador el uso del comando
+* **git blame archivo -L 35, 60 -c** : Muestra quien escribio el codigo con informacion de la linea 35 a la 60, EJ: git blame css/estilos.css -L 35, 60 -c
+* **git branch -r** : Muestra las Ramas remotas de GitHub
+* **git branch -a**: Muestra todas las Ramas del repo y remotas de GitHub
