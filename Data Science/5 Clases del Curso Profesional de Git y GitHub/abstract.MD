@@ -550,10 +550,6 @@ buscar los commits en los cuales sale una palabra
 * **git log -S "palabra a buscar"**
 busca la palabra en los mensajes de los commits
 
-
-
-
-
 ## Comandos y recursos colaborativos en Git y GitHub
 
 * **git shortlog** : Ver cuantos commits a hecho los miembros del equipo
