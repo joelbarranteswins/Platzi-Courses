@@ -83,6 +83,10 @@ Y 4 Pilares:
 
 - Polimorfismo
 
+<center>
+<img src="./src/poo.webp" width=600>
+</center>
+
 ## Lenguajes Orientados a Objetos
 
 Algunos de los lenguajes de programación Orientados a Objetos son:
