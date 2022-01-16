@@ -13,7 +13,10 @@
 			"path": "Desarrollo con ASP .NET/1 Curso de Introducción a C#"
 		},
 		{
-			"path": "Data Science/ 15 Manipulación y Análisis de Datos con Pandas y Python"
+			"path": "Data Science/15 Manipulación y Análisis de Datos con Pandas y Python"
+		},
+		{
+			"path": "Data Science/16 Matemáticas para Data Science - Estadística Descriptiva"
 		}
 	],
 	"settings": {
