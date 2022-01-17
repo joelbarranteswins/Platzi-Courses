@@ -1,0 +1,14 @@
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\ListExample\ListExample\bin\Debug\net6.0\ListExample.exe
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\ListExample\ListExample\bin\Debug\net6.0\ListExample.deps.json
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\ListExample\ListExample\bin\Debug\net6.0\ListExample.runtimeconfig.json
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\ListExample\ListExample\bin\Debug\net6.0\ListExample.dll
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\ListExample\ListExample\bin\Debug\net6.0\ref\ListExample.dll
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\ListExample\ListExample\bin\Debug\net6.0\ListExample.pdb
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\ListExample\ListExample\obj\Debug\net6.0\ListExample.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\ListExample\ListExample\obj\Debug\net6.0\ListExample.AssemblyInfoInputs.cache
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\ListExample\ListExample\obj\Debug\net6.0\ListExample.AssemblyInfo.cs
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\ListExample\ListExample\obj\Debug\net6.0\ListExample.csproj.CoreCompileInputs.cache
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\ListExample\ListExample\obj\Debug\net6.0\ListExample.dll
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\ListExample\ListExample\obj\Debug\net6.0\ref\ListExample.dll
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\ListExample\ListExample\obj\Debug\net6.0\ListExample.pdb
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\ListExample\ListExample\obj\Debug\net6.0\ListExample.genruntimeconfig.cache

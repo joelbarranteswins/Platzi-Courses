@@ -1,0 +1,14 @@
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\MethodExercise\MethodExercise\bin\Debug\netcoreapp3.1\MethodExercise.exe
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\MethodExercise\MethodExercise\bin\Debug\netcoreapp3.1\MethodExercise.deps.json
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\MethodExercise\MethodExercise\bin\Debug\netcoreapp3.1\MethodExercise.runtimeconfig.json
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\MethodExercise\MethodExercise\bin\Debug\netcoreapp3.1\MethodExercise.runtimeconfig.dev.json
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\MethodExercise\MethodExercise\bin\Debug\netcoreapp3.1\MethodExercise.dll
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\MethodExercise\MethodExercise\bin\Debug\netcoreapp3.1\MethodExercise.pdb
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\MethodExercise\MethodExercise\obj\Debug\netcoreapp3.1\MethodExercise.csproj.AssemblyReference.cache
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\MethodExercise\MethodExercise\obj\Debug\netcoreapp3.1\MethodExercise.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\MethodExercise\MethodExercise\obj\Debug\netcoreapp3.1\MethodExercise.AssemblyInfoInputs.cache
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\MethodExercise\MethodExercise\obj\Debug\netcoreapp3.1\MethodExercise.AssemblyInfo.cs
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\MethodExercise\MethodExercise\obj\Debug\netcoreapp3.1\MethodExercise.csproj.CoreCompileInputs.cache
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\MethodExercise\MethodExercise\obj\Debug\netcoreapp3.1\MethodExercise.dll
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\MethodExercise\MethodExercise\obj\Debug\netcoreapp3.1\MethodExercise.pdb
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\MethodExercise\MethodExercise\obj\Debug\netcoreapp3.1\MethodExercise.genruntimeconfig.cache

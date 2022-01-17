@@ -1,0 +1,14 @@
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\NumericCalculator\NumericCalculator\bin\Debug\net6.0\NumericCalculator.exe
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\NumericCalculator\NumericCalculator\bin\Debug\net6.0\NumericCalculator.deps.json
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\NumericCalculator\NumericCalculator\bin\Debug\net6.0\NumericCalculator.runtimeconfig.json
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\NumericCalculator\NumericCalculator\bin\Debug\net6.0\NumericCalculator.dll
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\NumericCalculator\NumericCalculator\bin\Debug\net6.0\ref\NumericCalculator.dll
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\NumericCalculator\NumericCalculator\bin\Debug\net6.0\NumericCalculator.pdb
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\NumericCalculator\NumericCalculator\obj\Debug\net6.0\NumericCalculator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\NumericCalculator\NumericCalculator\obj\Debug\net6.0\NumericCalculator.AssemblyInfoInputs.cache
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\NumericCalculator\NumericCalculator\obj\Debug\net6.0\NumericCalculator.AssemblyInfo.cs
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\NumericCalculator\NumericCalculator\obj\Debug\net6.0\NumericCalculator.csproj.CoreCompileInputs.cache
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\NumericCalculator\NumericCalculator\obj\Debug\net6.0\NumericCalculator.dll
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\NumericCalculator\NumericCalculator\obj\Debug\net6.0\ref\NumericCalculator.dll
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\NumericCalculator\NumericCalculator\obj\Debug\net6.0\NumericCalculator.pdb
+C:\Users\joel_\OneDrive\Escritorio\Nueva carpeta\NumericCalculator\NumericCalculator\obj\Debug\net6.0\NumericCalculator.genruntimeconfig.cache
