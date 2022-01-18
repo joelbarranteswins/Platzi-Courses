@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreaTusPropiosMetodos", "CreaTusPropiosMetodos\CreaTusPropiosMetodos.csproj", "{87990B22-9EAA-4313-AD00-535F34D2059F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{87990B22-9EAA-4313-AD00-535F34D2059F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87990B22-9EAA-4313-AD00-535F34D2059F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87990B22-9EAA-4313-AD00-535F34D2059F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87990B22-9EAA-4313-AD00-535F34D2059F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8F7B80D1-2000-4F01-87E4-5D25C2A810D0}
+	EndGlobalSection
+EndGlobal

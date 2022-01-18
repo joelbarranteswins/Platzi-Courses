@@ -26,7 +26,7 @@ namespace ExerciseMethodString
             Console.WriteLine($"Su DNI tiene {identifier.Length} digitos");
             Console.WriteLine($"los ultimo digitos son *****{identifier.Substring(identifier.Length - 3)}");
             Console.WriteLine("----------------------------- \nMuchas Gracias Por usar nuestro programa");
-
+             
         }
     }
 }
