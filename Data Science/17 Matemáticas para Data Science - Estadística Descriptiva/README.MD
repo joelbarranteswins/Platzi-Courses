@@ -1,5 +1,5 @@
 
-# Estadística descriptiva vs. inferencial
+## 1. Estadística descriptiva vs. inferencial
 
 Estadística descriptiva vs. inferencial
 Es importante entender la diferencia entre las dos principales ramas de la estadística en el area de las matemáticas:
@@ -26,7 +26,7 @@ descubrir a quien usan estas herramientas con fines nefastos
 <img src="./img/estadistica.png">
 
 
-## Flujo de trabajo en data science
+## 2. Flujo de trabajo en data science
 
 Puede existir profesiones que se enfoquen mas a cada una de fases, no existe un perfil de data science que se encargue a todo el flujo de trabajo.
 
@@ -44,7 +44,7 @@ Evaluar el modelo, Producción e Interacción: esta parte del flujo se basa mas 
 
 <img src="./img/secuencia_de_datos.jpg">
 
-El flujo de trabajo en Data Science tiene 8 pasos:
+**El flujo de trabajo en Data Science tiene 8 pasos:**
 
 1. Data ingestion.
 2. Data visualization.
@@ -71,7 +71,52 @@ Sabemos y tenemos bien claro que la estadística descriptiva es súper común, p
 
 ¿Cuáles serán los puntos específicos que vamos a tratar en este curso?
 
-* Primera parte del curso: Vamos a abordar cuales son los elementos de estadística la descriptiva para la ingesta y el procesamiento de los datos.
+* **Primera parte del curso:** Vamos a abordar cuales son los elementos de estadística la descriptiva para la ingesta y el procesamiento de los datos.
 
 
-* Segunda parte del curso: Vamos a ver análisis exploratorio de los datos, identificar correlaciones de los datos, abordaremos si a partir de eso podemos reducir el conjunto de datos que necesitamos para un modelo, por ejemplo. Entonces, el objetivo es abordar los estadísticos para exploración y analítica.
+* **Segunda parte del curso:** Vamos a ver análisis exploratorio de los datos, identificar correlaciones de los datos, abordaremos si a partir de eso podemos reducir el conjunto de datos que necesitamos para un modelo, por ejemplo. Entonces, el objetivo es abordar los estadísticos para exploración y analítica.
+
+
+## 3. Medidas de tendencia central
+
+Son medidas que nos ayudan a resumir una gran cantidad de información en un solo numero
+
+* **Media:** Es el promedio de todos los datos, puede ser susceptible a valores atípicos
+* **Mediana:** es el dato central es decir tiene la misa cantidad de datos a su izquierda y derecha, no es lo mismo que la media
+* **Moda:** es el dato que mas se repite, la moda no aplica para datos numéricos continuos
+
+#### 4. Diagrama de frecuencia
+Es la representación grafica asociada a la tabla de frecuencia, normalmente todos los estadísticos descriptivos se pueden representar en términos de esta distribución
+
+<center>
+<img src="./img/diagrama_de_frecuencias.jpg">
+</center>
+
+* la media es suceptible a valores atipicos
+* la moda no se aplica a datos numericos continuos
+
+## 5. Metáfora de Bill Gates en un bar
+
+**Media aritmética (promedio)**
+Dados los n números la media aritmética se define como:
+
+<center><img src="./img/media.jpg"></center>
+
+**Mediana**
+formulas matematicas de la mediana
+<center><img src="./img/mediana.jpg"></center>
+
+
+**Resumen de la metafora de BIll Gates:**
+
+* Esta metáfora nos muestra que al tener valores atípicos nuestra media se vera sesgada o desviada.
+
+<center><img src="./img/metafora_de_bill_gates.jpg"></center>
+
+* La mediana será un mejor valor para manejar un conjunto de datos con valores atípicos.
+
+<center><img src="./img/metafora_de_bill_gates_2.jpg"></center>
+
+Por esto hablar del ingreso per cápita de un país es equivocado cuando hay una distribución de riqueza desigual.
+
+## Medidas de tendencia central en Python
