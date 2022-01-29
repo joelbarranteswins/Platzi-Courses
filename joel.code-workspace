@@ -17,10 +17,10 @@
 		},
 		{
 			"path": "Data Science/16 Funciones Matemáticas para Data Science e Inteligencia Artificial"
+		},
+		{
+			"path": "Data Science/17 Matemáticas para Data Science - Estadística Descriptiva"
 		}
-		// {
-		// 	"path": "Data Science/17 Matemáticas para Data Science - Estadística Descriptiva"
-		// }
 	],
 	"settings": {
 		"liveServer.settings.multiRootWorkspaceName": "8 Clases del Curso de Programación Orientada a Objetos POO"
