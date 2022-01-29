@@ -15,8 +15,11 @@
 		{
 			"path": "Data Science/15 Manipulación y Análisis de Datos con Pandas y Python"
 		},
+		{
+			"path": "Data Science/16 Funciones Matemáticas para Data Science e Inteligencia Artificial"
+		}
 		// {
-		// 	"path": "Data Science/16 Matemáticas para Data Science - Estadística Descriptiva"
+		// 	"path": "Data Science/17 Matemáticas para Data Science - Estadística Descriptiva"
 		// }
 	],
 	"settings": {
