@@ -286,4 +286,48 @@ Justo antes de aplicar el escalamiento lineal, las transformaciones no lineales 
 <img src="img/transformacion_no_lineal.jpg">
 
 
-## Procesamiento de datos numéricos en Python
+## 11. Pipelines de procesamiento para variables categóricas
+
+<img src="img/mapeos_de_variables_categoricas.jpg">
+
+ * **Dummy :** es la representación más compacta que se puede tener de los datos. Es mejor usarla cuando los inputs son variables linealmente independientes (no tienen un grado de correlación significativo). Es decir, las cuando se sabe que las categorías son independientes entre sí.
+* **One-hot :** es más extenso. Permite incluir categorías que no estaban en el dataset inicialmente. De forma que si se filtra una categoría que no estaba incluida, igual se pueda representar numéricamente y no de error en el modelo (este modelo es más cool y es el que se usa).
+Hay errores en la notación de Pandas y los tratan como que ambos modelos son lo mismo, pero en la realidad el Dummy no se usa. Aún así, en Pandas el método es .get_dummies().
+
+<img src="./img/dummy_y_one_hot.jpg">
+
+## Correlaciones
+
+
+**Correlaciones**
+
+* **¿Qué es la correlación?**
+La correlación es una medida estadística que expresa hasta qué punto dos variables están relacionadas linealmente (esto es, cambian conjuntamente a una tasa constante).
+
+* **¿Qué es la covarianza?**
+Es un valor que indica el grado de variación conjunta de dos variables aleatorias respecto a sus medias.
+
+* **¿Qué es el coeficiente de correlación?**
+El coeficiente de correlación es la medida específica que cuantifica la intensidad de la relación lineal entre dos variables en un análisis de correlación.
+
+
+coeficiente de correlacion: 
+- si es cercano a cero, no tiene correlacion. 
+- si es vayor a cero, es decir que tiene una fuerte correlacion
+- si es negativo es la inversa del positivo
+
+
+<img src="./img/covarianza_coeficiente_de_correlacion.jpg">
+
+
+<img src="./img/covarianza_y_coeficiente.png">
+
+la correlacion no implica una causalidad, puede que si o puede que no
+
+<img src="./img/correlacion.png">
+
+
+**Hay 2 tipos de multicolinealidad:**
+* **Multicolinealidad exacta:** Hay colinealidad exacta, cuando una o más variables, son una combinación lineal de otra, es decir, existe un coeficiente de correlación entre estas dos variables de 1.
+
+* **Multicolinealidad aproximada:** Hay colinealidad aproximada, cuando una o más variables, no son exactamente una combinación lineal de la otra, pero existe un coeficiente de determinación entre estas variables muy cercano al uno.
