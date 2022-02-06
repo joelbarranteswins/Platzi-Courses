@@ -9,3 +9,6 @@ if respuesta**2 == objetivo:
 
 else:
     print(f'{objetivo} no tinene una raiz cuadrada exacta')
+
+
+# Esto es fuerza bruta
