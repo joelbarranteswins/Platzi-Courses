@@ -1,28 +1,40 @@
 {
 	"folders": [
 		{
+			"name": "2__Cursos__P",
 			"path": "."
 		},
 		{
-			"path": "Data Science/5 Curso Profesional de Git y GitHub"
+			"name": "5 Curso Profesional de Git y GitHub",
+			"path": "Data Science\\5 Curso Profesional de Git y GitHub"
 		},
 		{
-			"path": "Data Science/8 Programación Orientada a Objetos POO"
+			"name": "8 Programación Orientada a Objetos POO",
+			"path": "Data Science\\8 Programación Orientada a Objetos POO"
 		},
 		{
-			"path": "Desarrollo con ASP .NET/1 Curso de Introducción a C#"
+			"name": "1 Curso de Introducción a C#",
+			"path": "Desarrollo con ASP .NET\\1 Curso de Introducción a C#"
 		},
 		{
-			"path": "Data Science/15 Manipulación y Análisis de Datos con Pandas y Python"
+			"name": "15 Manipulación y Análisis de Datos con Pandas y Python",
+			"path": "Data Science\\15 Manipulación y Análisis de Datos con Pandas y Python"
 		},
 		{
-			"path": "Data Science/17 Matemáticas para Data Science - Estadística Descriptiva"
+			"name": "17 Matemáticas para Data Science - Estadística Descriptiva",
+			"path": "Data Science\\17 Matemáticas para Data Science - Estadística Descriptiva"
 		},
 		{
-			"path": "Data Science/18 Matemáticas para Data Science - Probabilidad"
+			"name": "18 Matemáticas para Data Science - Probabilidad",
+			"path": "Data Science\\18 Matemáticas para Data Science - Probabilidad"
 		},
 		{
-			"path": "Desarrollo Backend con Python y Django/1 Introducción al Pensamiento Computacional con Python"
+			"name": "1 Introducción al Pensamiento Computacional con Python",
+			"path": "Desarrollo Backend con Python y Django\\1 Introducción al Pensamiento Computacional con Python"
+		},
+		{
+			"name": "DataAcademy",
+			"path": "Data Science\\DataAcademy"
 		}
 	],
 	"settings": {
