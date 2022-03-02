@@ -173,3 +173,9 @@ Contextualizar: darle sentido a los textos para poder comunicarlo de manera clar
 - El portafolio debe de estar bien documentado, bien explicados, buen storytelling, que se vea que es un proyecto profesional con calidad. Esto con el fin de demostrar que puedes hacer un trabajo profesional.
 - Para trabajar en equipo busca hackatones.
 - Excel y PowerBI para realizar gráficas y análisis.
+
+
+
+# a buscar trabajo
+
+https://www.getonbrd.com/jobs/tag/data-science
