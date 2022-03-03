@@ -28,3 +28,7 @@ Además de apply, también se pueden usar las funciones applymap y map, dependie
 apply() se utiliza para aplicar una función a lo largo de un eje (columna o fila).
 applymap() se usa para aplicar una función a todos los elementos del DataFrame
 map() se usa para sustituir cada valor de una fila por otro valor.
+
+## web for data
+
+> https://data.worldbank.org/
