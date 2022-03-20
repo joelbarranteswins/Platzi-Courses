@@ -1,6 +1,6 @@
 # Curso de Matemáticas para Data Science: Probabilidad
 
-# Qué es la probabilidad?
+## Qué es la probabilidad?
 
 > El azar no es más que la medida de nuestra ignorancia. Los fenómenos fortuitos son, por definicón, aquellos cuyas leyes o causas simplemente ignoramos. 
 
@@ -38,7 +38,7 @@ Esta equiprobabilidad de ocurrencia en un espacio muestral ocurre bajo el supues
 
 **Escuela frecuentista**
 
-“Toda variable aleatoria viene descrita por el espacio muestral que contiene todos los posibles sucesosde ese problema aleatorio.”
+“Toda variable aleatoria viene descrita por el espacio muestral que contiene todos los posibles sucesos de ese problema aleatorio.”
 
 La probabilidad que se asigna como un valor a cada posible suceso tiene varias propiedades por cumplirse.
 
@@ -59,11 +59,11 @@ La probabilidad que se asigna como un valor a cada posible suceso tiene varias p
 
 Y claro, todo esta incertidumbre se puede cuantificar con probabilidad. **Ejemplo:**
 
-![https://static.platzi.com/media/user_upload/1-7f1c567a-ea6d-4cbd-b151-9eb21c655520.jpg](https://static.platzi.com/media/user_upload/1-7f1c567a-ea6d-4cbd-b151-9eb21c655520.jpg)
+<img src="./img/modelo_de_clasificacion.png">
 
 Entonces, el modelo asignara cierta probabilidad a cada documento y así de determinará la clasificación de los documentos. Pero, ¿cómo funciona por dentro nuestro modelo de clasificación?
 
-![https://static.platzi.com/media/user_upload/2-84ba3506-44dd-46e8-8e3b-72d4330bf8e1.jpg](https://static.platzi.com/media/user_upload/2-84ba3506-44dd-46e8-8e3b-72d4330bf8e1.jpg)
+<img src="./img/modelo_de_clasificacion_2.png">
 
 ¿En dónde se aplica la probabilidad? Bueno, en realidad no todos los modelos probabilístico, a la hora de diseñarlo nosotros elegimos si queremos que sea un modelo probabilístico o no.
 
@@ -71,18 +71,29 @@ Por ejemplo, si escogemos el modelo de Naive Bayes, luego de que escogemos el di
 
 # Tipos de probabilidad
 
-![https://static.platzi.com/media/user_upload/3-c5edd38a-4cdf-4a87-9892-d13bdaffc1b9.jpg](https://static.platzi.com/media/user_upload/3-c5edd38a-4cdf-4a87-9892-d13bdaffc1b9.jpg)
+* Conjunta (joint)
+* Marginal
+* Condicional
 
+<img src="./img/tipos%20de%20probabilidad.png">
+
+### Probabilidad Conjunta
 Esta probabilidad de un suceso, en realidad corresponde a 2 sucesos separados y cuando yo calculo la probabilidad de 2 o mas sucesos, a eso es a lo que se le llama **probabilidad conjunta**.
 
-![https://static.platzi.com/media/user_upload/4-ea526f0d-2447-482c-bb69-19bd0557e0ae.jpg](https://static.platzi.com/media/user_upload/4-ea526f0d-2447-482c-bb69-19bd0557e0ae.jpg)
+<img src="./img/probabilidad_conjunta.png">
+
+
+### Probabilidad Condicional
+
+<img src="./img/probabilidad_condicional.png">
 
 La condición de “dado B en par”, lo que hizo fue restringir y paso de tener 36 posibilidades a tener 18 ocurrencias distintas. **Y como la probabilidad de A depende de B**, entonces la llamamos probabilidad condicional.
 
 Ahora para calcular la probabilidad, nos damos cuenta que el numero de eventos exitosos no cambio, si no que lo que cambió fue el número de eventos posibles.
 
-![https://static.platzi.com/media/user_upload/5-e17c5763-be01-4514-9df7-a7fb3a0d3c04.jpg](https://static.platzi.com/media/user_upload/5-e17c5763-be01-4514-9df7-a7fb3a0d3c04.jpg)
 
+
+### Probabilidad Marginal
 Ahora, nos vamos a reformular le pregunta. **¿cuál es la probabilidad de que el dado B caiga en par?**
 
 Aquí no se impone ninguna condición y yo puedo usar todo el espacio muestral completo. De la misma manera tengo 36 opciones y de esas 36 opciones, ¿cuantas corresponden al dado b en par? Son 18.
@@ -91,13 +102,15 @@ Ahora si multiplico 9/18 * 10/36 = 1/4 y da exactamente la probabilidad conjunta
 
 Por lo tanto, la probabilidad conjunta de que suceda A y B es igual a la probabilidad condicional de que suceda A dado que ya sé que sucedió B, por la probabilidad de que suceda B. Esto la resultado a **la regla del producto.**
 
-![https://static.platzi.com/media/user_upload/6-6572f16b-3882-4ba4-85b7-3942a9c9cef9.jpg](https://static.platzi.com/media/user_upload/6-6572f16b-3882-4ba4-85b7-3942a9c9cef9.jpg)
+<img src="./img/probabilidad_marginal.png">
 
 **Ahora, ¿qué es la probabilidad marginal?**
 
 Es cuando se obtiene una probabilidad sencilla a partir de una probabilidad conjunta. Es decir cuando se tiene las probabilidades conjuntas de 2 sucesos y se quiere saber solo la probabilidad de que suceda el primer suceso independiente de lo que pasa con el otro, así eso se define como la suma de todas la probabilidades conjuntas sobre los demás estados que no está considerando A.
 
 La probabilidad marginal es la misma probabilidad de la regla del producto, pero la relación fundamental siempre será la regla del producto.
+
+<img src="./img/regla del producto.png">
 
 ### Otro ejemplo:
 
@@ -107,11 +120,27 @@ La probabilidad marginal es la misma probabilidad de la regla del producto, pero
 
 ![https://static.platzi.com/media/user_upload/Ej3-463be177-e937-4f32-a28f-bbee45931335.jpg](https://static.platzi.com/media/user_upload/Ej3-463be177-e937-4f32-a28f-bbee45931335.jpg)
 
-# Ejemplos de Cálculo de Probabilidad
+## Ejemplos de Cálculo de Probabilidad
 
-![https://static.platzi.com/media/user_upload/Probabilidad-0eef886f-27e4-42f9-a977-532b7f6e7d69.jpg](https://static.platzi.com/media/user_upload/Probabilidad-0eef886f-27e4-42f9-a977-532b7f6e7d69.jpg)
+#### Ejercicio 1 
+##### Existe correlacion?
+<img src="./img/ejercicio_1.png">
 
-**Correlación entre sucesos:** Decimos que dos sucesos están correlacionados si la ocurrencia de uno varía difectamente sobre la probabilidad del otro, pueden ser:
+Que las probabilidades sean excluyentes no significa que sean independientes.
+
+#### Ejercicio 2
+<img src="./img/ejercicio_2.png">
+
+#### Ejercicio 3
+<img src="./img/ejercicio_3.png">
+
+#### Tarea
+<img src="./img/tarea_1.png">
+
+
+
+### **Correlación entre sucesos:** 
+Decimos que dos sucesos están correlacionados si la ocurrencia de uno varía difectamente sobre la probabilidad del otro, pueden ser:
 
 - **Correlación positiva**: La ocurrencia de un suceso incrementa la probabilidad de ocurrencia del otro.
 - **Correlación negativa**: La ocurrencia de un suceso disminuye la probabilidad de ocurrencia del otro.
@@ -122,17 +151,25 @@ La probabilidad marginal es la misma probabilidad de la regla del producto, pero
 
 # Ejemplos avanzados con probabilidad
 
+#### Ejercicio 1
+<img src="./img/ejercicio_4.png">
+
+#### Ejercicio 2
+<img src="./img/ejercicio_5.png">
+
 [21 Black Jack - Cambio de variable](https://www.youtube.com/watch?v=uz58hg0EJAY)
 
-![https://static.platzi.com/media/user_upload/1-fbd5dc0a-1587-4ea0-b8e3-f60a0834d5dc.jpg](https://static.platzi.com/media/user_upload/1-fbd5dc0a-1587-4ea0-b8e3-f60a0834d5dc.jpg)
-
-![https://static.platzi.com/media/user_upload/2-a15a24d0-76ff-43aa-accf-1eafe942f9c2.jpg](https://static.platzi.com/media/user_upload/2-a15a24d0-76ff-43aa-accf-1eafe942f9c2.jpg)
 
 # Qué es una distribución?
 
 Distribuciones de Probabilidad o funcion densidad, es una función que relaciona una variable **aleatoria** y a cada uno de sus posibles estados dentro del espacio muestral le asigna una probabilidad.
 
 ### **Convención de notación:**
+
+la probabilidad de ocurrencia:
+$$
+P(X = x)
+$$
 
 $X\rightarrow$ variable aleatoria
 
@@ -158,8 +195,10 @@ P(a\leq X\leq)=?
 $$
 
 $$
-P(a\leq X\leq)=\int_{a}^{b}{F(X)dX}=F(b)-F(a)=C(X)
+P(a\leq X\leq b)=\int_{a}^{b}{F(X)dX}=F(b)-F(a)=C(X)
 $$
+
+C(X) es una funcion de probabilidad acumulada
 
 # Distribución discretas
 
