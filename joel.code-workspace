@@ -35,7 +35,13 @@
 		{
 			"name": "DataAcademy",
 			"path": "Data Science\\DataAcademy"
+		},
+		{
+			"name": "12 Business Intelligence - Utilidad y Areas de oportunidad",
+			"path": "Data Science\\12 Business Intelligence - Utilidad y Areas de oportunidad"
 		}
+
+		
 	],
 	"settings": {
 		"liveServer.settings.multiRootWorkspaceName": "plus"
