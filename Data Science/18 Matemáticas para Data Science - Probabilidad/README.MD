@@ -216,17 +216,23 @@ Cuando se tiene secuencias repetitivas de varios eventos binarios (eventos tipo 
 
 Existe un elemento matematico llamado el combinatorio, que sirve en este caso para calcular un numero $k$ de ocurrencias en $n$ intentos.
 
-![Screenshot from 2021-12-05 00-03-04.png](Curso%20de%20M%2005f12/Screenshot_from_2021-12-05_00-03-04.png)
+![Screenshot from 2021-12-05 00-03-04.png](img/distribución_binomial.png)
 
-**Ejemplo utilizando Dsitribución binomial**
+![Screenshot from 2021-12-05 00-03-04.png](img/distribución_binomial_2.png)
 
-[Google Colaboratory](https://colab.research.google.com/drive/1aaRI-9JDUEOj0tzn_iyiAh0dXp7trtcg?usp=sharing)
+**Otras Dsitribución**
+* Poisson
+* Geometrica
+* HiperGeometrica
+* Binomial Negativa
+
 
 # Distribuciones continuas
 
-[Google Colaboratory](https://colab.research.google.com/drive/1kbwrLeECW7x4p1SAjxllnChfJaek2Ase?usp=sharing)
+**Otras Dsitribución**
+* Pareto
+* Exponencial
 
-![Curso%20de%20M%2005f12/Untitled.png](Curso%20de%20M%2005f12/Untitled.png)
 
 # **¿Cómo estimar una distribución?**
 
