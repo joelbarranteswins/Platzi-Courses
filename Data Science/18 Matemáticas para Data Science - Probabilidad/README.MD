@@ -322,7 +322,6 @@ El objetivo del MLE es encontrar la manera más óptima de encajar una distribuc
 
 ## MLE en Machine Learning
 
-![Curso%20de%20M%2005f12/Untitled%201.png](Curso%20de%20M%2005f12/Untitled%201.png)
 
 ![https://static.platzi.com/media/user_upload/5-ea11996f-4c43-46dd-bb46-27843c1554ef.jpg](https://static.platzi.com/media/user_upload/5-ea11996f-4c43-46dd-bb46-27843c1554ef.jpg)
 
@@ -350,6 +349,8 @@ $$
 
 [Teorema de Bayes - Probabilidades - Ejercicios Resueltos](https://www.youtube.com/watch?v=CP4ToX5Tyvw)
 
+<img src="img/terorema_de_bayes.png">
+
 # Bayes en Machine Learning
 
 De la misma manera que el algoritmo MLE, consiste en maximizar la probabilidad para ajustarla mejor a los datos:
@@ -363,3 +364,5 @@ $$
 $$
 
 Eliminamos $P(D)$ puesto que es el mismo valor para el conjuto de datos
+
+<img src="img/naive_bayes.png">
