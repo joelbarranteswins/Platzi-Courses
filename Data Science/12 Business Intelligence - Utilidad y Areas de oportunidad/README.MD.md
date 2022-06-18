@@ -1,12 +1,10 @@
 # Business Intelligence: Utilidad y Áreas de Oportunidad
 
-[01-slides_bi_d063883c-4d34-4fad-bc00-9a369c3217bc.pdf](https://static.platzi.com/media/public/uploads/01-slides_bi_d063883c-4d34-4fad-bc00-9a369c3217bc.pdf)
-
 # INTRODUCCION
 
 Cuando hablamos de inteligencia de negocio nos referimos a utilizar la información que existe dentro de la organización estructurada y no estructurada con la utilidad de colaborar en la toma de decisiones. 
 
-![Untitled](Business%20I%20064b3/Untitled.png)
+![Untitled](imgs/Untitled.png)
 
 BI ⇒ Análisis descriptivo del presente. ¿Qué paso durante este tiempo y que esta pasando actualmente?
 
@@ -14,17 +12,17 @@ DS⇒ Nos van a hablar de predicciones para saber a donde queremos ir.
 
 Existen tres grandes etapas dentro del trabajo : Preparación, descubrimiento y presentación de la información.  A la hora de hablar sobre la preparación es necesario tener en cuenta los  ETL (Extract, Transform y Load the information) 
 
-![Untitled](Business%20I%20064b3/Untitled%201.png)
+![Untitled](imgs/Untitled%201.png)
 
-Exploración: Indagación, ¿Qué sucede con la data?
-Descubrimiento: ¿Cuál es mi mejor producto? ¿Cuál el peor? ¿Cuál es el mejor usuario?
-Reporting: 
+**Exploración:** Indagación, ¿Qué sucede con la data?
+**Descubrimiento:** ¿Cuál es mi mejor producto? ¿Cuál el peor? ¿Cuál es el mejor usuario?
+**Reporting:** 
 
-1. VD: La manera en que presentamos la información. 
-2. ST: ¿Cómo vamos a narrar los eventos?
-3. Recomendaciones ⇒ Etapa fundamental sobre lo que encontramos para la toma de decisiones. 
+1. VISUALIZACION DE DATOS: La manera en que presentamos la información. 
+2. STORY TELLING: ¿Cómo vamos a narrar los eventos?
+3. RECOMENDACIONES ⇒ Etapa fundamental sobre lo que encontramos para la toma de decisiones. 
 
-![Untitled](Business%20I%20064b3/Untitled%202.png)
+![Untitled](imgs/Untitled%202.png)
 
 # Fundamentos
 
@@ -32,10 +30,10 @@ Reporting:
 
 En español son las personas de interés. Son todos aquellos grupos o personas que rodean a la empresa (o se involucran dentro de su circuito comercial u operativo) manteniendo alguna relación o interés en la organización. 
 
-![Untitled](Business%20I%20064b3/Untitled%203.png)
+![Untitled](imgs/Untitled%203.png)
 
-> **🚄 Dentro del rol del analista de BI es fundamental no perder de vista el interés de los SH.**
-> 
+> **🚄 Dentro del rol del analista de BI es fundamental no perder de vista el interés de los StackeHolders.**
+
 
 Ejemplos:
 
@@ -44,11 +42,11 @@ Ejemplos:
 3. Empleados: Seguridad y Estabilidad. Crecimiento profesional. 
 4. Proveedores: Relación de estabilidad e ingresos. 
 
-***Es necesario priorizar los SH dependiendo cada organización. En caso de las empresas tradicionales: Accionistas, Clientes, Empleados. En el caso de las Startup: Clientes, Empleados y Accionistas.*** 
+***Es necesario priorizar los SH dependiendo cada organización. En caso de las empresas tradicionales: 1. Accionistas, 2. Clientes, 3. Empleados. En el caso de las Startup: 1. Clientes, 2. Empleados y 3. Accionistas.*** 
 
 ## 3. Tipo de empresa: venta de producto o servicios.
 
-![Untitled](Business%20I%20064b3/Untitled%204.png)
+![Untitled](imgs/Untitled%204.png)
 
 ¿Cómo diferenciar una empresa de servicios de una empresa de bienes? Principalmente, el "Costo" mas significativo en una empresa que comercializa bienes es el CMV. En el caso de las operaciones realizadas en empresas de prestación de servicios, cuenta con gastos operativos significativos que abarcan nomina, honorarios y prestadores. 
 
@@ -95,7 +93,7 @@ La diferencia entre el precio de venta de los producto y los costos asociados al
 
 Nos ayuda a encontrar o entender nuestro punto de equilibro o "Break Even Point". Es el momento en que no tenemos ni ganancias, ni perdidas. 
 
-![Untitled](Business%20I%20064b3/Untitled%205.png)
+![Untitled](imgs/Untitled%205.png)
 
 ## 7. Razones Matemáticas.
 
