@@ -12,22 +12,10 @@
 			"name": "8 Programación Orientada a Objetos POO",
 			"path": "Data Science\\8 Programación Orientada a Objetos POO"
 		},
-		{
-			"name": "1 Curso de Introducción a C#",
-			"path": "Desarrollo con ASP .NET\\1 Curso de Introducción a C#"
-		},
-		{
-			"name": "15 Manipulación y Análisis de Datos con Pandas y Python",
-			"path": "Data Science\\15 Manipulación y Análisis de Datos con Pandas y Python"
-		},
 
 		{
 			"name": "1 Introducción al Pensamiento Computacional con Python",
 			"path": "Desarrollo Backend con Python y Django\\1 Introducción al Pensamiento Computacional con Python"
-		},
-		{
-			"name": "DataAcademy",
-			"path": "Data Science\\DataAcademy"
 		},
 		{
 			"name": "12 Business Intelligence - Utilidad y Areas de oportunidad",
