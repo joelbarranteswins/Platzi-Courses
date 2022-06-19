@@ -87,10 +87,14 @@ Costos
 - **Costo variable:** están relacionados a una actividad, en donde a mayor actividad, mayor costo; como con las ventas y los COGS
 - **Costo semivariable:** es fijo hasta cierto punto y luego variable, como la electricidad
 
-## 6. Margen de contribución.
+## 6. Margen de contribución y Punto de Equilibrio
+
+* Margen de contribución
+Margen de contribucion = precio del producto - Costo de produccion
 
 La diferencia entre el precio de venta de los producto y los costos asociados al mismo. 
 
+* Punto de Equilibrio
 Nos ayuda a encontrar o entender nuestro punto de equilibro o "Break Even Point". Es el momento en que no tenemos ni ganancias, ni perdidas. 
 
 ![Untitled](imgs/Untitled%205.png)
@@ -130,7 +134,7 @@ Tipos de archivo utilizados: Excel, XLX, CSV, Textos,.
 
 La información contiene errores de integridad, de ortografía, no se encuentra estandarizada o es incompleta. Por lo tanto, es necesario trabajar sobre ella para transformar un dato en información relevante. 
 
-- Garbage in & Garbage Out se refiere a que si ingresas contenido basura al analaisis, tendrás como resultado contenido basura.
+- Garbage in & Garbage Out se refiere a que si ingresas contenido basura al analisis, tendrás como resultado contenido basura.
 - Python + librerias como Numby y Pandas.
 - Excel
 
