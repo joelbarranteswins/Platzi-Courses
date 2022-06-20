@@ -366,3 +366,14 @@ $$
 Eliminamos $P(D)$ puesto que es el mismo valor para el conjuto de datos
 
 <img src="img/naive_bayes.png">
+
+
+
+
+
+
+
+
+## En el siguiente enlace te permite calcular la probabilidad de las distribuciones
+
+* https://stattrek.com/online-calculator/binomial
