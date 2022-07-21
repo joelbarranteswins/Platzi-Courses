@@ -9,26 +9,46 @@ class Program
 {
     static public void Main(string[] strings)
     {
-        
+        Printer.WriteLine(mensaje: "Colegio 4500", color: ConsoleColor.Magenta);
+
         var engine = new EscuelaEngine();
         engine.Inicialize();
         ImprimirCursosEscuela(engine.Escuela);
+        ImprimirCursosEvaluaciones(engine.Escuela);
 
-        WriteLine(Printer.Imprimir(len: 10, color: ConsoleColor.Green));
-
+        
     }
+
+    
 
     private static void ImprimirCursosEscuela(Escuela escuela)
     {
-        //if (escuela != null && escuela.cursos != null)
         if (escuela?.cursos != null)
         {
-            foreach (var cursos in escuela.cursos)
+            Console.WriteLine("----------------------------------------------------");
+            foreach (var curso in escuela.cursos)
             {
-                Console.WriteLine(cursos.Nombre + "," + cursos.UniqueId);
+                Console.WriteLine(curso.Nombre + "," + curso.UniqueId);
             }
         }
-        
+    }
+
+    private static void ImprimirCursosEvaluaciones(Escuela escuela)
+    {
+        if (escuela?.cursos != null)
+        {
+            Console.WriteLine("----------------------------------------------------");
+            foreach (var curso in escuela.cursos)
+            {
+                foreach (var asignatura in curso.Asignaturas)
+                {
+                    foreach (var evaluacion in asignatura.Evaluaciones)
+                    {
+                        Console.WriteLine(evaluacion.ToString());
+                    }
+                }
+            }
+        }
     }
 
 }
