@@ -2,6 +2,8 @@
 
 Xamarin es una plataforma de desarrollo que nos permite construir aplicaciones **multiplataforma.** Expone las APIs de los sistemas operativos mas importantes en el espacio móvil hacia el mundo de .NET para que los desarrolladores de C# puedan usar dichas APIs para construir aplicaciones multiplataforma.
 
+![net-standard](./imgs/Xamarin.Forms.png)
+
 **Características:**
 La interfaz de usuario que se desarrollan con Xamarin son nativas
 Código compartido entre todas las plataformas
@@ -17,6 +19,8 @@ Busca los repositorios:
 * github.com/xamarin/Xamarin.Forms
 
 ## 1. Introducción a Instalación de Visual Studio .NET y Herramientas
+
+![net-standard](./imgs/dev-environment.png)
 
 ### Visual Studio.NET
 
@@ -110,9 +114,82 @@ Hay dos maneras de compartir código en una aplicación de Xamarin.Forms:
 
 La anatomía o estructura de archivos creada por Visual Studio .NET para tu aplicación, va a depender inicialmente del sistema operativo en el que estés trabajando y de los SDKs y opciones particulares que tengas instalados.
 
-### A manera general, la estructura es la siguiente:
+### A manera general, la estructura es la siguiente
 
 1. Proyecto de código común (.NET Standard o shared project según configuración)
 2. App de Android
 3. App de iOS
 4. App de UWP
+
+## Arquitectura de Xamarin.Forms
+
+**.NET Standar Library como base de todo:**
+
+~~~batch
+    App
+    |__ MainPage (la UI)
+    |   |__ Página raíz 
+    |   |__ Diccionario de recursos globales
+    |__ Resources (Recursos globales de toda la aplicacion)
+    |__ Eventos del Ciclo de Vida
+    |__ Propiedades de la aplicación
+~~~
+
+**que da soporte a:**
+
+~~~batch
+    MyApp(.Droid, .iOS, .UWP) según la plataforma
+    |__ Modelo de Aplicación
+    |__ SDK (Xamarin.Android ó Xamarin.iOS o UWP) según la plataforma
+    |__ Lógica específica
+~~~
+
+**Ensamblados:**
+
+~~~batch
+    Principales
+    |__Xamarin.Forms.Core.dll
+    |__Xamarin.Forms.Platform.dll
+    |__Xamarin.Forms.Xaml.dll
+    - Plataforma específica
+    - Paquete de Nuget Xamarin.Forms (y demás componentes adicionales)
+~~~
+
+**Jerarquía de Clases:**
+
+~~~batch
+    BindableObject
+        Element
+        -Visual Element
+        - View
+        - Layout
+        - Page
+            Cell
+~~~
+
+![net-standard](./imgs/xamarin-classes.png)
+
+El esquema de la Arquitectura de Xamarin.Forms y la Jerarquía de Clases están disponibles en las diapositivas del curso.
+
+![net-standard](./imgs/architecture-xamarin-forms.png)
+
+## Sistema de Propiedades Enlazables
+
+Las Propiedades Enlazables son una característica esencial de los sistemas basados en XAML, se implementa en Xamarin.Forms a través de la clase base BindableObjects, de la que derivan todas las demás clases de la API. Son propiedades cuyo valor no lo determinas tú sino que está en función de una gran cantidad de estímulos a su alrededor.
+
+**Funcionalidades que ofrecen las Propiedades Enlazables:**
+
+* Enlace a Datos
+* Estilización y Plantillas
+* Animación
+* Notificación de cambio de valor
+
+![net-standard](./imgs/precedencia-valores.png)
+
+De las anteriores, el valor determinado por una Animación activa es el que tiene mayor precedencia con respecto a todos los demás, siendo el valor por default el de menor jerarquía.
+
+**BindableObject:**
+![net-standard](./imgs/bindable-object.png)
+![net-standard](./imgs/bindable-property.png)
+
+Las Propiedades Enlazables están disponibles a través del BindableObject y son del tipo BindableProperty. Al definirlas, deben ser public, static, readonly, y su nombre debe tener el sufijo “Property”. Se accede a través de una propiedad CLR tradicional y puede indicar un callback de manera opcional
