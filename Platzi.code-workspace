@@ -1,0 +1,44 @@
+{
+	"folders": [
+		{
+			"name": "Platzi-Home",
+			"path": "."
+		},
+		{
+			"name": ".Net",
+			"path": "./Desarrollo Backend con C# y .NET"
+		}
+		// {
+		// 	"name": "5 Curso Profesional de Git y GitHub",
+		// 	"path": "Data Science\\5 Curso Profesional de Git y GitHub"
+		// },
+		// {
+		// 	"name": "1 Introducción al Pensamiento Computacional con Python",
+		// 	"path": "Desarrollo Backend con Python y Django\\1 Introducción al Pensamiento Computacional con Python"
+		// },
+		// {
+		// 	"name": "15.5 Manipulación y Transformación de Datos con Pandas y NumPy",
+		// 	"path": "Data Science\\15.5 Manipulación y Transformación de Datos con Pandas y NumPy"
+		// },
+		// {
+		// 	"name": "15.6 Visualización de Datos con Matplotlib y Seaborn",
+		// 	"path": "Data Science\\15.6 Visualización de Datos con Matplotlib y Seaborn"
+		// },
+		// {
+		// 	"name": "12 Business Intelligence - Utilidad y Areas de oportunidad",
+		// 	"path": "Data Science\\12 Business Intelligence - Utilidad y Areas de oportunidad"
+		// },
+		// {
+		// 	"name": "13 Visualización de Datos para Business Intelligence",
+		// 	"path": "Data Science\\13 Visualización de Datos para Business Intelligence"
+		// },
+		// {
+		// 	"name": "14 Tableu - Visualización de Datos y Storytelling para Negocios",
+		// 	"path": "Data Science\\14 Tableu - Visualización de Datos y Storytelling para Negocios"
+		// }
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "plus",
+		"FSharp.suggestGitignore": false
+	}
+}
