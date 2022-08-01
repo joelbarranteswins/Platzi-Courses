@@ -1,2 +1,0 @@
-class payment:
-    id = int
