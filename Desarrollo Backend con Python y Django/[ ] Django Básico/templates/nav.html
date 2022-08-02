@@ -1,0 +1,37 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg fixed-top" id="main-navbar">
+  <div class="container">
+
+    <a class="navbar-brand pr-5" style="border-right: 1px solid #efefef;" href="{% url 'feed' %}">
+      <img src="{% static 'img/instagram.png' %}" height="45" class="d-inline-block align-top"/>
+    </a>
+
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item">
+          <a href="">
+            {% if request.user.profile.picture %}
+            <img src="{{ request.user.profile.picture.url }}" height="35" class="d-inline-block align-top rounded-circle"/>
+            {% else %}
+              <img src="{% static 'img/default-profile.png' %}" height="35" class="d-inline-block align-top rounded-circle"/>
+            {% endif %}
+          </a>
+        </li>
+
+        <li class="nav-item nav-icon">
+          <a href="{% url 'create_post' %}">
+            <i class="fas fa-plus"></i>
+          </a>
+        </li>
+
+        <li class="nav-item nav-icon">
+          <a href="{% url 'logout' %}">
+            <i class="fas fa-sign-out-alt"></i>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
