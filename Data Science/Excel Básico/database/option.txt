@@ -1,0 +1,31 @@
+option_id 	option_name
+1201	Macbook Pro 13.3-inch
+1202	Macbook Pro 15.4-inch
+1301	Macbook Air 11.6-inch
+1302	Macbook Air 13-inch
+1401	Iphone X 128GB
+1402	Iphone X 256GB
+1501	Iphone 7 64GB
+1502	Iphone 7 32GB
+1601	Iphone 8 64GB
+1602	Iphone 8 128GB
+1701	Ipad Air 9.7-inch
+1702	Ipad Air 12-inch
+1801	Ipad Mini 7.9-inch
+1802	Ipad Mini 10-inch
+1901	ESC8000 G3 - 8 G Intel Xeon E5-1603 V4(2.80GHz,140W,L3:10M)
+1902	ESC8000 G3 - 8 G Intel Xeon E5-1620 v3 (3.5G,140W,L3:10M,4C,HT)
+2001	ESC8000 G4 - 8 G Intel Xeon E5-1603 v3 (3.5G,140W,L3:10M,4C,HT)
+2002	ESC8000 G4 - 8 G Intel Xeon E5-1620 v3 (3.5G,140W,L3:10M,4C,HT)
+2101	XPS 13 - 5080 8GB LPDDR3 1866MHz
+2102	XPS 13 - 5080 16GB LPDDR3 1866MHz
+2201	XPS 15- 5070 256GB PCIe Solid State Drive
+2202	XPS 15- 5070 500GB PCIe Solid State Drive
+2301	Monoprice Ultra Slim Series High Speed HDMI Cable - 4K - Length - 1ft
+2302	Monoprice Ultra Slim Series High Speed HDMI Cable - 4K - Length - 1.5ft
+2401	Monoprice Ultra Slim Series High Speed HDMI Cable - 4K - Length - 3ft
+2402	Monoprice Ultra Slim Series High Speed HDMI Cable - 4K - Length - 5ft
+2501	COWIN E7 PRO - Black
+2502	COWIN E7 PRO - Red
+2601	COWIN E7 PRO - Pink
+2602	COWIN E7 PRO - White
