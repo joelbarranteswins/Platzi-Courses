@@ -1,0 +1,34 @@
+lee todos los archivos ocultos y no ocultos
+> ls -la  
+
+iniziliza el git
+> git init
+
+abre un archivo
+> touch --help
+
+en linux -> man touch
+
+~creo un fichero con contenido
+> echo "Hola caracola" > file.txt
+
+ver el contenido
+> cat file.txt
+
+Concatena mas contenido
+> echo "Hola caracola" >> file.txt
+
+modificar como un entorno
+> nano file.txt
+
+remover, pero no borra carpetas
+> rm file2.txt
+
+crear carpeta
+> mkdir name_carpeta
+
+remover carpetas
+> rm -rf name_carpeta
+
+abrir un buscador
+> explorer .

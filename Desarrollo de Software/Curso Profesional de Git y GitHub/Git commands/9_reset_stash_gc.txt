@@ -1,0 +1,49 @@
+GIT RESET
+
+git reset --mixed codigo_sexagesimal_del_commit
+git reset --soft
+git reset --hard
+
+mixed (por defecto)
+- descarta commit
+- descarta Staging Area (index)
+- guardan Working directory
+
+soft
+- descarta commit
+- guardan Staging Area (index)
+- guardan Working directory
+
+hard
+- descarta commit
+- descarta Staging Area (index)
+- descarta Working directory
+
+--------------------------------------------------------------------------
+cambiar el autor en un commit
+git commit -m "nuevo" --amend --author="silvester stallon<silvester@stalon.com>"
+
+
+
+replicar un commit de otra rama a la rama master (dos commits diferentes
+para cada rama) - no es un merge
+git cherry-pick 33e6c48
+
+----------------------------------------------------------------------
+los stash son lo que tenemos en el Stagin Area, sirven para guardar
+como refencia de nuestro staging Area que debemos hacer commit o sincronizar
+> git stash
+
+para borrar
+> git stash pop
+
+----------------------------------------------------------------------
+llamar al recolector de basura, que queremos eliminar y ocupe menos spacio
+se debe llamar cada cierto tiempo (garbash collector)
+> git gc
+
+
+
+-----------------------------------------------------------------------
+como salir de vim
+:q!
