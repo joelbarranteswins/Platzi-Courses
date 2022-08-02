@@ -32,6 +32,7 @@ stateDiagram-v2
 ## Base de Datos
 
 * [Fundamentos de Bases de Datos](https://github.com/joelbarranteswins/Platzi-Courses/tree/main/Base%20de%20datos/1%20Fundamento%20de%20bases%20de%20datos)
+* [x] Curso de PostgreSQL
 
 ## Data Science
 
@@ -55,24 +56,33 @@ stateDiagram-v2
 
 * Curso de Introducción a C#
 * Curso de C# con .Net Core
-* Curso de C# con .Net Core 2
+* [x] Curso de C# con .Net Core 2
 * Fundamentos de Entity Framework
-* API con .NET
-* ASP.NET Core
-* Desarrollo Web con Blazor y .Net
-* Curso de Xamarin.Forms
+* [x] API con .NET
+* [x] ASP.NET Core
+* [x] Desarrollo Web con Blazor y .Net
+* [x] Curso de Xamarin.Forms
 
 ## Desarrollo Backend con Python y Django
 
 * Introducción al Pensamiento Computacional con Python
 * Introducción al Desarrollo Backend
+* [x] Django Básico
+* [x] POO y Algoritmos con Python
 
 ## Desarrollo de Software
 
+* [x] Fundamentos de Ingeniería de Software
 * Curso Profesional de Git y GitHub
 * Introducción a la Terminal y Línea de Comandos
 * Programación Orientada a Objetos POO
+* [x] Curso de Buenas Prácticas para Escritura de Código
+* [x] Curso Profesional de Arquitectura de Software
+* [x] Fundamentos de Arquitectura de Software
 
 ## Desarrollo Web
 
 * Curso Definitivo de HTML y CSS
+* [x] JavaScript Básico
+
+<img src="https://media4.giphy.com/media/YnS7j9pwnECXLMrI4t/giphy.gif?cid=790b7611bcac33f8180fa033a644a3a80b8c473654503079&rid=giphy.gif&ct=s">
