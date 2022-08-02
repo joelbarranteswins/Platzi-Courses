@@ -1,0 +1,18 @@
+/* * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+} */
+
+/* body {
+    font-size: 20px;
+} */
+
+.text-container {
+    font-size: 1.5em;
+}
+
+.text-container div {
+    font-size: 1.5em;
+}

@@ -1,0 +1,31 @@
+.main-nav {
+    margin-top: 20px; /* 20px para que quede más arriba que el header */
+    list-style: none; /* Elimina los puntos de la lista */
+    padding: 0;  /* dimension interna - a indentacion */
+    background-color: #13a4a4; /* color de fondo */
+}
+
+.main-nav__item {
+    display: inline-block; /* para que se muestren en linea */
+
+}
+
+.main-nav__item a {
+    color: white; /* color de texto */
+    padding: 5px; /* espacio entre los elementos */
+    border-radius: 2px; /* redondear los bordes */
+    text-decoration: none; /* Elimina los puntos de la lista */
+}
+
+.main-nav__item a:hover { /*hover es un efecto*/
+    color: blue; /* color de texto */
+}
+
+.main-nav__item a:active { 
+    color: red; /* color de texto */
+}
+
+.main-nav__item a::after { /*::after es una etiqueta de CSS*/
+    content: " | "; /* contenido de la etiqueta */
+
+}
