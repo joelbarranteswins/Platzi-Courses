@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pomodoro.RootPage"
+             xmlns:pages="clr-namespace:Pomodoro"
+             xmlns:viewModels="clr-namespace:Pomodoro.ViewModels;assembly=Pomodoro">
+    <MasterDetailPage.BindingContext>
+        <viewModels:RootPageViewModel />
+    </MasterDetailPage.BindingContext>
+    
+  <MasterDetailPage.Master>
+        <ContentPage Title="Master">
+            <ListView ItemsSource="{Binding MenuItems}"
+                      SelectedItem="{Binding SelectedMenuItem, Mode=TwoWay}" />
+        </ContentPage>
+  </MasterDetailPage.Master>
+    
+  <MasterDetailPage.Detail>
+    <NavigationPage>
+      <x:Arguments>
+        <pages:RootPageDetail />
+      </x:Arguments>
+    </NavigationPage>
+  </MasterDetailPage.Detail>
+    
+</MasterDetailPage>
