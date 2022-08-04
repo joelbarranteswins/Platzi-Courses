@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace webapi.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class WeatherForecastController : ControllerBase
 {
     private static readonly string[] Summaries = new[]
@@ -29,8 +29,12 @@ public class WeatherForecastController : ControllerBase
     }
 
     [HttpGet(Name = "GetWeatherForecast")]
+    //[Route("Get/weatherforecast")]
+    //[Route("Get/weatherforecast2")]
+    //[Route("[action]")] //permite utilizar el nombre para su llamado del api
     public IEnumerable<WeatherForecast> Get()
     {
+        _logger.LogDebug("Retornando el listado de WeatherForecast");
        return ListWeatherForecast;
     }
 
@@ -44,6 +48,10 @@ public class WeatherForecastController : ControllerBase
     [HttpDelete("{index}")]
     public IActionResult Delete(int index)
     {
+        if (index < 0 || index >= ListWeatherForecast.Count)
+        {
+            return BadRequest("The given ID is out of bounds.");
+        }
         ListWeatherForecast.RemoveAt(index);
         return Ok();
     }
