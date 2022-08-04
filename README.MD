@@ -57,8 +57,8 @@ stateDiagram-v2
 * [x] Curso de Introducción a C#
 * [x] Curso de C# con .Net Core
 * [ ] Curso de C# con .Net Core 2
-* Fundamentos de Entity Framework
-* [ ] API con .NET
+* [x] Fundamentos de Entity Framework
+* [x] API con .NET
 * [ ] ASP.NET Core
 * [ ] Desarrollo Web con Blazor y .Net
 * [ ] Curso de Xamarin.Forms
