@@ -13,8 +13,7 @@ Each School and Course has a Pattern
 
 ~~~mermaid
 stateDiagram-v2
-    state Home {
-        [*] --> School
+    state Platzi-courses {
         state School {
             [*] --> Course 
             state Course {
@@ -23,12 +22,27 @@ stateDiagram-v2
                 exercise --> scripts
                 [*] --> imgs: (folder)
                 [*] --> shared: (folder)
+                shared --> slides: (presentation file)
                 [*] --> README:(summary file)
             }
         }
+        [*] --> Certificates
+        state Certificates{
+            [*] --> certificate: (file)
+        }
     }
+
+
+
+    
+
+    
 ~~~
 
+~~~mermaid
+state Platzi-courses ##[dotted]green {}
+
+~~~
 ## Base de Datos
 
 * [x] [Fundamentos de Bases de Datos]()
