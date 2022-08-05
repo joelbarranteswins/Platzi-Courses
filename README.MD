@@ -30,22 +30,12 @@ stateDiagram-v2
         state Certificates{
             [*] --> certificate: (file)
         }
-    }
-
-
-
-    
-
-    
+    } 
 ~~~
 
-~~~mermaid
-state Platzi-courses ##[dotted]green {}
-
-~~~
 ## Base de Datos
 
-* [x] [Fundamentos de Bases de Datos]()
+* [x] Fundamentos de Bases de Datos
 * [ ] Curso de PostgreSQL
 
 ## Data Science
@@ -76,6 +66,9 @@ state Platzi-courses ##[dotted]green {}
 * [ ] ASP.NET Core
 * [ ] Desarrollo Web con Blazor y .Net
 * [ ] Curso de Xamarin.Forms
+* [ ] Desarrollo Web con Blazor y .Net
+* [ ] Web Apps y Logic Apps en Azure
+* [ ] Azure DevOps: Flujos de CI/CD
 
 ## Desarrollo Backend con Python y Django
 
@@ -86,6 +79,7 @@ state Platzi-courses ##[dotted]green {}
 
 ## Desarrollo de Software
 
+* [*] Curso Básico de Programación
 * [ ] Fundamentos de Ingeniería de Software
 * [x] Curso Profesional de Git y GitHub
 * [x] Introducción a la Terminal y Línea de Comandos
