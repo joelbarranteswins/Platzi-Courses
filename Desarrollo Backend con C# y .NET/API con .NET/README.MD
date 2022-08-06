@@ -1,4 +1,3 @@
-
 # API con .NET
 
 ## 1. ¿Qué es una API?
@@ -23,7 +22,7 @@ Caracteristicas:
 
 Una API de REST, o API de RESTful, es una interfaz de programación de aplicaciones (API o API web) que se ajusta a los límites de la arquitectura REST y permite la interacción con los servicios web de RESTful. El informático Roy Fielding es el creador de la transferencia de estado representacional (REST).
 
-* REST
+* REST (Representational state transfer)
 
 REST no es un protocolo ni un estándar, sino más bien un conjunto de límites de arquitectura. Los desarrolladores de las API pueden implementarlo de distintas maneras.
 
@@ -102,3 +101,38 @@ En mi caso tuve conflicto al seguir el ejemplo del video ya que no existía un a
 
 ## Atributos para verbos HTTP
 
+## Minimal API vs. Web API
+
+![minimal-api](./imgs/minimal-api.png)
+
+![minimal-vs-web](./imgs/minimal-api-vs-web-api.png)
+
+## ¿Qué son los middlewares?
+
+**Middleware**
+
+* Código que se agrega al ciclo de vida de un petición HTTP
+
+* Su ejecución es por capas
+
+* Facilita la implementación de interceptores y filtros sobre las peticiones HTTP
+
+![minimal-vs-web](./imgs/middleware-cicle.png)
+
+![minimal-vs-web](./imgs/middleware-order.png)
+
+**Custom Middleware**
+Deben de estar antes del EndPoint y despues de la authorization
+
+## 6. Agregando librerías para Entity Framework
+
+## Nugets packages
+
+**Entity Framework Core:**
+> dotnet add package Microsoft.EntityFrameworkCore
+
+**Entity Framework In Memory:**
+> dotnet add package Microsoft.EntityFrameworkCore.InMemory
+
+**Entity Framework SQL Server:**
+> dotnet add package Microsoft.EntityFrameworkCore.SqlServer
