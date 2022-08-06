@@ -79,7 +79,7 @@ stateDiagram-v2
 
 ## Desarrollo de Software
 
-* [*] Curso Básico de Programación
+* [x] Curso Básico de Programación
 * [ ] Fundamentos de Ingeniería de Software
 * [x] Curso Profesional de Git y GitHub
 * [x] Introducción a la Terminal y Línea de Comandos
