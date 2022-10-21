@@ -35,7 +35,7 @@ Tenemos dos grandes estándares para crear las APIs:
 * **Rest (Representational State Transfer):** Utiliza otro lenguaje JSON (Javascript Objet Notation). Un JSON no es más que un diccionario de Python. Los diccionarios de Python son lo mismo que los objetos de JS.
 
 <center>
-<img src="./img/JSON.webp">
+<img src="./imgs/JSON.webp">
 </center>
 
 ## El lenguaje que habla Internet: HTTP
@@ -44,7 +44,7 @@ HTTP: Hypertext Transfer Protocol
 
 peticion y respuesta en HTTP:
 
-<img src="./img/request.jpg">
+<img src="./imgs/request.jpg">
 
 **Request (petición) y Response (respuesta).**
 
@@ -54,15 +54,15 @@ Existen distintos métodos para una request, GET, DELETE, POST, etc.
 
 Aquí un ejemplo Request HTTP:
 
-<img src="./img/http_request.png">
+<img src="./imgs/http_request.png">
 
 A esto se responde con un Response, aquí dejo un ejemplo:
 
-<img src="./img/http_response.png">
+<img src="./imgs/http_response.png">
 
 status code de HTTP (codigo de respuesta), respuestas:
 
-<img src="./img/http_message.png">
+<img src="./imgs/http_message.png">
 
 ### **la web:**
 
@@ -99,7 +99,7 @@ En mi computadora, las cosas van a vivir en un entorno local:
 
 port: es el puerto en la que se trabaja y lo normal es 8000. puede ser cualquier numero siempre que este disponible.
 
-<center><img src="./img/flujo_de_desarrollo_web.png"></center>
+<center><img src="./imgs/flujo_de_desarrollo_web.png"></center>
 
 
 ver datacenter aca: https://www.datacenters.com/locations
@@ -186,7 +186,7 @@ A esto se le llama No Code
 * Slack
 * WordPress
 
-<center><img src="./img/servidores.png"></center>
+<center><img src="./imgs/servidores.png"></center>
 
 
 ## Proyecto: diseño y bosquejo de una API
@@ -247,4 +247,4 @@ PD: La simplificación no tiene nada de malo pero esta simplemente es una forma 
 
 6. Ruby: aUno de sus fuertes es su comunidad, el framework a elegir sería Ruby On Rails (RoR).
 
-<center><img src="./img/lenguajes_y_frameworks.png"></center>
+<center><img src="./imgs/lenguajes_y_frameworks.png"></center>

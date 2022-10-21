@@ -3,7 +3,7 @@
 </div>
 
 <div align="center"> 
-  <img src="img/python.png" width="250">
+  <img src="imgs/python.png" width="250">
 </div>
 
 
@@ -68,7 +68,7 @@ Posiblemente la primera computadora fue creada por los **antiguos griegos** el c
 
 <br>
 <div align="center"> 
-  <img src="img/computadora-griega.jpg" width="250">
+  <img src="imgs/computadora-griega.jpg" width="250">
   <h5>Mecanismo Anticitera</h5>
 </div>
 <br>
@@ -77,7 +77,7 @@ Miles de años después se creo el **telar de Jacquard**, en donde las se creaba
 
 <br>
 <div align="center"> 
-  <img src="img/Telar-de-Jacquard.jpg" width="350">
+  <img src="imgs/Telar-de-Jacquard.jpg" width="350">
   <h5>Telar de Jacquard</h5>
 </div>
 <br>
@@ -86,7 +86,7 @@ Después llego el **motor analítico de Charles Babbage**, el cual ocupo la tecn
 
 <br>
 <div align="center"> 
-  <img src="img/motor-babbage.jpg" width="350">
+  <img src="imgs/motor-babbage.jpg" width="350">
   <h5>Motor analítico de Charles Babbage</h5>
 </div>
 <br>
@@ -95,7 +95,7 @@ A finales del siglo XIX el gobierno de EE.UU. tenia serios problemas para realiz
 
 <br>
 <div align="center"> 
-  <img src="img/maquina-tabuladora.jpg" width="350">
+  <img src="imgs/maquina-tabuladora.jpg" width="350">
   <h5>Máquina Tabuladora</h5>
 </div>
 <br>
@@ -104,9 +104,9 @@ Antiguamente existía la **profesión de computadora**, la cual eran personas qu
 
 <br>
 <div align="center"> 
-  <img src="img/church_alonzo.jpg" height="200">
-  <img src="img/alan-turing.jpg" height="200">
-  <img src="img/eniac.jpg" height="200">
+  <img src="imgs/church_alonzo.jpg" height="200">
+  <img src="imgs/alan-turing.jpg" height="200">
+  <img src="imgs/eniac.jpg" height="200">
   <h5>Alonzo Chruch, Alan Turing y la maquina ENIAC respectivamente.</h5>
 </div>
 <br>
@@ -115,14 +115,14 @@ Antiguamente existía la **profesión de computadora**, la cual eran personas qu
 
 <br>
 <div align="center"> 
-  <img src="img/neumann-edvac.jpeg" width="350">
+  <img src="imgs/neumann-edvac.jpeg" width="350">
   <h5>John von Neumann junto a la maquina EDVAC.</h5>
 </div>
 <br>
 
 <br>
 <div align="center"> 
-  <img src="img/arquitectura-neumann.png" width="350">
+  <img src="imgs/arquitectura-neumann.png" width="350">
   <h5>La arquitectura von Neumann.</h5>
 </div>
 <br>
@@ -131,8 +131,8 @@ Con la llegada de los **microchips** llego la pauta para la computación de hoy 
 
 <br>
 <div align="center"> 
-  <img src="img/microchips.jpg" height="200">
-  <img src="img/oblea-silicio.jpg" height="200">
+  <img src="imgs/microchips.jpg" height="200">
+  <img src="imgs/oblea-silicio.jpg" height="200">
   <h5>Microchip y Oblea de Silicio respectivamente.</h5>
 </div>
 <br>
@@ -141,7 +141,7 @@ Ya en nuestros tiempos llego la **nube**, el cual son data centers que no son ma
 
 <br>
 <div align="center"> 
-  <img src="img/nube.jpg" width="350">
+  <img src="imgs/nube.jpg" width="350">
   <h5>Sala de servidores de una nube</h5>
 </div>
 <br>
@@ -150,8 +150,8 @@ Ya en nuestros tiempos llego la **nube**, el cual son data centers que no son ma
 
 <br>
 <div align="center"> 
-  <img src="img/feynman.jpeg" height="200">
-  <img src="img/computador-cuantico.png" height="200">
+  <img src="imgs/feynman.jpeg" height="200">
+  <img src="imgs/computador-cuantico.png" height="200">
   <h5>Richard Feyman y una computadora cuántica respectivamente.</h5>
 </div>
 <br>
@@ -166,7 +166,7 @@ Un **algoritmo** es una _lista finita de instrucciones_ que describen un cómput
 
 <br>
 <div align="center"> 
-  <img src="img/lovelace.jpg" width="350">
+  <img src="imgs/lovelace.jpg" width="350">
   <h5>Ada Lovelace</h5>
 </div>
 <br>
@@ -175,7 +175,7 @@ Un **algoritmo** es una _lista finita de instrucciones_ que describen un cómput
 
 <br>
 <div align="center"> 
-  <img src="img/Grace-Murray-Hopper.jpg" width="350">
+  <img src="imgs/Grace-Murray-Hopper.jpg" width="350">
   <h5>Grace Murray Hopper</h5>
 </div>
 <br>
@@ -184,7 +184,7 @@ En el sentido de la idea de los lenguajes de programación llega **Dennis Ritchi
 
 <br>
 <div align="center"> 
-  <img src="img/dennis-ritchie.jpg" width="350">
+  <img src="imgs/dennis-ritchie.jpg" width="350">
   <h5>Dennis Ritchie</h5>
 </div>
 <br>
@@ -194,7 +194,7 @@ En el sentido de la idea de los lenguajes de programación llega **Dennis Ritchi
 
 <br>
 <div align="center"> 
-  <img src="img/van-rossum.jpg" width="350">
+  <img src="imgs/van-rossum.jpg" width="350">
   <h5>Guido van Rossum</h5>
 </div>
 <br>
@@ -383,7 +383,7 @@ Los lenguajes tienen algo llamado **palabras reservadas**, estas son objetos den
 
 <br>
 <div align="center"> 
-  <img src="img/reserved-words-python.png" width="500">
+  <img src="imgs/reserved-words-python.png" width="500">
 </div>
 <br>
 
@@ -500,7 +500,7 @@ Además de los operadores de comparación también tenemos los operadores lógic
 
 <br>
 <div align="center"> 
-  <img src="img/operador-logico.png" width="500">
+  <img src="imgs/operador-logico.png" width="500">
 </div>
 <br>
 
@@ -860,7 +860,7 @@ Para verlo de forma gráfica buscaremos el valor 18 en la lista [1, 3, 5, 7, 9, 
 
 <br>
 <div align="center"> 
-  <img src="img/búsqueda-binaria.png" width="500">
+  <img src="imgs/búsqueda-binaria.png" width="500">
 </div>
 <br>
 
