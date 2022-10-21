@@ -49,12 +49,14 @@ stateDiagram-v2
 * [x] Curso Practico de Regresion Lineal Simple
 * [x] Curso Profesional de Python
 * [x] Business Intelligence - Utilidad y Areas de oportunidad
+* [ ] Visualización de Datos para Business Intelligence
 * [x] Manipulación y Análisis de Datos con Pandas y Python
 * [x] Manipulación y Transformación de Datos con Pandas y NumPy
 * [x] Visualización de Datos con Matplotlib y Seaborn
 * [x] Funciones Matemáticas para Data Science e Inteligencia Artificial
 * [x] Matemáticas para Data Science - Estadística Descriptiva
 * [x] Matemáticas para Data Science - Probabilidad
+* [x] Ética y Manejo de Datos para Data Science e Inteligencia Artificial
 
 ## Desarrollo Backend con C# y .NET
 
@@ -66,12 +68,12 @@ stateDiagram-v2
 * [ ] ASP.NET Core
 * [ ] Desarrollo Web con Blazor y .Net
 * [ ] Curso de Xamarin.Forms
-* [ ] Desarrollo Web con Blazor y .Net
 * [ ] Web Apps y Logic Apps en Azure
 * [ ] Azure DevOps: Flujos de CI/CD
 
 ## Desarrollo Backend con Python y Django
 
+* [x] Comprehensions, Funciones y Manejo de Errores (just exam)
 * [x] Introducción al Pensamiento Computacional con Python
 * [x] Introducción al Desarrollo Backend
 * [ ] Django Básico
