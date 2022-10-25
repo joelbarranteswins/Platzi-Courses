@@ -3,7 +3,7 @@
 </div>
 
 <div align="center"> 
-  <img src="readme_img/python.png" width="250">
+  <img src="imgs/python.png" width="250">
 </div>
 
 # Introducción al documento
@@ -618,7 +618,7 @@ Existen distintos tipos de complejidad algorítmica:
 - **O(n!) Factorial:** crece de forma **factorial**, por lo que al igual que el exponencial su carga es muy alta, por lo que jamas utilizar algoritmos de este tipo.
 
 <div align="center"> 
-  <img src="readme_img/big-o-complexity-chart.png" width="70%">
+  <img src="imgs/big-o-complexity-chart.png" width="70%">
 </div>
 
 # Algoritmos de búsqueda y ordenación
@@ -665,7 +665,7 @@ La **búsqueda binaria** es uno de los mejores algoritmos que se tienen hoy en d
 </div>
 
 <div align="center"> 
-  <img src="readme_img/binary-and-linear-search-animations.gif" width="70%">
+  <img src="imgs/binary-and-linear-search-animations.gif" width="70%">
 </div>
 
 <div align="center">
@@ -673,7 +673,7 @@ La **búsqueda binaria** es uno de los mejores algoritmos que se tienen hoy en d
 </div>
 
 <div align="center"> 
-  <img src="readme_img/linear-vs-binary-search-worst-case.gif" width="70%">
+  <img src="imgs/linear-vs-binary-search-worst-case.gif" width="70%">
 </div>
 
 <div align="center">
@@ -681,7 +681,7 @@ La **búsqueda binaria** es uno de los mejores algoritmos que se tienen hoy en d
 </div>
 
 <div align="center"> 
-  <img src="readme_img/linear-vs-binary-search-best-case.gif" width="70%">
+  <img src="imgs/linear-vs-binary-search-best-case.gif" width="70%">
 </div>
 
 Para ver de forma practica haremos una búsqueda binaria a través de código. Lo primero que tenemos que realizar es ordenar nuestra lista antes de ejecutar la búsqueda.
@@ -721,7 +721,7 @@ if __name__ == '__main__':
 El primer algoritmo de ordenamiento que veremos es el **ordenamiento de burbuja**. Es un algoritmo que recorre repetidamente una lista que necesita ordenarse. Compara elementos adyacentes y los intercambia si están en el orden incorrecto. Este procedimiento se repite hasta que no se requiere mas intercambios, lo que indica que la lista se encuentra ordenada.
 
 <div align="center"> 
-  <img src="readme_img/bubble-sort.gif" width="80%">
+  <img src="imgs/bubble-sort.gif" width="80%">
 </div>
 
 ```py
@@ -828,7 +828,7 @@ def ordenamiento_por_insercion(lista):
 El **ordenamiento por mezcla** creado por **John von Neumann** el cual aplica el concepto de "divide y conquista". Primero divide una lista en partes iguales hasta que quedan sublistas de 1 o 0 elementos. Luego las recombina en forma ordenada.
 
 <div align="center"> 
-  <img src="readme_img/merge-sort.gif" width="60%">
+  <img src="imgs/merge-sort.gif" width="60%">
 </div>
 
 ```py
@@ -925,7 +925,7 @@ deactivate          # Comando para desactivar ambiente Virtual
 Es importante que podamos traducir los datos que nos arrojan nuestro programa en un elemento visual, así podemos realizar reconocimientos de patrones, predicción de series, simplifica la interpretación y la conclusión acerca de los datos.
 
 <div align="center"> 
-  <img src="readme_img/grafico.svg" width="80%">
+  <img src="imgs/grafico.svg" width="80%">
 </div>
 
 ## Graficado simple
@@ -960,7 +960,7 @@ El concepto de **optimización** permite resolver muchos problemas de manera com
 ## El problema del morral
 
 <div align="center"> 
-  <img src="readme_img/backpack-problem.png" width="40%">
+  <img src="imgs/backpack-problem.png" width="40%">
 </div>
 
 Imagina que eres un ladrón que entra a un museo pero tienes un gran problema, nada mas tienes una mochila pero hay muchísimas cosas mas de las que puedes cargar, por lo cual debes determinar cuales artículos puedes cargar y te entregaran el mayor valor posible.
