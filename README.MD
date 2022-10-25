@@ -71,13 +71,18 @@ stateDiagram-v2
 * [ ] Web Apps y Logic Apps en Azure
 * [ ] Azure DevOps: Flujos de CI/CD
 
-## Desarrollo Backend con Python y Django
+## Desarrollo Backend con Python
 
-* [x] Comprehensions, Funciones y Manejo de Errores (just exam)
+* [x] Fundamentos de Python
+* [x] Comprehensions, Funciones y Manejo de Errores
 * [x] Introducción al Pensamiento Computacional con Python
+* [x] PIP y Entornos Virtuales
+* [] Estructuras de Datos Lineales con Python
+* [x] POO y Algoritmos con Python
 * [x] Introducción al Desarrollo Backend
-* [ ] Django Básico
-* [ ] POO y Algoritmos con Python
+* [] Curso Práctico de Python - Creación de un CRUD
+* [] Introducción a Selenium con Python
+
 
 ## Desarrollo de Software
 
