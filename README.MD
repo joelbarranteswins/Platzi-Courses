@@ -80,8 +80,9 @@ stateDiagram-v2
 * [] Estructuras de Datos Lineales con Python
 * [x] POO y Algoritmos con Python
 * [x] Introducción al Desarrollo Backend
-* [] Curso Práctico de Python - Creación de un CRUD
+* [x] Curso Práctico de Python: Creación de un CRUD
 * [] Introducción a Selenium con Python
+* [] Curso de FastAPI: Fundamentos, Path Operations y Validaciones
 
 
 ## Desarrollo de Software
@@ -99,5 +100,9 @@ stateDiagram-v2
 
 * [x] Curso Definitivo de HTML y CSS
 * [ ] JavaScript Básico
+
+## English
+
+* [x] Ruta de Beginner A1-A2
 
 <img src="https://media4.giphy.com/media/YnS7j9pwnECXLMrI4t/giphy.gif?cid=790b7611bcac33f8180fa033a644a3a80b8c473654503079&rid=giphy.gif&ct=s">
