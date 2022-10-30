@@ -82,8 +82,10 @@ stateDiagram-v2
 * [x] Introducción al Desarrollo Backend
 * [x] Curso Práctico de Python: Creación de un CRUD
 * [] Introducción a Selenium con Python
-* [] Curso de FastAPI: Fundamentos, Path Operations y Validaciones
-
+* [x] Curso de FastAPI: Fundamentos, Path Operations y Validaciones
+* [] Curso de FastAPI - Modularización, Datos Avanzados y Errores
+* [] Curso Django Básico 
+* [] Curso de Django Intermedio: Testing, Static Files, Django Admin
 
 ## Desarrollo de Software
 
