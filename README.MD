@@ -77,7 +77,7 @@ stateDiagram-v2
 * [x] Comprehensions, Funciones y Manejo de Errores
 * [x] Introducción al Pensamiento Computacional con Python
 * [x] PIP y Entornos Virtuales
-* [ ] Estructuras de Datos Lineales con Python
+* [x] Estructuras de Datos Lineales con Python
 * [x] POO y Algoritmos con Python
 * [x] Introducción al Desarrollo Backend
 * [x] Curso Práctico de Python: Creación de un CRUD
