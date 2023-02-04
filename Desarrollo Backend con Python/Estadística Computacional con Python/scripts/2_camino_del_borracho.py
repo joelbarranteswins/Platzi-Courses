@@ -35,7 +35,7 @@ class Borracho:
             axis_y.append(self.posicion[1])
 
         plt.scatter(x=axis_x, y=axis_y, c="r",
-                    alpha=0.3, s=5*len(axis_x), marker='.')
+                    alpha=0.3, s=5, marker='.')
         plt.plot(axis_x, axis_y, c="b", alpha=0.5,
                  linewidth=1, linestyle="--")
 
@@ -46,7 +46,7 @@ class Borracho:
 
 if __name__ == "__main__":
     borrachin = Borracho()
-    direccion_final = borrachin.camino_borrachos(pasos=100)
+    direccion_final = borrachin.camino_borrachos(pasos=20000)
     print(direccion_final)
     distancia_final = (direccion_final[0]**2+direccion_final[1]**2)**0.5
     print("La distancia final es: ", distancia_final)

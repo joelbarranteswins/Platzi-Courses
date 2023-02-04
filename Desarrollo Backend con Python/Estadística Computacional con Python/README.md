@@ -385,15 +385,16 @@ Al hablar de **probabilidad** preguntamos qué fracción de todos los posibles e
 - Ley del complemento:
     - P(A) + P(~A) = 1
 
-- Ley multiplicativa:
+- Ley multiplicativa (Solo si los eventos son independiente):
     - P(A y B) = P(A) * P(B)
 
 - Ley aditiva:
-    - Mutuamente exclusivos: P(A o B) = P(A) + P(B)
+    - Mutuamente exclusivos (no ocurren al mismo tiempo): P(A o B) = P(A) + P(B)
 
-    - No exclusivos: P(A o B) = P(A) + P(B) - P(A y B)
+    - No exclusivos (ocurre al mismo tiempo): P(A o B) = P(A) + P(B) - P(A y B)
     
-
+**Formular de la probabilidad:**
+$P(A) = Casos Exitosos / Numero total de Casos$
 
 Para ver un ejemplo práctico de las leyes anteriores vamos a realizar un ejercicio de el lanzamiento de un dado de 6 caras:
 
@@ -728,6 +729,13 @@ El **muestreo** es muy importante cuando no tenemos acceso a toda la población 
 En un **muestreo aleatorio** cualquier miembro de la población tiene la misma probabilidad de ser escogido.
 
 En un **muestreo estratificado** tomamos en consideración las características de la población para partirla en subgrupos y luego tomamos muestras de cada subgrupo, esto incrementa la probabilidad de que el muestreo sea representativo de la población.
+
+### Tipos de muestreo
+
+
+<div align="center"> 
+  <img src="./imgs/tipos_de_muestreo.jpg" width="70%">
+</div>
 
 ## Teorema del Límite Central
 
