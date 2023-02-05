@@ -78,12 +78,15 @@ stateDiagram-v2
 * [x] Introducción al Pensamiento Computacional con Python
 * [x] PIP y Entornos Virtuales
 * [x] Estructuras de Datos Lineales con Python
+* [x] Estadística Computacional con Python
 * [x] POO y Algoritmos con Python
 * [x] Introducción al Desarrollo Backend
 * [x] Curso Práctico de Python: Creación de un CRUD
 * [ ] Introducción a Selenium con Python
 * [x] Curso de FastAPI: Fundamentos, Path Operations y Validaciones
-* [ ] Curso de FastAPI - Modularización, Datos Avanzados y Errores
+* [x] Curso de FastAPI: Modularización, Datos Avanzados y Errores
+* [ ] Curso de FastAPI: Path Operations, Validaciones y Autenticación
+* [ ] Curso de FastAPI: Base de Datos, Modularización y Deploy a Producción
 * [ ] Curso Django Básico 
 * [ ] Curso de Django Intermedio: Testing, Static Files, Django Admin
 
