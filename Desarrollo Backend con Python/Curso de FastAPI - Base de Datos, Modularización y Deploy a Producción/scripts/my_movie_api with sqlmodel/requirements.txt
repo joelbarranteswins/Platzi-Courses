@@ -1,0 +1,4 @@
+fastapi==0.89.1
+pydantic==1.9.2
+PyJWT==2.6.0
+sqlmodel==0.0.8
