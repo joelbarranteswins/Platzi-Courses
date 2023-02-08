@@ -3,7 +3,7 @@
 </div>
 
 <div align="center">
-  <img src="./readme_img/django_2.png"
+  <img src="./imgs/django_2.png"
     width="60%"
    alt="hello-world-capture">
 </div>
@@ -51,60 +51,79 @@
   - [Mostrando el form en el template](#Mostrando-el-form-en-el-template)
   - [Models forms y validación](#Models-forms-y-validación)
 
-# Preparando entorno
 
-## Configuración de entorno de trabajo
+
+## ¿Qué es Django?
+
+* Django es uno de los framework gratis y open source más populares para crear aplicaciones web. 
+
+* Es muy veloz, seguro y escalable.
+Es el segundo framework de desarrollo web más usado, siendo Flask el más usado solo por un 1% y el tercero siendo FastAPI.
+
+* Algunos proyectos que usan Django son:
+
+  * Instagram
+  * Pinterest
+  * National Geographic
+  * Platzi
+
+
+## Instalación de Django
+
+
+
+### Configuración de entorno de trabajo
 Primero debemos tener instalado Python. Luego de la instalacion abrimos la terminal y nos posicionamos en la ruta que deseamos establecer nuestro proyecto.
 
-## Creacion de entorno virtual con Python
-Vamos a crear un entorno virtual para nuestro proyecto, el cual contendra todas las dependencias. Es muy importante que este entorno este fuera de nuestro proyecto. Para crearlo ejecutamos:
+### Creacion de entorno virtual con Python
+* Vamos a crear un entorno virtual para nuestro proyecto, el cual contendra todas las dependencias. Es muy importante que este entorno este fuera de nuestro proyecto. Para crearlo ejecutamos:
 
-```
-python -m venv .env
-```
+  ```
+  python -m venv .env
+  ```
 
-Nota: .env sera el nombre de nuestro entorno.
+  Nota: .env sera el nombre de nuestro entorno.
 
-## Comandos del entorno
+### Comandos del entorno
 
-Para **activar** nuestro entorno ejecutamos
+* Para **activar** nuestro entorno ejecutamos
 
-```
-source .env/bin/activate
-```
+  ```
+  source .env/bin/activate
+  ```
 
-Y para **desactivarlo**
+* Y para **desactivarlo**
 
-```
-deactivate
-```
+  ```
+  deactivate
+  ```
 
-Si queremos **listar las librerias instaladas** usamos
+* Si queremos **listar las librerias instaladas** usamos
 
-```
-pip freeze
-```
+  ```
+  pip freeze
+  ```
 
 ## Instalación de Django
 Para **instalar** la ultima version de Django ejecutamos
 
-```
+```shell
 pip install django -U
 ```
 
-## Django Admin
-Es una interfaz instalada junto con Django que contiene subcomandos que utiles. Para listar los subcomandos utilizamos
+### Django Admin
+* Es una interfaz instalada junto con Django que contiene subcomandos que utiles. Para listar los subcomandos utilizamos
 
-```
-django-admin
-```
+  ```
+  django-admin
+  ```
 
-## Creación de proyecto
-Para **crear** un proyecto ejecutamos
+### Creación de proyecto
+* Para **crear** un proyecto ejecutamos
 
-```
-django-admin startproject name
-```
+  ```
+  django-admin startproject name
+  ```
 
 ## Exploración de los archivos
 Lo primero que veremos es un folder con el nombre de nuestro proyecto, el cual contiene los archivos:
@@ -132,48 +151,81 @@ Dentro del archivo setting podemos encontrar variables relevantes para nuestro p
 - **TIME_ZONE:** Zona horaria en el cual corre nuestra aplicación.
 - **STATIC_URL:** En lugar de resolver la url establecidas en el archivo de urls, va a buscar resolver el archivo estático con la url estalecida en esta variable.
 
+## El servidor de desarrollo
 ### Archivo manage.py
-Este archivo contiene un gran listado de subcomandos los cuales podemos listar con:
+* Este archivo contiene un gran listado de subcomandos los cuales podemos listar con:
 
-```
-python manage.py
-```
+  ```
+  python manage.py
+  ```
 
-## Levantar servicio
-Para levantar el servicio ejecutamos:
+### Levantar servicio
+* Para levantar el servicio ejecutamos:
 
-```
-python manage.py runserver
-```
+  ```
+  python manage.py runserver
+  ```
 
-# Vistas
+## Nuestro primer proyecto: Premios Platzi App
 
-## Crear la primera vista
-Para este ejercicio lo haremos simple. En el archivo **urls.py** importamos **django.http.HttpResponse** y definimos una **funcion** que devuelva una respuesta (en este caso hello_world), y establemos en que path estara esta despuesta:
+* para crear la carpeta polls y la base de datos
 
-```py
-from django.contrib import admin
-from django.urls import path
-from django.http import HttpResponse
+  ```
+  python manage.py startapp polls
+  ```
 
-def hello_world(request):
-  return HttpResponse('Hello, world!')
+### Crear la primera vista
 
-urlpatterns = [
-  path('hello-world/', hello_world)
-]
-```
+* Para este ejercicio lo haremos simple. En el archivo **urls.py** importamos **django.http.HttpResponse** y definimos una **funcion** que devuelva una respuesta (en este caso hello_world), y establemos en que path estara esta despuesta:
 
-Corremos nuestro servidor con
+  ```py
+  from django.contrib import admin
+  from django.urls import path
+  from django.http import HttpResponse
 
-```
-python manage.py runserver
-```
+  def hello_world(request):
+    return HttpResponse('Hello, world!')
 
-Luego accedemos al [**http://localhost:8000/hello-world**](http://localhost:8000/hello-world) donde podremos acceder a nuestra vista:
+  urlpatterns = [
+    path('hello-world/', hello_world)
+  ]
+  ```
+
+* en la carpeta views.py de la carpeta polls se tendra el siguiente codigo:
+
+  ~~~python
+  from django.shortcuts import render
+  from django.http import HttpResponse
+  # Create your views here.
+
+
+  def index(request):
+      return HttpResponse("Hello, world. You're at the polls index.")
+  ~~~
+
+* creamos el archivo urls.py en la carpeta polls y agregamos el siguiente codigo:
+
+  ~~~python
+  from django.shortcuts import render
+  from django.http import HttpResponse
+  # Create your views here.
+
+
+  def index(request):
+      return HttpResponse("Hello, world. You're at the polls index.")
+  ~~~
+
+* Corremos nuestro servidor con
+
+  ```
+  python manage.py runserver
+  ```
+
+
+* Luego accedemos al [**http://localhost:8000/hello-world**](http://localhost:8000/hello-world) donde podremos acceder a nuestra vista:
 
 <div align="center">
-  <img src="./readme_img/hello_world.png"
+  <img src="./imgs/hello_world.png"
     width="100%"
    alt="hello-world-capture">
 </div>
@@ -193,7 +245,7 @@ Luego accedemos al [**http://localhost:8000/hello-world**](http://localhost:8000
 Es buena practica tener las vistas separadas del archivo url.py, por lo que crearemos un archivo **views.py** dentro de nuestra aplicación que contendra las vistas:
 
 <div align="center">
-  <img src="./readme_img/views.png"
+  <img src="./imgs/views.png"
     width="40%"
    alt="hello-world-capture">
 </div>
@@ -261,7 +313,7 @@ A traves del objeto request podemos acceder a varios atributos  los cuales se en
   De esta forma podemos ver los valores de number a traves de nuetra vista.
 
   <div align="center">
-    <img src="./readme_img/numbers.png"
+    <img src="./imgs/numbers.png"
       width="100%"
     alt="numbers">
   </div>
@@ -295,7 +347,7 @@ urlpatterns = [
 En el resultado final si ingresamos **age = 26** y **name = Karl** obtenemos el resultado definido en nuestra funcion **say_hi()**:
 
 <div align="center">
-    <img src="./readme_img/url_params_1.png"
+    <img src="./imgs/url_params_1.png"
       width="70%"
     alt="numbers">
 </div>
@@ -303,7 +355,7 @@ En el resultado final si ingresamos **age = 26** y **name = Karl** obtenemos el 
 Pero si cambiamos **age = 10** obtenemos:
 
 <div align="center">
-    <img src="./readme_img/url_params_2.png"
+    <img src="./imgs/url_params_2.png"
       width="70%"
     alt="numbers">
 </div>
@@ -318,7 +370,7 @@ python manage.py startapp name
 En este ejemplo creamos un app llamada **posts**, el cual genero una carpeta con todos los archivos basicos necesarios
 
 <div align="center">
-    <img src="./readme_img/app_posts.png"
+    <img src="./imgs/app_posts.png"
       width="40%"
     alt="numbers">
 </div>
@@ -378,7 +430,7 @@ urlpatterns = [
 Ahora vamos a [**http://localhost:8000/posts/**](http://localhost:8000/posts/) para ver nuestro resultado
 
 <div align="center">
-    <img src="./readme_img/posts.png"
+    <img src="./imgs/posts.png"
       width="80%"
     alt="numbers">
 </div>
@@ -390,7 +442,7 @@ El template system es una manera de mostrar los datos usando HTML, incluye lógi
 Para crear nuestros templates lo que haremos es dentro de nuestra aplicacion **crear una carpeta templates** y un **archivo html** con el nombre de nuestro template, en este caso _feed.html_
 
 <div align="center">
-    <img src="./readme_img/template_feed.png"
+    <img src="./imgs/template_feed.png"
       width="40%"
     alt="numbers">
 </div>
@@ -413,7 +465,7 @@ def list_posts(request):
 Si revisamos el path [**http://localhost:8000/posts/**](http://localhost:8000/posts/) tendremos nuestro "Hola, mundo!"
 
 <div align="center">
-    <img src="./readme_img/post_hola_mundo.png"
+    <img src="./imgs/post_hola_mundo.png"
       width="80%"
     alt="numbers">
 </div>
@@ -503,7 +555,7 @@ En nuestro template _feed.html_ ahora imprimiremos nuestro diccionario escribien
 Si revisamos [**http://localhost:8000/posts/**](http://localhost:8000/posts/) veremos nuestro diccionario.
 
 <div align="center">
-    <img src="./readme_img/posts_diccionario.png"
+    <img src="./imgs/posts_diccionario.png"
       width="80%"
     alt="numbers">
 </div>
@@ -519,7 +571,7 @@ Ahora juguemos un poco con la **lógica de programación** y **html**. Vamos a i
 Y el resultado en [**http://localhost:8000/posts/**](http://localhost:8000/posts/)
 
 <div align="center">
-    <img src="./readme_img/posts_diccionario_titulos.png"
+    <img src="./imgs/posts_diccionario_titulos.png"
       width="80%"
     alt="numbers">
 </div>
@@ -563,7 +615,7 @@ Ahora despleguemos los datos de nuestro diccionario y estilemos con **Bootstrap*
 Y en [**http://localhost:8000/posts/**](http://localhost:8000/posts/) veremos
 :
 <div align="center">
-    <img src="./readme_img/estilado.gif"
+    <img src="./imgs/estilado.gif"
       width="40%"
     alt="numbers">
 </div>
@@ -595,7 +647,7 @@ urlpatterns = [
 En este caso le dimos el path **/admin/** para acceder a el. Entonces vamos a la dirección [**http://localhost:8000/admin/**](http://localhost:8000/admin/) para ingresar.
 
 <div align="center">
-    <img src="./readme_img/dashboard_login.png"
+    <img src="./imgs/dashboard_login.png"
       width="60%"
     alt="numbers">
 </div>
@@ -680,19 +732,19 @@ De esta forma tendremos la interfaz de administración predeterminada, en nuestr
 
 <div align="center">
   <img 
-    src="./readme_img/dashboard_menu.png"
+    src="./imgs/dashboard_menu.png"
     width="60%"
   >
 </div>
 <div align="center">
   <img 
-    src="./readme_img/dashboard_users_list.png"
+    src="./imgs/dashboard_users_list.png"
     width="60%"
   >
 </div>
 <div align="center">
   <img 
-    src="./readme_img/dashboard_users_add.png"
+    src="./imgs/dashboard_users_add.png"
     width="60%"
   >
 </div>
@@ -744,7 +796,7 @@ class ProfileAdmin(admin.ModelAdmin): #Por convencion la clase que creemos debe 
 
 <div align="center">
   <img 
-    src="./readme_img/dashboard_profile_list_custom.png"
+    src="./imgs/dashboard_profile_list_custom.png"
     width="100%"
   >
 </div>
@@ -812,7 +864,7 @@ class ProfileAdmin(admin.ModelAdmin):
 ```
 <div align="center">
   <img 
-    src="./readme_img/detalle_personalizado.png"
+    src="./imgs/detalle_personalizado.png"
     width="100%"
   >
 </div>
@@ -901,7 +953,7 @@ Si vamos a crear un nuevo **User** podremos encontrar los campos asociados a nue
 
 <div align="center">
   <img 
-    src="./readme_img/create_user_custom.png"
+    src="./imgs/create_user_custom.png"
     width="100%"
   >
 </div>
@@ -910,7 +962,7 @@ Y si revisamos la lista de registro **User** veremos los cambios realizados en l
 
 <div align="center">
   <img 
-    src="./readme_img/user_dashboard_custom.png"
+    src="./imgs/user_dashboard_custom.png"
     width="100%"
   >
 </div>
@@ -994,7 +1046,7 @@ En la raíz de nuestro proyecto crearemos una carpeta llamada _static_, y en ell
 
 <div align="center">
   <img 
-    src="./readme_img/static_folder.png"
+    src="./imgs/static_folder.png"
     width="40%"
   >
 </div>
@@ -1048,7 +1100,7 @@ Ln la **raíz** de nuestro proyecto crearemos la carpeta _templates_ definido an
 
 <div align="center">
   <img 
-    src="./readme_img/templates.png"
+    src="./imgs/templates.png"
     width="40%"
   >
 </div>
@@ -1171,7 +1223,7 @@ Ahora si revisamos el path de la aplicación [http://localhost:8000/posts/](http
 
 <div align="center">
   <img 
-    src="./readme_img/posts_navbar.png"
+    src="./imgs/posts_navbar.png"
     width="60%"
   >
 </div>
@@ -1306,7 +1358,7 @@ Si observarte bien en el archivo _login.html_ hacemos uso del metodo _csrf_token
 
 <div align="center">
   <img 
-    src="./readme_img/csrf_token.png"
+    src="./imgs/csrf_token.png"
     width="80%"
   >
 </div>
@@ -1341,7 +1393,7 @@ Ahora veamos las vistas protegidas en acción. Primero con un usuario **sin regi
 
 <div align="center">
   <img 
-    src="./readme_img/unregisted_protected.gif"
+    src="./imgs/unregisted_protected.gif"
     width="80%"
   >
 </div>
@@ -1350,7 +1402,7 @@ Y segundo con un usario **registrado**.
 
 <div align="center">
   <img 
-    src="./readme_img/registed_protected.gif"
+    src="./imgs/registed_protected.gif"
     width="80%"
   >
 </div>
@@ -1581,7 +1633,7 @@ Llego el momento esperado, es hora de crear nuestro **middleware**. Por lo gener
 
 <div align="center">
   <img 
-    src="./readme_img/middleware.png"
+    src="./imgs/middleware.png"
     width="40%"
   >
 </div>
@@ -1801,7 +1853,7 @@ Terminados estos pasos podremos ver nuestro profile con los datos de nuestro usu
 
 <div align="center">
   <img 
-    src="./readme_img/profile.png"
+    src="./imgs/profile.png"
     width="60%"
   >
 </div>
@@ -1810,7 +1862,7 @@ En caso de que algun dato no cumpla con los requisitos establecidos en la clase 
 
 <div align="center">
   <img 
-    src="./readme_img/profile_error.png"
+    src="./imgs/profile_error.png"
     width="60%"
   >
 </div>
@@ -1931,7 +1983,7 @@ Con esto estos cambios ahora los valores ingresados **persistiran** en nuestro f
 
 <div align="center">
   <img 
-    src="./readme_img/profile_error_styled.png"
+    src="./imgs/profile_error_styled.png"
     width="60%"
   >
 </div>
