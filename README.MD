@@ -63,19 +63,23 @@ stateDiagram-v2
 * [x] Curso de Introducción a C#
 * [x] Curso de C# con .Net Core
 * [ ] Curso de C# con .Net Core 2
+* [ ] Buenas Prácticas y Código Limpio en C#
+* [ ] Fundamentos de .NET
 * [x] Fundamentos de Entity Framework
-* [x] API con .NET
+* [x] APIs con .NET
+* [ ] Manejo de Datos con LINQ
+* [ ] Curso de Principios SOLID en C# y .NET
 * [ ] ASP.NET Core
 * [ ] Desarrollo Web con Blazor y .Net
-* [ ] Curso de Xamarin.Forms
-* [ ] Web Apps y Logic Apps en Azure
 * [ ] Azure DevOps: Flujos de CI/CD
+* [ ] Curso Práctico de Arquitectura Backend
 
 ## Desarrollo Backend con Python
 
 * [x] Fundamentos de Python
 * [x] Comprehensions, Funciones y Manejo de Errores
 * [x] Introducción al Pensamiento Computacional con Python
+* [ ] Introducción al Pensamiento Probabilístico
 * [x] PIP y Entornos Virtuales
 * [x] Estructuras de Datos Lineales con Python
 * [x] Estadística Computacional con Python
@@ -86,7 +90,7 @@ stateDiagram-v2
 * [x] Curso de FastAPI: Fundamentos, Path Operations y Validaciones
 * [x] Curso de FastAPI: Modularización, Datos Avanzados y Errores
 * [ ] Curso de FastAPI: Path Operations, Validaciones y Autenticación
-* [ ] Curso de FastAPI: Base de Datos, Modularización y Deploy a Producción
+* [x] Curso de FastAPI: Base de Datos, Modularización y Deploy a Producción
 * [ ] Curso Django Básico 
 * [ ] Curso de Django Intermedio: Testing, Static Files, Django Admin
 

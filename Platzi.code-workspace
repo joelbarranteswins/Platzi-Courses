@@ -5,8 +5,16 @@
 			"path": "."
 		},
 		{
+			"name": "Python",
+			"path": "Desarrollo Backend con Python"
+		},
+		{
 			"name": ".Net",
 			"path": "./Desarrollo Backend con C# y .NET"
+		},
+		{
+			"name": "Data Science",
+			"path": "./Data Science"
 		}
 	],
 	"settings": {
