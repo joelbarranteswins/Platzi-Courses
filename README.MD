@@ -125,7 +125,7 @@ stateDiagram-v2
 * Platzi create and updates courses, roads and schools, so I will use my knowledge to sort courses as you saw above. 
     * set of courses -> roads
     * set of roads -> Schools
-* I'm not sure if my certificates have to be in this repository, but they are till someone makes a complaint.
+* I'm not sure if my certificates have to be in this repository, but they are till someone makes a complaint. however, it's not a crime to show certificates but they use space in this repo. maybe it will be removed
 
 </br>
 
