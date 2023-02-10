@@ -3,13 +3,16 @@
 
 <img src="https://static.platzi.com/static/images/footer/logo.png">
 
-## Overview
+## `Overview`
 
 All the courses which appear here is what I have taken in [**platzi.com**](platzi.com) and I own all the files except the files inside folders named **shared**, with much pleasure Fork and download all my sources if you like it and if you want to improve this repo just make a Pull request 😀.
 
-## Architecture
+## `Architecture`
 
-Each School and Course has a Pattern
+* `Each School and Course` has a `Pattern`
+* `All courses from each school are sorted` as they appear in Platzi."
+
+
 
 ~~~mermaid
 stateDiagram-v2
@@ -33,12 +36,12 @@ stateDiagram-v2
     } 
 ~~~
 
-## Base de Datos
+## `Base de Datos`
 
 * [x] Fundamentos de Bases de Datos
 * [ ] Curso de PostgreSQL
 
-## Data Science
+## `Data Science`
 
 * [x] DataAcademy
 * [x] Cómo y Por Qué Aprender Data Science e Inteligencia Artificial
@@ -58,7 +61,7 @@ stateDiagram-v2
 * [x] Matemáticas para Data Science - Probabilidad
 * [x] Ética y Manejo de Datos para Data Science e Inteligencia Artificial
 
-## Desarrollo Backend con C# y .NET
+## `Desarrollo Backend con C# y .NET`
 
 * [x] Curso de Introducción a C#
 * [x] Curso de C# con .Net Core
@@ -74,7 +77,7 @@ stateDiagram-v2
 * [ ] Azure DevOps: Flujos de CI/CD
 * [ ] Curso Práctico de Arquitectura Backend
 
-## Desarrollo Backend con Python
+## `Desarrollo Backend con Python`
 
 * [x] Fundamentos de Python
 * [x] Comprehensions, Funciones y Manejo de Errores
@@ -94,7 +97,7 @@ stateDiagram-v2
 * [x] Curso Django Básico 
 * [ ] Curso de Django Intermedio: Testing, Static Files, Django Admin
 
-## Desarrollo de Software
+## `Desarrollo de Software`
 
 * [x] Curso Básico de Programación
 * [ ] Fundamentos de Ingeniería de Software
@@ -105,13 +108,20 @@ stateDiagram-v2
 * [ ] Curso Profesional de Arquitectura de Software
 * [ ] Fundamentos de Arquitectura de Software
 
-## Desarrollo Web
+## `Desarrollo Web`
 
 * [x] Curso Definitivo de HTML y CSS
 * [ ] JavaScript Básico
 
-## English
+## `English`
 
 * [x] Ruta de Beginner A1-A2
+
+</br></br>
+<div align="center">
+<p style="color:green; font-size:130%;">Made with ♥ by Joel Barrantes</p>
+</div>
+
+
 
 <img src="https://media4.giphy.com/media/YnS7j9pwnECXLMrI4t/giphy.gif?cid=790b7611bcac33f8180fa033a644a3a80b8c473654503079&rid=giphy.gif&ct=s">
