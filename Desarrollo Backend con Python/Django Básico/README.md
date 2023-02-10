@@ -78,9 +78,9 @@ Primero debemos tener instalado Python. Luego de la instalacion abrimos la termi
 ### Creacion de entorno virtual con Python
 * Vamos a crear un entorno virtual para nuestro proyecto, el cual contendra todas las dependencias. Es muy importante que este entorno este fuera de nuestro proyecto. Para crearlo ejecutamos:
 
-  ```
+  ~~~
   python -m venv .env
-  ```
+  ~~~
 
   Nota: .env sera el nombre de nuestro entorno.
 
@@ -88,42 +88,42 @@ Primero debemos tener instalado Python. Luego de la instalacion abrimos la termi
 
 * Para **activar** nuestro entorno ejecutamos
 
-  ```
+  ~~~
   source .env/bin/activate
-  ```
+  ~~~
 
 * Y para **desactivarlo**
 
-  ```
+  ~~~
   deactivate
-  ```
+  ~~~
 
 * Si queremos **listar las librerias instaladas** usamos
 
-  ```
+  ~~~
   pip freeze
-  ```
+  ~~~
 
 ## Instalación de Django
 Para **instalar** la ultima version de Django ejecutamos
 
-```shell
+~~~shell
 pip install django -U
-```
+~~~
 
 ### Django Admin
 * Es una interfaz instalada junto con Django que contiene subcomandos que utiles. Para listar los subcomandos utilizamos
 
-  ```
+  ~~~
   django-admin
-  ```
+  ~~~
 
 ### Creación de proyecto
 * Para **crear** un proyecto ejecutamos
 
-  ```
+  ~~~
   django-admin startproject name
-  ```
+  ~~~
 
 ## Exploración de los archivos
 Lo primero que veremos es un folder con el nombre de nuestro proyecto, el cual contiene los archivos:
@@ -155,30 +155,30 @@ Dentro del archivo setting podemos encontrar variables relevantes para nuestro p
 ### Archivo manage.py
 * Este archivo contiene un gran listado de subcomandos los cuales podemos listar con:
 
-  ```
+  ~~~
   python manage.py
-  ```
+  ~~~
 
 ### Levantar servicio
 * Para levantar el servicio ejecutamos:
 
-  ```
+  ~~~
   python manage.py runserver
-  ```
+  ~~~
 
 ## Nuestro primer proyecto: Premios Platzi App
 
 * para crear la carpeta polls y la base de datos
 
-  ```
+  ~~~
   python manage.py startapp polls
-  ```
+  ~~~
 
 ### Crear la primera vista
 
 * Para este ejercicio lo haremos simple. En el archivo **urls.py** importamos **django.http.HttpResponse** y definimos una **funcion** que devuelva una respuesta (en este caso hello_world), y establemos en que path estara esta despuesta:
 
-  ```py
+  ~~~py
   from django.contrib import admin
   from django.urls import path
   from django.http import HttpResponse
@@ -189,7 +189,7 @@ Dentro del archivo setting podemos encontrar variables relevantes para nuestro p
   urlpatterns = [
     path('hello-world/', hello_world)
   ]
-  ```
+  ~~~
 
 * en la carpeta views.py de la carpeta polls se tendra el siguiente codigo:
 
@@ -217,9 +217,9 @@ Dentro del archivo setting podemos encontrar variables relevantes para nuestro p
 
 * Corremos nuestro servidor con
 
-  ```
+  ~~~
   python manage.py runserver
-  ```
+  ~~~
 
 
 * Luego accedemos al [**http://localhost:8000/hello-world**](http://localhost:8000/hello-world) donde podremos acceder a nuestra vista:
@@ -231,7 +231,618 @@ Dentro del archivo setting podemos encontrar variables relevantes para nuestro p
 </div>
 
 
-## Como Django procesa un request
+## ¿Qué es ORM? ¿Qué es un modelo?
+
+### ORM - Object Relational Mapping
+Es la forma de replicar la estructura de una base de datos relacional con programación orientada a objetos.
+
+~~~shell
+Utilizando un ORM podemos operar sobre la base de datos aprovechando las características propias de la orientación a objetos, como herencia y polimorfismo.
+~~~
+
+Las bases de datos se conforman por tablas y cada tablas obtiene los datos relacionados a cada entidad, es posible convertir estas bases de datos en un archivo python que contiene la representación en programación orientada a objetos.
+
+Las tablas corresponden a modelos (los cuales se expresan como clases), las columans van a corresponder a atributos de esas clases y los tipos de datos de cada columna correponderán a clases ligadas a los atributos de los objetos.
+
+### Ventajas
+* Facilidad y velocidad de uso
+* Abstracción de la base de datos
+* Seguridad de la capa de acceso a datos contra ataques.
+* Reutilización. Nos permite utilizar los métodos de un objeto de datos desde distintas zonas de la aplicación, incluso desde aplicaciones distintas.
+* Mantenimiento del código.
+
+## Creando un diagrama entidad-relación para nuestro proyecto
+
+<img src="./imgs/diagram-entity-relation.webp" width="500" align="center">
+
+## Creando los modelos Question y Choice
+
+1. en el archivo model.py de polls se creara los modelos de las tablas:
+
+~~~python
+from django.db import models
+
+class Question(models.Model):
+    id = models.AutoField(primary_key=True)
+    question_text = models.CharField(max_length=200)
+    pub_date = models.DateTimeField('date published')
+
+
+class Choice(models.Model):
+    id = models.AutoField(primary_key=True)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    choice_text = models.CharField(max_length=200)
+    votes = models.IntegerField(default=0)
+~~~
+
+2. ejecutar en el root del proyecto:
+* Crea un archivo “migration/001_initial-py” en el que django automaticamente describe toda la creación de las tablas en las BD, uso del concepto ORM
+
+en linux:
+> py manage-py makemigrations polls 
+
+en windows:
+> python manage-py makemigrations polls 
+
+* Tomar el archivo creado y ejecutarlo en la BD. “Applying polls.001_initial”
+
+en linux:
+> py manage-py migrate 
+
+en windows:
+> python manage-py makemigrations polls 
+  
+
+## La consola interactiva de Django
+
+Comando para acceder a la consola interactiva de Django: 
+> python3 manage.py shell
+
+~~~python    
+# Importacion de los modelos
+from polls.models import Question, Choice
+from django.utils import timezone
+
+# Llamado de todos los registros de un modelo
+Question.objects.all()
+
+# Creacion de un nuevo registro
+q = Question(question_text="¿Cual es el mejor curso de Platzi?", pub_date=timezone.now())
+
+# Guardado del nuevo registro
+q.save()
+~~~
+
+otra forma de crear y guardar un objeto
+
+~~~python
+q  = Question.objects.create(question_text="¿Cuál es el mejor curso de platzi?" , pub_date=timezone.now())
+~~~
+
+## El método __str__
+
+este metodo __str__ se ejecuta cuando se realiza print a un objeto creado.
+
+* En el archivo *models..py*:
+
+  ~~~py
+  from django.db import models
+  from django.utils import timezone
+
+  class Question(models.Model):
+
+      # id - Django lo hace automáticamente
+      question_text = models.CharField(max_length=200)
+      pub_date = models.DateTimeField("date published")
+
+      def __str__(self):
+          return self.question_text
+      
+      def was_published_recently(self):
+          return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+
+  class Choice(models.Model):
+
+      question = models.ForeignKey(Question, on_delete=models.CASCADE)
+      choice_text = models.CharField(max_length=200)
+      votes = models.IntegerField(default=0)
+
+      def __str__(self):
+          return self.choice_text
+  ~~~
+
+* luego ejecutamos 
+~~~python
+from polls.models import Choice, Question
+
+Question.objects.all()
+
+# Out[1]: <QuerySet [<Question: Cual es le mejor curso de platzi?>, <Question: ¿Cuál es el mejor curso de udemy?>]>
+
+~~~
+
+## Filtrando los objetos creados desde la consola interactiva
+
+* Para traer un objeto en específicos de las clases ORM podemos usar:
+
+  (el comando get sólo devuelve un valor)
+  ~~~python
+  Question.object.get(pk=1)
+  ~~~
+
+## El método filter
+
+* Para obtener múltiples respuestas podemos usar 
+~~~python
+Question.objects.filter(question_text__startswith="¿Cual")
+~~~
+
+* este método devuelve un QuerySet
+Otro ejemplo: 
+~~~python
+Question.objects.filter(pub_date__year=timezone.now().year)`
+~~~
+
+## Accediendo al conjunto de respuestas
+
+1. creamos una instancia de Question con la llave primaria = 1
+
+~~~python
+from polls.models import Choice, Question
+from django.utils import timezone
+
+question = Question.objects.get(pk=1)
+~~~
+
+2. para acceder a todos las opciones dentro un question
+~~~python
+question.choice_set.all()
+~~~
+
+3. crear opciones dentro de una pregunta
+
+~~~python
+q.choice_set.create(choice_text="curso Basico de Python?", votes=0)
+#Out[21]: <Choice: curso Basico de Python?>
+
+q.choice_set.create(choice_text="curso de ingenieria de software?", votes=0)
+
+#Out[22]: <Choice: curso de ingenieria de software?>
+
+q.choice_set.create(choice_text="curso de goland?", votes=0)
+
+#Out[23]: <Choice: curso de goland?>
+~~~
+
+4. ver todas las opciones:
+
+~~~python
+q.choice_set.all()
+
+Out[24]: <QuerySet [<Choice: curso Basico de Python?>, <Choice: curso de ingenieria de software?>, <Choice: curso de goland?>]>
+~~~
+
+5. contar las opciones
+
+~~~python
+q.choice_set.count()
+~~~
+
+6. filtrar las opciones dentro de una pregunta
+
+~~~python
+Choice.objects.filter(question__pub_date__year=timezone.now().year)
+~~~
+
+
+
+## Administrador de datos
+
+1. para comenzar a usar el administrador se debe crear un usuario y contraseña, para crearlo se usa el siguiente codigo:
+
+~~~shell
+python manage.py createsuperuser
+~~~
+
+Se debe tener mucho cuidado con la seguridad de estos datos, ya que si son expuestos pueden comprometer la aplicación completa.
+
+Ahora, se deben hacer disponibles los modelos creados al administrador:
+
+2. *En el archivo *admin.py* de la carpeta polls:*
+~~~py
+from django.contrib import admin
+from polls.models import Choice, Question
+
+admin.site.register([Question, Choice])
+~~~
+
+3. ejecutar el siguiente codigo para ejecuta application django:
+
+~~~shell
+python .\manage.py runserver
+~~~
+
+4. Usando la dirección http://127.0.0.1:8000/admin/ Se puede entrar al panel de administración.
+
+
+# Views
+## ¿Qué son las views o vistas?
+
+### Diferencia entre MVC y MTV 😮
+* Muy similar a MVC (Modelo, vista, controlador) donde:
+
+  * Modelo - Hace referencia a todo lo que tiene que ver con bases de datos.
+
+  * Vista - Con la parte visual.
+
+  * Controlador - Con toda la parte lógica.
+
+
+* En Django siendo MTV 😃
+
+  * Modelo - Hace referencia a todo lo que tiene que ver con bases de datos (En este caso Django hace demasiada alusión a su nombre donde las bases de datos quedan implícitas y manejamos todo con el ORM)
+
+  * Template - En este caso no debemos confundir el View del MTV con el del MVC puesto en que en Django no hace referencia a lo visual, template si hace alusión con la parte visual de las Web Apps con Django.
+
+  * View - Todo lo relacionado con la lógica es aquí donde entra el tema de las vistas genéricas y demás (Que si solo nos especializamos en el back con Django es lo que mas utilizaremos)
+
+
+~~~shell
+MTV => MVC:
+
+Views + Urls => Controller
+Templates => View
+Models => Model
+~~~
+
+### Crear vistas
+
+* en el archivo `views.py` de mi aplicacion yo puedo crear distintas vistas como se ven a continuación:
+
+  ~~~python
+  from django.shortcuts import render
+  from django.http import HttpResponse
+
+
+  def index(request):
+      return HttpResponse("Estas en la pagina principal de la aplicacion")
+
+
+  def detail(request, question_id):
+      return HttpResponse(f"Estas viendo la pregunta numero {question_id}.")
+
+
+  def results(request, question_id):
+      return HttpResponse(f"Estas viendo el resultado de la pregunta numero {question_id}.")
+
+
+  def vote(request, question_id):
+      return HttpResponse(f"Estas votando a la pregunta número {question_id}.")
+  ~~~
+
+* Luego estas vistas son ligadas a una url, esto se programa en el archivo `urls.py`:
+
+  ~~~python
+  from django.urls import path
+  from . import views
+
+  urlpatterns = [
+      # ex: /polls/
+      path('', views.index, name='index'),
+      # ex: /polls/5/
+      path('<int:question_id>/', views.detail, name='index'),
+      # ex: /polls/5/results
+      path('<int:question_id>/results/', views.results, name='index'),
+      # ex: /polls/5/vote
+      path('<int:question_id>/vote/', views.vote, name='index')
+  ]
+
+  ~~~
+
+Como las urls están configuradas desde una aplicación, siempre van a tener el nombre de la aplicación antes de cualquier url.
+Nótese como "<>" se usa para enviar parámetros a las vistas, esto permite tener múltiples urls con respuestas únicas.
+
+## Crear Templates
+
+1. Ubicados en la carpeta de la aplicación ejecutamos en consola:
+
+  ~~~shell
+  mkdir -p templates/polls
+  ~~~
+
+2. Ahora creamos un archivo html para comenzar a crear la página.
+  ~~~shell
+  touch templates/polls/index.html
+  ~~~
+
+3. Ahora, la forma en la que se ha programado el archivo:
+* (Permite recorrer todas las preguntas y linkear cada una de ellas a una url distinta)
+
+  ~~~html
+  {% if latest_question_list %}
+      <ul>
+          {% for question in latest_question_list %}
+              <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+          {% endfor %}
+      </ul>
+  {% else %}
+      <p>No polls are available.</p>
+  {% endif %}
+  ~~~
+
+4. en view.py de polls se tendra lo siguiente:
+
+* Cada vez que una url llame a la vista index, esta llamará al template `index.html` y le enviará el argumento `latest_question_list`
+
+  ~~~py
+  from .models import Question
+
+  def index(request):
+      latest_question_list = Question.objects.all()
+      return render(request, "polls/index.html", {
+          "latest_question_list": latest_question_list
+      })
+  ~~~
+
+
+5. Ahora, se crea un template para cada vez que se quiera ver el detalle de una pregunta en el archivo `templates/polls/detail.html`
+
+  ~~~html
+  <h1>{{question.question_text}}</h1>
+  <ul>
+      {% for choice in question.choice_set.all %}
+          <li>{{ choice.choice_text }}</li>
+      {% endfor %}
+  </ul>
+  ~~~
+
+6. De igual forma se tiene que configurar la llamada del template en las vistas:
+* La funcion `get_object_or_404` es usada para devolver un error 404 si no se encuentra el objeto
+
+  ~~~py
+  def detail(request, question_id):
+      question = get_object_or_404(Question, pk=question_id)
+      return render(request, "polls/detail.html",{
+          "question": question
+      } )
+  ~~~
+
+
+
+7. Para evitar el hard-code en nuestro programa vamos a usar la etiqueta `url` en el archivo `index.html`
+
+>> Hard-code: Término del mundo de la informática que hace referencia a una práctica en el desarrollo de software que consiste en incrustar datos directamente en el código fuente del programa.
+
+
+
+  ~~~html
+  {% if latest_question_list %}
+      <ul>
+          {% for question in latest_question_list %}
+              <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+          {% endfor %}
+      </ul>
+  {% else %}
+      <p>No polls are available.</p>
+  {% endif %}
+  ~~~
+
+8. Para que la url.py funcione de forma adecuada debemos asignar el nombre de nuestra aplicación en la variable 
+
+~~~python
+app_name = "polls"
+~~~
+
+De esta forma se puede con libertad cambiar las urls sin afectar los templates o archivos asociados.
+
+## Formularios
+
+
+1. En el template detail.html se tendra el siguiente codigo:
+  * `{% csrf_token %}`: Esta etiqueta agrega un token de seguridad para evitar ataques de hacking a formularios
+
+~~~html
+<form action="{% url 'polls:vote' question.id %}" method='post'>
+    
+    {% csrf_token %}
+    
+    <fieldset>
+        <legend><h1>{{ question.question_text}}</h1></legend>
+        {% if error_message %}
+            <p><strong>{{ error_message }}</strong></p>
+        {% endif %}
+        
+        {% for choice in question.choice_set.all %}
+            <input 
+                type="radio"
+                name="choice"
+                id="choice{{ forloop.counter }}"
+                value="{{ choice.id }}"
+            >
+            <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label>
+            <br>
+        {% endfor %}
+    </fieldset>
+    <input type="submit" value="Votar">
+
+</form>
+~~~
+El formulario de linkea a la vista vote cuando se presiona el botón votar
+
+## Vista vote
+
+Por el momento la interfaz está lista pero internamente no se están contando los votos. Este es el siguiente paso.
+
+Se programa entonces la lógica de programación en el archivo `views.py`:
+
+~~~py
+def vote(request, question_id):
+    question= get_object_or_404(Question, pk=question_id)
+    try:
+        selected_choice = question.choice_set.get(pk=request.POST["choice"])
+    except (KeyError, Choice.DoesNotExist):
+        return render(request, "polls/detail.html", {
+            "question": question,
+            "error_message": "No elegiste una respuesta"
+        })
+    else:
+        selected_choice.votes += 1
+        selected_choice.save()
+        return HttpResponseRedirect(reverse("polls:results", 
+            args=(question.id, )))
+~~~
+En este casos se usa un try para saber si se ha seleccionado una opción o si la opción seleccionada es válida, la forma de controlar este error es volver a redirigir la página llamando a `detail.html` pero esta vez con un mensaje de error.
+
+Siempre que se trabaje con formularios es una buena práctica redirigir al usuario con la función `HttpResponseRedirect` en lugar del clásico `HttpResponse`, así nos aseguramos que el usuario no envíe la información dos veces.
+
+la función en python `reverse("", args=() )` tiene su equivalente en django: `{% url '' %}`
+
+## Creando la vista results
+
+Hasta ahora tenemos la interfaz de voto y el conteo de votos programado, ahora vamos a programar la vista resultados para ver la cantidad de votos por opción cuando votamos, para esto hacemos cambios en los archivos `views.py` y `results.html`, este último lo vamos a crear, recordemos que todo lo trabajamos dentro de la carpeta de la aplicación.
+**En el archivo `views.py`**
+~~~py
+def results(request, question_id):
+    # siempre se llega después de ejecutar vote
+    question= get_object_or_404(Question, pk=question_id)
+    return render(request, "polls/results.html", {
+        "question": question
+    })
+~~~
+Recordemos que al llamar los templates debemos enviar los argumentos si son necesarios, en este caso "question"
+
+**En el archivo `results.html`**
+~~~html
+<h1>{{ question.question_text }}</h1>
+<ul>
+    {% for choice in question.choice_set.all %}
+        <li>
+            {{ choice.choice_text }} -- {{ choice.votes }}
+            vote{{ choice.votes|pluralize  }}
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'polls:detail' question.id %}">
+    ¿Te gustaría votar de nuevo?
+</a>
+~~~
+
+El indentado de la programación cambia un poco, considero que así se ve más organizado
+
+
+## Generic Views
+
+>DRY: Don´t Repeat Yourself
+
+Hasta ahora hemos programado Class Based Views, lo que podemos observar en el archivo `views.py` es que por ejemplo las funciones results y detail son exactamente iguales, por lo que estaríamos incumpliendo el principio DRY.
+
+Las generic views nos permiten evitar caer en este error, estas funcionan por clases y existen multiples que se adaptan a distintos casos, actualización, login, formularios, etc. (info completa en los links de referencia)
+
+* Function Base View: vistas basada en funciones
+* Classed Base View: Vistas basada en classes
+
+Example: vamos a cambiar las vistas que tenemos definidas por funciones a generic views:
+**En el archivo `views.py`**
+~~~py
+# generic views
+from django.views import generic
+
+class IndexView(generic.ListView):
+    template_name = "polls/index.html"
+    context_object_name = "latest_question_list"
+
+    def get_queryset(self):
+        return Question.objects.order_by("-pub_date")[:5]
+
+
+class DetailView(generic.DetailView):
+    model = Question
+    template_name = "polls/detail.html"
+
+
+
+class ResultView(generic.DetailView):
+    model = Question
+    template_name = "polls/results.html"
+~~~
+la función `vote` no se cambia por una clase porque es muy compleja.
+Las clase de las vistas genéraicas deben siempre cumplir con estas reglas en su nombre: Empezar en mayúscula porque son una clase y terminar en `View`, esto es una buena práctica
+
+Se le debe hacer saber al archivo `urls.py` que debe reconocer clases en vez de funciones:
+~~~py
+    # ex: /polls/
+    path("", views.IndexView.as_view(), name="index"),
+    # ex: /polls/5/
+    path("<int:pk>/", views.DetailView.as_view(), name="detail"),
+    path("<int:pk>/results/", views.ResultView.as_view(), name="results"),
+~~~
+
+# Helpful tips
+
+## Crear un entorno virtual
+
+~~~zsh
+python3 -m venv venv
+source ./venv/bin/activate
+~~~
+
+## Crear carpetas anidadas
+
+~~~zsh
+mkdir -p CarpetaGeneral/{carpeta1,carpeta2/{subdirectorio1,subdirectorio2},carpeta3,carpeta4}
+~~~
+
+## Tener sugerencias de autocompletado html en archivos ligados a Django
+(Para vsCode) 
+
+Instala la extensión Django en tu editor.
+Presiona F1 y escribe "settings.json", selecciona la opción open user settings. Al archivo Json debes agregar estas líneas.
+~~~py
+"emmet.includeLanguages": {
+        "django-html": "html"
+    }
+~~~
+Puedes reiniciar la extensión si no te sale aún el autocompletado.
+
+# Helpful Links
+
+- [.gitignore](https://www.toptal.com/developers/gitignore)
+
+- [Basic writing and formatting syntax](https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+
+- [Django documentation](https://docs.djangoproject.com/en/3.2/)
+
+- [Writing your first Django app, part 1](https://docs.djangoproject.com/en/3.2/intro/tutorial01/)
+
+- [List of tz database time zones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
+
+- [Making queries | Django documentation](https://docs.djangoproject.com/en/3.2/topics/db/queries/#field-lookups-intro)
+
+- [Classy Class-Based Views. | Django](https://ccbv.co.uk/)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Como Django procesa un request
 1. Primero va a buscar en el archivo **settings.py** en la variable **ROOT_URLCONF**
 2. Luego Django desde el archivo **urls.py** carga los modulos de Python definidos en la variable **urlpatterns**
 3. Dentro de **urlpatterns** se busca el patron coincidente a la peticion
@@ -252,17 +863,17 @@ Es buena practica tener las vistas separadas del archivo url.py, por lo que crea
 
 Dentro de nuestro archivo **views.py** importamos **HttpResponse** y traemos nuestra funcion **hello_world()** creado en urls.py
 
-```py
+~~~py
 from django.http import HttpResponse
 
 def hello_world(request):
     return HttpResponse('Hello, world!')
-```
+~~~
 
 Ahora debemos importar nuestra funcion al archivo **urls.py**.
 No olvidemos **borrar** la importacion de HttpResponse y la funcion hello_world() en el archivo.
 
-```py
+~~~py
 from django.contrib import admin
 from django.urls import path
 from photogram import views
@@ -270,7 +881,7 @@ from photogram import views
 urlpatterns = [
     path('hello-world/', views.hello_world)
 ]
-```
+~~~
 
 Si revisamos la url [**http://localhost:8000/hello-world**](http://localhost:8000/hello-world) nuestro proyecto seguira funcionando.
 
@@ -279,36 +890,36 @@ A traves del objeto request podemos acceder a varios atributos  los cuales se en
 
 - **request.method:** nos muestra el metodo HTTP ("GET", "POST", etc.) usado por el request en formato de string en UPPERCASE. Un ejemplo de uso seria:
 
-  ```py
+  ~~~py
   if request.method == 'GET':
     do_something()
   elif request.method == 'POST':
     do_something_else()
-  ```
+  ~~~
 
 - **request.GET:** Un diccionario que contiene todos los parametros entregados por HTTP GET. Por ejemplo:
 
   Pasamos una lista de numeros en la variable numbers **(?numbers)**
 
-  ```http
+  ~~~http
   http://localhost:8000/numbers/?numbers=10,2,6,7
-  ```
+  ~~~
 
   Para acceder a la lista usamos 
 
-  ```py
+  ~~~py
   request.GET['numbers']
-  ```
+  ~~~
 
   *Nota: En el siguiente ejemplo se creo la vista numbers*
   
   Un ejemplo practico seria:
 
-  ```py
+  ~~~py
   def numbers(request):
     numbers = request.GET['numbers']
     return HttpResponse(str(numbers))
-  ```
+  ~~~
 
   De esta forma podemos ver los valores de number a traves de nuetra vista.
 
@@ -320,7 +931,7 @@ A traves del objeto request podemos acceder a varios atributos  los cuales se en
 
 ## Pasando argumentos por URL
 Podemos pasar argumentos a traves de la URL, para esto primero creamos la funcion que hara uso de estos parametros y devolvera la vista en el archivo **views.py**
-```py
+~~~py
 from django.http import HttpResponse
 
 def say_hi(request, name, age):
@@ -330,11 +941,11 @@ def say_hi(request, name, age):
     message = 'Hello {}! Welcome to Photogram'.format(name)
     
   return HttpResponse(message)
-```
+~~~
 
 Luego definimos el path para esta vista en el archivo **urls.py**. Para definir los parametros que pasaran por la url los encerramos con "<>" definiendo el tipo de dato y el nombre del parametro.
 
-```py
+~~~py
 from django.contrib import admin
 from django.urls import path
 from photogram import views
@@ -342,7 +953,7 @@ from photogram import views
 urlpatterns = [
   path('hi/<str:name>/<int:age>/', views.say_hi)
 ]
-```
+~~~
 
 En el resultado final si ingresamos **age = 26** y **name = Karl** obtenemos el resultado definido en nuestra funcion **say_hi()**:
 
@@ -363,9 +974,9 @@ Pero si cambiamos **age = 10** obtenemos:
 ## Crear una app
 Con Django podemos crear una app de forma rapida y sencilla ejecutando el comando
 
-```
+~~~
 python manage.py startapp name
-```
+~~~
 
 En este ejemplo creamos un app llamada **posts**, el cual genero una carpeta con todos los archivos basicos necesarios
 
@@ -377,18 +988,18 @@ En este ejemplo creamos un app llamada **posts**, el cual genero una carpeta con
 
 Para desplegar una vista de esta aplicacion vamos al archivo *./posts/views.py* donde crearemos una vista a traves de la funcion **list_posts()**
 
-```py
+~~~py
 from django.shortcuts import render
 from django.http import HttpResponse
 
 def list_posts(request):
   posts = [1, 2, 3, 4]
   return HttpResponse(str(posts))
-```
+~~~
 
 Luego vamos al archivo settings de nuestro proyecto, en este caso *./photogram/settings.py* donde incorporaremos en la variable **INSTALLED_APPS** nuestra nueva app
 
-```py
+~~~py
 INSTALLED_APPS = [
     # Django apps
     'django.contrib.admin',
@@ -401,13 +1012,13 @@ INSTALLED_APPS = [
     # Local apps
     'posts',
 ]
-```
+~~~
 
 Ahora nos toca asignar un path para nuestra vista **list_posts()**. Para eso vamos al archivo **urls.py** de nuestro proyecto, en este caso *./photogram/urls.py* e importamos nuestra nueva app, y le asignamos un path a nuestra vista.
 
 Para que no existan conflictos al llamar views vamos asignar un **alias** para las views de cada aplicacion.
 
-```py
+~~~py
 from django.contrib import admin
 from django.urls import path
 from photogram import views as local_views
@@ -425,7 +1036,7 @@ urlpatterns = [
     path('posts/', posts_views.list_posts),
 
 ]
-```
+~~~
 
 Ahora vamos a [**http://localhost:8000/posts/**](http://localhost:8000/posts/) para ver nuestro resultado
 
@@ -449,18 +1060,18 @@ Para crear nuestros templates lo que haremos es dentro de nuestra aplicacion **c
 
 Dentro de nuestro archivo **feed.html** solo escribiremos:
 
-```html
+~~~html
 Hola, mundo!
-```
+~~~
 
 Y dentro de **views.py** de nuestra aplicación ya no es necesario el HttpResponse, por que borramos su importación. A través de la función que devolvemos nuestra vista devolveremos nuestro nuevo template con el metodo **render**, que le pasaremos la request y la vista:
 
-```py
+~~~py
 from django.shortcuts import render
 
 def list_posts(request):
     return render(request, 'feed.html')
-```
+~~~
 
 Si revisamos el path [**http://localhost:8000/posts/**](http://localhost:8000/posts/) tendremos nuestro "Hola, mundo!"
 
@@ -472,7 +1083,7 @@ Si revisamos el path [**http://localhost:8000/posts/**](http://localhost:8000/po
 
 ¿Como logro funcionar si dentro de render jamas definimos la ruta donde buscar nuestro template? (en nuetro caso solo _feed.html_). Si revisamos en el archivo **settings.py** de nuestro proyecto, en la definicion de **TEMPLATES** veremos
 
-```py
+~~~py
 
 ...
 
@@ -494,7 +1105,7 @@ TEMPLATES = [
 
 ...
 
-```
+~~~
 
 En **APP_DIRS** lo tenemos definido como **True**, esto significa que las aplicaciones buscaran los templates dentro de sus directorios, de esta forma funciona sin tener que nombrar la dirección de nuestro template.
 
@@ -502,7 +1113,7 @@ En **APP_DIRS** lo tenemos definido como **True**, esto significa que las aplica
 
 Primero crearemos un diccionario de datos dentro de nuestra vista (solo a modo de ejemplo) y enviaremos al template estos datos a traves del render. En nuestro caso este diccionario sera posts
 
-```py
+~~~py
 # Django
 from django.shortcuts import render
 
@@ -542,15 +1153,15 @@ posts = [
 def list_posts(request):
     """List existing posts."""
     return render(request, 'feed.html', {'posts': posts})
-```
+~~~
 
 Si logran observar enviamos los datos a traves de **{'posts': posts}**, el cual el **primer parametro sera el nombre de la variable** al momento de enviar al template, y el **segundo es el valor asignado**.
 
 En nuestro template _feed.html_ ahora imprimiremos nuestro diccionario escribiendo el **nombre de la variable**.
 
-```html
+~~~html
 {{ posts }}
-```
+~~~
 
 Si revisamos [**http://localhost:8000/posts/**](http://localhost:8000/posts/) veremos nuestro diccionario.
 
@@ -562,11 +1173,11 @@ Si revisamos [**http://localhost:8000/posts/**](http://localhost:8000/posts/) ve
 
 Ahora juguemos un poco con la **lógica de programación** y **html**. Vamos a imprimir solo los títulos. Para eso en nuestro **template** _feed.html_ escribiremos:
 
-```html
+~~~html
 {% for post in posts %}
   <p>{{ post.title }}</p>
 {% endfor %}
-```
+~~~
 
 Y el resultado en [**http://localhost:8000/posts/**](http://localhost:8000/posts/)
 
@@ -580,7 +1191,7 @@ Para ver toda la **lógica de programación** que podemos crear en el template s
 
 Ahora despleguemos los datos de nuestro diccionario y estilemos con **Bootstrap** nuestro template _feed.html_.
 
-```html
+~~~html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -610,7 +1221,7 @@ Ahora despleguemos los datos de nuestro diccionario y estilemos con **Bootstrap*
 </body>
 </html>
 
-```
+~~~
 
 Y en [**http://localhost:8000/posts/**](http://localhost:8000/posts/) veremos
 :
@@ -624,9 +1235,9 @@ Y en [**http://localhost:8000/posts/**](http://localhost:8000/posts/) veremos
 
 Para crear un **super usuario** en Django es bastante facil. En la consola escribimos
 
-```
+~~~
 python3 manage.py createsuperuser
-```
+~~~
 
 Nos preguntara un **username, email (opcional), y contrañesa**, con esto ya tendriamos nuestro super usuario.
 
@@ -636,13 +1247,13 @@ Nos preguntara un **username, email (opcional), y contrañesa**, con esto ya ten
 
 Django cuenta con un dashboard de administración. Para acceder a el debemos darle un path dentro del archivo **urls.py** de nuestro proyecto. Para esto importamos **django.contrib.admin** y le asignamos la dirección que deseamos
 
-```py
+~~~py
 from django.contrib import admin
 from django.urls import path
 
 urlpatterns = [
   path('admin/', admin.site.urls),
-```
+~~~
 
 En este caso le dimos el path **/admin/** para acceder a el. Entonces vamos a la dirección [**http://localhost:8000/admin/**](http://localhost:8000/admin/) para ingresar.
 
@@ -660,21 +1271,21 @@ Con Django podemos crear modelos de clases de nuestra aplicación.
 
 Para estos ejemplos crearemos una nueva aplicacion de usuarios en nuestro proyecto.
 
-```
+~~~
 python manage.py startapp users
-```
+~~~
 
 En el archivo **models.py** de la nueva aplicación crearemos el modelo de nuestros usuarios, el cual sera una clase _Profile_, y los tipos de valores para la clase _models_ estan definidos en la [documentación.](https://docs.djangoproject.com/en/3.0/ref/models/fields/)
 
 Para poder cargar las referencias de imagenes en neustro modelo instalaremos en nuestro ambiente Pillow, esto nos servira para la siguiente sección.
 
-```
+~~~
 pip install pillow
-```
+~~~
 
 Ahora creamos el modelo de usuarios.
 
-```py
+~~~py
 from django.contrib.auth.models import User
 from django.db import models
 
@@ -697,27 +1308,27 @@ class Profile(models.Model):
 
   def __str__(self):
     return self.user.username
-```
+~~~
 
 ## Implementar modelos en base de datos
 
 Los modelos creados en nuestras aplicaciones podemos aplicarlos en el esquema de nuestra base de datos. Primero debemos auditar los cambios en los modelos con:
 
-```
+~~~
 python manage.py makemigration
-```
+~~~
 
 Ahora aplicaremos los cambios auditados en nuestra base de datos.
 
-```
+~~~
 python manage.py migrate
-```
+~~~
 
 ## Reflejar modelos en dashboard de administración
 
 En primera instancia no podremos ver los _modelos_ que creamos en el dashboard de administración. La clase **ModelAdmin** es la representacion del modelo en la interfaz de administración. Para reflejarlo debemos almacenar el _modelo_ en el archivo **admin.py** de nuestra aplicación.
 
-```py
+~~~py
 # Django
 from django.contrib import admin
 
@@ -726,7 +1337,7 @@ from users.models import Profile
 
 # Registramos nuestros modelos aquí.
 admin.site.register(Profile)
-```
+~~~
 
 De esta forma tendremos la interfaz de administración predeterminada, en nuestro caso incluimos el modelo **Profile**.
 
@@ -753,7 +1364,7 @@ De esta forma tendremos la interfaz de administración predeterminada, en nuestr
 
 Si queremos mostrar nuestra lista de modelos de una forma personalizada, con Django podemos realizarlo. Para esto debemos crear una clase **ModelAdmin**
 
-```py
+~~~py
 # Django
 from django.contrib import admin
 
@@ -792,7 +1403,7 @@ class ProfileAdmin(admin.ModelAdmin): #Por convencion la clase que creemos debe 
     'created', 
     'modified'
   )
-```
+~~~
 
 <div align="center">
   <img 
@@ -807,7 +1418,7 @@ Para mas opciones de personalización siempre puedes revisar la [documentación.
 
 Podemos perzonalizar nuestros dashbord del registro. En nuestro caso lo haremos para el modelo de usuarios _Profile_.
 
-```py
+~~~py
 # Django
 from django.contrib import admin
 
@@ -861,7 +1472,7 @@ class ProfileAdmin(admin.ModelAdmin):
 
   # Aqui declararemos los campos que solo pueden ser leidos pero no modificados.
   readonly_fields = ('created', 'modified',)
-```
+~~~
 <div align="center">
   <img 
     src="./imgs/detalle_personalizado.png"
@@ -875,7 +1486,7 @@ En la [documentación](https://docs.djangoproject.com/en/3.0/ref/contrib/admin/#
 
 Existe la posibilidad de personalizar los dashboard nativos de Django, para ello vamos a trabajar sobre el modelo de **Users** para el cual vamos a visualizar los datos que definamos y tambien al momento de crear un usuario tambien podremos crear dentro del proceso una instancia de nuestro modelo _Profile_
 
-```py
+~~~py
 # Django
 # Importamos UserAdmin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
@@ -947,7 +1558,7 @@ class UserAdmin(BaseUserAdmin):
 
 admin.site.unregister(User)
 admin.site.register(User, UserAdmin)
-```
+~~~
 
 Si vamos a crear un nuevo **User** podremos encontrar los campos asociados a nuestro modelo _Profile_ que definimos en la variable _inlines_
 
@@ -973,7 +1584,7 @@ En la [documentación](https://docs.djangoproject.com/en/3.0/ref/contrib/admin/#
 
 ¿Que pasa si en nuestro proyecto un modelo depende de otro? Un ejemplo de esto puede ser un **_post_** que solo es posible que exista si esta relacionado con un **_usuario_**. Afortunadamente en Django podemos relacionar los modelos, en nuestro caso lo haremos con el modelo de **posts**, por lo iremos al archivo _posts/models.py_.
 
-```py
+~~~py
 # Django
 from django.db import models
 from django.contrib.auth.models import User
@@ -994,7 +1605,7 @@ class Post(models.Model):
 
   def __str__(self):
     return '{} by @{}'.format(self.title, self.user.username)
-```
+~~~
 
 ## Hacer funcionar los links
 
@@ -1002,16 +1613,16 @@ class Post(models.Model):
 
 En nuestro archivo **settings.py** declararemos 2 variables en el fondo del archivo.
 
-```py
+~~~py
 ...
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-```
+~~~
 
 Luego iremos al archivo **urls.py** y a _urlpatterns_ donde tenemos definidos los path de nuestras aplicaciones vamos a concatenar un valor static
 
-```py
+~~~py
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
@@ -1032,7 +1643,7 @@ urlpatterns = [
 
   # concatenamos static con los valores definidos en settings.py
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-```
+~~~
 
 Con esto estaría todo listo para que los valores definidos como links en los dashboard funcionen correctamente.
 
@@ -1053,7 +1664,7 @@ En la raíz de nuestro proyecto crearemos una carpeta llamada _static_, y en ell
 
 Ahora vamos al archivo _settings.py_ de nuestro proyecto. Justo debajo de la variable **STATIC_URL** vamos a pegar las variables de **STATICFILES_DIRS** y **STATICFILES_FINDERS**.
 
-```py
+~~~py
 ...
 
 STATICFILES_DIRS = (
@@ -1065,7 +1676,7 @@ STATICFILES_FINDERS = [
 ]
 
 ...
-```
+~~~
 
 Con esto tus archivos estáticos ya pueden ser referenciados.
 
@@ -1075,7 +1686,7 @@ Los templates de nuestro proyecto tienen la capacidad de **extenderse** desde ot
 
 Para preparar todo iremos al archivo _settings.py_, y en la variable **TEMPLATES** vamos a definir donde buscar los **templates** para nuestro proyecto.
 
-```py
+~~~py
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -1094,7 +1705,7 @@ TEMPLATES = [
         },
     },
 ]
-```
+~~~
 
 Ln la **raíz** de nuestro proyecto crearemos la carpeta _templates_ definido anteriormente y dentro de este crearemos todos los elementos compartidos, como por ejemplo un **navbar, base, etc.** Para los templates **no compartidos** que deseamos agregar vamos a crear **carpetas** de estos elementos. Para nuestro ejemplo vamos a crear los templates compartidos de **base** y **navbar**, y para los elementos particulares crearemos las carpetas **posts** y **users**, con los archivos _feed.html_ y _base.html_ respectivamente.
 
@@ -1107,7 +1718,7 @@ Ln la **raíz** de nuestro proyecto crearemos la carpeta _templates_ definido an
 
 Primero vamos a crear nuestro navbar en el archivo _templates/**nav.html**_ y haremos referencias a nuestros **archivos estáticos** creados en la [sección anterior.](#Archivos-estáticos)
 
-```html
+~~~html
 <!-- Cargamos las refenrencias a los dir static -->
 {% load static %}
 <nav class="navbar navbar-expand-lg fixed-top" id="main-navbar">
@@ -1144,11 +1755,11 @@ Primero vamos a crear nuestro navbar en el archivo _templates/**nav.html**_ y ha
     </div>
   </div>
 </nav>
-```
+~~~
 
 Sin embargo nuestro **navbar** aun no aparecera en nuestra aplicación. Para esto crearemos el archivo _templates/**base.html**_ y como lo hicimos en el archivo anterior vamos a cargar los **archivos estáticos.** Pero no nos detengamos ahí, tambien definamos el **bloque del head** y el **container que desplegara los templates** que se extenderan.
 
-```html
+~~~html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1175,11 +1786,11 @@ Sin embargo nuestro **navbar** aun no aparecera en nuestra aplicación. Para est
 
 </body>
 </html>
-```
+~~~
 
 Con esto ya desplegamos nuestro template **navbar** dentro de **base**, pero no nos detengamos ahí. Vamos a crear el template para **posts** que se **extendera** del archivo _templates/base.html_, el cual sera _templates/posts/**feed.html**_
 
-```html
+~~~html
 <!-- Extendemos este template de nuestro archivo templates/base.html -->
 {% extends "base.html" %}
 
@@ -1206,18 +1817,18 @@ Con esto ya desplegamos nuestro template **navbar** dentro de **base**, pero no 
     {% endfor %}
   </div>
 {% endblock %}
-```
+~~~
 
 Como ahora este template esta fuera de la aplicación debemos referenciarla en el render de la vista, por lo que iremos a _posts/views.py_ a realizar los cambios. Lo referenciaremos como _**posts/feed.html**_ que hace referencia al path de _template/posts/feed.html_. **No es necesario definir la carpeta _templates_** ya que en el archivo _settings.py_ definimos que **los templates seran buscados en esta carpeta**.
 
-```py
+~~~py
 ...
 
 def list_posts(request):
     # En la función que nos devuelve el render, debemos referenciar correctamente el template, 
     # en este caso a posts/feed.html
     return render(request, 'posts/feed.html', {'posts': posts})
-```
+~~~
 
 Ahora si revisamos el path de la aplicación [http://localhost:8000/posts/](http://localhost:8000/posts/) veremos el template de **base**, **navbar** y **posts** desplegados correctamente, ademas del head definido en _templates/posts/feed.html_
 
@@ -1234,7 +1845,7 @@ Vamos a crear el login de nuestra aplicación, y este estara alojado en la aplic
 
 Primero que todo llego la hora de poner **alias a las rutas** de nuestro proyecto, de esta forma podemos referenciar al alias en cualquier parte de nuestra aplicación sin preocuparnos si cambian el path, para esto iremos a _urls.py_
 
-```py
+~~~py
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
@@ -1258,11 +1869,11 @@ urlpatterns = [
     path('users/login/', users_views.login_view, name='login')
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-```
+~~~
 
 En el archivo _users/**views.py**_ vamos a renderizar el **login**
 
-```py
+~~~py
 # Django
 # Importamos authenticate y login
 from django.contrib.auth import authenticate, login
@@ -1287,11 +1898,11 @@ def login_view(request):
       # pero enviando la variable 'error'
       return render(request, 'users/login.html', {'error': 'Invalid username and password'})
   return render(request, 'users/login.html')
-```
+~~~
 
 En _templates/users_ crearemos 2 archivos, **base.html** y **login.html**. La razón del porque ocuparemos un base distinto al anterior es por que a nivel de contenido son distintos, sin embargo _template/users/**login.html**_ extendera de _template/users/**base.html**_
 
-```html
+~~~html
 <!-- Archivo template/users/base.html -->
 <!DOCTYPE html>
 <html lang="en">
@@ -1321,9 +1932,9 @@ En _templates/users_ crearemos 2 archivos, **base.html** y **login.html**. La ra
 
 </body>
 </html>
-```
+~~~
 
-```html
+~~~html
 <!-- Archivo template/users/login.html -->
 {% extends "users/base.html" %}
 
@@ -1352,7 +1963,7 @@ En _templates/users_ crearemos 2 archivos, **base.html** y **login.html**. La ra
 </form>
 
 {% endblock %}
-```
+~~~
 
 Si observarte bien en el archivo _login.html_ hacemos uso del metodo _csrf_token_ de Django. Este método evita un tipo de exploit malicioso llamado "Cross-site request forgery", el cual consiste en llenados de formularios desde fuera del sitio. La forma en la que trabaja _csrf_token_ es que cuando se realiza una peticion 'GET' se te envia un token único, y cuando realizas el submit del formulario con un metodo 'POST' se va a revisar el token que conseguiste antes, de esta forma se evita el exploit.
 
@@ -1365,15 +1976,15 @@ Si observarte bien en el archivo _login.html_ hacemos uso del metodo _csrf_token
 
 Ahora para **proteger** las vistas de _posts_ y solo podamos acceder a ellas si hemos **iniciado sesión** vamos al archivo _settings.py_ de nuestro proyecto y al fondo del código creamos la variable **LOGIN_URL** con el path de nuestro **login**, de esta forma nos redigira al path definido si tratamos de renderizar una vista protegida.
 
-```py
+~~~py
 ...
 # Usamos el alias del path de login
 LOGIN_URL = 'login'
-```
+~~~
 
 Ahora para proteger las vistas debemos ir al archivo views.py de nuestra aplicación.
 
-```py
+~~~py
 # Django
 # Importamos login_required
 from django.contrib.auth.decorators import login_required
@@ -1387,7 +1998,7 @@ from django.shortcuts import render
 @login_required
 def list_posts(request):
   return render(request, 'posts/feed.html', {'posts': posts})
-```
+~~~
 
 Ahora veamos las vistas protegidas en acción. Primero con un usuario **sin registrar.**
 
@@ -1411,7 +2022,7 @@ Y segundo con un usario **registrado**.
 
 El proceso de **logout** es bastante sencillo en Django. Primero iremos a las vistas de nuestro aplicativo y crearemos una función para ello.
 
-```py
+~~~py
 # Archivo users/views.py
 # Django
 # Importamos logout.
@@ -1437,11 +2048,11 @@ def login_view(request):
 def logout_view(request):
   logout(request) # Ejecutamos logout, el cual borrara los tokens del navegador.
   return redirect('login') # Redirigimos a path de login.
-```
+~~~
 
 Luego de ello iremos a las _urls.py_ de nuestro proyecto.
 
-```py
+~~~py
 
 ...
 
@@ -1451,11 +2062,11 @@ urlpatterns = [
   path('users/logout', users_views.logout_view, name='logout'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-```
+~~~
 
 Y por terminar, en el **html** haremos referencia al path de 'logout'.
 
-```html
+~~~html
 <!-- templates/nav.html -->
 {% load static %}
 ...
@@ -1466,7 +2077,7 @@ Y por terminar, en el **html** haremos referencia al path de 'logout'.
           </a>
         </li>
 ...
-```
+~~~
 
 Listo, ahora tenemos un logout funcionando perfectamente de forma sencilla.
 
@@ -1476,7 +2087,7 @@ Ahora aprenderemos a registrar un usuario y guardar un instacia de nuestro model
 
 Primero crearemos un **template** para el registro, asi que creamos el archivo _template/users/**signup.html**_
 
-```html
+~~~html
 <!-- Archivo template/users/signup.html -->
 
 {% extends 'users/base.html' %}
@@ -1509,11 +2120,11 @@ Primero crearemos un **template** para el registro, asi que creamos el archivo _
   </form>
 
 {% endblock %}
-```
+~~~
 
 Teniendo listo nuestro **template** ahora crearemos la función que renderizara nuestra vista. Para ello iremos a _users/**views.py**_
 
-```py
+~~~py
 # Django
 ...
 # Vamos hacer uso de render y redirect
@@ -1567,11 +2178,11 @@ def signup(request):
   return render(request, 'users/signup.html')
 
 ...
-```
+~~~
 
 Ahora nos faltaría solo asignar un path a nuestro signup, lo configuraremos en _urls.py_
 
-```py
+~~~py
 ...
 
 urlpatterns = [
@@ -1582,7 +2193,7 @@ urlpatterns = [
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 ...
-```
+~~~
 
 ## Middlewares
 
@@ -1592,7 +2203,7 @@ En este apartado aprenderemos como crear nuestro propio **middleware**, este no 
 
 Primero crearemos un template del perfil donde el usuario podra modificar su información. Este template sera simple por el momento y estara en _templates/users/**update_profile.html**_ 
 
-```html
+~~~html
 <!-- Archivo templates/users/update_profile.html -->
 {% extends "base.html" %}
 
@@ -1603,22 +2214,22 @@ Primero crearemos un template del perfil donde el usuario podra modificar su inf
 {% block container %}
   <h1 class="mt-5">@{{ request.user.username }}</h1>
 {% endblock %}
-```
+~~~
 
 Ahora en nuestro archivo _users/views.py_ vamos a crear la funcion que renderizara el template recien creado.
 
-```py
+~~~py
 ...
 
 def update_profile(request):
   return render(request, 'users/update_profile.html')
 
 ...
-```
+~~~
 
 Luego de definir nuestra vista vamos asignarle un path dentro del archivo _urls.py_
 
-```py
+~~~py
 ...
 
 urlpatterns = [
@@ -1627,7 +2238,7 @@ urlpatterns = [
   path('users/me/profile', users_views.update_profile, name='update_profile'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-```
+~~~
 
 Llego el momento esperado, es hora de crear nuestro **middleware**. Por lo general los middleware se crean en la aplicación relacionada, pero **solo para efectos practicos** crearemos el nuestro en la carpeta principal de nuestro proyecto como **middleware.py**
 
@@ -1640,7 +2251,7 @@ Llego el momento esperado, es hora de crear nuestro **middleware**. Por lo gener
 
 El **objetivo** de nuestro middleware es evitar que se pueda navegar por la aplicación si es que el usuario no tiene foto de perfil o no ha escrito su biografía, por lo que nuestro middleware contendra una clase que realizara todas estas validaciones.
 
-```py
+~~~py
 # Django
 # Para nuestro objetivo ocuparemos redirect para que el usuario
 # se dirija a la configuración en caso de no cumplir con los requisitos.
@@ -1665,18 +2276,18 @@ class ProfileCompletionMiddleware:
       if not profile.picture or not profile.biography:
         # En caso de que no trate de navegar al path de
         # 'update_profile' o 'logout'
-        if request.path not in [reverse('update_profile'), reverse('logout')]:
+        if request.path not se('update_profile'), reverse('logout')]:
           # Vamos a redireccionarlo al path de 'update_profile'
           return redirect('update_profile')
 
     # En caso de que cumple todos los requisitos devolvemos la solicitud original.
     response = self.get_response(request)
     return response
-```
+~~~
 
 Nos falta un paso mas, tenemos que decirle a nuestro proyecto que ahora también debe usar este middleware para las peticiones. Para ello iremos al archivo _settings.py_ y lo incluiremos en la variable de **MIDDLEWARE.**
 
-```py
+~~~py
 MIDDLEWARE = [
     # Django
     'django.middleware.security.SecurityMiddleware',
@@ -1690,7 +2301,7 @@ MIDDLEWARE = [
     # Referenciamos al middleware por el nombre de la clase
     'photogram.middleware.ProfileCompletionMiddleware',
 ]
-```
+~~~
 
 Y con esto ya creamos nuestro primer middleware.
 
@@ -1700,7 +2311,7 @@ Y con esto ya creamos nuestro primer middleware.
 
 En esta sección veremos en acción los **forms** en Django. Primero que todo crearemos nuestro form en _templates/users/**update_profile.html**_ creado en la sección de [middlewares](#Middlewares).
 
-```html
+~~~html
 <!-- templates/users/update_profile.html -->
 {% extends "base.html" %}
 {% load static %}
@@ -1773,11 +2384,11 @@ En esta sección veremos en acción los **forms** en Django. Primero que todo cr
 </div>
 
 {% endblock %}
-```
+~~~
 
 Django ya incorpora una **clase forms** del cual podemos hacer uso, asi que crearemos nuestra clase forms para crear un formulario de usuario.
 
-```py
+~~~py
 # Django
 from django import forms
 
@@ -1788,13 +2399,13 @@ class ProfileForm(forms.Form):
   phone_number = forms.CharField(max_length=20, required=False)
   picture = forms.ImageField()
 
-```
+~~~
 
 En la documentación podras encontrar como trabajar con [formularios](https://docs.djangoproject.com/en/3.0/topics/forms/) y los [campos](https://docs.djangoproject.com/en/3.0/ref/forms/fields/) que puedes usar
 
 Para poder recibir los datos y guardarlos en nuestra base de datos vamos a ir a nuestra vista de la aplicación _users/**views.py**_ en donde crearemos la función que se encargara de ello.
 
-```py
+~~~py
 # Archivo users/views.py
 ...
 
@@ -1847,7 +2458,7 @@ def update_profile(request):
   )
 
 ...
-```
+~~~
 
 Terminados estos pasos podremos ver nuestro profile con los datos de nuestro usuario y actualizarlos, preservando los datos.
 
@@ -1873,7 +2484,7 @@ Si te diste cuenta en la sección anterior, si enviamos campos inválidos estos 
 
 Para ello solo tendremos que modificar nuestro _template/**update_profile.html**_
 
-```html
+~~~html
 {% extends "base.html" %}
 {% load static %}
 
@@ -1977,7 +2588,7 @@ Para ello solo tendremos que modificar nuestro _template/**update_profile.html**
 </div>
 
 {% endblock %}
-```
+~~~
 
 Con esto estos cambios ahora los valores ingresados **persistiran** en nuestro formulario sin importar si existe un error, ademas de mostrarlos de forma estilizadas.
 
@@ -1994,7 +2605,7 @@ Hasta ahora hemos estado validando los datos a traves de la renderizacion de las
 
 Para ello primero crearemos un archivo **forms.py** en nuestra aplicación _users_.
 
-```py
+~~~py
 # Archivo users/forms.py
 # Django
 # Django tiene una clase forms del cual podemos crear nuestros formularios.
@@ -2051,11 +2662,11 @@ class SignupForm(forms.Form):
     profile = Profile(user=user)
     profile.save()
 
-```
+~~~
 
 Ya que tenemos nuestro formulario creado lo aplicaremos en la vista de **signup** de la aplicación _users_.
 
-```py
+~~~py
 # Django
 ...
 from django.shortcuts import render, redirect
@@ -2091,6 +2702,6 @@ def signup(request):
   )
 
 ...
-```
+~~~
 
 Con esta metodología hacemos uso de las herramientas de Django para crear formularios, facilitando el desarrollo y sintaxis de nuestro proyecto.
