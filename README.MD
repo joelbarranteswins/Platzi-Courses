@@ -91,7 +91,7 @@ stateDiagram-v2
 * [x] Curso de FastAPI: Modularización, Datos Avanzados y Errores
 * [ ] Curso de FastAPI: Path Operations, Validaciones y Autenticación
 * [x] Curso de FastAPI: Base de Datos, Modularización y Deploy a Producción
-* [ ] Curso Django Básico 
+* [x] Curso Django Básico 
 * [ ] Curso de Django Intermedio: Testing, Static Files, Django Admin
 
 ## Desarrollo de Software
