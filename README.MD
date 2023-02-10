@@ -10,7 +10,7 @@ All the courses which appear here is what I have taken in [**platzi.com**](platz
 ## `Architecture`
 
 * `Each School and Course` has a `Pattern`
-* `All courses from each school are sorted` as they appear in Platzi."
+* `All courses from each school are sorted` as they appear in Platzi.
 
 
 
@@ -116,6 +116,16 @@ stateDiagram-v2
 ## `English`
 
 * [x] Ruta de Beginner A1-A2
+
+</br>
+
+## Comments:
+* If a course doesn't have a check it's because I didn't take it but I will soon
+* I will be a backend engineer and machine learning enginer, so it's probably I won't take all the courses from web developer
+* Platzi create and updates courses, roads and schools, so I will use my knowledge to sort courses as you saw above. 
+    * set of courses -> roads
+    * set of roads -> Schools
+* I'm not sure if my certificates have to be in this repository, but they are till someone makes a complaint.
 
 </br>
 
