@@ -117,11 +117,14 @@ stateDiagram-v2
 
 * [x] Ruta de Beginner A1-A2
 
-</br></br>
+</br>
+
 <div align="center">
+<img src="https://pbs.twimg.com/media/DsD-ttxWsAAye1s.png" width="200">
+
+</br>
+
 <p style="color:green; font-size:130%;">Made with ♥ by Joel Barrantes</p>
 </div>
 
 
-
-<img src="https://media4.giphy.com/media/YnS7j9pwnECXLMrI4t/giphy.gif?cid=790b7611bcac33f8180fa033a644a3a80b8c473654503079&rid=giphy.gif&ct=s">
