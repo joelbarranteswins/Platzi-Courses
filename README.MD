@@ -82,20 +82,20 @@ stateDiagram-v2
 * [x] Fundamentos de Python
 * [x] Comprehensions, Funciones y Manejo de Errores
 * [x] Introducción al Pensamiento Computacional con Python
-* [ ] Introducción al Pensamiento Probabilístico
+* [ ] Introducción al Pensamiento Probabilístico `(Updated)`
 * [x] PIP y Entornos Virtuales
 * [x] Estructuras de Datos Lineales con Python
 * [x] Estadística Computacional con Python
 * [x] POO y Algoritmos con Python
 * [x] Introducción al Desarrollo Backend
 * [x] Curso Práctico de Python: Creación de un CRUD
-* [ ] Introducción a Selenium con Python
+* [ ] Introducción a Selenium con Python `(Deprecated)`
 * [x] Curso de FastAPI: Fundamentos, Path Operations y Validaciones
 * [x] Curso de FastAPI: Modularización, Datos Avanzados y Errores
-* [ ] Curso de FastAPI: Path Operations, Validaciones y Autenticación
+* [ ] Curso de FastAPI: Path Operations, Validaciones y Autenticación `(Deprecated)`
 * [x] Curso de FastAPI: Base de Datos, Modularización y Deploy a Producción
 * [x] Curso Django Básico 
-* [ ] Curso de Django Intermedio: Testing, Static Files, Django Admin
+* [x] Curso de Django Intermedio: Testing, Static Files, Django Admin
 
 ## `Desarrollo de Software`
 
@@ -116,6 +116,7 @@ stateDiagram-v2
 ## `English`
 
 * [x] Ruta de Beginner A1-A2
+* [x] Intermediate B1
 
 </br>
 
