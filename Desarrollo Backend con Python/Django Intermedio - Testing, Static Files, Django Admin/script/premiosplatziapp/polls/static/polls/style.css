@@ -1,0 +1,51 @@
+body, header, ul, li, footer {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+header, ul {
+  background: linear-gradient(
+      to right,
+      hsl(98, 100%, 62%),
+      hsl(204, 100%,  59%)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+body {
+ background: hsl(204, 100%, 5%);
+ flex-direction: column;
+ font-family: Arial, Helvetica, sans-serif;
+ height: 100vh;
+}
+
+header {
+  color: #71622d;
+  font-size: 72px;
+  height: 60px;
+  padding: 100px 50px 50px;
+}
+
+ul{
+  flex-direction: column;
+}
+
+li {
+  border: 1px solid white;
+  font-size: 28px;
+  margin-bottom: 20px;
+  padding: 50px;
+  width: 500px;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+footer {
+  justify-content: space-evenly;
+  padding: 50px 0;
+  width: 100vw;
+}
