@@ -65,37 +65,39 @@ stateDiagram-v2
 
 * [x] Curso de Introducción a C#
 * [x] Curso de C# con .Net Core
-* [ ] Curso de C# con .Net Core 2
-* [ ] Buenas Prácticas y Código Limpio en C#
-* [ ] Fundamentos de .NET
+* [ ] ~~Curso de C# con .Net Core 2~~ `(Deprecated)`
+* [ ] Buenas Prácticas y Código Limpio en C# `(New)`
+* [ ] Fundamentos de .NET `(New)`
 * [x] Fundamentos de Entity Framework
 * [x] APIs con .NET
 * [ ] Manejo de Datos con LINQ `(New)`
 * [ ] Curso de Principios SOLID en C# y .NET `(New)`
 * [ ] ASP.NET Core `(New)`
-* [ ] Desarrollo Web con Blazor y .Net
+* [ ] Desarrollo Web con Blazor y .Net 
 * [ ] Azure DevOps: Flujos de CI/CD
 * [ ] Curso Práctico de Arquitectura Backend
 
-## `Desarrollo Backend con Python`
+## `Desarrollo Backend con Python`  &check;  :heavy_check_mark: (completed)
 
 * [x] Fundamentos de Python
 * [x] Comprehensions, Funciones y Manejo de Errores
 * [x] Introducción al Pensamiento Computacional con Python
-* [ ] Introducción al Pensamiento Probabilístico `(New)`
+* [ ] ~~Introducción al Pensamiento Probabilístico~~ `(Deprecated)`
 * [x] PIP y Entornos Virtuales
 * [x] Estructuras de Datos Lineales con Python
 * [x] Estadística Computacional con Python
 * [x] POO y Algoritmos con Python
 * [x] Introducción al Desarrollo Backend
 * [x] Curso Práctico de Python: Creación de un CRUD
-* [ ] Introducción a Selenium con Python `(Deprecated)`
+* [ ] ~~Introducción a Selenium con Python~~ `(Deprecated)`
 * [x] Curso de FastAPI: Fundamentos, Path Operations y Validaciones
 * [x] Curso de FastAPI: Modularización, Datos Avanzados y Errores
-* [ ] Curso de FastAPI: Path Operations, Validaciones y Autenticación `(Deprecated)`
+* [ ] ~~Curso de FastAPI: Path Operations, Validaciones y Autenticación~~ `(Deprecated)`
 * [x] Curso de FastAPI: Base de Datos, Modularización y Deploy a Producción
 * [x] Curso Django Básico 
 * [x] Curso de Django Intermedio: Testing, Static Files, Django Admin
+
+
 
 ## `Desarrollo de Software`
 
