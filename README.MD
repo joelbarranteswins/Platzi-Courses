@@ -39,7 +39,7 @@ stateDiagram-v2
 ## `Base de Datos`
 
 * [x] Fundamentos de Bases de Datos
-* [ ] Curso de PostgreSQL
+
 
 ## `Data Science`
 
@@ -70,9 +70,9 @@ stateDiagram-v2
 * [ ] Fundamentos de .NET
 * [x] Fundamentos de Entity Framework
 * [x] APIs con .NET
-* [ ] Manejo de Datos con LINQ
-* [ ] Curso de Principios SOLID en C# y .NET
-* [ ] ASP.NET Core
+* [ ] Manejo de Datos con LINQ `(New)`
+* [ ] Curso de Principios SOLID en C# y .NET `(New)`
+* [ ] ASP.NET Core `(New)`
 * [ ] Desarrollo Web con Blazor y .Net
 * [ ] Azure DevOps: Flujos de CI/CD
 * [ ] Curso Práctico de Arquitectura Backend
@@ -82,7 +82,7 @@ stateDiagram-v2
 * [x] Fundamentos de Python
 * [x] Comprehensions, Funciones y Manejo de Errores
 * [x] Introducción al Pensamiento Computacional con Python
-* [ ] Introducción al Pensamiento Probabilístico `(Updated)`
+* [ ] Introducción al Pensamiento Probabilístico `(New)`
 * [x] PIP y Entornos Virtuales
 * [x] Estructuras de Datos Lineales con Python
 * [x] Estadística Computacional con Python
@@ -111,7 +111,6 @@ stateDiagram-v2
 ## `Desarrollo Web`
 
 * [x] Curso Definitivo de HTML y CSS
-* [ ] JavaScript Básico
 
 ## `English`
 
