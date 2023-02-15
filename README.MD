@@ -77,7 +77,7 @@ stateDiagram-v2
 * [ ] Azure DevOps: Flujos de CI/CD
 * [ ] Curso Práctico de Arquitectura Backend
 
-## `Desarrollo Backend con Python`  &check;  :heavy_check_mark: :heavy_check_mark: :white_check_mark: (completed)
+## `Desarrollo Backend con Python` :white_check_mark: (completed)
 
 * [x] Fundamentos de Python
 * [x] Comprehensions, Funciones y Manejo de Errores
