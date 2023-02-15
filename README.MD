@@ -36,9 +36,17 @@ stateDiagram-v2
     } 
 ~~~
 
-## `Base de Datos`
+## `Backend, Arquitectura y Bases de Datos`
 
 * [x] Fundamentos de Bases de Datos
+* [ ] Curso de MySQL y MariaDB
+* [ ] Curso Práctico de SQL y MySQL
+* [ ] Curso de PostgreSQL
+* [ ] Curso Práctico de SQL
+* [ ] Curso de Optimización de Bases de Datos en SQL Server
+* [ ] Nuevo Curso de Introducción a MongoDB
+* [ ] Curso de Modelamiento de Datos en MongoDB
+* [ ] Curso de Introducción a Elasticsearch
 
 
 ## `Data Science`
@@ -60,6 +68,11 @@ stateDiagram-v2
 * [x] Matemáticas para Data Science - Estadística Descriptiva
 * [x] Matemáticas para Data Science - Probabilidad
 * [x] Ética y Manejo de Datos para Data Science e Inteligencia Artificial
+
+## `Backend`
+
+* [ ] Curso de Introducción al Desarrollo Backend
+* [ ] Curso Práctico de Arquitectura Backend
 
 ## `Desarrollo Backend con C# y .NET`
 
@@ -103,12 +116,15 @@ stateDiagram-v2
 
 * [x] Curso Básico de Programación
 * [ ] Fundamentos de Ingeniería de Software
+* [ ] Curso de Expresiones Regulares
 * [x] Curso Profesional de Git y GitHub
 * [x] Introducción a la Terminal y Línea de Comandos
 * [x] Programación Orientada a Objetos POO
 * [ ] Curso de Buenas Prácticas para Escritura de Código
-* [ ] Curso Profesional de Arquitectura de Software
 * [ ] Fundamentos de Arquitectura de Software
+* [ ] Curso Profesional de Arquitectura de Software
+
+* [ ] Fundamentos de Arquitectura de Alta Concurrencia
 
 ## `Desarrollo Web`
 
