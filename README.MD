@@ -152,7 +152,10 @@ stateDiagram-v2
 
 </br>
 
-<p style="color:green; font-size:130%;">Made with ♥ by Joel Barrantes</p>
+<p style="color:green; font-size:130%;">
+Made with ♥ by 
+<a href="https://www.dropbox.com/s/8u1sw03d4y001dc/JOel%20barrantes%20palacios.pdf?dl=0" download="acero.pdf" >Joel Barrantes</a>
+</p>
 </div>
 
 
