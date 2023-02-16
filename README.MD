@@ -36,7 +36,7 @@ stateDiagram-v2
     } 
 ~~~
 
-## `Backend, Arquitectura y Bases de Datos`
+## `Bases de Datos`
 
 * [x] Fundamentos de Bases de Datos
 * [ ] Curso de MySQL y MariaDB
