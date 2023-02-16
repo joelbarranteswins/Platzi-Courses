@@ -1,0 +1,24 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@Model List<Student>
+
+    @{
+        ViewData["Title"] = "Información de Alumno";
+        //Layout = "_Layout";
+        //Layout = "Simple";
+    }
+
+    <h1>@ViewData["Title"]</h1>
+
+    <strong>Desde la vista parcial</strong>
+    <partial name="ListObjectSchool" model="Model"/>
+
+    
+    
+
+    @*<p><i>@ViewBag.ThingDynamic </i></p>*@
+    <p><i>@ViewData["Date"] </i></p>

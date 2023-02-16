@@ -1,0 +1,20 @@
+#!csharp
+
+using System.Collections.Generic;
+using System;
+
+#!csharp
+
+var value = new List<int>(){2,3,4};
+
+#!csharp
+
+var value1 = 1;
+
+#!csharp
+
+Console.WriteLine(value1);
+
+#!csharp
+
+Console.WriteLine(value1.FirstOrDefault());

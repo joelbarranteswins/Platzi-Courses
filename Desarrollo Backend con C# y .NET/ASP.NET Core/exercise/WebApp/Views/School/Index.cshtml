@@ -1,0 +1,23 @@
+﻿@Model School
+
+@{
+    ViewData["Title"] = "Información Escuela";
+    //Layout = "_Layout";
+    //Layout = "Simple";
+}
+
+<h1>Escuela @ViewData["Title"]</h1>
+<h3>Data: @Model</h3>
+@*<h2>Nombre: @Model.Name</h2>
+<h3>Tipo de Escuela: @Model.TypeSchool</h3>
+<address>
+    <p>Dirección: @Model.Address</p>
+    <p>País: @Model.Country</p>
+    <p>Ciudad: @Model.City</p>
+</address>*@
+
+@*<p><strong>Año de Fundación: @Model.YearFundation</strong></p>*@
+
+@*<p><i>@ViewBag.ThingDynamic </i></p>*@
+<p><i>@ViewData["ThingDynamic"] </i></p>
+

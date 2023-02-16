@@ -1,0 +1,30 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@Model List<Subject>
+
+    @{
+        ViewData["Title"] = "Información de Asignatura";
+        //Layout = "_Layout";
+        //Layout = "Simple";
+    }
+
+    <h1>@ViewData["Title"]</h1>
+
+    <strong>Desde la vista parcial</strong>
+    <partial name="ListObjectSchool" model="Model"/>
+
+    @*@foreach (var subject in Model)
+    {
+        <partial name="SubjectSimple" model="subject"/>
+        <partial name="ObjectSchoolSimple" model="subject"/>
+        
+    }*@
+
+    
+
+    @*<p><i>@ViewBag.ThingDynamic </i></p>*@
+    <p><i>@ViewData["Date"] </i></p>

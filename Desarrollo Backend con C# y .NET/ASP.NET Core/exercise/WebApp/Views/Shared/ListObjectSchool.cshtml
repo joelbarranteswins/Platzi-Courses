@@ -1,0 +1,27 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@*@Model List<ObjectSchoolBase>*@
+
+<table class="table table-dark table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Id</th>
+        </tr>
+      </thead>
+      <tbody>
+            @foreach (var obj in Model)
+            {
+                @*<partial name="SubjectSimple" model="subject"/>*@
+                @*<partial name="ObjectSchoolSimple" model="student"/>*@
+                <tr>
+                    <th>@obj.Name</th>
+                    <th>@obj.UniqueId</th>
+                </tr>
+            }
+      </tbody>
+    </table>

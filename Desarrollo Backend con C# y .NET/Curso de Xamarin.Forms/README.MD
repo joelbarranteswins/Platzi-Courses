@@ -54,7 +54,7 @@ Requiere tener instalada la app Xamarin Live Player en tu dispositivo
 
 Nuevo entorno de desarrollo para aplicaciones Android, iOS, Mac, ASP.NET Core y juegos con Unity
 
-## Instalación de Visual Studio .NET en Windows
+## 2. Instalación de Visual Studio .NET en Windows
 
 * Instalar Visual Studio Community 2017
 * Instalar los componentes de Xamarin, Xamarin Remoted Simulator y Xamarin Workbooks
@@ -68,7 +68,7 @@ Acepta la licencia de Microsoft
 
 Si vas a usar el emulador de Android asegúrate de tener instalado el HAXM (Hardware Accelerated Execution Manager) de Intel que te ayuda a acelerar los emuladores de Android en Windows.
 
-## Xamarin.Forms vs. Xamarin clásico
+## 3. Xamarin.Forms vs. Xamarin clásico
 
 | Xamarín clásico              | Xamarin.Forms    |
 |-------------------|-------------|
@@ -91,7 +91,7 @@ Si vas a usar el emulador de Android asegúrate de tener instalado el HAXM (Hard
 * Apps donde compartir el código sea más importante que una UI muy compleja.
 * Xamarin.Forms sería ideal para todos los demás tipos de aplicaciones de uso general.
 
-## Estrategias para compartir código
+## 4. Estrategias para compartir código
 
 Hay dos maneras de compartir código en una aplicación de Xamarin.Forms:
 
@@ -110,7 +110,7 @@ Hay dos maneras de compartir código en una aplicación de Xamarin.Forms:
 
 .NET Standard es la opción recomendada, que asegura la máxima compatibilidad y portabilidad del código, ya que está fundamentada en los lineamientos y especificaciones de Microsoft que permiten desarrollar código que sea compatible entre las librearías y proyectos de las diferentes plataformas .NET / Microsoft sin mayores condicionamientos.
 
-## Anatomía de una aplicación
+## 5. Anatomía de una aplicación
 
 La anatomía o estructura de archivos creada por Visual Studio .NET para tu aplicación, va a depender inicialmente del sistema operativo en el que estés trabajando y de los SDKs y opciones particulares que tengas instalados.
 
@@ -121,7 +121,7 @@ La anatomía o estructura de archivos creada por Visual Studio .NET para tu apli
 3. App de iOS
 4. App de UWP
 
-## Arquitectura de Xamarin.Forms
+## 6. Arquitectura de Xamarin.Forms
 
 **.NET Standar Library como base de todo:**
 
@@ -173,7 +173,7 @@ El esquema de la Arquitectura de Xamarin.Forms y la Jerarquía de Clases están 
 
 ![net-standard](./imgs/architecture-xamarin-forms.png)
 
-## Sistema de Propiedades Enlazables
+## 7. Sistema de Propiedades Enlazables
 
 Las Propiedades Enlazables son una característica esencial de los sistemas basados en XAML, se implementa en Xamarin.Forms a través de la clase base BindableObjects, de la que derivan todas las demás clases de la API. Son propiedades cuyo valor no lo determinas tú sino que está en función de una gran cantidad de estímulos a su alrededor.
 
