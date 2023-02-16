@@ -111,7 +111,6 @@ stateDiagram-v2
 * [x] Curso de Django Intermedio: Testing, Static Files, Django Admin
 
 
-
 ## `Desarrollo de Software`
 
 * [x] Curso Básico de Programación
@@ -123,7 +122,6 @@ stateDiagram-v2
 * [ ] Curso de Buenas Prácticas para Escritura de Código
 * [ ] Fundamentos de Arquitectura de Software
 * [ ] Curso Profesional de Arquitectura de Software
-
 * [ ] Fundamentos de Arquitectura de Alta Concurrencia
 
 ## `Desarrollo Web`
