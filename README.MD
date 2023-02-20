@@ -36,7 +36,7 @@ stateDiagram-v2
     } 
 ~~~
 
-## `Bases de Datos`
+## `Bases de Datos` :sunglasses: (Studying)
 
 * [x] Fundamentos de Bases de Datos
 * [ ] Curso de MySQL y MariaDB
@@ -60,7 +60,7 @@ stateDiagram-v2
 * [x] Curso Practico de Regresion Lineal Simple
 * [x] Curso Profesional de Python
 * [x] Business Intelligence - Utilidad y Areas de oportunidad
-* [ ] Visualización de Datos para Business Intelligence
+* [ ] Visualización de Datos para Business Intelligence `(New)`
 * [x] Manipulación y Análisis de Datos con Pandas y Python
 * [x] Manipulación y Transformación de Datos con Pandas y NumPy
 * [x] Visualización de Datos con Matplotlib y Seaborn
@@ -69,9 +69,9 @@ stateDiagram-v2
 * [x] Matemáticas para Data Science - Probabilidad
 * [x] Ética y Manejo de Datos para Data Science e Inteligencia Artificial
 
-## `Backend`
+## `Desarrollo Backend`
 
-* [ ] Curso de Introducción al Desarrollo Backend
+* [x] Curso de Introducción al Desarrollo Backend
 * [ ] Curso Práctico de Arquitectura Backend
 
 ## `Desarrollo Backend con C# y .NET`
@@ -90,7 +90,7 @@ stateDiagram-v2
 * [ ] Azure DevOps: Flujos de CI/CD
 * [ ] Curso Práctico de Arquitectura Backend
 
-## `Desarrollo Backend con Python` :white_check_mark: (completed)
+## `Desarrollo Backend con Python` :white_check_mark: (Completed)
 
 * [x] Fundamentos de Python
 * [x] Comprehensions, Funciones y Manejo de Errores
