@@ -5,6 +5,10 @@
 			"path": "."
 		},
 		{
+			"name": "Base de Datos",
+			"path": "./Base de Datos"
+		},
+		{
 			"name": "Python",
 			"path": "Desarrollo Backend con Python"
 		},
@@ -15,6 +19,10 @@
 		{
 			"name": "Data Science",
 			"path": "./Data Science"
+		},
+		{
+			"name": "Perfil Profesional",
+			"path": "./Perfil Profesional"
 		}
 	],
 	"settings": {
