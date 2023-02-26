@@ -54,13 +54,12 @@ stateDiagram-v2
 * [x] DataAcademy
 * [x] Cómo y Por Qué Aprender Data Science e Inteligencia Artificial
 * [x] Analisis de negocios para ciencia de datos
-* [x] Básico de Python
+* [x] Python Básico
 * [x] Excel Básico
 * [x] Entorno Trabajo Ciencia de Datos
 * [x] Curso Practico de Regresion Lineal Simple
 * [x] Curso Profesional de Python
 * [x] Business Intelligence - Utilidad y Areas de oportunidad
-* [ ] Visualización de Datos para Business Intelligence `(New)`
 * [x] Manipulación y Análisis de Datos con Pandas y Python
 * [x] Manipulación y Transformación de Datos con Pandas y NumPy
 * [x] Visualización de Datos con Matplotlib y Seaborn
@@ -78,7 +77,6 @@ stateDiagram-v2
 
 * [x] Curso de Introducción a C#
 * [x] Curso de C# con .Net Core
-* [ ] ~~Curso de C# con .Net Core 2~~ `(Deprecated)`
 * [ ] Buenas Prácticas y Código Limpio en C# `(New)`
 * [ ] Fundamentos de .NET `(New)`
 * [x] Fundamentos de Entity Framework
@@ -95,17 +93,14 @@ stateDiagram-v2
 * [x] Fundamentos de Python
 * [x] Comprehensions, Funciones y Manejo de Errores
 * [x] Introducción al Pensamiento Computacional con Python
-* [ ] ~~Introducción al Pensamiento Probabilístico~~ `(Deprecated)`
 * [x] PIP y Entornos Virtuales
 * [x] Estructuras de Datos Lineales con Python
 * [x] Estadística Computacional con Python
 * [x] POO y Algoritmos con Python
 * [x] Introducción al Desarrollo Backend
 * [x] Curso Práctico de Python: Creación de un CRUD
-* [ ] ~~Introducción a Selenium con Python~~ `(Deprecated)`
 * [x] Curso de FastAPI: Fundamentos, Path Operations y Validaciones
 * [x] Curso de FastAPI: Modularización, Datos Avanzados y Errores
-* [ ] ~~Curso de FastAPI: Path Operations, Validaciones y Autenticación~~ `(Deprecated)`
 * [x] Curso de FastAPI: Base de Datos, Modularización y Deploy a Producción
 * [x] Curso Django Básico 
 * [x] Curso de Django Intermedio: Testing, Static Files, Django Admin
@@ -127,6 +122,15 @@ stateDiagram-v2
 ## `Desarrollo Web`
 
 * [x] Curso Definitivo de HTML y CSS
+
+## `Perfil Profesional`
+* [x] Creación de Portafolio y CV
+* [x] Curso de Creación de CV
+* [ ] Optimización del Perfil de LinkedIn
+* [ ] Curso de Networking Efectivo
+* [ ] Optimización del Perfil Profesional
+* [ ] Curso para ser Freelance Profesional
+* [ ] Diseño y Desarrollo de Plan de Carrera
 
 ## `English`
 
@@ -151,8 +155,7 @@ stateDiagram-v2
 </br>
 
 <p style="color:green; font-size:130%;">
-Made with ♥ by 
-<a href="https://www.dropbox.com/s/8u1sw03d4y001dc/JOel%20barrantes%20palacios.pdf?dl=0" download="acero.pdf" >Joel Barrantes</a>
+Made with ♥ by Joel Barrantes</a>
 </p>
 </div>
 
