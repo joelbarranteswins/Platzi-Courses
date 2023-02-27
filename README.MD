@@ -126,7 +126,7 @@ stateDiagram-v2
 ## `Perfil Profesional`
 * [x] Creación de Portafolio y CV
 * [x] Curso de Creación de CV
-* [ ] Optimización del Perfil de LinkedIn
+* [x] Optimización del Perfil de LinkedIn
 * [ ] Curso de Networking Efectivo
 * [ ] Optimización del Perfil Profesional
 * [ ] Curso para ser Freelance Profesional
