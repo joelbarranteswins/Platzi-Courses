@@ -1,9 +1,11 @@
 
 # Curso de Creación de CV
 
+<div align="center">
+<img src="./imgs/cv-poster.png">
+</div>
+
 # Lo que debes conocer antes de construir tu CV
-
-
 
 ## Estilos y formatos para un CV memorable
 
