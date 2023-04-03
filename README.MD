@@ -5,7 +5,8 @@
 
 ## `Overview`
 
-All the courses which appear here is what I have taken in [**platzi.com**](platzi.com) and I own all the files except the files inside folders named **shared**, with much pleasure Fork and download all my sources if you like it and if you want to improve this repo just make a Pull request 😀.
+This repository contains all the courses I have taken on [**platzi.com**](https://platzi.com), and I own all the files, except for those inside the "shared" folders. If you find this repository helpful, please give it a star. If you'd like to contribute, feel free to fork the repository and make a pull request. I welcome any improvements you might have. Thank you! 😀
+
 
 ## `Architecture`
 
@@ -139,13 +140,14 @@ stateDiagram-v2
 
 </br>
 
-## Comments:
-* If a course doesn't have a check it's because I didn't take it but I will soon
-* I will be a backend engineer and machine learning enginer, so it's probably I won't take all the courses from web developer
-* Platzi create and updates courses, roads and schools, so I will use my knowledge to sort courses as you saw above. 
-    * set of courses -> roads
-    * set of roads -> Schools
-* I'm not sure if my certificates have to be in this repository, but they are till someone makes a complaint. however, it's not a crime to show certificates but they use space in this repo. maybe it will be removed
+## Important Considerations:
+* If a course doesn't have a checkmark, it's because I haven't taken it yet, but I plan to soon.
+* Although my focus is on becoming a backend and machine learning engineer, I may not take all of the web development courses.
+* Platzi frequently creates and updates courses, paths, and schools, and I will use my knowledge to organize the courses as shown below:
+    * Sets of courses -> Paths
+    * Sets of paths -> Schools
+* Please note that if you fork this repository, it is recommended that you do so for the purpose of making a pull request. If you fork for any other reason, you may not have access to new commits. To receive updates, please star this repository.
+
 
 </br>
 
@@ -155,7 +157,7 @@ stateDiagram-v2
 </br>
 
 <p style="color:green; font-size:130%;">
-Made with ♥ by Joel Barrantes</a>
+Made with ♥ by <a href="https://github.com/joelbarranteswins"><b>Joel Barrantes</b></a>
 </p>
 </div>
 
