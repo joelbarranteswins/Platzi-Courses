@@ -37,6 +37,17 @@ stateDiagram-v2
     } 
 ~~~
 
+
+## `Artificial inteligence Tools`
+* [x] Curso de Inteligencia Artificial - ChatGPT, DALL-E y Hugging Face
+* [ ] Curso de Generación de Imágenes con IA - Dall-E, Midjourney y Stable Diffusion
+* [ ] Taller de Creación de Contenido con Inteligencia Artificial
+* [ ] Desafío IA - Crea videos y animaciones con herramientas avanzadas de IA
+* [ ] Curso de Experimentación en Machine Learning con Hugging Face
+* [ ] Curso de Transfer Learning con Hugging Face
+* [ ] Curso de Inteligencia Artificial aplicada a Product Design
+
+
 ## `Bases de Datos` :sunglasses: (Studying)
 
 * [x] Fundamentos de Bases de Datos
@@ -124,6 +135,13 @@ stateDiagram-v2
 
 * [x] Curso Definitivo de HTML y CSS
 
+
+## `English`
+
+* [x] Ruta de Beginner A1-A2
+* [x] Intermediate B1
+
+
 ## `Perfil Profesional`
 * [x] Creación de Portafolio y CV
 * [x] Curso de Creación de CV
@@ -133,10 +151,8 @@ stateDiagram-v2
 * [ ] Curso para ser Freelance Profesional
 * [ ] Diseño y Desarrollo de Plan de Carrera
 
-## `English`
 
-* [x] Ruta de Beginner A1-A2
-* [x] Intermediate B1
+
 
 </br>
 
