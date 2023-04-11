@@ -39,6 +39,7 @@ stateDiagram-v2
 
 
 ## `Artificial inteligence Tools`
+* [ ] Curso de Inglés para el Uso de Herramientas de Inteligencia Artificial
 * [x] Curso de Inteligencia Artificial - ChatGPT, DALL-E y Hugging Face
 * [ ] Curso de Generación de Imágenes con IA - Dall-E, Midjourney y Stable Diffusion
 * [ ] Taller de Creación de Contenido con Inteligencia Artificial
@@ -80,10 +81,12 @@ stateDiagram-v2
 * [x] Matemáticas para Data Science - Probabilidad
 * [x] Ética y Manejo de Datos para Data Science e Inteligencia Artificial
 
+
 ## `Desarrollo Backend`
 
 * [x] Curso de Introducción al Desarrollo Backend
 * [ ] Curso Práctico de Arquitectura Backend
+
 
 ## `Desarrollo Backend con C# y .NET`
 
@@ -99,6 +102,7 @@ stateDiagram-v2
 * [ ] Desarrollo Web con Blazor y .Net 
 * [ ] Azure DevOps: Flujos de CI/CD
 * [ ] Curso Práctico de Arquitectura Backend
+
 
 ## `Desarrollo Backend con Python` :white_check_mark: (Completed)
 
@@ -130,6 +134,7 @@ stateDiagram-v2
 * [ ] Fundamentos de Arquitectura de Software
 * [ ] Curso Profesional de Arquitectura de Software
 * [ ] Fundamentos de Arquitectura de Alta Concurrencia
+
 
 ## `Desarrollo Web`
 
