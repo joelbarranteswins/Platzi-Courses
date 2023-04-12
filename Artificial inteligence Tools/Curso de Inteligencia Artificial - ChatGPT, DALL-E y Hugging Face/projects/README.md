@@ -171,7 +171,7 @@ print(transcriptions)
 3. The Transformer library proved to be an excellent choice for my project due to its ease of use and versatility. With a solid understanding of the desired outcome, this library can help to create an interesting and engaging project.
 
 
-## Recommendation::
+## Recommendation:
 1. It's important to understand that machine learning models are not easy to comprehend right away. It takes time and effort to learn the basics and recognize the applications of supervised learning, unsupervised learning, reinforcement learning, and deep learning. Therefore, it is recommended that you take the time to learn the basics before diving into more complex models. This will help you build a solid foundation of knowledge, making it easier to understand and apply advanced machine learning concepts in the future.
 
 
