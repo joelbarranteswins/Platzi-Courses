@@ -1,12 +1,9 @@
 
-<div style="display: flex; justify-content: center;">
-  <span style="color:gray; font-size: 20px; font-style: italic; text-align: center;">Proyecto del curso de Inteligencia Artificial: ChatGPT, DALL-E y Hugging Face</span>
-</div>
+## Proyecto del curso de Inteligencia Artificial: ChatGPT, DALL-E y Hugging Face
 
-<div style="display: flex; justify-content: center;">
-  <span style="color:red; font-size: 15px; font-weight: bold;">Joel Barrantes</span>
-</div></br></br>
+### `Joel Barrantes`
 
+</br></br>
 
 ## Using AI to generate Images
 
