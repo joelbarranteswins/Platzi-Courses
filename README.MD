@@ -37,18 +37,6 @@ stateDiagram-v2
     } 
 ~~~
 
-
-## `Artificial inteligence Tools`
-* [x] Curso de Inglés para el Uso de Herramientas de Inteligencia Artificial
-* [x] Curso de Inteligencia Artificial - ChatGPT, DALL-E y Hugging Face
-* [ ] Curso de Generación de Imágenes con IA - Dall-E, Midjourney y Stable Diffusion
-* [ ] Taller de Creación de Contenido con Inteligencia Artificial
-* [ ] Desafío IA - Crea videos y animaciones con herramientas avanzadas de IA
-* [ ] Curso de Experimentación en Machine Learning con Hugging Face
-* [ ] Curso de Transfer Learning con Hugging Face
-* [ ] Curso de Inteligencia Artificial aplicada a Product Design
-
-
 ## `Bases de Datos` :sunglasses: (Studying)
 
 * [x] Fundamentos de Bases de Datos
@@ -88,12 +76,6 @@ stateDiagram-v2
 * [ ] Curso Práctico de Arquitectura Backend
 
 
-## `Desarrollo Backend`
-
-* [x] Curso Básico de Programación en Go
-* [ ] Curso Práctico de Go: Creación de un Servidor Web
-
-
 ## `Desarrollo Backend con C# y .NET`
 
 * [x] Curso de Introducción a C#
@@ -128,6 +110,12 @@ stateDiagram-v2
 * [x] Curso de Django Intermedio: Testing, Static Files, Django Admin
 
 
+## `Desarrollo Backend con GO`
+
+* [x] Curso Básico de Programación en Go
+* [ ] Curso Práctico de Go: Creación de un Servidor Web
+
+
 ## `Desarrollo de Software`
 
 * [x] Curso Básico de Programación
@@ -147,18 +135,23 @@ stateDiagram-v2
 * [x] Curso Definitivo de HTML y CSS
 
 
-## `English`
+## `Herramientas de IA`
+* [x] Curso de Inglés para el Uso de Herramientas de Inteligencia Artificial
+* [x] Curso de Inteligencia Artificial - ChatGPT, DALL-E y Hugging Face
+* [ ] Curso de Generación de Imágenes con IA - Dall-E, Midjourney y Stable Diffusion
+* [ ] Taller de Creación de Contenido con Inteligencia Artificial
+* [ ] Desafío IA - Crea videos y animaciones con herramientas avanzadas de IA
+* [ ] Curso de Experimentación en Machine Learning con Hugging Face
+* [ ] Curso de Transfer Learning con Hugging Face
+* [ ] Curso de Inteligencia Artificial aplicada a Product Design
 
+
+## `Ingles
 * [x] Ruta de Beginner A1-A2
 * [x] Intermediate B1
 
 
-## `Productivity and Well-being`
-
-* [ ] Audiocurso - Duerme Mejor y Logra un Sueño Reparador
-
-
-## `Professional Profile`
+## `Perfil Profesional`
 * [x] Creación de Portafolio y CV
 * [x] Curso de Creación de CV
 * [x] Optimización del Perfil de LinkedIn
@@ -168,6 +161,9 @@ stateDiagram-v2
 * [ ] Diseño y Desarrollo de Plan de Carrera
 
 
+## `Productividad y Bienestar`
+
+* [ ] Audiocurso - Duerme Mejor y Logra un Sueño Reparador
 
 
 </br>

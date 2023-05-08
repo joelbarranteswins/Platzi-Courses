@@ -5,28 +5,52 @@
 			"path": "."
 		},
 		{
-			"name": "Backend with Go",
-			"path": "./Backend with Go"
-		},
-		{
 			"name": "Base de Datos",
 			"path": "./Base de Datos"
-		},
-		{
-			"name": "Python",
-			"path": "Desarrollo Backend con Python"
-		},
-		{
-			"name": ".Net",
-			"path": "./Desarrollo Backend con C# y .NET"
 		},
 		{
 			"name": "Data Science",
 			"path": "./Data Science"
 		},
 		{
+			"name": "Desarrollo Backend",
+			"path": "./Desarrollo Backend"
+		},
+		{
+			"name": ".Net",
+			"path": "./Desarrollo Backend con C# y .NET"
+		},
+		{
+			"name": "Python",
+			"path": "Desarrollo Backend con Python"
+		},
+		{
+			"name": "Desarrollo Backend con Go",
+			"path": "./Desarrollo Backend con Go"
+		},
+		{
+			"name": "Desarrollo de Software",
+			"path": "./Desarrollo de Software"
+		},
+		{
+			"name": "Desarrollo Web",
+			"path": "./Desarrollo Web"
+		},
+		{
+			"name": "Herramientas de IA",
+			"path": "./Herramientas de IA"
+		},
+		{
+			"name": "Ingles",
+			"path": "./Ingles"
+		},
+		{
 			"name": "Perfil Profesional",
 			"path": "./Perfil Profesional"
+		},
+		{
+			"name": "Productividad y Bienestar",
+			"path": "./Productividad y Bienestar"
 		}
 	],
 	"settings": {
