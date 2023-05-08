@@ -39,7 +39,7 @@ stateDiagram-v2
 
 
 ## `Artificial inteligence Tools`
-* [ ] Curso de Inglés para el Uso de Herramientas de Inteligencia Artificial
+* [x] Curso de Inglés para el Uso de Herramientas de Inteligencia Artificial
 * [x] Curso de Inteligencia Artificial - ChatGPT, DALL-E y Hugging Face
 * [ ] Curso de Generación de Imágenes con IA - Dall-E, Midjourney y Stable Diffusion
 * [ ] Taller de Creación de Contenido con Inteligencia Artificial
@@ -86,6 +86,12 @@ stateDiagram-v2
 
 * [x] Curso de Introducción al Desarrollo Backend
 * [ ] Curso Práctico de Arquitectura Backend
+
+
+## `Desarrollo Backend`
+
+* [x] Curso Básico de Programación en Go
+* [ ] Curso Práctico de Go: Creación de un Servidor Web
 
 
 ## `Desarrollo Backend con C# y .NET`
@@ -147,7 +153,12 @@ stateDiagram-v2
 * [x] Intermediate B1
 
 
-## `Perfil Profesional`
+## `Productivity and Well-being`
+
+* [ ] Audiocurso - Duerme Mejor y Logra un Sueño Reparador
+
+
+## `Professional Profile`
 * [x] Creación de Portafolio y CV
 * [x] Curso de Creación de CV
 * [x] Optimización del Perfil de LinkedIn

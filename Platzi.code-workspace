@@ -5,6 +5,10 @@
 			"path": "."
 		},
 		{
+			"name": "Backend with Go",
+			"path": "./Backend with Go"
+		},
+		{
 			"name": "Base de Datos",
 			"path": "./Base de Datos"
 		},
