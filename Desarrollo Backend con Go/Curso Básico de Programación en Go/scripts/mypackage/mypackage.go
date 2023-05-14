@@ -1,4 +1,4 @@
-package rain
+package mypackage
 
 import "fmt"
 

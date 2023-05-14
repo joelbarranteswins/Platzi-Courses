@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	pk "./src/rain"
+	pk "platzi.com/joel/funciones/mypackage"
 )
 
 func main() {
@@ -14,6 +14,6 @@ func main() {
 
 	pk.PrintMessage("Hola Platzi")
 
-	pk.printMessage1("Hola")
+	// pk.printMessage1("Hola")
 
 }
