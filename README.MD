@@ -92,6 +92,24 @@ stateDiagram-v2
 * [ ] Curso Práctico de Arquitectura Backend
 
 
+## `Desarrollo Backend con GO`
+
+* [x] Curso Básico de Programación en Go
+* [ ] Curso Práctico de Go: Creación de un Servidor Web
+
+
+## `Desarrollo backend con Java`
+* [ ] Curso de Introducción a Java SE
+* [ ] Curso de Java SE Orientado a Objetos
+* [ ] Curso de Java SE Persistencia de Datos
+
+
+## `Desarrollo backend con JavaScript`
+* [ ] Curso Básico de JavaScript
+* [ ] Curso de ECMAScript: Historia y Versiones de JavaScript
+* [ ] Curso de Fundamentos de Node.js
+
+
 ## `Desarrollo Backend con Python` :white_check_mark: (Completed)
 
 * [x] Fundamentos de Python
@@ -108,12 +126,6 @@ stateDiagram-v2
 * [x] Curso de FastAPI: Base de Datos, Modularización y Deploy a Producción
 * [x] Curso Django Básico 
 * [x] Curso de Django Intermedio: Testing, Static Files, Django Admin
-
-
-## `Desarrollo Backend con GO`
-
-* [x] Curso Básico de Programación en Go
-* [ ] Curso Práctico de Go: Creación de un Servidor Web
 
 
 ## `Desarrollo de Software`
