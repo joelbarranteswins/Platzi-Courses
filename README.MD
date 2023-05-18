@@ -80,13 +80,13 @@ stateDiagram-v2
 
 * [x] Curso de Introducción a C#
 * [x] Curso de C# con .Net Core
-* [ ] Buenas Prácticas y Código Limpio en C# `(New)`
-* [ ] Fundamentos de .NET `(New)`
+* [ ] Buenas Prácticas y Código Limpio en C#
+* [ ] Fundamentos de .NET
 * [x] Fundamentos de Entity Framework
 * [x] APIs con .NET
-* [ ] Manejo de Datos con LINQ `(New)`
-* [ ] Curso de Principios SOLID en C# y .NET `(New)`
-* [ ] ASP.NET Core `(New)`
+* [ ] Manejo de Datos con LINQ
+* [ ] Curso de Principios SOLID en C# y .NET
+* [ ] ASP.NET Core
 * [ ] Desarrollo Web con Blazor y .Net 
 * [ ] Azure DevOps: Flujos de CI/CD
 * [ ] Curso Práctico de Arquitectura Backend
@@ -105,7 +105,7 @@ stateDiagram-v2
 
 
 ## `Desarrollo backend con JavaScript`
-* [ ] Curso Básico de JavaScript
+* [x] Curso Básico de JavaScript
 * [ ] Curso de ECMAScript: Historia y Versiones de JavaScript
 * [ ] Curso de Fundamentos de Node.js
 
