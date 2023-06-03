@@ -79,16 +79,18 @@ stateDiagram-v2
 ## `Desarrollo Backend con C# y .NET`
 
 * [x] Curso de Introducción a C#
+* [x] Curso Básico de Programación con C#
+* [x] Curso de Fundamentos de .NET
 * [x] Curso de C# con .Net Core
-* [ ] Buenas Prácticas y Código Limpio en C#
-* [ ] Fundamentos de .NET
+* [ ] Curso de Buenas Prácticas y Código Limpio en C#
 * [x] Fundamentos de Entity Framework
 * [x] APIs con .NET
 * [ ] Manejo de Datos con LINQ
 * [ ] Curso de Principios SOLID en C# y .NET
 * [ ] ASP.NET Core
 * [ ] Desarrollo Web con Blazor y .Net 
-* [ ] Azure DevOps: Flujos de CI/CD
+* [ ] Curso de Aplicaciones Web con Blazor WebAssembly y .NET
+* [ ] Curso de Azure DevOps: Flujos de CI/CD
 * [ ] Curso Práctico de Arquitectura Backend
 
 
@@ -99,9 +101,14 @@ stateDiagram-v2
 
 
 ## `Desarrollo backend con Java`
-* [ ] Curso de Introducción a Java SE
+* [x] Curso de Introducción a Java SE
 * [ ] Curso de Java SE Orientado a Objetos
 * [ ] Curso de Java SE Persistencia de Datos
+* [ ] Curso Básico de Testing en Java
+* [ ] Curso de Programación Funcional con Java SE
+* [ ] Curso de Java Spring
+* [ ] Curso de Java - Backend con Spring Boot
+* [ ] Curso Avanzado de Java SE
 
 
 ## `Desarrollo backend con JavaScript`

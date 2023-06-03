@@ -17,12 +17,16 @@
 			"path": "./Desarrollo Backend"
 		},
 		{
-			"name": ".Net",
+			"name": "Desarrollo Backend con C# y .NET",
 			"path": "./Desarrollo Backend con C# y .NET"
 		},
 		{
 			"name": "Desarrollo Backend con Go",
 			"path": "./Desarrollo Backend con Go"
+		},
+		{
+			"name": "Desarrollo Backend con Java",
+			"path": "./Desarrollo Backend con Java"
 		},
 		{
 			"name": "Desarrollo Backend con JavaScript",
@@ -58,7 +62,7 @@
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "plus",
+		"liveServer.settings.multiRootWorkspaceName": "Desarrollo Backend con JavaScript",
 		"FSharp.suggestGitignore": false
 	}
 }
