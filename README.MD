@@ -37,7 +37,7 @@ stateDiagram-v2
     } 
 ~~~
 
-## `Bases de Datos` :sunglasses: (Studying)
+## `Bases de Datos` 
 
 * [x] Fundamentos de Bases de Datos
 * [ ] Curso de MySQL y MariaDB
@@ -76,7 +76,7 @@ stateDiagram-v2
 * [ ] Curso Práctico de Arquitectura Backend
 
 
-## `Desarrollo Backend con C# y .NET`
+## `Desarrollo Backend con C# y .NET` :sunglasses: (Studying)
 
 * [x] Curso de Introducción a C#
 * [x] Curso Básico de Programación con C#
