@@ -82,7 +82,7 @@ stateDiagram-v2
 * [x] Curso Básico de Programación con C#
 * [x] Curso de Fundamentos de .NET
 * [x] Curso de C# con .Net Core
-* [ ] Curso de Buenas Prácticas y Código Limpio en C#
+* [x] Curso de Buenas Prácticas y Código Limpio en C#
 * [x] Fundamentos de Entity Framework
 * [x] APIs con .NET
 * [ ] Manejo de Datos con LINQ
@@ -91,7 +91,9 @@ stateDiagram-v2
 * [ ] Desarrollo Web con Blazor y .Net 
 * [ ] Curso de Aplicaciones Web con Blazor WebAssembly y .NET
 * [ ] Curso de Azure DevOps: Flujos de CI/CD
-* [ ] Curso Práctico de Arquitectura Backend
+* [ ] Curso de .NET MAUI: Fundamentos de Interfaces Gráficas
+* [ ] Curso de .NET MAUI: Manejo del XAML
+* [ ] Laboratorio de .NET MAUI: Interfaz de una App de Reservas
 
 
 ## `Desarrollo Backend con GO`
@@ -184,6 +186,10 @@ stateDiagram-v2
 
 * [ ] Audiocurso - Duerme Mejor y Logra un Sueño Reparador
 
+
+## `Technical Writing`
+
+* [x] Curso de Introducción al Technical Writing y Documentación de Código
 
 </br>
 
