@@ -83,12 +83,13 @@ stateDiagram-v2
 * [x] Curso de Fundamentos de .NET
 * [x] Curso de C# con .Net Core
 * [x] Curso de Buenas Prácticas y Código Limpio en C#
+* [ ] Curso de Principios SOLID en C# y .NET
 * [x] Fundamentos de Entity Framework
 * [x] APIs con .NET
 * [ ] Manejo de Datos con LINQ
-* [ ] Curso de Principios SOLID en C# y .NET
-* [ ] ASP.NET Core
-* [ ] Desarrollo Web con Blazor y .Net 
+* [ ] Curso de ASP.NET Core
+* [ ] Curso de Desarrollo Web con Blazor y .Net Core 3 
+* [ ] Curso de Web Apps y Logic Apps en Azure
 * [ ] Curso de Aplicaciones Web con Blazor WebAssembly y .NET
 * [ ] Curso de Azure DevOps: Flujos de CI/CD
 * [ ] Curso de .NET MAUI: Fundamentos de Interfaces Gráficas
