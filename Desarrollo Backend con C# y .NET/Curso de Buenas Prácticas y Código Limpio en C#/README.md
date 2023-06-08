@@ -138,6 +138,11 @@ Algunos ejemplos de complejidad innecesaria son:
 * https://dev.to/mteheran/c-evolution-3o9o
 * https://learn.microsoft.com/es-es/dotnet/csharp/whats-new/csharp-version-history
 
+![](./imgs/versions_1.png)
+
+![](./imgs/versions_2.png)
+
+
 ## 8. Interpolación de cadenas, inicializador de propiedades y operador condicional null
 
 * Interpolación de cadenas: La interpolación de cadenas es una forma conveniente de combinar variables y cadenas de texto en un solo valor. En lugar de concatenar manualmente las cadenas, puedes incluir variables dentro de una cadena utilizando llaves {} y el símbolo de dólar $ al principio. Al evaluar la cadena, el valor de la variable se insertará en su lugar. Aquí tienes un ejemplo de cómo se vería en código:
@@ -198,3 +203,10 @@ void ShowMenuTaskList()
 
 ## 10. Uso de comentarios
 
+![](./imgs/comments.png)
+
+## 11. Recomendaciones finales
+
+![](./imgs/suggestions.png)
+
+![](./imgs/suggestions_2.png)

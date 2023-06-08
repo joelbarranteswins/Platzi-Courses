@@ -24,15 +24,16 @@ do
 /// <returns>Returns option indicated by user</returns>
 static int ShowMainMenu()
 {
-    Console.WriteLine("----------------------------------------");
-    Console.WriteLine("Ingrese la opción a realizar: ");
-    Console.WriteLine("1. Nueva tarea");
-    Console.WriteLine("2. Remover tarea");
-    Console.WriteLine("3. Tareas pendientes");
-    Console.WriteLine("4. Salir");
+    string optionalText = $@"
+    ----------------------------------------
+    1. Nueva tarea
+    2. Remover tarea
+    3. Tareas pendientes
+    4. Salir
+    ";
+    Console.WriteLine(optionalText);
 
-    string line = Console.ReadLine();
-    return Convert.ToInt32(line);
+    return Convert.ToInt32(Console.ReadLine());
 }
 
 void ShowMenuRemove()
