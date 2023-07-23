@@ -1,0 +1,302 @@
+[
+    {
+      "title": "Unlocking Android",
+      "pageCount": 416,
+      "publishedDate": "2009-04-01",
+      "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/ableson.jpg",
+      "shortDescription": "Unlocking Android: A Developer's Guide provides concise, hands-on instruction for the Android operating system and development tools. This book teaches important architectural concepts in a straightforward writing style and builds on this with practical and useful examples throughout.",
+      "status": "PUBLISH",
+      "authors": ["W. Frank Ableson", "Charlie Collins", "Robi Sen"],
+      "categories": ["Open Source", "Mobile"]
+    },
+    {
+      "title": "Android in Action, Second Edition",
+      "pageCount": 592,
+      "publishedDate": "2011-01-14" ,
+      "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/ableson2.jpg",
+      "shortDescription": "Android in Action, Second Edition is a comprehensive tutorial for Android developers. Taking you far beyond \"Hello Android,\" this fast-paced book puts you in the driver's seat as you learn important architectural concepts and implementation strategies. You'll master the SDK, build WebKit apps using HTML 5, and even learn to extend or replace Android's built-in features by building useful and intriguing examples. ",
+      "longDescription": "When it comes to mobile apps, Android can do almost anything   and with this book, so can you! Android runs on mobile devices ranging from smart phones to tablets to countless special-purpose gadgets. It's the broadest mobile platform available.    Android in Action, Second Edition is a comprehensive tutorial for Android developers. Taking you far beyond \"Hello Android,\" this fast-paced book puts you in the driver's seat as you learn important architectural concepts and implementation strategies. You'll master the SDK, build WebKit apps using HTML 5, and even learn to extend or replace Android's built-in features by building useful and intriguing examples. ",
+      "status": "PUBLISH",
+      "authors": ["W. Frank Ableson", "Robi Sen"],
+      "categories": ["Java"]
+    },
+    {
+      "title": "Specification by Example",
+      "pageCount": 0,
+      "publishedDate": "2011-06-03",
+      "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/adzic.jpg",
+      "status": "PUBLISH",
+      "authors": ["Gojko Adzic"],
+      "categories": ["Software Engineering"]
+    },
+    {
+      "title": "Collective Intelligence in Action",
+      "pageCount": 425,
+      "publishedDate": "2008-10-01",
+      "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/alag.jpg",
+      "longDescription": "There's a great deal of wisdom in a crowd, but how do you listen to a thousand people talking at once  Identifying the wants, needs, and knowledge of internet users can be like listening to a mob.    In the Web 2.0 era, leveraging the collective power of user contributions, interactions, and feedback is the key to market dominance. A new category of powerful programming techniques lets you discover the patterns, inter-relationships, and individual profiles   the collective intelligence   locked in the data people leave behind as they surf websites, post blogs, and interact with other users.    Collective Intelligence in Action is a hands-on guidebook for implementing collective-intelligence concepts using Java. It is the first Java-based book to emphasize the underlying algorithms and technical implementation of vital data gathering and mining techniques like analyzing trends, discovering relationships, and making predictions. It provides a pragmatic approach to personalization by combining content-based analysis with collaborative approaches.    This book is for Java developers implementing collective intelligence in real, high-use applications. Following a running example in which you harvest and use information from blogs, you learn to develop software that you can embed in your own applications. The code examples are immediately reusable and give the Java developer a working collective intelligence toolkit.    Along the way, you work with, a number of APIs and open-source toolkits including text analysis and search using Lucene, web-crawling using Nutch, and applying machine learning algorithms using WEKA and the Java Data Mining (JDM) standard.",
+      "status": "PUBLISH",
+      "authors": ["Satnam Alag"],
+      "categories": ["Internet"]
+    },
+    {
+      "title": "Griffon in Action",
+      "pageCount": 375,
+      "publishedDate": "2012-06-04",
+      "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/almiray.jpg",
+      "shortDescription": "Griffon in Action is a comprehensive tutorial written for Java developers who want a more productive approach to UI development. In this book, you'll immediately dive into Griffon. After a Griffon orientation and a quick Groovy tutorial, you'll start building examples that explore Griffon's high productivity approach to Swing development. One of the troublesome parts of Swing development is the amount of Java code that is required to get a simple application off the ground.",
+      "longDescription": "Although several options exist for interface development in Java, even popular UI toolkits like Swing have been notoriously complex and difficult to use. Griffon, an agile framework that uses Groovy to simplify Swing, makes UI development dramatically faster and easier. In many respects, Griffon is for desktop development what Grails is for web development. While it's based on Swing, its declarative style and approachable level of abstraction is instantly familiar to developers familiar with other technologies such as Flex or JavaFX.    Griffon in Action is a comprehensive tutorial written for Java developers who want a more productive approach to UI development. In this book, you'll immediately dive into Griffon. After a Griffon orientation and a quick Groovy tutorial, you'll start building examples that explore Griffon's high productivity approach to Swing development. One of the troublesome parts of Swing development is the amount of Java code that is required to get a simple application off the ground.    You'll learn how SwingBuilder (and its cousin builders) present a very palatable alternative in the form of a DSL geared towards building graphical user interfaces. Pair it up with the convention over configuration paradigm, a well tested and tried application source structure (based on Grails) and you have a recipe for quick and effective Swing application development. Griffon in Action covers declarative view development, like the one provided by JavaFX Script, as well as the structure, architecture and life cycle of Java application development",
+      "status": "PUBLISH",
+      "authors": ["Andres Almiray", "Danno Ferrin", "", "James Shingler"],
+      "categories": ["Java"]
+    },
+    {
+      "title": "OSGi in Depth",
+      "pageCount": 325,
+      "publishedDate": "2011-12-12",
+      "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/alves.jpg",
+      "shortDescription": "Enterprise OSGi shows a Java developer how to develop to the OSGi Service Platform Enterprise specification, an emerging Java-based technology for developing modular enterprise applications. Enterprise OSGi addresses several shortcomings of existing enterprise platforms, such as allowing the creation of better maintainable and extensible applications, and provide a simpler, easier-to-use, light-weight solution to enterprise software development.",
+      "longDescription": "A good application framework greatly simplifies a developer's task by providing reusable code modules that solve common, tedious, or complex tasks. Writing a great framework requires an extraordinary set of skills-ranging from deep knowledge of a programming language and target platform to a crystal-clear view of the problem space where the applications to be developed using the framework will be used.    OSGi Application Frameworks shows a Java developer how to build frameworks based on the OSGi service platform. OSGi, an emerging Java-based technology for developing modular applications, is a great tool for framework building. A framework itself, OSGi allows the developer to create a more intuitive, modular framework by isolating many of the key challenges the framework developer faces.    This book begins by describing the process, principles, and tools you must master to build a custom application framework. It introduces the fundamental concepts of OSGi, and then shows you how to put OSGi to work building various types of frameworks that solve specific development problems.    OSGi is particularly useful for building frameworks that can be easily extended by developers to create domain-specific applications. This book teaches the developer to break down a problem domain into its abstractions and then use OSGi to create a modular framework solution. Along the way, the developer learns software engineering practices intrinsic to framework building that result in systems with better software qualities, such as flexibility, extensibility, and maintainability.    Author Alexandre Alves guides you through major concepts, such as the definition of programming models and modularization techniques, and complements them with samples that have real applicability using industry-proved technologies, such as Spring-DM and Equinox.",
+      "status": "PUBLISH",
+      "authors": ["Alexandre de Castro Alves"],
+      "categories": ["Java"]
+    },
+    {
+      "title": "Flexible Rails",
+      "pageCount": 592,
+      "publishedDate": "2008-01-01",
+      "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/armstrong.jpg",
+      "shortDescription": "\"Flexible Rails created a standard to which I hold other technical books. You definitely get your money's worth.\"",
+      "longDescription": "Rails is a fantastic tool for web application development, but its Ajax-driven interfaces stop short of the richness you gain with a tool like Adobe Flex. Simply put, Flex is the most productive way to build the UI of rich Internet applications, and Rails is the most productive way to rapidly build a database-backed CRUD application. Together, they're an amazing combination.    Flexible Rails is a book about how to use Ruby on Rails and Adobe Flex to build next-generation rich Internet applications (RIAs). The book takes you to the leading edge of RIA development, presenting examples in Flex 3 and Rails 2.    This book is not an exhaustive Ruby on Rails tutorial, nor a Flex reference manual. (Adobe ships over 3000 pages of PDF reference documentation with Flex.) Instead, it's an extensive tutorial, developed iteratively, how to build an RIA using Flex and Rails together. You learn both the specific techniques you need to use Flex and Rails together as well as the development practices that make the combination especially powerful.    The example application built in the book is MIT-licensed, so readers can use it as the basis for their own applications. In fact, one reader has already built an agile project management tool based on the book example!    With this book, you learn Flex by osmosis. You can read the book and follow along even if you have never used Flex before. Consider it \"Flex Immersion.\" You absorb the key concepts of Flex as you go through the process of building the application.    You will also learn how Flex and Rails integrate with HTTPService and XML, and see how RESTful Rails controller design gracefully supports using the same controller actions for Flex and HTML clients. The author will show you how Cairngorm can be used to architect larger Flex applications, including tips to use Cairngorm in a less verbose way with HTTPService to talk to Rails.    Flexible Rails is for both Rails developers who are interested in Flex, and Flex developers who are interested in Rails. For a Rails developer, Flex allows for more dynamic and engaging user interfaces than are possible with Ajax. For a Flex developer, Rails provides a way to rapidly build the ORM and services layer of the application.",
+      "status": "PUBLISH",
+      "authors": ["Peter Armstrong"],
+      "categories": ["Web Development"]
+    },
+    {
+      "title": "Hello! Flex 4",
+      "pageCount": 258,
+      "publishedDate": "2009-11-01",
+      "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/armstrong3.jpg",
+      "shortDescription": "Hello! Flex 4 progresses through 26 self-contained examples selected so you can progressively master Flex. They vary from small one-page apps, to a 3D rotating haiku, to a Connect Four-like game. And in the last chapter you'll learn to build a full Flex application called SocialStalkr   a mashup that lets you follow your friends by showing their tweets on a Yahoo map.",
+      "longDescription": "With Flex 4 you can easily add color and life to your web applications by introducing dynamic user features, slick transitions, and eye-catching animations. Flex also provides powerful data handling capabilities so you can build industrial-strength applications. And it's open source, so you can get started without forking over a lot of your hard-earned cash.    We think it should be just as much fun to learn Flex as it is to use Flex. Hello! Flex 4 shows you everything you need to know to get started with Flex 4 without bogging you down in obscure detail or academic edge cases. In this entertaining, hands-on book, you'll quickly move from Hello World into the techniques you'll need to use Flex effectively.    You'll start by progressing through 26 self-contained workshop items, which include everything from small one-page examples, to a 3D rotating haiku, to building a Connect Four game. Finally, in the last chapter you'll build a full Flex application called 'SocialStalkr': an interesting mashup of Twitter and Yahoo Maps that lets you 'stalk' your friends by showing specially formatted Twitter tweets on a Yahoo map.",
+      "status": "PUBLISH",
+      "authors": ["Peter Armstrong"],
+      "categories": ["Internet"]
+    },
+    {
+      "title": "Coffeehouse",
+      "pageCount": 316,
+      "publishedDate": "1997-07-01",
+      "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/asher.jpg",
+      "shortDescription": "Coffeehouse is an anthology of stories, poems and essays originally published on the World Wide Web.",
+      "longDescription": "Coffeehouse is an anthology of stories, poems and essays originally published on the World Wide Web. The purpose is to capture the zeitgeist of the web's creative community, and to give readers a chance to enjoy some of the best and most notable original works that have appeared in this form. It showcases over forty individual web writers, among them Joseph Squier, Martha Conway, Jason Snell, David Alexander, Carl Steadman and Walter Miller. The intent is to show the variety and vitality of the web's blossoming literary \"scene,\" and to capture the unique and highly iconoclastic \"personality\" of the web community.",
+      "status": "PUBLISH",
+      "authors": ["Levi Asher", "Christian Crumlish"],
+      "categories": ["Miscellaneous"]
+    },
+    {
+      "title": "Team Foundation Server 2008 in Action",
+      "pageCount": 344,
+      "publishedDate": "2008-12-01",
+      "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/azher.jpg",
+      "longDescription": "In complex software projects, managing the development process can be as critical to success as writing the code itself. A project may involve dozens of developers, managers, architects, testers, and customers, hundreds of builds, and thousands of opportunities to get off-track. To keep tabs on the people, tasks, and components of a medium- to large-scale project, most teams use a development system that allows for easy monitoring, follow-up, and accountability.    Microsoft Team Foundation Server 2008 (TFS), the server component of Microsoft's Visual Studio Team System (VSTS), provides a powerful collaborative platform for software-development teams. The product offers an integrated toolset for tracking work items, creating test cases, managing source code, generating builds, constructing database schemas, and so on. Because in software development one size does not fit all, TFS provides process customization, project management, and reporting capabilities to build solutions around your requirements.    Team Foundation Server 2008 in Action is a hands-on guide to Team Foundation Server 2008. Written for developers with a good handle on TFS basics, this book shows you how to solve real-life problems. It's not a repetition of Microsoft's product documentation. Team Foundation Server 2008 in Action is a practitioner's handbook for how to work with TFS under common constraints. This book walks you through real-life software engineering problems based on hundreds of hours of TFS experience.    You'll benefit from expert author Jamil Azher's extensive interactions with members of Microsoft's TFS team and MVPs, survey feedback from the author's blog, and interviews with organizations and user groups using TFS. Instead of just offering a high-level overview, the book provides detailed solutions for solving common   and not-so-common   problems using TFS. It discusses the strengths as well as weaknesses of TFS, and suggests appropriate problem resolution steps, workarounds, or custom solutions.",
+      "status": "PUBLISH",
+      "authors": ["Jamil Azher"],
+      "categories": ["Microsoft .NET"]
+    },
+    {
+      "title": "Brownfield Application Development in .NET",
+      "pageCount": 550,
+      "publishedDate": "2010-04-16",
+      "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/baley.jpg",
+      "shortDescription": "Brownfield Application Development in .Net shows you how to approach legacy applications with the state-of-the-art concepts, patterns, and tools you've learned to apply to new projects. Using an existing application as an example, this book guides you in applying the techniques and best practices you need to make it more maintainable and receptive to change.",
+      "longDescription": "It's easy to get excited about building a new software project from scratch. So-called \"greenfield\" projects often involve learning new technology and the opportunity for experimentation. Working on established software projects may seem less glamorous.    Most software developers have inherited a monolithic application where the day-to-day tasks involve maintenance, incremental improvements, or even cleaning up the mess another programmer left behind. These legacy or brownfield projects often have tightly coupled components, low cohesion, and poor separation of concerns, making them fragile and resistant to change.    Brownfield Application Development in .Net shows you how to approach legacy applications with the state-of-the-art concepts, patterns, and tools you've learned to apply to new projects. Using an existing application as an example, this book guides you in applying the techniques and best practices you need to make it more maintainable and receptive to change.    Starting with the build process and the introduction of unit tests, the authors show you how to set up the application so that in later chapters, you can make incremental changes aimed at decoupling components from each other. Each practice introduced will increase your confidence and ability to make subsequent changes to your code.    As the book proceeds, the authors introduce frameworks and tools commonly used today while still approaching the subject from a conceptual level so that you can substitute alternate tools as appropriate. This book examines the reasons why a tool is necessary, not the tool itself. Because the book is based on the authors' experiences, Brownfield Application Development in .Net moves beyond the theories and shows you the techniques you need to be successful.",
+      "status": "PUBLISH",
+      "authors": ["Kyle Baley", "Donald Belcham"],
+      "categories": ["Microsoft"]
+    },
+    {
+      "title": "MongoDB in Action",
+      "pageCount": 0,
+      "publishedDate": "2011-12-12",
+      "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/banker.jpg",
+      "shortDescription": "MongoDB In Action is a comprehensive guide to MongoDB for application developers. The book begins by explaining what makes MongoDB unique and describing its ideal use cases. A series of tutorials designed for MongoDB mastery then leads into detailed examples for leveraging MongoDB in e-commerce, social networking, analytics, and other common applications.",
+      "longDescription": "MongoDB is a document-oriented database that's highly scalable and delivers very high-performance, especially with massive data sets that need to be spread across multiple servers. It blends the things you expect with any database   like indexing, querying, and high availability   with powerful new features like easy horizontal scaling (\"auto-sharding\"), map/reduce aggregation, and a flexible document data model to support dynamic schemas.    MongoDB In Action is a comprehensive guide to MongoDB for application developers. The book begins by explaining what makes MongoDB unique and describing its ideal use cases. A series of tutorials designed for MongoDB mastery then leads into detailed examples for leveraging MongoDB in e-commerce, social networking, analytics, and other common applications.    Along the way, all of MongoDB's major features are covered, including:        * Indexes and explain plans for efficient queries      * Atomic operations for managing simple data structures and manipulating complex, rich documents      * GridFS for storing and managing large binary objects (images, videos, etc.) in MongoDB      * Map-reduce for custom aggregations and reporting      * Master-slave replication and replica sets for automated failover      * Auto-sharding for automated horizontal scaling    The handy reference section on schema design patterns will help ease the transition from the relational data model of SQL to MongoDB's document-based data model. The numerous, detailed examples are implemented in Ruby and include comprehensive explanations.    MongoDB has been gaining traction in the developer community for its speed, flexibility, scalability, and ease of use. With production deployments that include SourceForge, Foursquare, and Shutterfly, MongoDB is proving to be a robust and reliable database system that keeps developers happy. Covering everything from installation to application design to deployment, MongoDB In Action is written for the application developer who wants to take advantage of MongoDB and get up and running quickly.",
+      "status": "PUBLISH",
+      "authors": ["Kyle Banker"],
+      "categories": ["Next Generation Databases"]
+    },
+    {
+      "title": "Distributed Application Development with PowerBuilder 6.0",
+      "pageCount": 504,
+      "publishedDate": "1998-06-01",
+      "longDescription": "Distributed Application Development with PowerBuilder 6.0 is a vital source for the PowerBuilder programmer; it provides the sort of detailed coverage of Distributed PowerBuilder that you can find nowwhere else.    The book opens with a discussion of distributed computing in general, as well as its design principles and technologies. Then Distributed PowerBuilder is examined in detail. By building a simple application step by step, the author discusses all of the concepts and components needed for building a PowerBuilder application and shows how to make the application available over a network.    Finally, the author explores how PowerBuilder can be used in distributed solutions both with and without using DPB.    Distributed Application Development with PowerBuilder 6.0 is for any PowerBuilder developer looking for information on distributed computing options with the PowerBuilder environment. IS managers, system architects, and developers using many different technologies can learn how PowerBuilder can be used as all or part of the solution for building distributed applications.    The main topic of this book is Distributed PowerBuilder (DPB). It covers the basics of building a DPB application and walks through each new feature with examples including the Shared object, DataWindow synchronization, Server Push and Web.PB. It also explains distributed computing technologies and design principles so that your application can be built to handle the stresses of a distributed environment.  ",
+      "status": "PUBLISH",
+      "authors": ["Michael J. Barlotta"],
+      "categories": ["PowerBuilder"]
+    },
+    {
+      "title": "XML Parsing with Digester",
+      "pageCount": 0,
+      "publishedDate": "2005-03-01",
+      "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/goyal4.jpg",
+      "status": "PUBLISH",
+      "authors": ["Vikram Goyal"],
+      "categories": ["Java"]
+    },
+    {
+      "title": "JXPath and Betwixt: Working with XML",
+      "pageCount": 0,
+      "publishedDate": "2005-03-01",
+      "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/goyal5.jpg",
+      "status": "PUBLISH",
+      "authors": ["Vikram Goyal"],
+      "categories": ["Java"]
+    },
+    {
+      "title": "Validating Data with Validator",
+      "pageCount": 0,
+      "publishedDate": "2005-03-01",
+      "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/goyal6.jpg",
+      "status": "PUBLISH",
+      "authors": ["Vikram Goyal"],
+      "categories": ["Java"]
+    },
+    {
+      "title": "Enhancing Java Core Libraries with Collections",
+      "pageCount": 0,
+      "publishedDate": "2005-03-01",
+      "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/goyal7.jpg",
+      "status": "PUBLISH",
+      "authors": ["Vikram Goyal"],
+      "categories": ["Java"]
+    },
+    {
+      "title": "Enhancing Java Core Libraries with BeanUtils and Lang",
+      "pageCount": 450,
+      "publishedDate": "2005-03-01",
+      "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/goyal8.jpg",
+      "status": "PUBLISH",
+      "authors": ["Vikram Goyal"],
+      "categories": ["Java"]
+    },
+    {
+      "title": "Pool and DBCP: Creating and Using Object Pools",
+      "pageCount": 521,
+      "publishedDate": "2005-03-01",
+      "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/goyal9.jpg",
+      "status": "PUBLISH",
+      "authors": ["Vikram Goyal"],
+      "categories": ["Java"]
+    },
+    {
+      "title": "Python and Tkinter Programming",
+      "pageCount": 688,
+      "publishedDate":  "2000-01-01",
+      "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/grayson.jpg",
+      "longDescription": "If you are interested in Python and Tkinter, you have probably noticed that although there is some good contributed documentation on the Web, there is not enough to get Tkinter applications up and running. Python and Tkinter Programming is the answer. It is designed for readers who are familiar with Python and who need to develop applications with Graphical User Interfaces (GUIs).    Python and Tkinter Programming presents the elements of typical Python and Tkinter applications in a straight-forward fashion. Sample code illustrates each element. Complete applications that go far beyond the fill-the-form class of graphical user interfaces are presented; here you will find examples of complex controls, drawn interfaces and photorealistic panels. The code can readily be used as templates for new applications. Extensions to Python (such as ODBC) are examined as well. Complete source code for all examples, along with the latest releases of required software, will be available from Manning's web site.    Tkinter is fully documented. To date, this level of documentation has not been available to Tkinter programmers, who have been required to read the code or interpret Tcl/Tk man pages to fully understand component usage.    Python and Tkinter Programming will be useful in both Windows and Unix environments, and the example code is portable between the two environments.",
+      "status": "PUBLISH",
+      "authors": ["John E. Grayson"],
+      "categories": ["Python"]
+    },
+    {
+      "title": "Microsoft.NET for Programmers",
+      "pageCount": 386,
+      "publishedDate": "2002-12-01",
+      "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/grimes.jpg",
+      "longDescription": "Written for intermediate and advanced programmers, this book builds on your existing knowledge to teach you exactly what you need to know to develop .NET applications.    Packed full of practical examples, the book presents a case study which takes you through the design of an application \"engine\" and its implementation as a .NET assembly. You'll reuse the engine to create different versions of the application using Windows Forms, Remoting, Web Services, Windows Services, COM, MSMQ, ASP.NET, ADO.NET, and the Mobile Internet Toolkit. You'll also learn about fundamental .NET concepts such as types and assemblies and develop a simple language compiler which can emit a .NET executable.    Also included is an appendix containing a comprehensive introduction to the C# programming language.",
+      "status": "PUBLISH",
+      "authors": ["Fergal Grimes"],
+      "categories": ["Microsoft .NET"]
+    },
+    {
+      "title": "Grails in Action",
+      "pageCount": 520,
+      "publishedDate": "2009-05-01",
+      "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/gsmith.jpg",
+      "shortDescription": "Grails in Action is a comprehensive guide to the Grails framework. First, the basics: the domain model, controllers, views, and services. Then, the fun! Dive into a Twitter-style app with features like AJAX/JSON, animation, search, wizards   even messaging and Jabber integration. Along the way, you'll discover loads of great plugins that'll make your app shine. Learn to integrate with existing Java systems using Spring and Hibernate. You'll need basic familiarity with Java and the web.",
+      "longDescription": "Web apps shouldn't be hard to build, right  The developers of Grails agree. This hyper-productive open-source web framework lets you \"code by convention\", leaving you to focus on what makes your app special. Through its use of Groovy, it gives you a powerful, Java-like language and full access to all Java libraries. And you can adapt your app's behavior at runtime without a server restart.    Grails in Action is a comprehensive guide to the Grails framework. First, the basics: the domain model, controllers, views, and services. Then, the fun! Dive into a Twitter-style app with features like AJAX/JSON, animation, search, wizards   even messaging and Jabber integration. Along the way, you'll discover loads of great plugins that'll make your app shine. Learn to integrate with existing Java systems using Spring and Hibernate. You'll need basic familiarity with Java and the web. Prior experience with Groovy is not necessary.",
+      "status": "PUBLISH",
+      "authors": ["Glen Smith", "Peter Ledbrook"],
+      "categories": ["Java"]
+    },
+    {
+      "title": "Up to Speed with Swing, Second Edition",
+      "pageCount": 560,
+      "publishedDate": "1999-10-01",
+      "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/gutz2.jpg",
+      "shortDescription": "Now in its Second Edition, Up to Speed with Swing is for you if you want to get on the fast track to Java Swing. The second edition has been extensively updated to cover Java 1.2 with additional code examples and illustrations.",
+      "longDescription": "Now in its Second Edition, Up to Speed with Swing is for you if you want to get on the fast track to Java Swing. The second edition has been extensively updated to cover Java 1.2 with additional code examples and illustrations.    Guided by a master programmer who writes Java for a living, you'll learn Swing from the insider's point of view. Up to Speeed with Swing has one purpose: to save you time mastering Swing. From the basics of Swing to creating a custom look and feel, or from the Model View Controller (MVC) architecture to optimizing your Swing code, this tutorial gives you an understanding of the big picture as well as the experience of working through detailed examples.",
+      "status": "PUBLISH",
+      "authors": ["Steven Gutz"],
+      "categories": ["Java"]
+    },
+    {
+      "title": "OSGi in Action",
+      "pageCount": 576,
+      "publishedDate":  "2011-04-06",
+      "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/hall.jpg",
+      "shortDescription": "OSGi in Action is a comprehensive guide to OSGi with two primary goals. First, it provides a clear introduction to OSGi concepts with examples that are relevant both for architects and developers. The central idea of OSGi is modularity, so you start by learning about OSGi bundles. You'll then see how OSGi handles module lifecycles and follow up with how it promotes service-oriented interaction among application components.",
+      "longDescription": "If you're a Java developer, you've almost certainly heard of OSGi   and also heard that it's becoming quite a big deal. But you may still be wondering exactly \"What is OSGi \"    Simply put, OSGi is a technology that allows you to create highly modular Java applications. It introduces a logical and physical module format, called a bundle, for explicitly structuring your application as a set of interconnected modules. OSGi lets you install, start, stop, update, or uninstall modules at execution time without taking down your entire system. In addition, OSGi defines a local service-oriented approach for creating applications out of loosely coupled components.    With the prevalence of modern component and service-based architectures, OSGi is becoming increasingly important. It meshes well with such approaches and greatly simplifies their creation and management. It's the backbone of Eclipse's plugin system as well as many recent JavaEE containers, such as GlassFish v3, WebSphere v6.1, and WebLogic Event Server. Even the SpringSource Application Platform is built on top of it.    OSGi in Action is a comprehensive guide to OSGi with two primary goals.    First, it provides a clear introduction to OSGi concepts with examples that are relevant both for architects and developers. The central idea of OSGi is modularity, so you start by learning about OSGi bundles.    You'll then see how OSGi handles module lifecycles and follow up with how it promotes service-oriented interaction among application components.    With the core concepts well in hand, you'll explore numerous application scenarios and techniques. How much of OSGi do you actually need  How do you embed OSGi inside other containers  What are the best practices for migrating legacy systems to OSGi  How can you embrace and make the most of system dynamism     Expert authors Richard S. Hall, Karl Pauls, and Stuart McCulloch have years of experience both in building OSGi-based systems and in contributing to OSGi implementations such as Apache Felix.",
+      "status": "PUBLISH",
+      "authors": [
+        "Richard S. Hall",
+        "Karl Pauls",
+        "Stuart McCulloch",
+        "",
+        "David Savage"
+      ],
+      "categories": ["Internet"]
+    },
+    {
+      "title": "GWT in Action",
+      "pageCount": 632,
+      "publishedDate": "2007-06-01",
+      "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/hanson.jpg",
+      "longDescription": "The Google Web Toolkit (GWT) is a new technology from Google that automatically translates Java into JavaScript, making Ajax applications easier to code and deploy. GWT in Action is a comprehensive tutorial for Java developers interested in building the next generation of rich, web-based applications. This book was written by Robert Hanson, creator of the popular GWT Widget Library, and Adam Tacy, a major contributor to the GWT Widget Library.    The Web is experiencing a new growth with an emphasis on rich, web-based applications. These applications can be difficult to build because they rely on JavaScript, which lacks the sophisticated object-oriented structures and static typing of Java, they are tricky to debug, and they require you to manage numerous browser inconsistencies.    In May of 2006 Google released the Google Web Toolkit. GWT enables developers to create Ajax applications in Java. With GWT, you can build your applications using a real object-oriented language and take advantage of Java tools like Eclipse that are already available. Instead of trying to bring tool support to Ajax, Google brought Ajax to a place where the tools already existed.    GWT in Action shows you how to take advantage of these exciting new tools. This clearly-written book is packed with hands-on GWT examples. You   ll absorb the GWT philosophy as you build your first working GWT application.    The book begins by exploring the main features of GWT, including    Compiling Java to JavaScript, the magic that really defines GWT  Building client-side components  Convenient JUnit integration and testing  Interacting with JavaScript and existing JavaScript libraries  Internationalization  You   ll also see how GWT compares to other toolkits.    GWT in Action shows you how to set up your development environment, use and create widgets, communicate with the server, and much more. Readers will follow an example running throughout the book and quickly master the basics of GWT: widgets, panels, and event handling. The book covers the full development cycle, from setting up your development environment, to building the application, then deploying it to the web server. The entire core GWT library is discussed, with details and examples on how it can be extended.    You   ll cover:    Testing, debugging, and deploying GWT Applications  Communicating with GWT-RPC  Examining client-side RPC architecture  Alternative RPC tools: HTTPRequest, RequestBuilder, and FormPanel  Achieving interoperability in GWT with JavaScript Object Notation (JSON)  Making your GWT application flexible and supportable  GWT helps you make the most of Ajax in your web applications and GWT in Action helps you get more out of GWT.",
+      "status": "PUBLISH",
+      "authors": ["Robert Hanson", "Adam Tacy"],
+      "categories": ["Internet", "Java"]
+    },
+    {
+      "title": "The Quick Python Book",
+      "pageCount": 444,
+      "publishedDate": "1999-10-01",
+      "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/harms.jpg",
+      "longDescription": "The Quick Python Book is a clear, concise introduction to Python, one of the most elegant programming languages in existence. The book is aimed at readers who know programming but for whom the Python language is new.  This book is designed so that you can use it to quickly become proficient in Python. However, it provides more than just a beginners tutorial. Even once you've become more experienced, it should continue to be quite valuable to you as an indexed cache of information on the bulk of the Python concepts and constructs of which you will find yourself wanting to refresh or augment your knowledge.    It first covers the core features of Python (syntax, control flow, basic data structures, etc.) and provides the knowledge to write basic but useful scripts. Features in Python common to other languages are covered very concisely, while features unique to Python are explained in detail.    It next discusses Python features which would be useful to anyone using Python in larger applications, including facilities for managing large collections of code, object-oriented programming, advanced string handling, etc.    The last section of the book discusses advanced topics: Windows/COM programming with Python, integrating Python and Java (Python is one of the few languages other than Java which can be compiled into Java bytecode), extending the Python language with C, and an introduction to some of the advanced web site building tools that are available for Python.",
+      "status": "PUBLISH",
+      "authors": ["Daryl Harms", "Kenneth McDonald"],
+      "categories": ["Python"]
+    },
+    {
+      "title": "SharePoint 2010 Site Owner's Manual",
+      "pageCount": 300,
+      "publishedDate":  "2012-02-13",
+      "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/harryman.jpg",
+      "shortDescription": "SharePoint 2010 Site Owner's Manual starts by assuming you already have SharePoint installed on your system and are looking for ways to solve the problems you face every day in your organization. You'll learn to determine what type of SharePoint installation you have   Microsoft Office SharePoint Server (MOSS), Windows SharePoint Services (WSS), the \"Fabulous 40\" templates   and what features are at your disposal. Once you know the lay of the land, you'll discover what you can do yourself, when you need to call in some help, and when you should leave it to the developers.",
+      "longDescription": "For every SharePoint 2010 developer who spends the day buried in Visual Studio cranking out code, there are dozens of other SharePoint site owners who want to share information, create content portals, and add features to existing SharePoint sites. If you're one of these SharePoint administrators, this is the book for you. Chock-full of great ideas and scenarios you'll relate to immediately, this book will teach you the amazing things you can do with SharePoint 2010 without writing any code   or calling in the developers.    SharePoint 2010 Site Owner's Manual starts by assuming you already have SharePoint installed on your system and are looking for ways to solve the problems you face every day in your organization. You'll learn to determine what type of SharePoint installation you have   Microsoft Office SharePoint Server (MOSS), Windows SharePoint Services (WSS), the \"Fabulous 40\" templates   and what features are at your disposal. Once you know the lay of the land, you'll discover what you can do yourself, when you need to call in some help, and when you should leave it to the developers.    This book teaches you by putting your hands on working SharePoint examples. You'll see seven common SharePoint-driven sites that lay out the features and approaches you'll need for most typical applications. The examples range from a simple document-sharing portal, to a SharePoint-hosted blog, to a project management site complete with a calendar, discussion forums, and an interactive task list.",
+      "status": "PUBLISH",
+      "authors": ["Yvonne M. Harryman"],
+      "categories": ["Microsoft .NET"]
+    },
+    {
+      "title": "JavaScript: The Definitive Guide",
+      "pageCount": 706,
+      "publishedDate": "2020-06-06",
+      "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/ableson.jpg",
+      "shortDescription": "This book is for programmers who want to learn JavaScript and for web developers who want to take their understanding and mastery to the next level. It begins by explaining the JavaScript language itself, in detail, from the bottom up. It then builds on that foundation to cover the web platform and Node.js.",
+      "status": "PUBLISH",
+      "authors": ["David Flanagan"],
+      "categories": ["Open Source", "Web"]
+    },
+    {
+      "title": "C#: The Ultimate Advanced Guide To Master C# Programming",
+      "pageCount": 123,
+      "publishedDate": "2022-04-22",
+      "thumbnailUrl": "https://m.media-amazon.com/images/I/410pQeehltL.jpg",
+      "shortDescription": "This advanced guide, created in an easy-to-understand format for intermediate levels, will help you to take the next step up from the basics of C# quickly and flawlessly.",
+      "status": "PUBLISH",
+      "authors": ["Mark Reed"],
+      "categories": ["Microsoft .NET", "C#"]
+    }
+  ]

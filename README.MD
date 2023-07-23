@@ -86,7 +86,7 @@ stateDiagram-v2
 * [x] Curso de Principios SOLID en C# y .NET
 * [x] Fundamentos de Entity Framework
 * [x] APIs con .NET
-* [ ] Manejo de Datos con LINQ
+* [x] Manejo de Datos con LINQ
 * [ ] Curso de Aplicaciones Web con Blazor WebAssembly y .NET
 * [ ] Curso de Azure DevOps: Flujos de CI/CD
 
