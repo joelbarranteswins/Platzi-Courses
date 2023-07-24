@@ -49,6 +49,15 @@ Console.WriteLine($"Sum all pages by min and max pages: {SumAllPagesByMinAndMaxP
 var BooksTitleConcatenatedAfterYear = queries.GetBooksTitleConcatenatedAfterYear(year: 2015);
 Console.WriteLine($"Books title concatenated after year: {BooksTitleConcatenatedAfterYear}");
 
+// Func Expresión
+Func<Book, bool> ConditionWhere = (x => x.PublishedDate.Year > 2015 && x.Title != string.Empty);
+var BooksTitleSeparatedByComma = queries. GetTitleSeparatedByComma(ConditionWhere);
+Console.WriteLine($"Books title separated by comma: {BooksTitleSeparatedByComma}");
+
+var BooksTitleSeparatedByCommaV2 = queries.GetTitleSeparatedByCommaV2(ConditionWhere);
+Console.WriteLine($"Books title separated by comma v2: {BooksTitleSeparatedByCommaV2}");
+
+
 var AverageAmountOfTitlesCharacters = queries.GetAverageAmountOfTitlesCharacters();
 Console.WriteLine($"Average amount of titles characters: {AverageAmountOfTitlesCharacters}");
 

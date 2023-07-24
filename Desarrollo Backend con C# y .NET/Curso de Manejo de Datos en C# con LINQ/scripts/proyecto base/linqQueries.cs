@@ -164,7 +164,9 @@ public class LinqQueries
     public Book? GetBookWithMinBookPages(){
         //extension method
         // return CollectionBook.Where(book => (book.PageCount ?? 0) > 0).OrderBy(book => book.PageCount).First();
-        return CollectionBook.Where(book => (book.PageCount ?? 0) > 0).MinBy(book => book.PageCount);
+        return CollectionBook
+            .Where(book => (book.PageCount ?? 0) > 0)
+            .MinBy(book => book.PageCount);
         
 
         //linq query
@@ -183,7 +185,9 @@ public class LinqQueries
     public int GetSumAllPagesByMinAndMaxPages(int min, int max)
     {
         //extension method
-        return CollectionBook.Where(book => (book.PageCount ?? 0) >= min && (book.PageCount ?? 0) <= max).Sum(book => book.PageCount ?? 0);
+        return CollectionBook
+            .Where(book => (book.PageCount ?? 0) >= min && (book.PageCount ?? 0) <= max)
+            .Sum(book => book.PageCount ?? 0);
 
         //linq query
         // return (from book in CollectionBook where book.PageCount >= min && book.PageCount <= max select book).Sum(book => book.PageCount);
@@ -220,6 +224,19 @@ public class LinqQueries
                 );
     }
 
+    // Methods shared by another user
+    public string GetTitleSeparatedByComma(Func<Book, bool> where)
+        => string.Join(", ", CollectionBook.Where(where).Select(book => book.Title));
+
+    public string GetTitleSeparatedByCommaV2(Func<Book, bool> where)
+    {
+        return CollectionBook?
+        .Where(where)
+        .Select(book => book.Title)
+        .Aggregate((acumulator, next) => acumulator + ", " + next)
+        ?? "";
+    }
+
     public double GetAverageAmountOfTitlesCharacters()
     {
         //extension method
@@ -238,7 +255,6 @@ public class LinqQueries
         //         .ThenBy(book => book.PublishedDate.Month)
         //         .GroupBy(book => book.PublishedDate.Year);
 
-
         //linq query
         return from book in CollectionBook 
            where book.PublishedDate.Year >= year
@@ -250,7 +266,7 @@ public class LinqQueries
     public ILookup<char, Book> GetBooksDictionary()
     {
         //extension method
-        return CollectionBook.ToLookup(book => book.Title[0]);
+        return CollectionBook.ToLookup(book => book.Title?.FirstOrDefault() ?? '\0');
 
         //linq query
         // return (from book in CollectionBook select book).ToLookup(book => book.Title[0]);
@@ -259,16 +275,20 @@ public class LinqQueries
     public IEnumerable<Book> GetBooksByYearAndByPages(int year, int pages)
     {
         //extension method
-        var BooksFilteredByYear =  CollectionBook.Where(book => book.PublishedDate.Year > year); 
-        var BooksFilteredByPages = CollectionBook.Where(book => (book.PageCount ?? 0) > pages);
-        return BooksFilteredByYear
-               .Join(BooksFilteredByPages, 
-                    bookByYear => bookByYear.Title, 
-                    bookByPages => bookByPages.Title, 
-                    (bookByYear, bookByPages) => bookByYear);
+        // var BooksFilteredByYear =  CollectionBook.Where(book => book.PublishedDate.Year > year); 
+        // var BooksFilteredByPages = CollectionBook.Where(book => (book.PageCount ?? 0) > pages);
+        // return BooksFilteredByYear
+        //        .Join(BooksFilteredByPages, 
+        //             bookByYear => bookByYear.Title, 
+        //             bookByPages => bookByPages.Title, 
+        //             (bookByYear, bookByPages) => bookByYear);
 
         //linq query
-      
+        return (from bookByYear in CollectionBook
+                where bookByYear.PublishedDate.Year > year
+                join bookByPages in CollectionBook on bookByYear.Title equals bookByPages.Title
+                where bookByPages.PageCount > pages
+                select bookByYear);
     }
 
     public void PrintValues()
