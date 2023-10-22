@@ -112,3 +112,8 @@ Puedes deshabilitar esa configuración haciendo lo siguiente en el csproj:
 ~~~cs
 <Nullable>disable</Nullable>
 ~~~
+
+
+## Links Adicionales
+
+* https://www.tutorialsteacher.com/linq
