@@ -161,5 +161,104 @@ Utilizando el siguiente link con el CounterFromQuery
 
 son componentes que no son llamados directamente en la aplicacion sino que son piezas de codigo que se utiliza dentro de otros componentes.
 
+Moduletitle.razor
 
+~~~csharp
+@using System.ComponentModel.DataAnnotations
+
+<h2>@Title</h2> 
+@code
+{    
+    [Parameter]    
+    [Required]    
+    public string Title { get; set; }
+}
+~~~
+
+y en la pages llamas al componente compartido como se hace ene l video:
+
+~~~csharp
+<ModuleTitle Title="Counter" />
+~~~
+
+
+
+
+
+## 8. Creando archivo de configuración
+
+Para poder recibir datos desde un archivo de configuracion de JSON podemos hacer lo siguiente:
+
+Dentro de la carpeta de wwwroot podemos crear un archivo llamado appsettings.json en el cual podemos introducir datos de configuración. Por ejemplo:
+
+~~~json
+{
+  "helloMessage" : "Hello World from Platzi",
+}
+~~~
+
+Una vez que tenemos nuestro archivo de configuración podemos recurrir a ponerlo en alguna página de Blazor de la siguiente manera.
+
+~~~csharp
+@page "/"
+@inject IConfiguration config
+
+<h2>@HelloMessage</h2>
+
+@code {
+    public string HelloMessage = "";
+
+    protected override void OnInitialized()
+    {
+        HelloMessage = config["helloMessage"];
+    }
+}
+~~~
+
+
+## 9. Configurando conexión al backend para el proyecto
+
+Agregar la URL de la api en el appsettings.json 
+
+~~~json
+{
+  "helloMessage": "Hello, world platzi!!!",
+  "apiURL": "https://api.escuelajs.co/api/"
+}
+~~~
+
+Agregar lo siguiente en el program.cs para que haga request a la api configurada
+
+~~~csharp
+builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(apiUrl) });
+~~~
+
+## 10. Creando componentes para conexión a la API
+
+
+## 11. Mostrando lista de productos
+
+## 12. Creando Menú y CSS para la lista de productos
+
+## 13. Creando formulario para agregar registros
+
+iconos para agregar: https://icon-sets.iconify.design/oi/
+
+## 14.
+
+
+
+## 15. 
+
+## 16. Usando Librerías de Blazor
+
+- Telerik: Es muy avanzada y tiene versión de prueba.
+
+- Syncfusion: Tiene muy buen rendimiento, cuenta herramientas como gráficos y calendarios. También tiene versión de prueba .
+
+- MudBlazor: Es de código abierto, tiene funcionabilidades muy interesantes pero con menos que las otras opciones. De sintaxis bastante sencilla. Posee la opción de probarla dentro del navegador sin necesidad de descargar la librería.
+
+- Radzen: Al igual que la anterior es gratuita y de código abierto. Tiene componentes como CheckBox, Buttons, ColorPicker así como Accordion, Dialog o los Panels y heramientas de visualización de datos.
+
+- Blazored: Conjunto de librerías de código abierto, son componentes específicos como por ejemplo Modal, LocalStorage o SessionStorage que de momento están de forma nativa en JS únicamente.
 

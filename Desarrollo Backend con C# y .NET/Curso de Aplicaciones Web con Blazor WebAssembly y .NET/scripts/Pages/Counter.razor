@@ -13,20 +13,20 @@
     private int currentCount = 0;
 
     [Parameter]
-    public string? currentCountParameter {get; set;}
+    public string? currentCountParameter {get;set;}
 
     [SupplyParameterFromQuery]
     [Parameter]
-    public string? CounterFromQuery {get; set;}
+    public string? CounterFromQuery {get;set;}
 
-    
     public override async Task SetParametersAsync(ParameterView parameters)
     {
-        logger.LogInformation("Se envian los parametros");
-
         if (parameters.TryGetValue<string>(nameof(currentCountParameter), out var value))
-            currentCountParameter = value ?? currentCountParameter;
-
+        {
+            if (value is not null)
+                currentCountParameter = value;
+        }
+    
         await base.SetParametersAsync(parameters);
     }
 
@@ -37,14 +37,14 @@
 
     protected override void OnInitialized()
     {
-        //currentCount = int.Parse(currentCountParameter ?? "0");
-        currentCount = int.Parse(CounterFromQuery ?? "0");
+        //currentCount = currentCountParameter!= null ? int.Parse(currentCountParameter) : 0; 
+        currentCount = CounterFromQuery!= null ? int.Parse(CounterFromQuery) : 0;
         logger.LogInformation("Se inicia el componente");
     }
 
     protected override void OnAfterRender(bool firstRender)
     {
-        logger.LogInformation("Esto ocurre despues de iniciar el componente");
+        logger.LogInformation("esto ocurre despues de iniciar el componente");
     }
 
     private void IncrementCount()
