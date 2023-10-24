@@ -89,7 +89,7 @@ stateDiagram-v2
 - [x] APIs con .NET
 - [x] Manejo de Datos con LINQ
 - [x] Curso de Unit Testing con C# y .NET
-- [ ] Curso de Aplicaciones Web con Blazor WebAssembly y .NET
+- [x] Curso de Aplicaciones Web con Blazor WebAssembly y .NET
 - [ ] Curso de Azure DevOps: Flujos de CI/CD
 
     ### Extras ASP.NET
