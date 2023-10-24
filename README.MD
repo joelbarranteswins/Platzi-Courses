@@ -78,19 +78,19 @@ stateDiagram-v2
 
 ## `Desarrollo Backend con C# y .NET` :sunglasses: (Studying)
 
-- [x] Curso de Introducción a C#
-- [x] Curso Básico de Programación con C#
-- [x] Curso de Programación Orientada a Objetos con C#
-- [x] Curso de Fundamentos de .NET
-- [x] Curso de C# con .Net Core
-- [x] Curso de Buenas Prácticas y Código Limpio en C#
-- [x] Curso de Principios SOLID en C# y .NET
-- [x] Fundamentos de Entity Framework
-- [x] APIs con .NET
-- [x] Manejo de Datos con LINQ
-- [x] Curso de Unit Testing con C# y .NET
-- [x] Curso de Aplicaciones Web con Blazor WebAssembly y .NET
-- [ ] Curso de Azure DevOps: Flujos de CI/CD
+* [x] Curso de Introducción a C#
+* [x] Curso Básico de Programación con C#
+* [x] Curso de Programación Orientada a Objetos con C#
+* [x] Curso de Fundamentos de .NET
+* [x] Curso de C# con .Net Core
+* [x] Curso de Buenas Prácticas y Código Limpio en C#
+* [x] Curso de Principios SOLID en C# y .NET
+* [x] Fundamentos de Entity Framework
+* [x] APIs con .NET
+* [x] Manejo de Datos con LINQ
+* [x] Curso de Unit Testing con C# y .NET
+* [x] Curso de Aplicaciones Web con Blazor WebAssembly y .NET
+- [x] Curso de Azure DevOps: Flujos de CI y CD
 
     ### Extras ASP.NET
     - [ ] Curso de ASP.NET Core
