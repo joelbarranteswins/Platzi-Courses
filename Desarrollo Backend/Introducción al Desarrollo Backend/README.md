@@ -5,7 +5,7 @@
 
 # Los roles del desarrollo backend
 
-## Los roles del desarrollo backend
+1. ## Los roles del desarrollo backend
 
 Tu rol principal como Backend Developer va ser escribir código que tengan que ver con:
 
@@ -25,7 +25,7 @@ El Backend developer también puede estár acercado a otro tipo de roles como:
 
     Se encarga de gestionar la seguridad en los servidores que es donde corre el código a disposición.
 
-## Frontend, Backend y Full Stack
+2. ## Frontend, Backend y Full Stack
 
 
 * Como backend developer vas a desarrollar servicios con los que se conectarán los clientes.
@@ -55,7 +55,7 @@ El Backend developer también puede estár acercado a otro tipo de roles como:
 
 # Fundamentos del Backend
 
-## ¿Cómo se construye el backend?
+## 3. ¿Cómo se construye el backend?
 
 * El cliente solicita la informacion, pero cómo?
 
@@ -66,7 +66,7 @@ El Backend developer también puede estár acercado a otro tipo de roles como:
 
 * Los frameworks apoyan a la creacion de la implementacion del protocolo REST API, nos ayudan a construir aplicaciones robustas de manera más sencilla.
 
-## ¿Cómo escoger lenguajes y frameworks para backend?
+## 4. ¿Cómo escoger lenguajes y frameworks para backend?
 
 ### Frameworks son herramientas que nos ayuda a ir más ágil y desarrollar nuestro proyecto en el dia a dia. entre ellos 
 
@@ -107,7 +107,7 @@ El Backend developer también puede estár acercado a otro tipo de roles como:
 
 ## HTTP
 
-### Protocolo HTTP y como interactúa con el Backend
+### 5. Protocolo HTTP y como interactúa con el Backend
 
 * Protocolo: Aqui se muestra el protocolo donde hacemos la peticion, normalemente es HTPPS la S es un certificado de seguridad.
 
@@ -127,7 +127,7 @@ El Backend developer también puede estár acercado a otro tipo de roles como:
 
 # Apis REST
 
-## ¿Qué son las APIs?
+## 6. ¿Qué son las APIs?
 
 * Las APIs nos permiten, a través de código, la comunicación entre sistemas.
 
@@ -137,7 +137,7 @@ El Backend developer también puede estár acercado a otro tipo de roles como:
     * JSON.
     * XML.
 
-## Estructura REST API
+## 7. Estructura REST API
 
 * API REST es un estandar para desarrollar APIs que funcionan en el protocolo HTTP .
 * A través de los endpoints se le pide información al dominio, por lo general, se nos devuelve la información empaquetada en un JSON.
@@ -153,7 +153,7 @@ El Backend developer también puede estár acercado a otro tipo de roles como:
 <img src="./imgs/endpoints.png" width= 500>
 </div>
 
-## Insomnia y Postman
+## 8. Insomnia y Postman
 
 ### Recordemos que para dar instrucciones a la API tenemos diferentes métodos para llevarlas a cabo:
 ~~~
@@ -269,7 +269,7 @@ No es necesario enviar todos los atributos, es suficiente con el atributo que de
     [GET] https://api.escuelajs.co/api/v1/products/219
     ~~~
 
-## La nube
+## 9. La nube
 
 La nube, o "cloud" en inglés, se refiere a servidores y servicios de almacenamiento y procesamiento de datos en línea que se pueden acceder a través de Internet. En lugar de tener que almacenar y administrar datos y aplicaciones en su propio dispositivo o servidor, se pueden usar servicios en la nube para hacerlo de manera remota. Esto permite a los usuarios acceder a sus datos y aplicaciones desde cualquier lugar con conexión a Internet, y también les permite escalar el uso de recursos según sea necesario sin tener que preocuparse por el mantenimiento y la administración de hardware físico.
 
@@ -277,7 +277,7 @@ La nube, o "cloud" en inglés, se refiere a servidores y servicios de almacenami
 <img src="./imgs/cloud-computing.png" width= 500>
 </div>
 
-## DevOps
+## 10. DevOps
 
 DevOps es una práctica que combina el desarrollo de software (Dev) y la operación de sistemas (Ops) en un solo proceso integrado. El objetivo de DevOps es mejorar la eficiencia y la velocidad de entrega de software, al mismo tiempo que se asegura su calidad y confiabilidad. Esto se logra al fomentar la colaboración entre los equipos de desarrollo y operaciones, y al automatizar el proceso de entrega de software, desde la planificación hasta la implementación y el monitoreo.
 
@@ -297,7 +297,7 @@ DevOps es una práctica que combina el desarrollo de software (Dev) y la operaci
 <img src="./imgs/type-services.png" width= 500>
 </div>
 
-## Cookies y sesiones
+## 11. Cookies y sesiones
 
 * Cookies
     Las cookies son pequeños fragmentos de texto que los sitios web que visitas envían al navegador
@@ -333,7 +333,7 @@ Pero hay una alternativa que se llama JWT que funciona en mobile y en navegadore
 
     Pueden ser usados tanto en mobile como en browsers.
 
-## Bases de datos
+## 12. Bases de datos
 
 * Una base de datos es una herramienta para recopilar y organizar información. Las bases de datos  pueden almacenar información sobre personas, productos, pedidos u otras cosas. Muchas bases de datos comienzan como una lista en una hoja de cálculo o en un programa de procesamiento de texto.
 
@@ -382,7 +382,7 @@ Ofrecen servicios para administrar las bases de datos en diferentes bases de dat
 
 # Escalabilidad en el backend
 
-## ¿Qué es el escalamiento?
+## 13. ¿Qué es el escalamiento?
 
 ### Escalamiento vertical.
 
@@ -416,7 +416,7 @@ LOAD BALANCER -> Tiene conocimiento de nuestras instancias/servidores (al conjun
 * SOLUCION: Gestionar la base de datos fuera de estos servidores. Quizas como un servidor aparte que sirva como DB.
 
 
-## ¿Qué es la replicación?
+## 14. ¿Qué es la replicación?
 
 la proceso de replicacion es el proceso de sincronizacion, es la escritura en una base de datos en cada uno de sus nodos
 
@@ -426,7 +426,7 @@ la proceso de replicacion es el proceso de sincronizacion, es la escritura en un
         * Cada vez que se realice escritura en una de las bases de datos, se realiza una sincronización para que el cambio ocurra en todas las bases de datos. Esto es conocido como replicación.
 * Normalmente el backend developer no se encarga de la parte de replicación y gestión de bases de datos, sino en la capa de los servidores y el escalamiento horizontal.
 
-## ¿Qué es la caché?
+## 15. ¿Qué es la caché?
 
 Es un espacio en memoria en base de datos que almacena los datos repetitivos de una navegación cotidiana del usuario en una aplicación, sitio web, etc.
 
@@ -448,7 +448,7 @@ La Caché es usual trabajar con ella en producción, más no recomnedable trabaj
 <img src="./imgs/diagrama-de-flujo-cache.webp" width= 500>
 </div>
 
-## Colas de tareas
+## 16. Colas de tareas
 
 * Ciertas tareas pueden tener un tiempo de espera muy largo.
     * Reportes
@@ -468,7 +468,7 @@ La Caché es usual trabajar con ella en producción, más no recomnedable trabaj
 
 
 
-## Server-Side Rendering
+## 17. Server-Side Rendering
 
 1. **Server-Side Rendering:** se renderiza el HTML del cliente totalmente en el lado servidor.
 2. **Client-Side Rendering:** se renderiza la aplicación completamente en el navegador haciendo uso de Javascript y la gestión del DOM.
