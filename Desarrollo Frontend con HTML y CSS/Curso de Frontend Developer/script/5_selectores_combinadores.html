@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div p {
+            color: red;
+        }
+        div > div {
+            background: blue;
+        }
+        .es {
+            background: green;
+        }
+        div + section {
+            background: yellow;
+        }
+        div ~ p {
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div>
+            <p>Texto 1</p>
+            <p>Texto 2</p>
+            <p>Texto 3</p>
+            <div class="es">Es</div>
+        </div>
+    </div>
+    <section>
+        <p>Texto 4</p>
+        <p>Texto 5</p>
+        <p>Texto 6</p>
+    </section>
+    <div>
+        Master
+    </div>
+    <p>Combinador de hermano</p>
+    
+</body>
+</html>
