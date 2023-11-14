@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    background-color: blueviolet;
+}
+
+section {
+    width: 80%; /* width base debe ser en porcentaje */
+    min-width: 320px;
+    max-width: 500px;
+    /* height: 500px; */
+    min-height: 20px;
+    max-height: 700px;
+    margin: 0 auto;
+    background-color: green;
+}
