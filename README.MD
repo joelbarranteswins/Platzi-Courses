@@ -121,9 +121,7 @@ stateDiagram-v2
 
 
 ## `Desarrollo backend con JavaScript`
-- [x] Curso Básico de JavaScript
-- [ ] Curso de ECMAScript: Historia y Versiones de JavaScript
-- [ ] Curso de Fundamentos de Node.js
+
 
 
 ## `Desarrollo Backend con Python` :white_check_mark: (Completed)
@@ -160,10 +158,30 @@ stateDiagram-v2
 
 ## `Desarrollo Web`
 
+
+## `Desarrollo con JavaScript`
+
+- [x] Curso Básico de JavaScript
+- [ ] Curso Práctico de JavaScript
+
+*
+    ### Librerías y Dependencias de JavaScript con NPM
+
+## `Desarrollo Frontend`
+
+
+## `Desarrollo Frontend con HTML y CSS`
+
+- [x] Curso de Frontend Developer
+- [x] Curso Práctico de Frontend Developer
 - [x] Curso Definitivo de HTML y CSS
+
+## `Desarrollo Frontend con React.js`
+
 
 
 ## `Herramientas de IA`
+
 - [x] Curso de Inglés para el Uso de Herramientas de Inteligencia Artificial
 - [x] Curso de Inteligencia Artificial - ChatGPT, DALL-E y Hugging Face
 - [ ] Curso de Generación de Imágenes con IA - Dall-E, Midjourney y Stable Diffusion
