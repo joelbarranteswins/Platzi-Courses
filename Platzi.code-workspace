@@ -29,11 +29,11 @@
 			"path": "./Desarrollo Backend con Java"
 		},
 		{
-			"name": "Desarrollo Backend con JavaScript",
-			"path": "./Desarrollo Backend con JavaScript"
+			"name": "Desarrollo con JavaScript",
+			"path": "./Desarrollo con JavaScript"
 		},
 		{
-			"name": "Python",
+			"name": "Desarrollo Backend con Python",
 			"path": "Desarrollo Backend con Python"
 		},
 		{
@@ -45,6 +45,10 @@
 			"path": "./Desarrollo Web"
 		},
 		{
+			"name": "Desarrollo Frontend con HTML y CSS",
+			"path": "./Desarrollo Frontend con HTML y CSS"
+		},
+		{
 			"name": "Herramientas de IA",
 			"path": "./Herramientas de IA"
 		},
@@ -52,6 +56,10 @@
 			"name": "Ingles",
 			"path": "./Ingles"
 		},
+		{
+			"name": "Metodologías Ágiles",
+			"path": "./Metodologías Ágiles"
+		}
 		{
 			"name": "Perfil Profesional",
 			"path": "./Perfil Profesional"
@@ -63,6 +71,7 @@
 	],
 	"settings": {
 		"liveServer.settings.multiRootWorkspaceName": "Desarrollo Backend con JavaScript",
-		"FSharp.suggestGitignore": false
+		"FSharp.suggestGitignore": false,
+		"dotnet.defaultSolution": "disable"
 	}
 }
