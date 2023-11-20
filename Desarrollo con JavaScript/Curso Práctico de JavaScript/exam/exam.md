@@ -1,4 +1,6 @@
- ## 1. ¿Qué palabra reservada usarías para crear una variable que pueda cambiar su valor en el futuro?
+ # Curso Práctico de JavaScript
+
+## 1. ¿Qué palabra reservada usarías para crear una variable que pueda cambiar su valor en el futuro?
 
 > let
 
