@@ -162,8 +162,10 @@ stateDiagram-v2
 ## `Desarrollo con JavaScript`
 
 - [x] Curso Básico de JavaScript
-- [ ] Curso Práctico de JavaScript
-
+- [x] Curso Práctico de JavaScript
+- [x] Curso de ECMAScript: Historia y Versiones de JavaScript
+- [x] Curso de Asincronismo con JavaScript
+- [x] Curso de NPM: Gestión de Paquetes y Dependencias en JavaScript
 *
     ### Librerías y Dependencias de JavaScript con NPM
 
