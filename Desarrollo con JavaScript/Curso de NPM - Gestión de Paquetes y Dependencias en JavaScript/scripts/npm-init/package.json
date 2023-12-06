@@ -1,0 +1,25 @@
+{
+  "name": "npm-init",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "node": "node src/index.js && node src/index.js"
+  },
+  "keywords": [
+    "javascript.",
+    "angular",
+    "node"
+  ],
+  "author": "joel barrantes <joelbarrantespalacios@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "json-server": "^0.17.4",
+    "moment": "^2.29.4",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.55.0"
+  }
+}
