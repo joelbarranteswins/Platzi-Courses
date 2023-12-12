@@ -180,7 +180,7 @@ stateDiagram-v2
 
 ## `Desarrollo Frontend con React.js`
 
-
+- [x] Curso de React.js
 
 ## `Herramientas de IA`
 
@@ -202,7 +202,7 @@ stateDiagram-v2
 ## `Metodologías Ágiles`
 - [x] Curso Profesional de Scrum
 - [ ] Curso de Scrum Master
-- [ ] Curso de Historias de Usuario en Scrum
+- [x] Curso de Historias de Usuario en Scrum
 - [ ] Curso de Fundamentos de Product Owner
 - [ ] Curso de Herramientas y Frameworks Intermedias para Product Owners
 
