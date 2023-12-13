@@ -73,7 +73,7 @@ stateDiagram-v2
 ## `Desarrollo Backend`
 
 - [x] Curso de Introducción al Desarrollo Backend
-- [ ] Curso Práctico de Arquitectura Backend
+- [x] Curso Práctico de Arquitectura Backend
 
 
 ## `Desarrollo Backend con C# y .NET` :white_check_mark: (Completed)
