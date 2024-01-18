@@ -1,43 +1,34 @@
 # Curso de ECMAScript: Historia y Versiones de JavaScript
 
-<aside>
-📌 Link del curso: [https://platzi.com/cursos/ecmascript-6/](https://platzi.com/cursos/ecmascript-6/)
-
-</aside>
-
-<aside>
-📌 Repositorio con ejemplos: [https://github.com/DanielRagi/ecmascript-features](https://github.com/DanielRagi/ecmascript-features)
-
-</aside>
 
 # 📜 Descripción del Curso
 
 JavaScript es el lenguaje más utilizado para desarrollo de aplicaciones web, principalmente en el frontend. Cada año, ECMA International publica una nueva edición de ECMAScript, la especificación a la cual se ajusta JavaScript. Aprende las nuevas características que implementa ECMAScript desde la versión ES6 hasta la versión ES13.
 
-### Introducción
+## Introducción
 
 - Historia de JavaScript, ¿qué es ECMAScript?
-    - ************1950:************ Nacimiento de las primeras computadoras y los primeros lenguajes de programación.
-    - ********1969:******** Nacimiento de ARPANET y protocolos de comunicaciones, forma en la que dos computadoras se podían comunicar.
-    - **********************1970-1990:********************** Exploración de ARPANET.
-    - ************1990:************ Tim Berners-Lee dio inicio a lo que se conoce como internet, con el nacimiento de World Wide Web: forma de acceder a archivos o elementos a través de enlaces.
-    - ************1993:************ Nace el primer navegador: Mosaic.
-    - **********1994:********** Universitarios pioneros escribieron el software simple que inició la revolución de la información: navegadores. Marc Andreessen le dió vida a Netscape, empresa que desarrolló un navegador con el que se podía acceder a internet.
-    - ************1995:************ Microsoft crea Internet Explorer para competirle a NetScape, lo que dió inicio a las Browser Wars. Empezaron a nacer tecnologías como CSS y JS, además de empresas como Mozilla (Mosaic + Godzilla). En este año apareció la tecnología ******Mocha,****** posteriormente Livescript, y finalmente JavaScript ************a manos de Netscape. Por su parte, Microsoft lanzó JScript para competir a Netscape. Aquí nació ECMAScript.
+    - **1950:** Nacimiento de las primeras computadoras y los primeros lenguajes de programación.
+    - **1969:** Nacimiento de ARPANET y protocolos de comunicaciones, forma en la que dos computadoras se podían comunicar.
+    - **1970-1990:** Exploración de ARPANET.
+    - **1990:** Tim Berners-Lee dio inicio a lo que se conoce como internet, con el nacimiento de World Wide Web: forma de acceder a archivos o elementos a través de enlaces.
+    - **1993:** Nace el primer navegador: Mosaic.
+    - **1994:** Universitarios pioneros escribieron el software simple que inició la revolución de la información: navegadores. Marc Andreessen le dió vida a Netscape, empresa que desarrolló un navegador con el que se podía acceder a internet.
+    - **1995:** Microsoft crea Internet Explorer para competirle a NetScape, lo que dió inicio a las Browser Wars. Empezaron a nacer tecnologías como CSS y JS, además de empresas como Mozilla (Mosaic + Godzilla). En este año apareció la tecnología **Mocha,** posteriormente Livescript, y finalmente JavaScript **a manos de Netscape. Por su parte, Microsoft lanzó JScript para competir a Netscape. Aquí nació ECMAScript.
     
     ECMA (European Computer Manufacturer Association) nació como un consorcio europeo que permitiría generar un estándar para llevar interacciones en los navegadores web, gracias a la guerra de los navegadores (Browser Wars). Por lo tanto, ECMAScript es el estándar y la serie de reglas que tendran los lenguajes de programación que se basen en esta línea (JavaScript, JScript, ActionScript).
     
     El surgimiento de ECAMScript se dió en 1997, con el nombre de ECMA-262, primera versión oficial de este estándar, que luego tuvo la siguiente evolución:
     
-    - ************1997:************ ES1
-    - ************1998:************ ES2
-    - ************1999:************ ES3
-    - ************2000:************ ES4 (abandonado)
-    - **************2005:************** ES5
-    - ************2015:************ ES6 (base de la actualidad)
-    - ************2016:************ ES7
-    - ************2018:************ ES9
-    - ************2019:************ ES10
+    - **1997:** ES1
+    - **1998:** ES2
+    - **1999:** ES3
+    - **2000:** ES4 (abandonado)
+    - **2005:** ES5
+    - **2015:** ES6 (base de la actualidad)
+    - **2016:** ES7
+    - **2018:** ES9
+    - **2019:** ES10
     
 - ¿Qué es el TC39?
     
@@ -45,13 +36,13 @@ JavaScript es el lenguaje más utilizado para desarrollo de aplicaciones web, pr
     
     ESNEXT es el nombre que se le da a la próxima versión de ECMAScript, sea cual sea, que generalmente se lanza en junio de cada año. El proceso de inclusión de una característica pasa por el siguiente proceso:
     
-    - ******************Stage 0:****************** Strawperson (Idea)
-    - ************Stage 1:************ Proposal (Propuesta)
-    - ******************Stage 2:****************** Draft (Borrador)
-    - ******************Stage 3:****************** Candidate (Candidato)
+    - **Stage 0:** Strawperson (Idea)
+    - **Stage 1:** Proposal (Propuesta)
+    - **Stage 2:** Draft (Borrador)
+    - **Stage 3:** Candidate (Candidato)
     - ****Stage 4:**** Finished (Finalizado)
 
-### Configuración
+## Configuración
 
 - Configurando nuestras herramientas
     
@@ -77,7 +68,7 @@ JavaScript es el lenguaje más utilizado para desarrollo de aplicaciones web, pr
     - `git init`
     - `npm init`
 
-### ES6 (ES2015)
+## ES6 (ES2015)
 
 - ES6: let y const, arrow functions
     
@@ -127,7 +118,7 @@ JavaScript es el lenguaje más utilizado para desarrollo de aplicaciones web, pr
     
 - ES6: default params
     
-    Los ******************************Default Params****************************** (parámetros por defecto) consisten en establecer un valor por defecto a los parámetros de una función, para asegurar que el código se ejecute correctamente en el caso de que no se establezcan los argumentos correspondientes en la invocación de la función.
+    Los ****Default Params**** (parámetros por defecto) consisten en establecer un valor por defecto a los parámetros de una función, para asegurar que el código se ejecute correctamente en el caso de que no se establezcan los argumentos correspondientes en la invocación de la función.
     
     Antes de ES6, si no se pasaban los valores como argumentos al llamar la función, generaría NaN como resultado al momento de utilizarlos. Una solución poco práctica era declarar nuevas variables dentro de la función (generalmente con el mismo nombre de los parámetros precedidos de `_`) y asignarles el valor del parámetro, seguido de `|| valorPorDefecto`.
     
@@ -177,7 +168,7 @@ JavaScript es el lenguaje más utilizado para desarrollo de aplicaciones web, pr
     console.log(newPlataforma)  // 'Platzi'
     ```
     
-    La **************************************************desestructuración en parámetros de una función************************************************** implica poder utilizar la desestructuración en los parámetros que sean objetos en la declaración de una función. El nombre debe ser igual a la propiedad del objeto.
+    La ****desestructuración en parámetros de una función**** implica poder utilizar la desestructuración en los parámetros que sean objetos en la declaración de una función. El nombre debe ser igual a la propiedad del objeto.
     
     ```jsx
     const usuario = { nombre: "Andres", edad: 23, plataforma: "Platzi" }
@@ -189,7 +180,7 @@ JavaScript es el lenguaje más utilizado para desarrollo de aplicaciones web, pr
     mostrarDatos(usuario) // 'Andres', 23, 'Platzi'
     ```
     
-    La ********************************************************desestructuración de arrays******************************************************** consiste en extraer los valores de un array en variables, utilizando la misma posición del array al momento de la desestructuración.
+    La **desestructuración de arrays** consiste en extraer los valores de un array en variables, utilizando la misma posición del array al momento de la desestructuración.
     
     ```jsx
     const array = [ 1, 2, 3, 4, 5 ]
@@ -210,7 +201,7 @@ JavaScript es el lenguaje más utilizado para desarrollo de aplicaciones web, pr
     console.log(cinco) // 5
     ```
     
-    En la ********************************************************************desestructuración para valores retornados de una función******************************************************************** podemos almacenar en variables separadas los valores retornados en un array.
+    En la ****desestructuración para valores retornados de una función**** podemos almacenar en variables separadas los valores retornados en un array.
     
     ```jsx
     function useState(value){
@@ -256,7 +247,7 @@ JavaScript es el lenguaje más utilizado para desarrollo de aplicaciones web, pr
     copyArray // [0,2,3,4,5]
     ```
     
-    Para ************************unir arrays y añadir elementos************************ utilizando el operador de propagación, se deben separar por comas en la creación de un aray:
+    Para ****unir arrays y añadir elementos**** utilizando el operador de propagación, se deben separar por comas en la creación de un aray:
     
     ```jsx
     const array1 = [1,2,3]
@@ -275,7 +266,7 @@ JavaScript es el lenguaje más utilizado para desarrollo de aplicaciones web, pr
     const copyArray = structuredClone(originalArray)
     ```
     
-    El ******************************parámetro rest****************************** consiste en agrupar el residuo de elementos mediante la sintaxis de tres puntos ( … ) seguido de una variable que contendrá los elementos en un array. Sirve para crear funciones que acepten cualquier número de argumentos para agruparlos en un array (siempre estando en la última posición de los parámetros). También sirve para obtener los elementos restantes de un array u objeto usando desestructuración.
+    El ****parámetro rest**** consiste en agrupar el residuo de elementos mediante la sintaxis de tres puntos ( … ) seguido de una variable que contendrá los elementos en un array. Sirve para crear funciones que acepten cualquier número de argumentos para agruparlos en un array (siempre estando en la última posición de los parámetros). También sirve para obtener los elementos restantes de un array u objeto usando desestructuración.
     
     ```jsx
     // Función que acepta cualquier número de argumentos
@@ -297,7 +288,7 @@ JavaScript es el lenguaje más utilizado para desarrollo de aplicaciones web, pr
     positivos // [ 1, 2, 3, 4, 5 ]
     ```
     
-    La ********************************************************************************************************************************diferencia entre el parámetro rest y el operador de propagación******************************************************************************************************************************** está en que el parámetro rest agrupa el residuo de elementos, mientras que el operador de propagación expande los elementos de un iterable en un array.
+    La ******diferencia entre el parámetro rest y el operador de propagación****** está en que el parámetro rest agrupa el residuo de elementos, mientras que el operador de propagación expande los elementos de un iterable en un array.
     
     ```jsx
     const array = [1,2,3,4,5]
@@ -312,7 +303,7 @@ JavaScript es el lenguaje más utilizado para desarrollo de aplicaciones web, pr
     
 - ES6: object literals
     
-    Los ************************************objetos literales************************************ consisten en crear objetos a partir de variables sin repetir el nombre al crear la clave y el valor dentro del objeto. Antes de ES6, se debía hacer de la siguiente manera:
+    Los ******objetos literales****** consisten en crear objetos a partir de variables sin repetir el nombre al crear la clave y el valor dentro del objeto. Antes de ES6, se debía hacer de la siguiente manera:
     
     ```jsx
     const nombre = "Andres"
@@ -454,7 +445,7 @@ JavaScript es el lenguaje más utilizado para desarrollo de aplicaciones web, pr
     
     Esta configuración se puede omitir si a los módulos les colocamos la extensión .mjs en vez de .js.
     
-    Las ****************************exportaciones de código**************************** consisten en crear funciones o variables para utilizarlas en otros archivos, mediante la palabra reservada ******export******. Se puede exportar tanto en la declaración de la función o luego de la declaración a través de llaves `{ }`.
+    Las **exportaciones de código** consisten en crear funciones o variables para utilizarlas en otros archivos, mediante la palabra reservada ******export******. Se puede exportar tanto en la declaración de la función o luego de la declaración a través de llaves `{ }`.
     
     ```jsx
     // math_function.js
@@ -471,7 +462,7 @@ JavaScript es el lenguaje más utilizado para desarrollo de aplicaciones web, pr
     export { add, otherFunction, ... }
     ```
     
-    Las ************************************************importaciones de código************************************************ consisten en usar funciones o variables de otros archivos usando la palabra reservada ********import.******** Deberá estar siempre al inicio del archivo y se debe utilizar el mismo nombre de los elementos a importar que en el archivo original.
+    Las **importaciones de código** consisten en usar funciones o variables de otros archivos usando la palabra reservada **import.** Deberá estar siempre al inicio del archivo y se debe utilizar el mismo nombre de los elementos a importar que en el archivo original.
     
     ```jsx
     // main.js
@@ -492,7 +483,7 @@ JavaScript es el lenguaje más utilizado para desarrollo de aplicaciones web, pr
     myMathModule.otherFunction()
     ```
     
-    Las ****************************************************exportaciones por defecto**************************************************** solo sirven si solo un valor será exportado, usando las palabras reservadas ****************export default.**************** Así no tendremos que usar llaves al exportar o importar. Solo se puede exportar por defecto desde la declaración en las funciones. Para declaraciones con const, let o var se deben exportar solo al final.
+    Las ******exportaciones por defecto****** solo sirven si solo un valor será exportado, usando las palabras reservadas ******export default.****** Así no tendremos que usar llaves al exportar o importar. Solo se puede exportar por defecto desde la declaración en las funciones. Para declaraciones con const, let o var se deben exportar solo al final.
     
     ```jsx
     //math_function.js
@@ -507,7 +498,7 @@ JavaScript es el lenguaje más utilizado para desarrollo de aplicaciones web, pr
     export default add
     ```
     
-    Las ******************************importaciones por defecto****************************** funcionan solo cuando un valor será importado y nos permitirá utilizar cualquier nombre en la importación sin necesidad de llaves.
+    Las ****importaciones por defecto**** funcionan solo cuando un valor será importado y nos permitirá utilizar cualquier nombre en la importación sin necesidad de llaves.
     
     ```jsx
     //Las siguientes importaciones son válidas
@@ -611,18 +602,18 @@ JavaScript es el lenguaje más utilizado para desarrollo de aplicaciones web, pr
     ```
     
 
-### ES7 (ES2016)
+## ES7 (ES2016)
 
 - ES7: exponentiation operator y array includes
     
-    El **********************************************************************************************************operador de potenciación (exponential operator)********************************************************************************************************** consiste en elevar una base a un exponente, utilizando el doble asterisco ( `**` ).
+    El ****operador de potenciación (exponential operator)**** consiste en elevar una base a un exponente, utilizando el doble asterisco ( `**` ).
     
     ```jsx
     // 2^3 = 8
     const potencia = 2**3; // 8
     ```
     
-    El ****************método includes**************** determina su un array o string incluye un determinado elemento y devuelve true o false. Este método recibe dos argumentos:
+    El ******método includes****** determina su un array o string incluye un determinado elemento y devuelve true o false. Este método recibe dos argumentos:
     
     - El elemento a comparar.
     - (Opcional) El índice inicial desde dónde comparar hasta el último elemento.
@@ -651,11 +642,11 @@ JavaScript es el lenguaje más utilizado para desarrollo de aplicaciones web, pr
     ```
     
 
-### ES8 (ES2017)
+## ES8 (ES2017)
 
 - ES8: object entries y object values
     
-    Los métodos de **********************************************************************transformación de objetos a arrays********************************************************************** sirven para obtener la información de las propiedades, sus valores o ambas cosas.
+    Los métodos de ******transformación de objetos a arrays****** sirven para obtener la información de las propiedades, sus valores o ambas cosas.
     
     `Object.entries()` devuelve un array con elementos en forma [propiedad, valor] del objeto enviado. **Obtiene los pares de propiedad y valor de un objeto**, transformándolos en un array.
     
@@ -704,12 +695,12 @@ JavaScript es el lenguaje más utilizado para desarrollo de aplicaciones web, pr
     
 - ES8: string padding y trailing commas
     
-    El ******************************string padding****************************** consiste en rellenar un string por el principio o por el final, con un caracter especificado, repetido hasta que se complete la longitud máxima. Los métodos reciben dos argumentos:
+    El ****string padding**** consiste en rellenar un string por el principio o por el final, con un caracter especificado, repetido hasta que se complete la longitud máxima. Los métodos reciben dos argumentos:
     
     - Longitud máxima a rellenar, incluyendo el string inicial.
     - El string a rellenar. Por defecto, un espacio.
     
-    **************************************El método padStart************************************** completa un string con otro string en el inicio, hasta tener un total de caracteres especificado.
+    **El método padStart** completa un string con otro string en el inicio, hasta tener un total de caracteres especificado.
     
     ```jsx
     'abc'.padStart(10) // "       abc"
@@ -719,7 +710,7 @@ JavaScript es el lenguaje más utilizado para desarrollo de aplicaciones web, pr
     'abc'.padStart(1) // "abc"
     ```
     
-    El método **************padEnd************** completa un string con otro string en el final hasta tener el total de caracteres especificado.
+    El método ****padEnd**** completa un string con otro string en el final hasta tener el total de caracteres especificado.
     
     ```jsx
     'abc'.padEnd(10) // "abc       "
@@ -728,7 +719,7 @@ JavaScript es el lenguaje más utilizado para desarrollo de aplicaciones web, pr
     'abc'.padEnd(1) // "abc"
     ```
     
-    Los ********************************trailing commas******************************** consisten en dejar comas al final de objetos o arrays que faciliten añadir nuevos elementos y evitar errores de sintaxis. Podemos añadir cuantas comas sean necesarias y serán leidas como “empty items”, reservados en el array.
+    Los ******trailing commas****** consisten en dejar comas al final de objetos o arrays que faciliten añadir nuevos elementos y evitar errores de sintaxis. Podemos añadir cuantas comas sean necesarias y serán leidas como “empty items”, reservados en el array.
     
     ```jsx
     const usuario = {
@@ -750,8 +741,8 @@ JavaScript es el lenguaje más utilizado para desarrollo de aplicaciones web, pr
     
     En ES2017 se añadió una nueva forma de manejar el asincronismo en JavaScript mediante funciones asíncronas, como alternativa al método `.then()`. Se usan mediante las palabras reservadas:
     
-    - **************`async`:** Crea una función asíncrona y retorna una promise.
-    - **************`await`:** Funciona solamente dentro de una función asíncrona y espera hasta que una promesa sea resuelta. Se puede manejar a través de los bloques try / catch para validar si se resuelve o no.
+    - ****`async`:** Crea una función asíncrona y retorna una promise.
+    - ****`await`:** Funciona solamente dentro de una función asíncrona y espera hasta que una promesa sea resuelta. Se puede manejar a través de los bloques try / catch para validar si se resuelve o no.
     
     ```jsx
     async function asyncFunction () {
@@ -765,7 +756,7 @@ JavaScript es el lenguaje más utilizado para desarrollo de aplicaciones web, pr
     ```
     
 
-### ES9 (ES2018)
+## ES9 (ES2018)
 
 - ES9: regular expressions y spread operator
     
@@ -776,7 +767,7 @@ JavaScript es el lenguaje más utilizado para desarrollo de aplicaciones web, pr
     const match = regexData.exec('2018-04-20')
     ```
     
-    Se añadió una mejora al ********************************spread operator******************************** incluido en ES6 para que ahora sea capaz de expandir las propiedades de un objeto. Sirve para crear nuevos objetos a partir de otros.
+    Se añadió una mejora al ******spread operator****** incluido en ES6 para que ahora sea capaz de expandir las propiedades de un objeto. Sirve para crear nuevos objetos a partir de otros.
     
     ```jsx
     const objeto = {
@@ -790,7 +781,7 @@ JavaScript es el lenguaje más utilizado para desarrollo de aplicaciones web, pr
     }
     ```
     
-    Para ****************************************************************************************************************************crear copias de objetos utilizando las propiedades de propagación**************************************************************************************************************************** se tiene un manejo semejante al manejo de las copias utilizando el spread operator. Se pueden realizar copias de objetos en un solo nivel utilizando la propiedad de propagación. Esto nos permite crear copias de objetos sin que la referencia en memoria sea la misma al objeto original.
+    Para **crear copias de objetos utilizando las propiedades de propagación** se tiene un manejo semejante al manejo de las copias utilizando el spread operator. Se pueden realizar copias de objetos en un solo nivel utilizando la propiedad de propagación. Esto nos permite crear copias de objetos sin que la referencia en memoria sea la misma al objeto original.
     
     ```jsx
     const objetoOriginal = {a: 1, b: 2}
@@ -812,7 +803,7 @@ JavaScript es el lenguaje más utilizado para desarrollo de aplicaciones web, pr
     
 - ES9: Promise.finally y generadores asíncronos
     
-    El método **************`finally`** de las promesas sirve para ejecutar código después de que una promesa haya sido ejecutada, ya sea como resuelta o rechazada.
+    El método ****`finally`** de las promesas sirve para ejecutar código después de que una promesa haya sido ejecutada, ya sea como resuelta o rechazada.
     
     ```jsx
     promesa()
@@ -850,13 +841,13 @@ JavaScript es el lenguaje más utilizado para desarrollo de aplicaciones web, pr
     ```
     
 
-### ES10 (ES2019)
+## ES10 (ES2019)
 
 - ES10: flat-map y trimStart-trimEnd
     
     El ******flat-map o aplanamiento de arrays****** consiste en transformar un array de arrays a una sola dimensión. Los métodos son `flat` y `flatMap`.
     
-    El método `flat` devuelve un array donde los sub-arrays originales han sido propagados hasta una profundidad especificada. Este método es inmutable, puesto que retorna un nuevo array sin modificar el array original. El argumento que recibe es la profundidad del aplanamiento (por defecto 1). Este argumento puede ser *********Infinity********* si se desean aplanar todos los sub-arrays en una sola dimensión, independientemente de en cuál dimensión se encuentren.
+    El método `flat` devuelve un array donde los sub-arrays originales han sido propagados hasta una profundidad especificada. Este método es inmutable, puesto que retorna un nuevo array sin modificar el array original. El argumento que recibe es la profundidad del aplanamiento (por defecto 1). Este argumento puede ser ***Infinity*** si se desean aplanar todos los sub-arrays en una sola dimensión, independientemente de en cuál dimensión se encuentren.
     
     ```jsx
     const array = [1,2,[3,4],5,6]
@@ -916,7 +907,7 @@ JavaScript es el lenguaje más utilizado para desarrollo de aplicaciones web, pr
     
 - ES10: try catch y fromEntries
     
-    Desde ES10, en la estructura ********************try-catch******************** podemos omitir el error en la sesión de catch si es necesario. Aunque ahora es posible, no es recomendable.
+    Desde ES10, en la estructura ****try-catch**** podemos omitir el error en la sesión de catch si es necesario. Aunque ahora es posible, no es recomendable.
     
     ```jsx
     try {
@@ -951,7 +942,7 @@ JavaScript es el lenguaje más utilizado para desarrollo de aplicaciones web, pr
     ```
     
 
-### ES11 (ES2020)
+## ES11 (ES2020)
 
 - ES11: optional chaining
     
@@ -966,7 +957,7 @@ JavaScript es el lenguaje más utilizado para desarrollo de aplicaciones web, pr
     // TypeError: Cannot read properties of undefined (reading 'facebook')
     ```
     
-    El **************************************************************************************encadenamiento opcional u optional chaining************************************************************************************** se utiliza con ( `?.` ) y detiene la evaluación del objeto cuando el valor es undefined o null, retornando undefined pero sin detener el programa causando un error. Se debe utilizar únicamente cuando probablemente un valor no exista, puesto que un error real puede ser ocultado por un undefined.
+    El **encadenamiento opcional u optional chaining** se utiliza con ( `?.` ) y detiene la evaluación del objeto cuando el valor es undefined o null, retornando undefined pero sin detener el programa causando un error. Se debe utilizar únicamente cuando probablemente un valor no exista, puesto que un error real puede ser ocultado por un undefined.
     
     ```jsx
     const usuario = {}
@@ -995,7 +986,7 @@ JavaScript es el lenguaje más utilizado para desarrollo de aplicaciones web, pr
     console.log(min) // -9007199254740991
     ```
     
-    El operador **************************************************nullish coalescing ( `??` )** consiste en evaluar si una variable es undefined o null para asignarle un valor.
+    El operador ****nullish coalescing ( `??` )** consiste en evaluar si una variable es undefined o null para asignarle un valor.
     
     ```jsx
     const usuario1 = {}
@@ -1099,7 +1090,7 @@ JavaScript es el lenguaje más utilizado para desarrollo de aplicaciones web, pr
     
     Para el manejo modular de JavaScript, tenemos la expresión `import()` que permite manejar módulos dinámicamente, ya que la sintaxis `import … from` no lo permite.
     
-    La ******************************************importación dinámica****************************************** consiste en cargar los módulos cuando el usuario los vaya a utilizar y no al iniciar la aplicación. Esto con el fin de ganar optimización en la web porque se descargan menos recursos. La expresión `import()` recibe un argumento tipo string con la ruta del módulo a importar y devuelve una promesa.
+    La ******importación dinámica****** consiste en cargar los módulos cuando el usuario los vaya a utilizar y no al iniciar la aplicación. Esto con el fin de ganar optimización en la web porque se descargan menos recursos. La expresión `import()` recibe un argumento tipo string con la ruta del módulo a importar y devuelve una promesa.
     
     ```jsx
     const ruta = "./modulo.js"
@@ -1131,7 +1122,7 @@ JavaScript es el lenguaje más utilizado para desarrollo de aplicaciones web, pr
     ```
     
 
-### ES12 (ES2021)
+## ES12 (ES2021)
 
 - ES12: numeric-separators y replaceAll
     
@@ -1164,7 +1155,7 @@ JavaScript es el lenguaje más utilizado para desarrollo de aplicaciones web, pr
     
 - ES12: promise-any y métodos privados
     
-    Los **********************************métodos privados********************************** consisten en limitar el acceso a atributos y métodos (que por defecto son públicos) agregando el caracter numeral ( `#` ). Así, solo se podrán acceder desde adentro de la clase, para mejorar el encapsulamiento.
+    Los ********métodos privados******** consisten en limitar el acceso a atributos y métodos (que por defecto son públicos) agregando el caracter numeral ( `#` ). Así, solo se podrán acceder desde adentro de la clase, para mejorar el encapsulamiento.
     
     ```jsx
     class Clase {
@@ -1195,7 +1186,7 @@ JavaScript es el lenguaje más utilizado para desarrollo de aplicaciones web, pr
     ```
     
 
-### ES13 (ES2022)
+## ES13 (ES2022)
 
 - ES13: at
     
@@ -1223,7 +1214,7 @@ JavaScript es el lenguaje más utilizado para desarrollo de aplicaciones web, pr
     ```
     
 
-### Recapitulación
+## Recapitulación
 
 <aside>
 💡 Especificación ECMA-262 donde están todas las funcionalidades que existen y existirán: [https://www.ecma-international.org/publications-and-standards/standards/ecma-262/](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/)
