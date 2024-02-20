@@ -51,6 +51,14 @@
 		{
 			"name": "Desarrollo Frontend con React.js",
 			"path": "./Desarrollo Frontend con React.js"
+		},
+		{
+			"name": "Google Cloud Platform",
+			"path": "./Google Cloud Platform"
+		},
+		{
+			"name": "Full Stack con WordPress",
+			"path": "./Full Stack con WordPress"
 		}
 		{
 			"name": "Herramientas de IA",
@@ -63,7 +71,7 @@
 		{
 			"name": "Metodologías Ágiles",
 			"path": "./Metodologías Ágiles"
-		}
+		},
 		{
 			"name": "Perfil Profesional",
 			"path": "./Perfil Profesional"
