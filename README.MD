@@ -50,6 +50,20 @@ stateDiagram-v2
 - [ ] Curso de Introducción a Elasticsearch
 
 
+## `Cloud Computing`
+
+- [] Curso de Introducción a la Nube
+
+## `Microsoft Azure`
+
+## `Amazon Web Services`
+
+## `Google Cloud Platform`
+
+- [x] Curso de Introducción a Google Cloud Platform
+- [ ] Curso de Google Serverless
+
+
 ## `Data Science`
 
 - [x] DataAcademy
@@ -206,6 +220,13 @@ stateDiagram-v2
 - [ ] Curso de Fundamentos de Product Owner
 - [ ] Curso de Herramientas y Frameworks Intermedias para Product Owners
 
+## `No-Code Developer`
+
+
+
+## `Full Stack con WordPress`
+
+- [ ] Curso de Creación de Páginas Web con Wordpress y No-code
 
 ## `Perfil Profesional`
 - [x] Creación de Portafolio y CV
