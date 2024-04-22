@@ -1,7 +1,9 @@
 
 # Platzi Course Resources
 
-<img src="https://static.platzi.com/static/images/footer/logo.png">
+<div align="center">
+<img src="https://static.platzi.com/static/images/footer/logo.png"/>
+</div>
 
 ## `Overview`
 
@@ -191,10 +193,13 @@ stateDiagram-v2
 - [x] Curso de Frontend Developer
 - [x] Curso Práctico de Frontend Developer
 - [x] Curso Definitivo de HTML y CSS
+- [x] Curso de CSS Grid Básico
+- [x] Curso de Responsive Design: Maquetación Mobile First
+
 
 ## `Desarrollo Frontend con React.js`
 
-- [x] Curso de React.js
+- [ ] Curso de React.js
 
 ## `Herramientas de IA`
 
