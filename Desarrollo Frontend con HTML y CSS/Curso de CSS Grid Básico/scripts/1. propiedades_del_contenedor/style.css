@@ -1,0 +1,18 @@
+.contenedor {
+    border: 5px solid #e1bee7;
+    background-color: #fff1ff;
+    display: grid;
+    /* grid-template-columns: 100px 200px 300px auto; */
+    /*grid-auto-rows: 150px;*/ /* set the height of all rows */
+    grid-auto-flow: column; /* set the direction of the flow */
+    grid-auto-columns: 100px;
+    grid-template-rows: 100px 200px;
+    /* row-gap: 15px;  */
+    /* column-gap: 15px; */
+    grid-gap: 15px;
+}
+
+.item {
+    border: 5px solid #00bcd4;
+    font-size: 4rem;
+}
